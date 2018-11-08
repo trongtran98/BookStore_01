@@ -25,3 +25,9 @@ hs_err_pid*
 # Config iml file
 *.idea
 *.iml
+
+# Data source file
+persistence/src/main/resources/datasources.properties
+persistence/target/
+bookstore_client/target/
+bookstore_admin/target/
