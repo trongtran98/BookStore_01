@@ -6,9 +6,5 @@
 
 	<import resource="spring-datasource.xml"/>
 
-	<!--<bean id="StudentDAO" class="app.dao.impl.StudentDAOImpl">-->
-		<!--<property name="sessionFactory">-->
-			<!--<ref bean="sessionFactory" />-->
-		<!--</property>-->
-	<!--</bean>-->
+
 </beans>

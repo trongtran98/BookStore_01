@@ -41,12 +41,22 @@
 		</property>
 
 		<!-- Load mapping of model and table -->
-		<!--<property name="mappingResources">-->
-			<!--<list>-->
-				<!--<value>app/model/hbm/Student.hbm.xml</value>-->
-			<!--</list>-->
-		<!--</property>-->
-		<property name="packagesToScan" value="app.*"/>
+		<property name="mappingResources">
+			<list>
+				<value>app/model/hbm/Address.hbm.xml</value>
+				<value>app/model/hbm/Author.hbm.xml</value>
+				<value>app/model/hbm/Book.hbm.xml</value>
+				<value>app/model/hbm/Cart.hbm.xml</value>
+				<value>app/model/hbm/CartDetails.hbm.xml</value>
+				<value>app/model/hbm/Category.hbm.xml</value>
+				<value>app/model/hbm/Order.hbm.xml</value>
+				<value>app/model/hbm/OrderDetails.hbm.xml</value>
+				<value>app/model/hbm/Producer.hbm.xml</value>
+				<value>app/model/hbm/Review.hbm.xml</value>
+				<value>app/model/hbm/User.hbm.xml</value>
+			</list>
+		</property>
+
 	</bean>
 
 

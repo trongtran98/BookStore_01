@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="app.model">
+    <class name="Category" table="categories">
+        <id name="id" column="id">
+            <generator class="increment" />
+        </id>
+
+        <property name="categoryName" type="string">
+            <column name="categoryName" />
+        </property>
+
+        <list name = "books" lazy="true">
+            <key column = "id" not-null="true"/>
+            <list-index column = "id"/>
+            <one-to-many class="Book"/>
+        </list>
+
+        <list name = "categories" lazy="true">
+            <key column = "id" not-null="true"/>
+            <list-index column = "id"/>
+            <one-to-many class="Category"/>
+        </list>
+
+        <many-to-one name="category" class="Category" lazy="no-proxy">
+            <column name="category" not-null="true" />
+        </many-to-one>
+
+    </class>
+</hibernate-mapping>

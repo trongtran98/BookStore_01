@@ -25,3 +25,6 @@ hs_err_pid*
 # Config iml file
 *.idea
 *.iml
+
+# Data source file
+datasources.properties
