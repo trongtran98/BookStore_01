@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="app.model">
+	<class name="Cart" table="carts">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+
+		<one-to-one name="user" class="User" fetch="join" cascade="all" />
+
+		<list name="cartDetails" inverse="true" fetch="join">
+			<key column="cartId" not-null="true" />
+			<list-index column="id" />
+			<one-to-many class="CartDetail" />
+		</list>
+	</class>
+</hibernate-mapping>
