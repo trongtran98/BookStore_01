@@ -27,7 +27,6 @@ hs_err_pid*
 *.iml
 
 # Data source file
-persistence/src/main/resources/datasources.properties
-persistence/target/
-bookstore_client/target/
-bookstore_admin/target/
+project_1/.settings
+project_1/target
+project_1/src/main/resources/datasources.properties
