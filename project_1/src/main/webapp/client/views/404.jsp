@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="entry-header text-center mb-20">
-                    <img src="/assets/img/3.jpg" alt="not-found-img">
+                    <img src="/client/assets/img/3.jpg" alt="not-found-img">
                     <p>Oops! That page can’t be found.</p>
                 </div>
                 <div class="entry-content text-center mb-30">

@@ -9,10 +9,6 @@ import java.io.Serializable;
 public class UserServiceImpl extends BaseServiceImpl implements UserService {
 	private static final Logger logger = Logger.getLogger(UserServiceImpl.class);
 
-	@Override
-	public User loadUser(User entity) {
-		return getUserDAO().loadUser(entity);
-	}
 
 	@Override
 	public User findById(Serializable key) {
