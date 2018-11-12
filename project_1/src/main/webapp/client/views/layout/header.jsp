@@ -9,18 +9,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="language-area">
-                    <ul>
-                        <li><img src="/client/assets/img/flag/1.jpg" alt="flag"/><a href="#">English<i
-                                class="fa fa-angle-down"></i></a>
-                            <div class="header-sub">
-                                <ul>
-                                    <li><a href="#"><img src="/client/assets/img/flag/2.jpg" alt="flag"/>france</a></li>
-                                    <li><a href="#"><img src="/client/assets/img/flag/3.jpg" alt="flag"/>croatia</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
+                    <ul id="language-ul-tag" style="cursor: pointer">
                     </ul>
                 </div>
             </div>
@@ -29,8 +18,6 @@
                     <spring:url value="/login" var="loginUrl"/>
                     <spring:url value="/security_logout" var="logoutUrl"/>
                     <ul>
-                        <li><a href="register.html">My Account</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
                         <security:authorize access="isAuthenticated()">
                             <li>
                                 <a href="/info"> <security:authentication property="principal.username"/></a>
@@ -43,7 +30,9 @@
                             </form>
                         </security:authorize>
                         <security:authorize access="isAnonymous()">
-                            <li><a href="${loginUrl}">Sign in</a></li>
+
+                            <li><a href="${loginUrl}"><spring:message code="label.login"/></a></li>
+
                         </security:authorize>
                     </ul>
                 </div>
@@ -59,20 +48,20 @@
             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
                 <div class="header-search">
                     <form action="#">
-                        <input type="text" placeholder="Search entire store here..."/>
+                        <input type="text" placeholder="<spring:message code="label.search.placeholder"/>"/>
                         <a href="#"><i class="fa fa-search"></i></a>
                     </form>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
                 <div class="logo-area text-center logo-xs-mrg">
-                    <a href="index.html"><img src="/client/assets/img/logo/logo.png" alt="logo"/></a>
+                    <a href="/"><img src="/client/assets/img/logo/logo.png" alt="logo"/></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="my-cart">
                     <ul>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i>My Cart</a>
+                        <li><a href="/cart"><i class="fa fa-shopping-cart"></i><spring:message code="label.cart"/></a>
                             <span>2</span>
                             <div class="mini-cart-sub">
                                 <div class="cart-product">
@@ -105,8 +94,8 @@
                                     <h5>Total <span>£12.00</span></h5>
                                 </div>
                                 <div class="cart-bottom">
-                                    <a class="view-cart" href="cart.html">view cart</a>
-                                    <a href="checkout.html">Check out</a>
+                                    <a class="view-cart" href="/cart"><spring:message code="label.view.cart"/></a>
+                                    <a href="checkout.html"><spring:message code="label.checkout"/></a>
                                 </div>
                             </div>
                         </li>
@@ -125,54 +114,49 @@
                 <div class="menu-area">
                     <nav>
                         <ul>
-                            <li class="active"><a href="index.html">Home<i class="fa fa-angle-down"></i></a>
-                                <div class="sub-menu">
-                                    <ul>
-                                        <li><a href="index-2.html">Home-2</a></li>
-                                        <li><a href="index-3.html">Home-3</a></li>
-                                        <li><a href="index-4.html">Home-4</a></li>
-                                        <li><a href="index-5.html">Home-5</a></li>
-                                        <li><a href="index-6.html">Home-6</a></li>
-                                    </ul>
-                                </div>
+                            <li class="active"><a href="/"><spring:message code="label.home"/> <i
+                                    class="fa fa-angle-down"></i></a>
+
                             </li>
-                            <li><a href="product-details.html">Book<i class="fa fa-angle-down"></i></a>
+                            <li><a href="product-details.html"><spring:message code="label.book"/> <i
+                                    class="fa fa-angle-down"></i></a>
                                 <div class="mega-menu">
-    <span>
-    <a href="#" class="title">Jackets</a>
-    <a href="shop.html">Tops & Tees</a>
-    <a href="shop.html">Polo Short Sleeve</a>
-    <a href="shop.html">Graphic T-Shirts</a>
-    <a href="shop.html">Jackets & Coats</a>
-    <a href="shop.html">Fashion Jackets</a>
-    </span>
                                     <span>
-    <a href="#" class="title">weaters</a>
-    <a href="shop.html">Crochet</a>
-    <a href="shop.html">Sleeveless</a>
-    <a href="shop.html">Stripes</a>
-    <a href="shop.html">Sweaters</a>
-    <a href="shop.html">hoodies</a>
-    </span>
+                                    <a href="#" class="title">Jackets</a>
+                                    <a href="shop.html">Tops & Tees</a>
+                                    <a href="shop.html">Polo Short Sleeve</a>
+                                    <a href="shop.html">Graphic T-Shirts</a>
+                                    <a href="shop.html">Jackets & Coats</a>
+                                    <a href="shop.html">Fashion Jackets</a>
+                                    </span>
                                     <span>
-    <a href="#" class="title">Bottoms</a>
-    <a href="shop.html">Heeled sandals</a>
-    <a href="shop.html">Polo Short Sleeve</a>
-    <a href="shop.html">Flat sandals</a>
-    <a href="shop.html">Short Sleeve</a>
-    <a href="shop.html">Long Sleeve</a>
-    </span>
+                                    <a href="#" class="title">weaters</a>
+                                    <a href="shop.html">Crochet</a>
+                                    <a href="shop.html">Sleeveless</a>
+                                    <a href="shop.html">Stripes</a>
+                                    <a href="shop.html">Sweaters</a>
+                                    <a href="shop.html">hoodies</a>
+                                    </span>
                                     <span>
-    <a href="#" class="title">Jeans Pants</a>
-    <a href="shop.html">Polo Short Sleeve</a>
-    <a href="shop.html">Sleeveless</a>
-    <a href="shop.html">Graphic T-Shirts</a>
-    <a href="shop.html">Hoodies</a>
-    <a href="shop.html">Jackets</a>
-    </span>
+                                    <a href="#" class="title">Bottoms</a>
+                                    <a href="shop.html">Heeled sandals</a>
+                                    <a href="shop.html">Polo Short Sleeve</a>
+                                    <a href="shop.html">Flat sandals</a>
+                                    <a href="shop.html">Short Sleeve</a>
+                                    <a href="shop.html">Long Sleeve</a>
+                                    </span>
+                                    <span>
+                                    <a href="#" class="title">Jeans Pants</a>
+                                    <a href="shop.html">Polo Short Sleeve</a>
+                                    <a href="shop.html">Sleeveless</a>
+                                    <a href="shop.html">Graphic T-Shirts</a>
+                                    <a href="shop.html">Hoodies</a>
+                                    <a href="shop.html">Jackets</a>
+                                    </span>
                                 </div>
                             </li>
-                            <li><a href="product-details.html">Audio books<i class="fa fa-angle-down"></i></a>
+                            <li><a href="product-details.html"><spring:message code="label.audio.book"/> <i
+                                    class="fa fa-angle-down"></i></a>
                                 <div class="mega-menu">
     <span>
     <a href="#" class="title">Shirts</a>
@@ -204,7 +188,8 @@
     </span>
                                 </div>
                             </li>
-                            <li><a href="product-details.html">children’s books<i class="fa fa-angle-down"></i></a>
+                            <li><a href="product-details.html"><spring:message code="label.children.book"/> <i
+                                    class="fa fa-angle-down"></i></a>
                                 <div class="mega-menu mega-menu-2">
     <span>
     <a href="#" class="title">Tops</a>
@@ -237,24 +222,7 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
-                                <div class="sub-menu sub-menu-2">
-                                    <ul>
-                                        <li><a href="shop.html">shop</a></li>
-                                        <li><a href="shop.html">product-details</a></li>
-                                        <li><a href="blog.html">blog</a></li>
-                                        <li><a href="blog-details.html">blog-details</a></li>
-                                        <li><a href="contact.html">contact</a></li>
-                                        <li><a href="about.html">about</a></li>
-                                        <li><a href="login.html">login</a></li>
-                                        <li><a href="register.html">register</a></li>
-                                        <li><a href="cart.html">cart</a></li>
-                                        <li><a href="checkout.html">checkout</a></li>
-                                        <li><a href="wishlist.html">wishlist</a></li>
-                                        <li><a href="404.html">404 Page</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+
                         </ul>
                     </nav>
                 </div>
@@ -275,14 +243,7 @@
                 <div class="mobile-menu">
                     <nav id="mobile-menu-active">
                         <ul id="nav">
-                            <li><a href="index.html">Home</a>
-                                <ul>
-                                    <li><a href="index-2.html">Home-2</a></li>
-                                    <li><a href="index-3.html">Home-3</a></li>
-                                    <li><a href="index-4.html">Home-4</a></li>
-                                    <li><a href="index-5.html">Home-5</a></li>
-                                    <li><a href="index-6.html">Home-6</a></li>
-                                </ul>
+                            <li><a href="/">Home</a>
                             </li>
                             <li><a href="product-details.html">Book</a>
                                 <ul>
@@ -350,22 +311,7 @@
                                     <li><a href="blog-details.html">blog-details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="product-details.html">Page</a>
-                                <ul>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="product-details.html">product-details</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-details.html">blog-details</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">Register</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="404.html">404 Page</a></li>
-                                </ul>
-                            </li>
+
                         </ul>
                     </nav>
                 </div>
