@@ -1,4 +1,4 @@
-package app.controler.admin;
+package app.controller.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,23 +8,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import app.model.User;
 import app.service.UserService;
 
-@Controller
+@Controller(value = "adminController")
+@RequestMapping(value = "/admin")
 public class IndexController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(){
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginPage(User user) {
         return "/admin/login";
-    }
-
-    @RequestMapping(value = "/doLogin", method = RequestMethod.POST)
-    public String doLogin(User user){
-        User userVerified = userService.loadUser(user);
-        if(userVerified != null){
-            return "/admin/index";
-        }else {
-            return "/admin/login";
-        }
     }
 }

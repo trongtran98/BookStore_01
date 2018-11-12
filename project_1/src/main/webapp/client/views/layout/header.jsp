@@ -10,12 +10,12 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="language-area">
                     <ul>
-                        <li><img src="/assets/img/flag/1.jpg" alt="flag"/><a href="#">English<i
+                        <li><img src="/client/assets/img/flag/1.jpg" alt="flag"/><a href="#">English<i
                                 class="fa fa-angle-down"></i></a>
                             <div class="header-sub">
                                 <ul>
-                                    <li><a href="#"><img src="/assets/img/flag/2.jpg" alt="flag"/>france</a></li>
-                                    <li><a href="#"><img src="/assets/img/flag/3.jpg" alt="flag"/>croatia</a></li>
+                                    <li><a href="#"><img src="/client/assets/img/flag/2.jpg" alt="flag"/>france</a></li>
+                                    <li><a href="#"><img src="/client/assets/img/flag/3.jpg" alt="flag"/>croatia</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
                 <div class="logo-area text-center logo-xs-mrg">
-                    <a href="index.html"><img src="/assets/img/logo/logo.png" alt="logo"/></a>
+                    <a href="index.html"><img src="/client/assets/img/logo/logo.png" alt="logo"/></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -62,7 +62,7 @@
                                 <div class="cart-product">
                                     <div class="single-cart">
                                         <div class="cart-img">
-                                            <a href="#"><img src="img/product/1.jpg" alt="book"/></a>
+                                            <a href="#"><img src="/client/assets/img/product/1.jpg" alt="book"/></a>
                                         </div>
                                         <div class="cart-info">
                                             <h5><a href="#">Joust Duffle Bag</a></h5>
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="single-cart">
                                         <div class="cart-img">
-                                            <a href="#"><img src="img/product/3.jpg" alt="book"/></a>
+                                            <a href="#"><img src="/client/assets/img/product/3.jpg" alt="book"/></a>
                                         </div>
                                         <div class="cart-info">
                                             <h5><a href="#">Chaz Kangeroo Hoodie</a></h5>

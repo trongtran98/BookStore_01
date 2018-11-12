@@ -10,12 +10,12 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="language-area">
                     <ul>
-                        <li><img src="/assets/img/flag/1.jpg" alt="flag"/><a href="#">English<i
+                        <li><img src="/admin/assets/img/flag/1.jpg" alt="flag"/><a href="#">English<i
                                 class="fa fa-angle-down"></i></a>
                             <div class="header-sub">
                                 <ul>
-                                    <li><a href="#"><img src="/assets/img/flag/2.jpg" alt="flag"/>france</a></li>
-                                    <li><a href="#"><img src="/assets/img/flag/3.jpg" alt="flag"/>croatia</a></li>
+                                    <li><a href="#"><img src="/admin/assets/img/flag/2.jpg" alt="flag"/>france</a></li>
+                                    <li><a href="#"><img src="/admin/assets/img/flag/3.jpg" alt="flag"/>croatia</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
                 <div class="logo-area text-center logo-xs-mrg">
-                    <a href="index.html"><img src="/assets/img/logo/logo.png" alt="logo"/></a>
+                    <a href="index.html"><img src="/admin/assets/img/logo/logo.png" alt="logo"/></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">

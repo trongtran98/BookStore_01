@@ -14,7 +14,7 @@
 <div class="slider-area mt-30">
     <div class="container">
         <div class="slider-active owl-carousel">
-            <div class="single-slider pt-100 pb-145 bg-img" style="background-image:url(/assets/img/slider/13.jpg);">
+            <div class="single-slider pt-100 pb-145 bg-img" style="background-image:url(/client/assets/img/slider/13.jpg);">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="slider-content-3 slider-animated-1 pl-100">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single-slider pt-100 pb-145 bg-img" style="background-image:url(/assets/img/slider/12.jpg);">
+            <div class="single-slider pt-100 pb-145 bg-img" style="background-image:url(/client/assets/img/slider/12.jpg);">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="slider-content-3 slider-animated-1 pl-100">
@@ -68,7 +68,7 @@
                 <div class="product-wrapper">
                     <div class="product-img">
                         <a href="#">
-                            <img src="/assets/img/product/1.jpg" alt="book" class="primary" />
+                            <img src="/client/assets/img/product/1.jpg" alt="book" class="primary" />
                         </a>
                         <div class="quick-view">
                             <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -117,7 +117,7 @@
                 <div class="product-wrapper">
                     <div class="product-img">
                         <a href="#">
-                            <img src="/assets/img/product/3.jpg" alt="book" class="primary" />
+                            <img src="/client/assets/img/product/3.jpg" alt="book" class="primary" />
                         </a>
                         <div class="quick-view">
                             <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -165,7 +165,7 @@
                 <div class="product-wrapper">
                     <div class="product-img">
                         <a href="#">
-                            <img src="/assets/img/product/5.jpg" alt="book" class="primary" />
+                            <img src="/client/assets/img/product/5.jpg" alt="book" class="primary" />
                         </a>
                         <div class="quick-view">
                             <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -213,7 +213,7 @@
                 <div class="product-wrapper">
                     <div class="product-img">
                         <a href="#">
-                            <img src="/assets/img/product/7.jpg" alt="book" class="primary" />
+                            <img src="/client/assets/img/product/7.jpg" alt="book" class="primary" />
                         </a>
                         <div class="quick-view">
                             <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -263,7 +263,7 @@
                 <div class="product-wrapper">
                     <div class="product-img">
                         <a href="#">
-                            <img src="/assets/img/product/9.jpg" alt="book" class="primary" />
+                            <img src="/client/assets/img/product/9.jpg" alt="book" class="primary" />
                         </a>
                         <div class="quick-view">
                             <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -312,7 +312,7 @@
                 <div class="product-wrapper">
                     <div class="product-img">
                         <a href="#">
-                            <img src="/assets/img/product/11.jpg" alt="book" class="primary" />
+                            <img src="/client/assets/img/product/11.jpg" alt="book" class="primary" />
                         </a>
                         <div class="quick-view">
                             <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -367,7 +367,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="banner-img-2">
-                    <a href="#"><img src="/assets/img/banner/5.jpg" alt="banner" /></a>
+                    <a href="#"><img src="/client/assets/img/banner/5.jpg" alt="banner" /></a>
                     <div class="banner-text">
                         <h3>G. Meyer Books & Spiritual Traveler Press</h3>
                         <h2>Sale up to 30% off</h2>
@@ -402,7 +402,7 @@
                             </div>
                         </div>
                         <div class="banner-img-3">
-                            <a href="#"><img src="/assets/img/product/3.jpg" alt="banner" /></a>
+                            <a href="#"><img src="/client/assets/img/product/3.jpg" alt="banner" /></a>
                         </div>
                     </div>
                     <div class="single-deal">
@@ -420,7 +420,7 @@
                             </div>
                         </div>
                         <div class="banner-img-3">
-                            <a href="#"><img src="/assets/img/product/11.jpg" alt="banner" /></a>
+                            <a href="#"><img src="/client/assets/img/product/11.jpg" alt="banner" /></a>
                         </div>
                     </div>
                     <div class="single-deal">
@@ -438,7 +438,7 @@
                             </div>
                         </div>
                         <div class="banner-img-3">
-                            <a href="#"><img src="/assets/img/product/15.jpg" alt="banner" /></a>
+                            <a href="#"><img src="/client/assets/img/product/15.jpg" alt="banner" /></a>
                         </div>
                     </div>
                 </div>
@@ -448,7 +448,7 @@
                     <div class="bestseller-total">
                         <div class="single-bestseller mb-25">
                             <div class="bestseller-img">
-                                <a href="#"><img src="/assets/img/product/13.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/13.jpg" alt="book" /></a>
                             </div>
                             <div class="bestseller-text text-center">
                                 <h3> <a href="#">Rival  Messenger</a></h3>
@@ -462,7 +462,7 @@
                         </div>
                         <div class="single-bestseller">
                             <div class="bestseller-img">
-                                <a href="#"><img src="/assets/img/product/14.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/14.jpg" alt="book" /></a>
                             </div>
                             <div class="bestseller-text text-center">
                                 <h3> <a href="#">Impulse Duffle</a></h3>
@@ -478,7 +478,7 @@
                     <div class="bestseller-total">
                         <div class="single-bestseller mb-25">
                             <div class="bestseller-img">
-                                <a href="#"><img src="/assets/img/product/15.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/15.jpg" alt="book" /></a>
                             </div>
                             <div class="bestseller-text text-center">
                                 <h3> <a href="#">Voyage Yoga Bag</a></h3>
@@ -492,7 +492,7 @@
                         </div>
                         <div class="single-bestseller">
                             <div class="bestseller-img">
-                                <a href="#"><img src="/assets/img/product/16.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/16.jpg" alt="book" /></a>
                             </div>
                             <div class="bestseller-text text-center">
                                 <h3> <a href="#">Compete Track Tote</a></h3>
@@ -507,7 +507,7 @@
                     <div class="bestseller-total">
                         <div class="single-bestseller mb-25">
                             <div class="bestseller-img">
-                                <a href="#"><img src="/assets/img/product/17.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/17.jpg" alt="book" /></a>
                             </div>
                             <div class="bestseller-text text-center">
                                 <h3> <a href="#">Fusion Backpack	</a></h3>
@@ -520,7 +520,7 @@
                         </div>
                         <div class="single-bestseller">
                             <div class="bestseller-img">
-                                <a href="#"><img src="/assets/img/product/14.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/14.jpg" alt="book" /></a>
                             </div>
                             <div class="bestseller-text text-center">
                                 <h3> <a href="#">Impulse Duffle</a></h3>
@@ -569,7 +569,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/1.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/1.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -616,7 +616,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/3.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/3.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -662,7 +662,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/5.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/5.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -708,7 +708,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/7.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/7.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -756,7 +756,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/9.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/9.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -803,7 +803,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/11.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/11.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -855,7 +855,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/5.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/5.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -901,7 +901,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/7.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/7.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -948,7 +948,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/1.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/1.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -994,7 +994,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/3.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/3.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -1041,7 +1041,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/9.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/9.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -1089,7 +1089,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/11.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/11.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -1140,7 +1140,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/9.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/9.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -1188,7 +1188,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/11.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/11.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -1235,7 +1235,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/1.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/1.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -1282,7 +1282,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/3.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/3.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -1328,7 +1328,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/5.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/5.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -1374,7 +1374,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/assets/img/product/7.jpg" alt="book" class="primary" />
+                                <img src="/client/assets/img/product/7.jpg" alt="book" class="primary" />
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
@@ -1436,7 +1436,7 @@
                     <div class="product-total-2">
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/20.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/20.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1459,7 +1459,7 @@
                         </div>
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/21.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/21.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1482,7 +1482,7 @@
                         </div>
                         <div class="single-most-product">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/22.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/22.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1506,7 +1506,7 @@
                     <div class="product-total-2">
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/23.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/23.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1529,7 +1529,7 @@
                         </div>
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/24.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/24.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1552,7 +1552,7 @@
                         </div>
                         <div class="single-most-product">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/22.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/22.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1583,7 +1583,7 @@
                     <div class="product-total-2">
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/23.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/23.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1606,7 +1606,7 @@
                         </div>
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/24.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/24.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1629,7 +1629,7 @@
                         </div>
                         <div class="single-most-product">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/26.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/26.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1653,7 +1653,7 @@
                     <div class="product-total-2">
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/20.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/20.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1676,7 +1676,7 @@
                         </div>
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/21.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/21.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1699,7 +1699,7 @@
                         </div>
                         <div class="single-most-product">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/22.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/22.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1730,7 +1730,7 @@
                     <div class="product-total-2">
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/27.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/27.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1753,7 +1753,7 @@
                         </div>
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/28.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/28.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1776,7 +1776,7 @@
                         </div>
                         <div class="single-most-product">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/29.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/29.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1801,7 +1801,7 @@
                     <div class="product-total-2">
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/23.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/23.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1824,7 +1824,7 @@
                         </div>
                         <div class="single-most-product bd mb-18">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/24.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/24.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1847,7 +1847,7 @@
                         </div>
                         <div class="single-most-product">
                             <div class="most-product-img">
-                                <a href="#"><img src="/assets/img/product/22.jpg" alt="book" /></a>
+                                <a href="#"><img src="/client/assets/img/product/22.jpg" alt="book" /></a>
                             </div>
                             <div class="most-product-content">
                                 <div class="product-rating">
@@ -1897,7 +1897,7 @@
                 <div class="col-lg-12">
                     <div class="single-post">
                         <div class="post-img">
-                            <a href="#"><img src="/assets/img/post/1.jpg" alt="post" /></a>
+                            <a href="#"><img src="/client/assets/img/post/1.jpg" alt="post" /></a>
                             <div class="blog-date-time">
                                 <span class="day-time">06</span>
                                 <span class="moth-time">Dec</span>
@@ -1913,7 +1913,7 @@
                 <div class="col-lg-12">
                     <div class="single-post">
                         <div class="post-img">
-                            <a href="#"><img src="/assets/img/post/2.jpg" alt="post" /></a>
+                            <a href="#"><img src="/client/assets/img/post/2.jpg" alt="post" /></a>
                             <div class="blog-date-time">
                                 <span class="day-time">06</span>
                                 <span class="moth-time">Dec</span>
@@ -1929,7 +1929,7 @@
                 <div class="col-lg-12">
                     <div class="single-post">
                         <div class="post-img">
-                            <a href="#"><img src="/assets/img/post/3.jpg" alt="post" /></a>
+                            <a href="#"><img src="/client/assets/img/post/3.jpg" alt="post" /></a>
                             <div class="blog-date-time">
                                 <span class="day-time">06</span>
                                 <span class="moth-time">Dec</span>
@@ -1945,7 +1945,7 @@
                 <div class="col-lg-12">
                     <div class="single-post">
                         <div class="post-img">
-                            <a href="#"><img src="/assets/img/post/4.jpg" alt="post" /></a>
+                            <a href="#"><img src="/client/assets/img/post/4.jpg" alt="post" /></a>
                             <div class="blog-date-time">
                                 <span class="day-time">06</span>
                                 <span class="moth-time">Dec</span>
@@ -1970,7 +1970,7 @@
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                 <div class="single-banner">
                     <div class="banner-img">
-                        <a href="#"><img src="/assets/img/banner/1.png" alt="banner" /></a>
+                        <a href="#"><img src="/client/assets/img/banner/1.png" alt="banner" /></a>
                     </div>
                     <div class="banner-text">
                         <h4>Free shipping item</h4>
@@ -1981,7 +1981,7 @@
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                 <div class="single-banner">
                     <div class="banner-img">
-                        <a href="#"><img src="/assets/img/banner/2.png" alt="banner" /></a>
+                        <a href="#"><img src="/client/assets/img/banner/2.png" alt="banner" /></a>
                     </div>
                     <div class="banner-text">
                         <h4>Money back guarantee</h4>
@@ -1992,7 +1992,7 @@
             <div class="col-lg-3 col-md-3 hidden-sm col-xs-12">
                 <div class="single-banner">
                     <div class="banner-img">
-                        <a href="#"><img src="/assets/img/banner/3.png" alt="banner" /></a>
+                        <a href="#"><img src="/client/assets/img/banner/3.png" alt="banner" /></a>
                     </div>
                     <div class="banner-text">
                         <h4>Cash on delivery</h4>
@@ -2003,7 +2003,7 @@
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                 <div class="single-banner mrg-none-xs">
                     <div class="banner-img">
-                        <a href="#"><img src="/assets/img/banner/4.png" alt="banner" /></a>
+                        <a href="#"><img src="/client/assets/img/banner/4.png" alt="banner" /></a>
                     </div>
                     <div class="banner-text">
                         <h4>Help & Support</h4>
@@ -2069,23 +2069,23 @@
                         <div class="modal-tab">
                             <div class="product-details-large tab-content">
                                 <div class="tab-pane active" id="image-1">
-                                    <img src="/assets/img/product/quickview-l4.jpg" alt=""/>
+                                    <img src="/client/assets/img/product/quickview-l4.jpg" alt=""/>
                                 </div>
                                 <div class="tab-pane" id="image-2">
-                                    <img src="/assets/img/product/quickview-l2.jpg" alt=""/>
+                                    <img src="/client/assets/img/product/quickview-l2.jpg" alt=""/>
                                 </div>
                                 <div class="tab-pane" id="image-3">
-                                    <img src="/assets/img/product/quickview-l3.jpg" alt=""/>
+                                    <img src="/client/assets/img/product/quickview-l3.jpg" alt=""/>
                                 </div>
                                 <div class="tab-pane" id="image-4">
-                                    <img src="/assets/img/product/quickview-l5.jpg" alt=""/>
+                                    <img src="/client/assets/img/product/quickview-l5.jpg" alt=""/>
                                 </div>
                             </div>
                             <div class="product-details-small quickview-active owl-carousel">
-                                <a class="active" href="#image-1"><img src="/assets/img/product/quickview-s4.jpg" alt=""/></a>
-                                <a href="#image-2"><img src="/assets/img/product/quickview-s2.jpg" alt=""/></a>
-                                <a href="#image-3"><img src="/assets/img/product/quickview-s3.jpg" alt=""/></a>
-                                <a href="#image-4"><img src="/assets/img/product/quickview-s5.jpg" alt=""/></a>
+                                <a class="active" href="#image-1"><img src="/client/assets/img/product/quickview-s4.jpg" alt=""/></a>
+                                <a href="#image-2"><img src="/client/assets/img/product/quickview-s2.jpg" alt=""/></a>
+                                <a href="#image-3"><img src="/client/assets/img/product/quickview-s3.jpg" alt=""/></a>
+                                <a href="#image-4"><img src="/client/assets/img/product/quickview-s5.jpg" alt=""/></a>
                             </div>
                         </div>
                     </div>

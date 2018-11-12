@@ -4,7 +4,7 @@
 <tiles-definitions>
 
 	<!-- Base Definition -->
-	<definition name="baseLayout" template="/admin/views/layout/baseLayout.jsp">
+	<definition name="/admin/baseLayout" template="/admin/views/layout/baseLayout.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/admin/views/layout/header.jsp" />
 		<put-attribute name="body" value="" />
@@ -12,13 +12,13 @@
 	</definition>
 
 	<!-- Home page -->
-	<definition name="index" extends="baseLayout">
+	<definition name="/admin/index" extends="/admin/baseLayout">
 		<put-attribute name="title" value="HOME" />
 		<put-attribute name="body" value="/admin/views/index.jsp" />
 	</definition>
 
 	<!-- login page -->
-	<definition name="login" template="/admin/views/login.jsp" >
+	<definition name="/admin/login" template="/admin/views/login.jsp" >
 
 	</definition>
 
