@@ -11,6 +11,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- header-area-end -->
 <!-- breadcrumbs-area-start -->
+
+
 <div class="breadcrumbs-area mb-70">
     <div class="container">
         <div class="row">
@@ -52,14 +54,28 @@
                         <div class="single-login single-login-2">
                             <input id="rememberme" type="checkbox" name="rememberme" value="forever">
                             <span>Remember me</span><br>
-                            <input type="submit" value="Login" style="margin-top: 15px">
+                            <input type="submit" value="Login"
+                                   style="margin-top: 15px; background-color: #FF742D; color: white">
                         </div>
-                        <a href="#" style="margin: 0 auto">Lost your password?</a>
+                        <a href="#"><span style="text-indent: 20px">Lost your password?</span></a>
+                        <hr>
+                        <div style="display: flex;
+  align-items: center;
+  justify-content: center;">
+                            <button class="loginBtn loginBtn--facebook">
+                                Login with Facebook
+                            </button>
+
+                            <button class="loginBtn loginBtn--google">
+                                Login with Google
+                            </button>
+                        </div>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <p class="error">
-                            ${errorMessage}
+                            <c:if test="${not empty errorMessage}">
+                                <spring:message code="${errorMessage}"/>
+                            </c:if>
                         </p
-                        <%--<p class="success">${param.logout}</p>--%>
                     </div>
                 </div>
             </form>

@@ -10,7 +10,6 @@
 	<head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Koparion – Book Shop Bootstrap 4 Template</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -38,8 +37,12 @@
         <link rel="stylesheet" href="/client/assets/css/responsive.css">
         <!-- modernizr css -->
         <script src="/client/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="/client/assets/js">
+        </script>
 
-		<title><tiles:insertAttribute name="title" ignore="true" /></title>
+        <title>
+            <tiles:insertAttribute name="title" ignore="true" />
+            </title>
 	</head>
 	<body>
 		<header>
@@ -79,5 +82,6 @@
         <script src="/client/assets/js/plugins.js"></script>
         <!-- main js -->
         <script src="/client/assets/js/main.js"></script>
+
 	</body>
 </html>

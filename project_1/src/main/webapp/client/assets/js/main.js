@@ -200,7 +200,6 @@
     ------------------------------ */
     $('.bestseller-active').owlCarousel({
         smartSpeed: 1000,
-        margin: 0,
         nav: true,
         autoplay: false,
         dots: false,
@@ -503,6 +502,7 @@
     
     /* Category Dropdown Menu  */
     if ($(window).width() < 768) {
+        // noinspection JSAnnotator
         function sidemenuDropdown() {
             var $this = $('.category-menu');
             $this.find('nav.menu .cr-dropdown').find('.left-menu').css('display', 'none');
@@ -523,3 +523,38 @@
 
 
 })(jQuery);
+
+
+let languageEn = "<li><img src=\"/client/assets/img/flag/1.jpg\" alt=\"flag\"/><a  onclick='urlLanguage(\"en\")'>English<i" +
+    "class=\"fa fa-angle-down\"></i></a >" +
+    "<div class=\"header-sub\">" +
+    "<ul>" +
+    "<li><a  onclick='urlLanguage(\"vi\")'><img src=\"/client/assets/img/flag/3.png\" alt=\"flag\"/>Việt Nam</a></li>" +
+    "</ul>" +
+    "</div>" +
+    "</li>";
+
+let languageVi = "<li><img src=\"/client/assets/img/flag/3.png\" alt=\"flag\"/><a onclick=\'urlLanguage(\"vi\")\'>Việt Nam<i" +
+    "class=\"fa fa-angle-down\"></i></a>" +
+    "<div class=\"header-sub\">" +
+    "<ul>" +
+    "<li><a onclick='urlLanguage(\"en\")'><img src=\"/client/assets/img/flag/1.jpg\" alt=\"flag\"/>English</a></li>" +
+    "</ul>" +
+    "</div>" +
+    "</li>";
+
+function getCookie(name) {
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}
+if (getCookie("bookStoreLocaleCookie") == "en" || getCookie("bookStoreLocaleCookie") == undefined) {
+    document.getElementById("language-ul-tag").innerHTML = languageEn;
+} else {
+    document.getElementById("language-ul-tag").innerHTML = languageVi;
+}
+function urlLanguage(locale){
+    let url = window.location.href;     // Returns full URL
+    let origin = window.location.origin;     // Returns full URL
+    window.location.href = (origin + "?locale=" +locale);
+}

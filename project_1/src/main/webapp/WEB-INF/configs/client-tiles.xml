@@ -2,7 +2,6 @@
 <!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-
     <!-- Base Definition -->
     <definition name="/client/baseLayout" template="/client/views/layout/baseLayout.jsp">
         <put-attribute name="title" value="" />
@@ -13,14 +12,19 @@
 
     <!-- Home page -->
     <definition name="/client/index" extends="/client/baseLayout">
-        <put-attribute name="title" value="HOME" />
+        <put-attribute name="title" value="Home" />
         <put-attribute name="body" value="/client/views/index.jsp" />
     </definition>
 
     <!-- login page -->
     <definition name="/client/login" extends="/client/baseLayout">
-        <put-attribute name="title" value="LOGIN"/>
+        <put-attribute name="title" value="Login"/>
         <put-attribute name="body" value="/client/views/login.jsp"/>
     </definition>
 
+    <!-- Register page-->
+    <definition name="/client/register" extends="/client/baseLayout">
+        <put-attribute name="title" value="Register page"/>
+        <put-attribute name="body" value="/client/views/register.jsp"/>
+    </definition>
 </tiles-definitions>

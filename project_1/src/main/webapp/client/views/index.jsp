@@ -10,6 +10,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <!-- slider-area-start -->
 <div class="slider-area mt-30">
     <div class="container">
@@ -2016,45 +2017,6 @@
 </div>
 <!-- banner-area-end -->
 <!-- social-group-area-start -->
-<div class="social-group-area ptb-60 bt">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="section-title-3">
-                    <h3>Latest Tweets</h3>
-                </div>
-                <div class="twitter-content">
-                    <div class="twitter-icon">
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </div>
-                    <div class="twitter-text">
-                        <p>
-                            Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum notare quam
-                        </p>
-                        <a href="#">posthemes</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="section-title-3">
-                    <h3>Stay Connected</h3>
-                </div>
-                <div class="link-follow">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-                        <li class="hidden-sm"><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                        <li class="hidden-sm"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Modal -->
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
