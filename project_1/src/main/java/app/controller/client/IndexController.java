@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import app.model.User;
 import app.service.UserService;
 
-@Controller
-public class IndexControllerClient {
+@Controller(value = "clientController")
+public class IndexController {
     @Autowired
     UserService userService;
 
@@ -18,13 +18,4 @@ public class IndexControllerClient {
         return "/client/login";
     }
 
-    @RequestMapping(value = "/doLogin", method = RequestMethod.POST)
-    public String doLogin(User user){
-        User userVerified = userService.loadUser(user);
-        if(userVerified != null){
-            return "/client/index";
-        }else {
-            return "/client/login";
-        }
-    }
 }

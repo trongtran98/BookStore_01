@@ -25,22 +25,22 @@
           rel="stylesheet" type="text/css">
 
     <!-- Vendor CSS -->
-    <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.css"/>
-    <link rel="stylesheet" href="/assets/vendor/magnific-popup/magnific-popup.css"/>
-    <link rel="stylesheet" href="/assets/vendor/bootstrap-datepicker/css/datepicker3.css"/>
+    <link rel="stylesheet" href="/admin/assets/vendor/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/admin/assets/vendor/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="/admin/assets/vendor/magnific-popup/magnific-popup.css"/>
+    <link rel="stylesheet" href="/admin/assets/vendor/bootstrap-datepicker/css/datepicker3.css"/>
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="/assets/stylesheets/theme.css"/>
+    <link rel="stylesheet" href="/admin/assets/stylesheets/theme.css"/>
 
     <!-- Skin CSS -->
-    <link rel="stylesheet" href="/assets/stylesheets/skins/default.css"/>
+    <link rel="stylesheet" href="/admin/assets/stylesheets/skins/default.css"/>
 
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="/assets/stylesheets/theme-custom.css">
+    <link rel="stylesheet" href="/admin/assets/stylesheets/theme-custom.css">
 
     <!-- Head Libs -->
-    <script src="/assets/vendor/modernizr/modernizr.js"></script>
+    <script src="/admin/assets/vendor/modernizr/modernizr.js"></script>
 
 </head>
 <body>
@@ -48,7 +48,7 @@
 <section class="body-sign">
     <div class="center-sign">
         <a href="/" class="logo pull-left">
-            <img src="/assets/images/logo.png" height="54" alt="Porto Admin"/>
+            <img src="/admin/assets/images/logo.png" height="54" alt="Porto Admin"/>
         </a>
 
         <div class="panel panel-sign">
@@ -109,22 +109,22 @@
 <!-- end: page -->
 
 <!-- Vendor -->
-<script src="/assets/vendor/jquery/jquery.js"></script>
-<script src="/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.js"></script>
-<script src="/assets/vendor/nanoscroller/nanoscroller.js"></script>
-<script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script src="/assets/vendor/magnific-popup/magnific-popup.js"></script>
-<script src="/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+<script src="/admin/assets/vendor/jquery/jquery.js"></script>
+<script src="/admin/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+<script src="/admin/assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="/admin/assets/vendor/nanoscroller/nanoscroller.js"></script>
+<script src="/admin/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="/admin/assets/vendor/magnific-popup/magnific-popup.js"></script>
+<script src="/admin/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 
 <!-- Theme Base, Components and Settings -->
-<script src="/assets/javascripts/theme.js"></script>
+<script src="/admin/assets/javascripts/theme.js"></script>
 
 <!-- Theme Custom -->
-<script src="/assets/javascripts/theme.custom.js"></script>
+<script src="/admin/assets/javascripts/theme.custom.js"></script>
 
 <!-- Theme Initialization Files -->
-<script src="/assets/javascripts/theme.init.js"></script>
+<script src="/admin/assets/javascripts/theme.init.js"></script>
 
 </body>
 </html>
