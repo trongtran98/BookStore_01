@@ -5,21 +5,14 @@
 
 	<!-- Base Definition -->
 	<definition name="/admin/baseLayout" template="/admin/views/layout/baseLayout.jsp">
-		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/admin/views/layout/header.jsp" />
 		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="/admin/views/layout/footer.jsp" />
 	</definition>
 
 	<!-- Home page -->
 	<definition name="/admin/index" extends="/admin/baseLayout">
 		<put-attribute name="title" value="HOME" />
 		<put-attribute name="body" value="/admin/views/index.jsp" />
-	</definition>
-
-	<!-- login page -->
-	<definition name="/admin/login" template="/admin/views/login.jsp" >
-
 	</definition>
 
 </tiles-definitions>

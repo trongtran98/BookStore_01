@@ -87,7 +87,11 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>${security.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${security.version}</version>
+		</dependency>
 		<!-- Hiberante -->
 		<dependency>
 			<groupId>org.hibernate</groupId>

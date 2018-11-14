@@ -37,16 +37,17 @@
                         architecto beat</p>
                 </div>
             </div>
-            <form method="POST">
+            <spring:url var="securityLogin" value="/security_login"/>
+            <form action="${securityLogin}" method="POST">
                 <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
                     <div class="login-form">
                         <div class="single-login">
                             <label>Username or email<span>*</span></label>
-                            <input type="text"/>
+                            <input name="email" type="text"/>
                         </div>
                         <div class="single-login" style="margin-bottom: 0">
                             <label>Passwords <span>*</span></label>
-                            <input type="password"/>
+                            <input type="password" name="password"/>
                         </div>
                         <div class="single-login single-login-2">
                             <input id="rememberme" type="checkbox" name="rememberme" value="forever">
@@ -54,6 +55,11 @@
                             <input type="submit" value="Login" style="margin-top: 15px">
                         </div>
                         <a href="#" style="margin: 0 auto">Lost your password?</a>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <p class="error">
+                            ${errorMessage}
+                        </p
+                        <%--<p class="success">${param.logout}</p>--%>
                     </div>
                 </div>
             </form>
