@@ -19,7 +19,11 @@ public class AuthorServiceImpl extends BaseServiceImpl implements AuthorService 
 
     @Override
     public Author saveOrUpdate(Author entity) {
-        return null;
+        try {
+            return authorDAO.saveOrUpdate(entity);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override

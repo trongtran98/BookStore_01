@@ -1,5 +1,7 @@
 package app.model;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -112,4 +114,5 @@ public class Book{
     public void setCategoryDetail(CategoryDetail categoryDetail) {
         this.categoryDetail = categoryDetail;
     }
+
 }

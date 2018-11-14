@@ -19,18 +19,10 @@ public class AuthorDAOImpl extends GenericDAO<Integer, Author> implements Author
     }
 
     @Override
-    public Author findAuthorById(Integer id) {
-        return (Author) getSession().createQuery("FROM Author WHERE Author.id = :id").setParameter("id", id).getSingleResult();
-    }
-
-    @Override
     public Author findAuthorById(Integer id, boolean lock) {
         if (lock == false)
             return (Author) getSession().createQuery("FROM Author WHERE id = :id").setParameter("id", id).getSingleResult();
-        else
-        {
-            return getSession().load(Author.class, id, LockMode.PESSIMISTIC_WRITE);
-        }
+        return getSession().load(Author.class, id, LockMode.PESSIMISTIC_WRITE);
     }
 
     @Override
