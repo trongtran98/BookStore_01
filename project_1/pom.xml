@@ -30,6 +30,8 @@
 		<slf4j.version>1.7.6</slf4j.version>
 		<hibernate-annotation.version>5.0.1.Final</hibernate-annotation.version>
 		<security.version>3.2.3.RELEASE</security.version>
+		<poi.version>3.12</poi.version>
+		<uploadfile.version>1.3.1</uploadfile.version>
 	</properties>
 
 	<dependencies>
@@ -225,7 +227,29 @@
 			<artifactId>tiles-jsp</artifactId>
 			<version>${apachetiles.version}</version>
 		</dependency>
-
+		<!-- excel -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<!-- excel 2007 over-->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<!-- Apache Commons IO -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${uploadfile.version}</version>
+		</dependency>
 	</dependencies>
 
 

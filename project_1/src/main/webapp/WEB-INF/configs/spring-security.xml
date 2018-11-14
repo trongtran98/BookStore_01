@@ -15,7 +15,7 @@
         <logout logout-url="/security_logout" invalidate-session="true"
                 logout-success-url="/login" delete-cookies="JSESSIONID" />
         <remember-me key="uniqueAndSecret" token-validity-seconds="1209600"
-                     remember-me-parameter="rememberme" />
+                     remember-me-parameter="remember-me" />
 
     </http>
 
