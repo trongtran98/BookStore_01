@@ -16,8 +16,8 @@
             <div class="col-lg-12">
                 <div class="breadcrumbs-menu">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#" class="active">register</a></li>
+                        <li><a href="#"><spring:message code="label.home"/></a></li>
+                        <li><a href="#" class="active"><spring:message code="label.register"/></a></li>
                     </ul>
                 </div>
             </div>
@@ -29,9 +29,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="login-title text-center mb-30">
-                    <h2>Sign Up</h2>
-                    <p>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo<br>inventore veritatis et quasi
-                        architecto beat</p>
+                    <h2>Sign up</h2>
                 </div>
             </div>
             <form id="idForm" action="/register" method="POST">
@@ -78,7 +76,7 @@
                         <div class="single-login single-login-2">
                             <%--<input id="rememberme" type="checkbox" name="remember-me">--%>
                             <span>I agree Terms &amp; Condition</span>
-                            <input type="submit" value="Register"
+                            <input type="submit" value="<spring:message code="label.register"/>"
                                    style="margin-top: 15px; background-color: #FF742D; color: white">
                         </div>
                         <br/>

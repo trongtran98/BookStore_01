@@ -88,15 +88,6 @@
                             </div>
                         </div>
                         <div class="product-details text-center">
-                            <div class="product-rating">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                </ul>
-                            </div>
                             <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
                             <div class="product-price">
                                 <ul>
@@ -106,7 +97,7 @@
                         </div>
                         <div class="product-link">
                             <div class="product-button">
-                                <a class="add-to-cart"  title="Add to cart" bId="${b.id}"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                <a class="add-to-cart"   bId="${b.id}"><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/> </a>
                             </div>
                             <div class="add-to-link">
                                 <ul>
@@ -154,15 +145,11 @@
                             <h2><a href="#">Sprite Yoga <br/>Straps1</a></h2>
                             <div class="sale-area">
                                 <div class="price-box">
-                                    <span class="old-sale">$38.00</span>
                                     <span class="new-sale">$36.00</span>
                                 </div>
                             </div>
                             <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with
                                 ruffles at the bottom of the dress.</p>
-                            <div class="timer">
-                                <div data-countdown="2018/12/15"></div>
-                            </div>
                         </div>
                         <div class="banner-img-3">
                             <a href="#"><img src="/client/assets/img/product/3.jpg" alt="banner"/></a>
@@ -173,15 +160,11 @@
                             <h2><a href="#">Rival Field <br>Messenger</a></h2>
                             <div class="sale-area">
                                 <div class="price-box">
-                                    <span class="old-sale">$99.00</span>
                                     <span class="new-sale">$50.00</span>
                                 </div>
                             </div>
                             <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with
                                 ruffles at the bottom of the dress.</p>
-                            <div class="timer">
-                                <div data-countdown="2018/12/15"></div>
-                            </div>
                         </div>
                         <div class="banner-img-3">
                             <a href="#"><img src="/client/assets/img/product/11.jpg" alt="banner"/></a>
@@ -192,15 +175,11 @@
                             <h2><a href="#">Voyage Yoga <br/> Bag</a></h2>
                             <div class="sale-area">
                                 <div class="price-box">
-                                    <span class="old-sale">$80.00</span>
                                     <span class="new-sale">$70.00</span>
                                 </div>
                             </div>
                             <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with
                                 ruffles at the bottom of the dress.</p>
-                            <div class="timer">
-                                <div data-countdown="2018/12/15"></div>
-                            </div>
                         </div>
                         <div class="banner-img-3">
                             <a href="#"><img src="/client/assets/img/product/15.jpg" alt="banner"/></a>
@@ -220,7 +199,6 @@
                                 <div class="price">
                                     <ul>
                                         <li><span class="new-price">$40.00</span></li>
-                                        <li><span class="old-price">$45.00</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -234,7 +212,6 @@
                                 <div class="price">
                                     <ul>
                                         <li><span class="new-price">$70.00</span></li>
-                                        <li><span class="old-price">$74.00</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -250,7 +227,6 @@
                                 <div class="price">
                                     <ul>
                                         <li><span class="new-price">$30.00</span></li>
-                                        <li><span class="old-price">$32.00</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -353,15 +329,6 @@
                                     </div>
                                 </div>
                                 <div class="product-details text-center">
-                                    <div class="product-rating">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        </ul>
-                                    </div>
                                     <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
                                     <div class="product-price">
                                         <ul>
@@ -371,8 +338,7 @@
                                 </div>
                                 <div class="product-link">
                                     <div class="product-button">
-                                        <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to
-                                            cart</a>
+                                        <a class="add-to-cart"  bId="${b.id}"><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/> </a>
                                     </div>
                                     <div class="add-to-link">
                                         <ul>
@@ -412,15 +378,6 @@
                                     </div>
                                 </div>
                                 <div class="product-details text-center">
-                                    <div class="product-rating">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        </ul>
-                                    </div>
                                     <h4><a href="/books/info/${b.title}">${b.title}</a></h4>
                                     <div class="product-price">
                                         <ul>
@@ -430,8 +387,7 @@
                                 </div>
                                 <div class="product-link">
                                     <div class="product-button">
-                                        <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to
-                                            cart</a>
+                                        <a class="add-to-cart"  bId="${b.id}"><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/> </a>
                                     </div>
                                     <div class="add-to-link">
                                         <ul>
@@ -486,14 +442,12 @@
                                     <div class="product-price">
                                         <ul>
                                             <li>$${b.price}</li>
-                                            <li class="old-price">40.00</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="product-link">
                                     <div class="product-button">
-                                        <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to
-                                            cart</a>
+                                        <a class="add-to-cart"  bId="${b.id}"><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
                                     </div>
                                     <div class="add-to-link">
                                         <ul>
@@ -528,20 +482,10 @@
                                 <a href="#"><img src="/client/assets/img/product/20.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Endeavor Daytrip</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>$30.00</li>
-                                        <li class="old-price">$33.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -551,20 +495,10 @@
                                 <a href="#"><img src="/client/assets/img/product/21.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Savvy Shoulder Tote</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>$30.00</li>
-                                        <li class="old-price">$35.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -574,15 +508,6 @@
                                 <a href="#"><img src="/client/assets/img/product/22.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Compete Track Tote</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -611,7 +536,6 @@
                                 <div class="product-price">
                                     <ul>
                                         <li>$30.00</li>
-                                        <li class="old-price">$33.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -621,15 +545,6 @@
                                 <a href="#"><img src="/client/assets/img/product/24.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Impulse Duffle</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -644,15 +559,6 @@
                                 <a href="#"><img src="/client/assets/img/product/22.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Fusion Backpack</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -675,20 +581,10 @@
                                 <a href="#"><img src="/client/assets/img/product/23.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Voyage Yoga Bag</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>$30.00</li>
-                                        <li class="old-price">$33.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -711,7 +607,6 @@
                                 <div class="product-price">
                                     <ul>
                                         <li>$70.00</li>
-                                        <li class="old-price">$74.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -721,15 +616,6 @@
                                 <a href="#"><img src="/client/assets/img/product/26.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Driven Backpack1</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -745,20 +631,10 @@
                                 <a href="#"><img src="/client/assets/img/product/20.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Endeavor Daytrip</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>$30.00</li>
-                                        <li class="old-price">$33.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -768,15 +644,6 @@
                                 <a href="#"><img src="/client/assets/img/product/21.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Savvy Shoulder Tote</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -822,20 +689,10 @@
                                 <a href="#"><img src="/client/assets/img/product/27.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Crown Summit</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>$36.00</li>
-                                        <li class="old-price">$38.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -845,20 +702,10 @@
                                 <a href="#"><img src="/client/assets/img/product/28.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Driven Backpack</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>$34.00</li>
-                                        <li class="old-price">$36.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -868,20 +715,10 @@
                                 <a href="#"><img src="/client/assets/img/product/29.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Endeavor Daytrip</a></h4>
                                 <div class="product-price">
                                     <ul>
                                         <li>$30.00</li>
-                                        <li class="old-price">$33.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -906,7 +743,6 @@
                                 <div class="product-price">
                                     <ul>
                                         <li>$30.00</li>
-                                        <li class="old-price">$33.00</li>
                                     </ul>
                                 </div>
                             </div>
@@ -916,15 +752,6 @@
                                 <a href="#"><img src="/client/assets/img/product/24.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Impulse Duffle</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -939,15 +766,6 @@
                                 <a href="#"><img src="/client/assets/img/product/22.jpg" alt="book"/></a>
                             </div>
                             <div class="most-product-content">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Fusion Backpack</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -986,8 +804,8 @@
                         <a href="#"><img src="/client/assets/img/banner/1.png" alt="banner"/></a>
                     </div>
                     <div class="banner-text">
-                        <h4>Free shipping item</h4>
-                        <p>For all orders over $500</p>
+                        <h4><spring:message code="label.free.ship.item"/></h4>
+                        <p><spring:message code="label.for.free.ship.item"/></p>
                     </div>
                 </div>
             </div>
@@ -997,8 +815,8 @@
                         <a href="#"><img src="/client/assets/img/banner/2.png" alt="banner"/></a>
                     </div>
                     <div class="banner-text">
-                        <h4>Money back guarantee</h4>
-                        <p>100% money back guarante</p>
+                        <h4><spring:message code="label.title.memory.back"/></h4>
+                        <p><spring:message code="label.memory.back"/></p>
                     </div>
                 </div>
             </div>
@@ -1008,7 +826,7 @@
                         <a href="#"><img src="/client/assets/img/banner/3.png" alt="banner"/></a>
                     </div>
                     <div class="banner-text">
-                        <h4>Cash on delivery</h4>
+                        <h4><spring:message code="label.title.cash.delivery"/></h4>
                         <p>Lorem ipsum dolor consect</p>
                     </div>
                 </div>
@@ -1019,8 +837,8 @@
                         <a href="#"><img src="/client/assets/img/banner/4.png" alt="banner"/></a>
                     </div>
                     <div class="banner-text">
-                        <h4>Help & Support</h4>
-                        <p>Call us : + 0123.4567.89</p>
+                        <h4><spring:message code="label.title.help.support"/></h4>
+                        <p><spring:message code="label.help.support.call"/></p>
                     </div>
                 </div>
             </div>
@@ -1064,7 +882,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7 col-sm-7 col-xs-12">
+                    <div class="col-md-7 col-sm-7 col-xs-12" style="height: 100%">
                         <div class="modal-pro-content">
                             <h3 id="book-title">Chaz Kangeroo Hoodie3</h3>
                             <div class="price">
@@ -1072,31 +890,11 @@
                             </div>
                             <p id="book-description">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
                                 egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
-                            <div class="quick-view-select">
-                                <div class="select-option-part">
-                                    <label>Size*</label>
-                                    <select class="select">
-                                        <option value="">S</option>
-                                        <option value="">M</option>
-                                        <option value="">L</option>
-                                    </select>
-                                </div>
-                                <div class="quickview-color-wrap">
-                                    <label>Color*</label>
-                                    <div class="quickview-color">
-                                        <ul>
-                                            <li class="blue">b</li>
-                                            <li class="red">r</li>
-                                            <li class="pink">p</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                             <form action="#">
                                 <input type="number" value="1"/>
-                                <button >Add to cart</button>
+                                <button ><spring:message code="add.to.cart"/></button>
                             </form>
-                            <span><i class="fa fa-check"></i> In stock</span>
+                            <span><i class="fa fa-check"></i><spring:message code="label.in.stock"/> </span>
                         </div>
                     </div>
                 </div>

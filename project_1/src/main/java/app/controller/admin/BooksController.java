@@ -5,18 +5,13 @@ import app.DTO.BookDTO;
 import app.controller.BaseController;
 import app.helper.Helper;
 import app.model.Book;
-import app.utlis.ImageUtils;
+import app.utils.ImageUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
 
 @Controller
 @RequestMapping("/admin/books")

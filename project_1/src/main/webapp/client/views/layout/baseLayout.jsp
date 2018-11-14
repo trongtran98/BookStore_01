@@ -83,8 +83,7 @@
         <script src="/client/assets/js/waypoints.min.js"></script>
         <!-- plugins js -->
         <script src="/client/assets/js/plugins.js"></script>
-        <!-- main js -->
-        <script src="/client/assets/js/main.js"></script>
+
         <%--client index js--%>
         <script src="/client/assets/js/client-index.js"></script>
 
@@ -93,6 +92,7 @@
         <script src="/client/assets/js/client-cart.js"></script>
         <script src="/client/assets/js/notify/notify.js"></script>
         <script src="/client/assets/js/notify/prettify.js"></script>
-
+        <!-- main js -->
+        <script src="/client/assets/js/main.js"></script>
     </body>
 </html>

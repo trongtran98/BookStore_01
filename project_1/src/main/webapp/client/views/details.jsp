@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%--
@@ -87,7 +88,7 @@
                                         <div class="quality-button">
                                             <input class="qty" type="number" value="1">
                                         </div>
-                                        <a class="add-to-cart"  bId="${book.id}">Add to cart</a>
+                                        <a class="add-to-cart"  bId="${book.id}"><spring:message code="add.to.cart"/> </a>
                                     </form>
                                 </div>
                                 <div class="product-social-links">
@@ -197,15 +198,6 @@
                                 </div>
                             </div>
                             <div class="product-details text-center">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Joust Duffle Bag</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -215,7 +207,7 @@
                             </div>
                             <div class="product-link">
                                 <div class="product-button">
-                                    <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="#" ><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
@@ -245,15 +237,6 @@
                                 </div>
                             </div>
                             <div class="product-details text-center">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Chaz Kangeroo Hoodie</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -263,7 +246,7 @@
                             </div>
                             <div class="product-link">
                                 <div class="product-button">
-                                    <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="#" ><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
@@ -293,15 +276,6 @@
                                 </div>
                             </div>
                             <div class="product-details text-center">
-                                <div class="product-rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    </ul>
-                                </div>
                                 <h4><a href="#">Set of Sprite Yoga Straps</a></h4>
                                 <div class="product-price">
                                     <ul>
@@ -311,7 +285,7 @@
                             </div>
                             <div class="product-link">
                                 <div class="product-button">
-                                    <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="#" ><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
@@ -355,13 +329,12 @@
                                 <div class="product-price">
                                     <ul>
                                         <li>$30.00</li>
-                                        <li class="old-price">$32.00</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-link">
                                 <div class="product-button">
-                                    <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="#" ><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
                                 </div>
                                 <div class="add-to-link">
                                     <ul>
@@ -389,20 +362,10 @@
                                         <a href="#"><img src="/client/assets/img/product/20.jpg" alt="book"/></a>
                                     </div>
                                     <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
                                         <h4><a href="#">Endeavor Daytrip</a></h4>
                                         <div class="product-price">
                                             <ul>
                                                 <li>$30.00</li>
-                                                <li class="old-price">$33.00</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -412,20 +375,10 @@
                                         <a href="#"><img src="/client/assets/img/product/21.jpg" alt="book"/></a>
                                     </div>
                                     <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
                                         <h4><a href="#">Savvy Shoulder Tote</a></h4>
                                         <div class="product-price">
                                             <ul>
                                                 <li>$30.00</li>
-                                                <li class="old-price">$35.00</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -435,15 +388,6 @@
                                         <a href="#"><img src="/client/assets/img/product/22.jpg" alt="book"/></a>
                                     </div>
                                     <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
                                         <h4><a href="#">Compete Track Tote</a></h4>
                                         <div class="product-price">
                                             <ul>
@@ -482,20 +426,10 @@
                                         <a href="#"><img src="/client/assets/img/product/24.jpg" alt="book"/></a>
                                     </div>
                                     <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
                                         <h4><a href="#">Impulse Duffle</a></h4>
                                         <div class="product-price">
                                             <ul>
                                                 <li>$70.00</li>
-                                                <li class="old-price">$74.00</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -505,15 +439,6 @@
                                         <a href="#"><img src="/client/assets/img/product/22.jpg" alt="book"/></a>
                                     </div>
                                     <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
                                         <h4><a href="#">Fusion Backpack</a></h4>
                                         <div class="product-price">
                                             <ul>

@@ -5664,3 +5664,7 @@ p.lost-password a:hover {
 .add-to-cart{
     cursor: pointer;
 }
+
+.mini-cart-sub {
+    display: none;
+}

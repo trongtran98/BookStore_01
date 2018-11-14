@@ -1,6 +1,8 @@
 package app.service.impl;
 
 import app.DAO.*;
+import app.utils.DatetimeUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class BaseServiceImpl {
     protected UserDAO userDAO;
@@ -13,6 +15,10 @@ public class BaseServiceImpl {
     protected ProducerDAO producerDAO;
     protected OrderDAO orderDAO;
     protected OrderDetailDAO orderDetailDAO;
+    @Autowired
+    protected DatetimeUtils datetimeUtils;
+
+
 
     public ProducerDAO getProducerDAO() {
         return producerDAO;

@@ -31,7 +31,7 @@
                             <li style="display: none">
                                 <form id="logout-form" action="${logoutUrl}" method="post">
                                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                                    <input type="submit"></input>
+                                    <input type="submit">
                                 </form>
                             </li>
                         </ul>
@@ -69,14 +69,17 @@
 
                 <div class="my-cart">
                     <ul>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i><spring:message code="label.cart"/></a>
+                        <li><a href="/carts/${myCart.id}"><i class="fa fa-shopping-cart"></i><spring:message
+                                code="label.cart"/></a>
+
                             <c:set var="number" value="0"/>
                             <c:if test="${cart != null}">
                                 <c:forEach items="${cart.getCartDetails()}" var="cd">
                                     <c:set var="number" value="${number + cd.amount}"/>
                                 </c:forEach>
                             </c:if>
-                            <span id="number-in-cart">${number}</span>
+
+                            <span class="number-in-cart123" id="number-in-cart">${number}</span>
                             <div class="mini-cart-sub">
                                 <c:forEach items="${myCart.cartDetails}" var="c">
                                     <div class="cart-product">
@@ -97,7 +100,8 @@
                                 </c:forEach>
                                 <div class="cart-bottom">
 
-                                    <a id="view-cart" class="view-cart" href="/carts/${myCart.id}"><spring:message code="label.view.cart"/></a>
+                                    <a id="view-cart" class="view-cart" href="/carts/${myCart.id}"><spring:message
+                                            code="label.view.cart"/></a>
 
                                     <a href="checkout.html"><spring:message code="label.checkout"/></a>
                                 </div>
@@ -226,7 +230,7 @@
                 <div class="mobile-menu">
                     <nav id="mobile-menu-active">
                         <ul id="nav">
-                            <li><a href="/">Home</a>
+                            <li><a href="/"><spring:message code="label.home"/></a>
                             </li>
                             <li><a href="product-details.html">Book</a>
                                 <ul>
@@ -304,9 +308,5 @@
 </div>
 <!-- mobile-menu-area-end -->
 <head>
-    <script>
-        document.getElementById("logout-button").onclick = function () {
-            document.getElementById("logout-form").submit();
-        }
-    </script>
+    <script src="/client/assets/js/customize/customize.js"></script>
 </head>
