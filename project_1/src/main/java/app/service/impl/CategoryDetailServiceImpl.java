@@ -25,8 +25,13 @@ public class CategoryDetailServiceImpl extends BaseServiceImpl implements Catego
     }
 
     @Override
-    public boolean delete(CategoryDetail entity) {
+    public boolean delete(Integer id) {
         return false;
+    }
+
+    @Override
+    public List<CategoryDetail> findCategoryDetails() {
+        return categoryDetailDAO.findCategoryDetails();
     }
 
     @Override

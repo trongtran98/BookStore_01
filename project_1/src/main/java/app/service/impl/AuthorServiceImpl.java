@@ -14,7 +14,11 @@ public class AuthorServiceImpl extends BaseServiceImpl implements AuthorService 
 
     @Override
     public Author findById(Serializable key) {
-        return null;
+        return authorDAO.findById(key);
+    }
+
+    public Author findById(Integer key) {
+        return authorDAO.findById(key);
     }
 
     @Override
@@ -27,7 +31,7 @@ public class AuthorServiceImpl extends BaseServiceImpl implements AuthorService 
     }
 
     @Override
-    public boolean deleteAuthor(Integer id) {
+    public boolean delete(Integer id) {
         try {
             Author author = authorDAO.findAuthorById(id,true);
             if ( author!= null){
@@ -40,8 +44,4 @@ public class AuthorServiceImpl extends BaseServiceImpl implements AuthorService 
         }
     }
 
-    @Override
-    public boolean delete(Author entity) {
-        return false;
-    }
 }

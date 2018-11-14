@@ -1,15 +1,12 @@
-package app.model;
+package app.DTO;
 
-import app.DTO.ProducerDTO;
+import app.model.Producer;
 
-import java.util.List;
-
-public class Producer implements java.io.Serializable{
+public class ProducerDTO {
     private Integer id;
     private String producerName;
     private String address;
     private String description;
-    private List<Book> books;
 
     public Integer getId() {
         return id;
@@ -43,21 +40,13 @@ public class Producer implements java.io.Serializable{
         this.description = description;
     }
 
-    public List<Book> getBooks() {
-        return books;
+    public ProducerDTO() {
     }
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
-    public Producer() {
-    }
-
-    public Producer(ProducerDTO producerDTO) {
-        this.id = producerDTO.getId();
-        this.producerName = producerDTO.getProducerName();
-        this.address = producerDTO.getAddress();
-        this.description= producerDTO.getDescription();
+    public ProducerDTO(Producer producer) {
+        this.id = producer.getId();
+        this.producerName = producer.getProducerName();
+        this.address = producer.getAddress();
+        this.description = producer.getDescription();
     }
 }

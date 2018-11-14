@@ -1,13 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: jocker
-  Date: 19/11/2018
-  Time: 08:26
+  Date: 21/11/2018
+  Time: 16:28
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <div class="inner-wrapper">
     <!-- start: sidebar -->
     <aside id="sidebar-left" class="sidebar-left">
@@ -46,8 +46,8 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li>
-                                    <c:url value="/admin/add-manager?${_csrf.parameterName}=${_csrf.token}"
-                                           var="addManager"/>
+                                    <spring:url value="/admin/add-manager?${_csrf.parameterName}=${_csrf.token}"
+                                                var="addManager"/>
                                     <form action="${addManager}" method="post" enctype="multipart/form-data">
                                         <input type="file" name="fileExcel"/>
                                         <button type="submit">ok</button>
@@ -61,17 +61,17 @@
                                 <span>Books</span>
                             </a>
                             <ul class="nav nav-children">
-                                <li class="nav-active">
+                                <li>
                                     <a href="/admin/books">
                                         Books
                                     </a>
                                 </li>
-                                <li>
+                                <li >
                                     <a href="/admin/authors">
                                         Authors
                                     </a>
                                 </li>
-                                <li>
+                                <li class="nav-active">
                                     <a href="/admin/producers">
                                         Producers
                                     </a>
@@ -160,17 +160,13 @@
         <!-- start: page -->
         <section class="panel">
             <header class="panel-heading">
-                <%--<div class="panel-actions">--%>
-                    <%--<a href="#" class="fa fa-caret-down"></a>--%>
-                    <%--<a href="#" class="fa fa-times"></a>--%>
-                <%--</div>--%>
-                <h2 class="panel-title">Books</h2>
+                <h2 class="panel-title">Producers</h2>
             </header>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="mb-md">
-                            <button onclick="displayBook(true)" style="width:auto;"
+                            <button onclick="add()" style="width:auto;"
                                     class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
                         </div>
                     </div>
@@ -187,11 +183,11 @@
                                 </th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1"
                                     colspan="1" aria-label="Browser: activate to sort column ascending"
-                                    style="width: 178px;">Full name
+                                    style="width: 178px;">Producer name
                                 </th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1"
                                     colspan="1" aria-label="Platform(s): activate to sort column ascending"
-                                    style="width: 160px;">Description
+                                    style="width: 160px;">Address
                                 </th>
                                 <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions"
                                     style="width: 60px;">Actions
@@ -199,17 +195,20 @@
                             </tr>
                             </thead>
                             <tbody id="reload">
-                            <c:forEach items="${books}" var="item">
+                            <c:forEach items="${producers}" var="item">
                                 <tr class="gradeA odd" role="row">
                                     <td class="sorting_1">${item.id}</td>
-                                    <td>${item.title}</td>
-                                    <td>${item.description}</td>
+                                    <td>${item.producerName}</td>
+                                    <td>${item.address}</td>
                                     <td class="actions">
                                         <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
                                         <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
                                         <a href="#"
-                                            <%--onclick="editbook('${item.id}')"--%>
-                                           style="width:auto;" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                           onclick="edit(${item.id})"
+                                           style="width:auto;"
+                                           class="on-default edit-row">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
                                         <a href="#" bId="${item.id}" class="on-default remove-row"><i
                                                 class="fa fa-trash-o"></i></a>
                                     </td>
@@ -222,7 +221,6 @@
             </div>
         </section>
         <!-- end: page -->
-
         <aside id="sidebar-right" class="sidebar-right">
             <div class="nano has-scrollbar">
                 <div class="nano-content" tabindex="0" style="right: -15px;">
@@ -466,20 +464,20 @@
                         <h2 class="panel-title">Form Elements</h2>
                     </header>
                     <div class="panel-body">
-                        <form id="idForm" class="form-horizontal form-bordered"
-                              action="/admin/books/create?${_csrf.parameterName}=${_csrf.token}" method="post"
-                              enctype="multipart/form-data">
-                            <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
-                            <%--<div class="form-group">--%>
-                            <%--<label class="col-md-3 control-label" for="id">ID</label>--%>
-                            <%--<div class="col-md-6">--%>
-                            <%--<input id="id" type="text" class="form-control input-rounded" name="id" >--%>
-                            <%--</div>--%>
-                            <%--</div>--%>
+                        <form id="idForm" class="form-horizontal form-bordered">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            <input id="id" type="hidden" class="form-control input-rounded" name="id">
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="title">Title</label>
+                                <label class="col-md-3 control-label" for="producerName">Producer name</label>
                                 <div class="col-md-6">
-                                    <input id="title" type="text" class="form-control input-rounded" name="title">
+                                    <input id="producerName" type="text" class="form-control input-rounded" name="producerName">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="address">Address</label>
+                                <div class="col-md-6">
+                                    <textarea id="address" placeholder="Description" name="address"></textarea>
                                 </div>
                             </div>
 
@@ -489,96 +487,9 @@
                                     <textarea id="description" placeholder="Description" name="description"></textarea>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label">File Upload</label>
-                                <div class="col-md-6">
-                                    <div class="file-upload">
-                                        <div class="image-upload-wrap">
-                                            <input class="file-upload-input" type='file' onchange="readURL(this);"
-                                                   accept="image/*"/>
-                                            <div class="drag-text">
-                                                <h3>Drag and drop a file or select add Image</h3>
-                                            </div>
-                                        </div>
-                                        <div class="file-upload-content">
-                                            <img class="file-upload-image" accept="image/*" src="#" alt="your image" name="image"/>
-                                            <div class="image-title-wrap">
-                                                <button type="button" onclick="removeUpload()" class="remove-image">
-                                                    Remove
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="pages">Pages</label>
-                                <div class="col-md-6">
-                                    <input id="pages" type="number" class="form-control input-rounded" name="pages"
-                                           min="0">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="price">Price</label>
-                                <div class="col-md-6">
-                                    <input id="price" type="number" class="form-control input-rounded" name="price"
-                                           min="0">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="available">Available</label>
-                                <div class="col-md-6">
-                                    <input id="available" type="number" class="form-control input-rounded"
-                                           name="available" min="0">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="status">Status</label>
-                                <div class="col-md-6">
-                                    <select id="status" name="status">
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="author">Author</label>
-                                <div class="col-md-6">
-                                    <select id="author" name="author">
-                                        <c:forEach items="${authors}" var="item">
-                                            <option value="${item.id}">${item.fullName}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="categoryDetail">Category detail</label>
-                                <div class="col-md-6">
-                                    <select id="categoryDetail" name="categoryDetail">
-                                        <c:forEach items="${categoryDetails}" var="item">
-                                            <option value="${item.id}">${item.categoryDetailName}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="producer">Producer</label>
-                                <div class="col-md-6">
-                                    <select id="producer" name="producer">
-                                        <c:forEach items="${producers}" var="item">
-                                            <option value="${item.id}">${item.producerName}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
-                            </div>
-                            <button type="submit">Add</button>
-                            <button onclick="displayBook(false)" type="button">cancel</button>
+                            <button id="button-add" type="button">Add</button>
+                            <button id="button-edit" type="button">edit</button>
+                            <button id="button-close" onclick="cancel()" type="button">cancel</button>
                         </form>
                     </div>
                 </section>
@@ -636,127 +547,4 @@
     <script src="/admin/assets/notify/notify.js"></script>
     <script src="/admin/assets/notify/prettify.js"></script>
     <script src="/admin/assets/custom/popup.js"></script>
-
-    <%--<style>--%>
-
-
-        <%--input[type=text], input[type=password], textarea, input[type=number], select {--%>
-            <%--width: 100%;--%>
-            <%--padding: 15px;--%>
-            <%--margin: 5px 0 22px 0;--%>
-            <%--display: inline-block;--%>
-            <%--border: none;--%>
-            <%--background: #f1f1f1;--%>
-        <%--}--%>
-
-        <%--/* Add a background color when the inputs get focus */--%>
-        <%--input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=number]:focus, select:focus {--%>
-            <%--background-color: #ddd;--%>
-            <%--outline: none;--%>
-        <%--}--%>
-
-        <%--/* Set a style for all buttons */--%>
-        <%--button {--%>
-            <%--background-color: #0090E3;--%>
-            <%--color: white;--%>
-            <%--padding: 14px 20px;--%>
-            <%--margin: 8px 0;--%>
-            <%--border: none;--%>
-            <%--cursor: pointer;--%>
-            <%--width: 100%;--%>
-            <%--opacity: 0.9;--%>
-        <%--}--%>
-
-        <%--button:hover {--%>
-            <%--opacity: 1;--%>
-        <%--}--%>
-
-
-        <%--.file-upload {--%>
-            <%--background-color: #ffffff;--%>
-            <%--width: 100%;--%>
-            <%--padding: 15px;--%>
-            <%--margin: 5px 0 22px 0;--%>
-        <%--}--%>
-
-        <%--.file-upload-content {--%>
-            <%--display: none;--%>
-            <%--text-align: center;--%>
-        <%--}--%>
-
-        <%--.file-upload-input {--%>
-            <%--position: absolute;--%>
-            <%--margin: 0;--%>
-            <%--padding: 0;--%>
-            <%--width: 100%;--%>
-            <%--height: 100%;--%>
-            <%--outline: none;--%>
-            <%--opacity: 0;--%>
-            <%--cursor: pointer;--%>
-        <%--}--%>
-
-        <%--.image-upload-wrap {--%>
-            <%--margin-top: 20px;--%>
-            <%--border: 4px dashed #1FB264;--%>
-            <%--position: relative;--%>
-        <%--}--%>
-
-        <%--.image-dropping,--%>
-        <%--.image-upload-wrap:hover {--%>
-            <%--background-color: #1FB264;--%>
-            <%--border: 4px dashed #ffffff;--%>
-        <%--}--%>
-
-        <%--.image-title-wrap {--%>
-            <%--padding: 0 15px 15px 15px;--%>
-            <%--color: #222;--%>
-        <%--}--%>
-
-        <%--.drag-text {--%>
-            <%--text-align: center;--%>
-        <%--}--%>
-
-        <%--.drag-text h3 {--%>
-            <%--font-weight: 100;--%>
-            <%--text-transform: uppercase;--%>
-            <%--color: #15824B;--%>
-            <%--padding: 60px 0;--%>
-        <%--}--%>
-
-        <%--.file-upload-image {--%>
-            <%--width: 100%;--%>
-            <%--padding: 15px;--%>
-            <%--margin: 5px 0 22px 0;--%>
-        <%--}--%>
-
-        <%--.remove-image {--%>
-            <%--width: 200px;--%>
-            <%--margin: 0;--%>
-            <%--color: #fff;--%>
-            <%--background: #cd4535;--%>
-            <%--border: none;--%>
-            <%--padding: 10px;--%>
-            <%--border-radius: 4px;--%>
-            <%--border-bottom: 4px solid #b02818;--%>
-            <%--transition: all .2s ease;--%>
-            <%--outline: none;--%>
-            <%--text-transform: uppercase;--%>
-            <%--font-weight: 700;--%>
-        <%--}--%>
-
-        <%--.remove-image:hover {--%>
-            <%--background: #c13b2a;--%>
-            <%--color: #ffffff;--%>
-            <%--transition: all .2s ease;--%>
-            <%--cursor: pointer;--%>
-        <%--}--%>
-
-        <%--.remove-image:active {--%>
-            <%--border: 0;--%>
-            <%--transition: all .2s ease;--%>
-        <%--}--%>
-    <%--</style>--%>
 </head>
-
-
-

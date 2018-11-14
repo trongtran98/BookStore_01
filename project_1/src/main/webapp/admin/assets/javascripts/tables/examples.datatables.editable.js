@@ -72,7 +72,8 @@
 				})
 				.on( 'click', 'a.remove-row', function( e ) {
 					e.preventDefault();
-
+                    var $pathname = window.location.pathname;
+                    var $arr = $pathname.split('/');
 					var $row = $(this).closest( 'tr' );
                     var bId = $(this).attr("bId");
 					$.magnificPopup.open({
@@ -86,17 +87,19 @@
 							change: function() {
 								_self.dialog.$confirm.on( 'click', function( e ) {
 									e.preventDefault();
-                                    var xhttp = new XMLHttpRequest();
-                                    xhttp.onreadystatechange = function () {
-                                        if (this.status == 200 && this.readyState == 4) {
+                                    $.ajax({
+                                        headers: {"X-CSRF-TOKEN": $("input[name='_csrf']").val()},
+                                        url: $arr[2] + "/" + bId,
+                                        type: 'DELETE',
+                                        success: function(result) {
+                                            // Do something with the result
                                             _self.rowRemove( $row );
                                             $.notify("success!", {type:"success", align:"right", verticalAlign:"top", icon:"close"});
-                                        } else if (this.readyState == 4 && this.status != 200) {
-                                            $.notify("Alert!", {type:"danger", align:"right", verticalAlign:"top", icon:"close"});
+                                        },
+                                        error: function (callback) {
+                                            $.notify("Alert!", {type: "danger", align: "right", verticalAlign: "top", icon: "close"});
                                         }
-                                    };
-                                    xhttp.open("GET", "authors/delete/" + bId, true);
-                                    xhttp.send();
+                                    });
 
 									$.magnificPopup.close();
 								});
