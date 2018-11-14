@@ -37,8 +37,6 @@
         <link rel="stylesheet" href="/client/assets/css/responsive.css">
         <!-- modernizr css -->
         <script src="/client/assets/js/vendor/modernizr-2.8.3.min.js"></script>
-        <script src="/client/assets/js">
-        </script>
 
         <title>
             <tiles:insertAttribute name="title" ignore="true" />
