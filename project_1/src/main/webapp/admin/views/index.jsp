@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: TrongTran
@@ -43,9 +44,11 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li>
-                                    <a href="pages-signup.html">
-                                        Sign Up
-                                    </a>
+                                    <spring:url value="/admin/add-manager?${_csrf.parameterName}=${_csrf.token}" var="addManager"/>
+                                   <form action="${addManager}" method="post" enctype="multipart/form-data">
+                                       <input type="file" name="fileExcel" />
+                                       <button type="submit">ok</button>
+                                   </form>
                                 </li>
                                 <li>
                                     <a href="pages-signin.html">
@@ -549,7 +552,7 @@
                                 color: "#734ba9"
                             }];
 
-                            // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
+                            // See: /admin/assets/javascripts/dashboard/examples.dashboard.js for more settings.
 
                         </script>
 
@@ -614,7 +617,7 @@
                                                 color: "#0088cc"
                                             }];
 
-                                            // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
+                                            // See: /admin/assets/javascripts/dashboard/examples.dashboard.js for more settings.
 
                                         </script>
 
@@ -636,7 +639,7 @@
                                                 color: "#2baab1"
                                             }];
 
-                                            // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
+                                            // See: /admin/assets/javascripts/dashboard/examples.dashboard.js for more settings.
 
                                         </script>
 
@@ -658,7 +661,7 @@
                                                 color: "#734ba9"
                                             }];
 
-                                            // See: assets/javascripts/dashboard/examples.dashboard.js for more settings.
+                                            // See: /admin/assets/javascripts/dashboard/examples.dashboard.js for more settings.
 
                                         </script>
                                     </div>
@@ -803,7 +806,7 @@
 
                                 <div class="widget-profile-info">
                                     <div class="profile-picture">
-                                        <img src="assets/images/!logged-user.jpg">
+                                        <img src="/admin/assets/images/!logged-user.jpg">
                                     </div>
                                     <div class="profile-info">
                                         <h4 class="name text-semibold">John Doe</h4>
@@ -923,28 +926,28 @@
                                             <ul class="simple-user-list mb-xlg">
                                                 <li>
                                                     <figure class="image rounded">
-                                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
+                                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
                                                     </figure>
                                                     <span class="title">Joseph Doe Junior</span>
                                                     <span class="message">Lorem ipsum dolor sit.</span>
                                                 </li>
                                                 <li>
                                                     <figure class="image rounded">
-                                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
+                                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
                                                     </figure>
                                                     <span class="title">Joseph Junior</span>
                                                     <span class="message">Lorem ipsum dolor sit.</span>
                                                 </li>
                                                 <li>
                                                     <figure class="image rounded">
-                                                        <img src="assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle">
+                                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle">
                                                     </figure>
                                                     <span class="title">Joe Junior</span>
                                                     <span class="message">Lorem ipsum dolor sit.</span>
                                                 </li>
                                                 <li>
                                                     <figure class="image rounded">
-                                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
+                                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
                                                     </figure>
                                                     <span class="title">Joseph Doe Junior</span>
                                                     <span class="message">Lorem ipsum dolor sit.</span>
@@ -1021,21 +1024,21 @@
                             <ul class="simple-user-list">
                                 <li>
                                     <figure class="image rounded">
-                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
+                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
                                     </figure>
                                     <span class="title">Joseph Doe Junior</span>
                                     <span class="message truncate">Lorem ipsum dolor sit.</span>
                                 </li>
                                 <li>
                                     <figure class="image rounded">
-                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
+                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
                                     </figure>
                                     <span class="title">Joseph Junior</span>
                                     <span class="message truncate">Lorem ipsum dolor sit.</span>
                                 </li>
                                 <li>
                                     <figure class="image rounded">
-                                        <img src="assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle">
+                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle">
                                     </figure>
                                     <span class="title">Joe Junior</span>
                                     <span class="message truncate">Lorem ipsum dolor sit.</span>
@@ -1090,8 +1093,8 @@
                                                 Checkout! How cool is that!
                                             </p>
                                             <div class="thumbnail-gallery">
-                                                <a class="img-thumbnail lightbox" href="assets/images/projects/project-4.jpg" data-plugin-options="{ &quot;type&quot;:&quot;image&quot; }">
-                                                    <img class="img-responsive" width="215" src="assets/images/projects/project-4.jpg">
+                                                <a class="img-thumbnail lightbox" href="/admin/assets/images/projects/project-4.jpg" data-plugin-options="{ &quot;type&quot;:&quot;image&quot; }">
+                                                    <img class="img-responsive" width="215" src="/admin/assets/images/projects/project-4.jpg">
                                                     <span class="zoom">
 																	<i class="fa fa-search"></i>
 																</span>
@@ -1267,7 +1270,7 @@
                     <ul>
                         <li class="status-online">
                             <figure class="profile-picture">
-                                <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                             </figure>
                             <div class="profile-info">
                                 <span class="name">Joseph Doe Junior</span>
@@ -1276,7 +1279,7 @@
                         </li>
                         <li class="status-online">
                             <figure class="profile-picture">
-                                <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                             </figure>
                             <div class="profile-info">
                                 <span class="name">Joseph Doe Junior</span>
@@ -1285,7 +1288,7 @@
                         </li>
                         <li class="status-offline">
                             <figure class="profile-picture">
-                                <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                             </figure>
                             <div class="profile-info">
                                 <span class="name">Joseph Doe Junior</span>
@@ -1294,7 +1297,7 @@
                         </li>
                         <li class="status-offline">
                             <figure class="profile-picture">
-                                <img src="assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
                             </figure>
                             <div class="profile-info">
                                 <span class="name">Joseph Doe Junior</span>

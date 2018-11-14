@@ -52,4 +52,12 @@
         <property name="cookieName" value="bookStoreLocaleCookie"/>
         <property name="cookieMaxAge" value="3600"/>
     </bean>
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxInMemorySize" value="50000000"/>
+	</bean>
+
+	<bean id="excelUtils" class="app.utlis.ExcelUtils">
+
+	</bean>
 </beans>
