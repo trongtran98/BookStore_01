@@ -1,9 +1,6 @@
 package app.controller;
 
-import app.service.BookService;
-import app.service.CategoryDetailService;
-import app.service.CategoryService;
-import app.service.UserService;
+import app.service.*;
 import app.utlis.GoogleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,4 +15,6 @@ public class BaseController {
     protected UserService userService;
     @Autowired
     protected GoogleUtils googleUtils;
+    @Autowired
+    protected AuthorService authorService;
 }

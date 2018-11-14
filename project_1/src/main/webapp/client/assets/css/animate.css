@@ -3272,3 +3272,8 @@ Copyright (c) 2015 Daniel Eden
   animation-name: slideOutUp;
 }
 
+#message-error-login{
+  color: red;
+  text-trim: normal;
+  margin-top: 10px;
+}

@@ -1,23 +1,13 @@
 package app.controller.client;
 
 import app.controller.BaseController;
-import app.model.Book;
-import app.model.Category;
-import app.model.CategoryDetail;
-import app.service.BookService;
-import app.service.CategoryDetailService;
-import app.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller(value = "clientController")
@@ -44,5 +34,30 @@ public class IndexController extends BaseController {
         attrs.put("feature", categoryDetailService.findById(TYPE_FEATURE));
         attrs.put("newBooks", bookService.loadBooksTypeNew(TYPE_NEW_BOOKS));
         return attrs;
+    }
+
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    public String about() {
+        return "/client/about";
+    }
+
+    @RequestMapping(value = "/contact", method = RequestMethod.GET)
+    public String contact() {
+        return "/client/contact";
+    }
+
+    @RequestMapping(value = "/cart", method = RequestMethod.GET)
+    public String cart() {
+        return "/client/cart";
+    }
+
+    @RequestMapping(value = "/shop", method = RequestMethod.GET)
+    public String shop() {
+        return "/client/shop";
+    }
+
+    @RequestMapping(value = "/checkout", method = RequestMethod.GET)
+    public String checkout() {
+        return "/client/checkout";
     }
 }

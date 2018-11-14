@@ -24,11 +24,13 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>WEB-INF/bookstore-servlet.xml</param-value>
+			<param-value>/WEB-INF/bookstore-servlet.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	
+
+
+
 	<!-- Config url which can passed -->
 	<servlet-mapping>
 		<servlet-name>bookstore</servlet-name>
