@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface BookService extends BaseService<Integer, Book> {
     List<Book> loadBooksTypeNew(int number);
-
     List<Book> findByName(String bookName);
+    List<Book> findBooks();
 }

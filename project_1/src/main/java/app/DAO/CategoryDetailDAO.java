@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CategoryDetailDAO  extends BaseDAO<Integer, CategoryDetail>  {
     List<CategoryDetail> loadFeatureCateDetails(int categoryId);
+    List findCategoryDetails();
 }

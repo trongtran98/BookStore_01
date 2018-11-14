@@ -1,24 +1,23 @@
-package app.model;
+package app.DTO;
 
-import app.DTO.BookDTO;
+import app.model.Book;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class Book {
+public class BookDTO implements Serializable {
 
     private Integer id;
     private String title;
     private String description;
-    private String avatar;
     private Integer pages;
     private BigDecimal price;
     private Integer available;
     private Boolean status;
-    private Author author;
-    private CategoryDetail categoryDetail;
-    private Producer producer;
-    private List<Review> reviews;
+    private List<AuthorDTO> author;
+    private List<CategoryDetailDTO> categoryDetail;
+    private List<ProducerDTO> producer;
 
     public Integer getId() {
         return id;
@@ -42,14 +41,6 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
     }
 
     public Integer getPages() {
@@ -84,49 +75,41 @@ public class Book {
         this.status = status;
     }
 
-    public Author getAuthor() {
+    public List<AuthorDTO> getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(List<AuthorDTO> author) {
         this.author = author;
     }
 
-    public Producer getProducer() {
-        return producer;
-    }
-
-    public void setProducer(Producer producer) {
-        this.producer = producer;
-    }
-
-    public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
-    }
-
-    public CategoryDetail getCategoryDetail() {
+    public List<CategoryDetailDTO> getCategoryDetail() {
         return categoryDetail;
     }
 
-    public void setCategoryDetail(CategoryDetail categoryDetail) {
+    public void setCategoryDetail(List<CategoryDetailDTO> categoryDetail) {
         this.categoryDetail = categoryDetail;
     }
 
-    public Book() {
+    public List<ProducerDTO> getProducer() {
+        return producer;
     }
 
-    public Book(BookDTO bookDTO, String image) {
-        this.id = bookDTO.getId();
-        this.title = bookDTO.getTitle();
-        this.description = bookDTO.getDescription();
-        this.avatar = image;
-        this.pages = bookDTO.getPages();
-        this.price = bookDTO.getPrice();
-        this.available = bookDTO.getAvailable();
-        this.status = bookDTO.getStatus();
+    public void setProducer(List<ProducerDTO> producer) {
+        this.producer = producer;
+    }
+
+    public BookDTO() {
+
+    }
+
+    public BookDTO(Book book) {
+        this.id = book.getId();
+        this.title = book.getTitle();
+        this.description = book.getDescription();
+        this.pages = book.getPages();
+        this.price = book.getPrice();
+        this.available = book.getAvailable();
+        this.status = book.getStatus();
     }
 }

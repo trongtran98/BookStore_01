@@ -26,7 +26,7 @@ public class CartServiceImpl extends BaseServiceImpl implements CartService {
     }
 
     @Override
-    public boolean delete(Cart entity) {
+    public boolean delete(Integer id) {
         return false;
     }
 

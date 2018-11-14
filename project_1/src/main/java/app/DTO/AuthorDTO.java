@@ -1,5 +1,7 @@
 package app.DTO;
 
+import app.model.Author;
+
 public class AuthorDTO {
     private Integer id;
     private String fullName;
@@ -28,5 +30,13 @@ public class AuthorDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public AuthorDTO() {
+    }
+    public AuthorDTO(Author author) {
+        this.id = author.getId();
+        this.fullName = author.getFullName();
+        this.description = author.getDescription();
     }
 }

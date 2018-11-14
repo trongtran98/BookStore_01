@@ -52,6 +52,13 @@
 			</bean>
 		</property>
 	</bean>
+	<bean id="producerService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="app.service.impl.ProducerServiceImpl">
+				<property name="producerDAO" ref="producerDAO"/>
+			</bean>
+		</property>
+	</bean>
 
 	<bean id="reviewService" parent="baseTransactionProxy">
 		<property name="target">

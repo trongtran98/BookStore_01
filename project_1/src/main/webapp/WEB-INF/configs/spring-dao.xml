@@ -36,4 +36,7 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 
+	<bean id="producerDAO" class="app.DAO.impl.ProducerDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 </beans>

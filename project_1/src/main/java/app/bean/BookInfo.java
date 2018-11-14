@@ -1,11 +1,10 @@
 package app.bean;
 
-import app.model.*;
+import app.model.Book;
 import org.apache.log4j.Logger;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.List;
 
 public class BookInfo implements Serializable {
     private static final long serialVersionUID = 5974438385263559928L;
@@ -17,6 +16,8 @@ public class BookInfo implements Serializable {
     private String avatar;
     private Integer pages;
     private BigDecimal price;
+    private Integer available;
+    private Boolean status;
     private String author;
     private String categoryDetail;
     private String producer;
@@ -102,6 +103,22 @@ public class BookInfo implements Serializable {
 
     public String getAuthor() {
         return author;
+    }
+
+    public Integer getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Integer available) {
+        this.available = available;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public String getCategoryDetail() {

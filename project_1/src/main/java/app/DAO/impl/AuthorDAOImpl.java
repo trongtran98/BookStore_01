@@ -22,6 +22,7 @@ public class AuthorDAOImpl extends GenericDAO<Integer, Author> implements Author
     public Author findAuthorById(Integer id, boolean lock) {
         if (lock == false)
             return (Author) getSession().createQuery("FROM Author WHERE id = :id").setParameter("id", id).getSingleResult();
+
         return getSession().load(Author.class, id, LockMode.PESSIMISTIC_WRITE);
     }
 

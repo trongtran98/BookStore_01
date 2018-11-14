@@ -19,7 +19,7 @@ public class CategoryServiceImpl extends BaseServiceImpl implements CategoryServ
     }
 
     @Override
-    public boolean delete(Category entity) {
+    public boolean delete(Integer id) {
         return false;
     }
 

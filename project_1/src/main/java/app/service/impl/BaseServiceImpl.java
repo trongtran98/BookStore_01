@@ -3,78 +3,87 @@ package app.service.impl;
 import app.DAO.*;
 
 public class BaseServiceImpl {
-	protected UserDAO userDAO;
-	protected CategoryDAO categoryDAO;
-	protected BookDAO bookDAO;
-	protected CategoryDetailDAO categoryDetailDAO;
-	protected AuthorDAO authorDAO;
-	protected CartDAO cartDAO;
-	protected CartDetailDAO cartDetailDAO;
+    protected UserDAO userDAO;
+    protected CategoryDAO categoryDAO;
+    protected BookDAO bookDAO;
+    protected CategoryDetailDAO categoryDetailDAO;
+    protected AuthorDAO authorDAO;
+    protected CartDAO cartDAO;
+    protected CartDetailDAO cartDetailDAO;
+    protected ProducerDAO producerDAO;
 
-	public AuthorDAO getAuthorDAO() {
-		return authorDAO;
-	}
+    public ProducerDAO getProducerDAO() {
+        return producerDAO;
+    }
 
-	public void setAuthorDAO(AuthorDAO authorDAO) {
-		this.authorDAO = authorDAO;
-	}
+    public void setProducerDAO(ProducerDAO producerDAO) {
+        this.producerDAO = producerDAO;
+    }
 
-	protected ReviewDAO reviewDAO;
+    public AuthorDAO getAuthorDAO() {
+        return authorDAO;
+    }
 
-	public UserDAO getUserDAO() {
-		return userDAO;
-	}
+    public void setAuthorDAO(AuthorDAO authorDAO) {
+        this.authorDAO = authorDAO;
+    }
 
-	public void setUserDAO(UserDAO userDAO) {
-		this.userDAO = userDAO;
-	}
+    protected ReviewDAO reviewDAO;
 
-	public BookDAO getBookDAO() {
-		return bookDAO;
-	}
+    public UserDAO getUserDAO() {
+        return userDAO;
+    }
 
-	public void setBookDAO(BookDAO bookDAO) {
-		this.bookDAO = bookDAO;
-	}
+    public void setUserDAO(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
-	public CategoryDetailDAO getCategoryDetailDAO() {
-		return categoryDetailDAO;
-	}
+    public BookDAO getBookDAO() {
+        return bookDAO;
+    }
 
-	public void setCategoryDetailDAO(CategoryDetailDAO categoryDetailDAO) {
-		this.categoryDetailDAO = categoryDetailDAO;
-	}
+    public void setBookDAO(BookDAO bookDAO) {
+        this.bookDAO = bookDAO;
+    }
 
-	public CategoryDAO getCategoryDAO() {
-		return categoryDAO;
-	}
+    public CategoryDetailDAO getCategoryDetailDAO() {
+        return categoryDetailDAO;
+    }
 
-	public void setCategoryDAO(CategoryDAO categoryDAO) {
-		this.categoryDAO = categoryDAO;
-	}
+    public void setCategoryDetailDAO(CategoryDetailDAO categoryDetailDAO) {
+        this.categoryDetailDAO = categoryDetailDAO;
+    }
+
+    public CategoryDAO getCategoryDAO() {
+        return categoryDAO;
+    }
+
+    public void setCategoryDAO(CategoryDAO categoryDAO) {
+        this.categoryDAO = categoryDAO;
+    }
 
 
-	public ReviewDAO getReviewDAO() {
-		return reviewDAO;
-	}
+    public ReviewDAO getReviewDAO() {
+        return reviewDAO;
+    }
 
-	public void setReviewDAO(ReviewDAO reviewDAO) {
-		this.reviewDAO = reviewDAO;
-	}
+    public void setReviewDAO(ReviewDAO reviewDAO) {
+        this.reviewDAO = reviewDAO;
+    }
 
-	public CartDAO getCartDAO() {
-		return cartDAO;
-	}
+    public CartDAO getCartDAO() {
+        return cartDAO;
+    }
 
-	public void setCartDAO(CartDAO cartDAO) {
-		this.cartDAO = cartDAO;
-	}
+    public void setCartDAO(CartDAO cartDAO) {
+        this.cartDAO = cartDAO;
+    }
 
-	public CartDetailDAO getCartDetailDAO() {
-		return cartDetailDAO;
-	}
+    public CartDetailDAO getCartDetailDAO() {
+        return cartDetailDAO;
+    }
 
-	public void setCartDetailDAO(CartDetailDAO cartDetailDAO) {
-		this.cartDetailDAO = cartDetailDAO;
-	}
+    public void setCartDetailDAO(CartDetailDAO cartDetailDAO) {
+        this.cartDetailDAO = cartDetailDAO;
+    }
 }

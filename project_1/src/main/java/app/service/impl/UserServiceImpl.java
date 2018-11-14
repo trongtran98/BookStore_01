@@ -31,9 +31,10 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
     }
 
     @Override
-    public boolean delete(User entity) {
+    public boolean delete(Integer id) {
         return false;
     }
+
 
     @Override
     public void saveUsersByExel(MultipartFile fileExcel) {
