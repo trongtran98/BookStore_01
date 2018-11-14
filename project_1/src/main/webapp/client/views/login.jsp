@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="login-title text-center mb-30">
-                    <h2>Login</h2>
+                    <h2><spring:message code="label.login"/></h2>
                     <p>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo<br>inventore veritatis et quasi
                         architecto beat</p>
                 </div>
@@ -57,29 +57,30 @@
                             <input type="submit" value="Login"
                                    style="margin-top: 15px; background-color: #FF742D; color: white">
                         </div>
-                        <a href="#"><span style="text-indent: 20px">Lost your password?</span></a>
+                        <a href="#"><span style="text-indent: 20px"><spring:message code="label.lost.password"/> </span></a>
+                        <br/>
+                        <div style="text-align: center">
+                            <scan id="message-error-login">
+                                <c:if test="${not empty errorMessage}">
+                                    <spring:message code="${errorMessage}"/>
+                                </c:if>
+                            </scan>
+                        </div>
                         <hr>
                         <div style="display: flex;
   align-items: center;
   justify-content: center;">
                             <button class="loginBtn loginBtn--facebook">
-                                Login with Facebook
+                                <spring:message code="label.with.facebook"/>
                             </button>
                             <spring:message code="google.request.url" var="googleReqUrl"/>
                             <a href="${googleReqUrl}">
                                 <button type="button" class="loginBtn loginBtn--google">
-                                    Login with Google
+                                    <spring:message code="label.with.google"/>
                                 </button>
-
                             </a>
-
                         </div>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                        <p class="error">
-                            <c:if test="${not empty errorMessage}">
-                                <spring:message code="${errorMessage}"/>
-                            </c:if>
-                        </p>
                     </div>
                 </div>
             </form>

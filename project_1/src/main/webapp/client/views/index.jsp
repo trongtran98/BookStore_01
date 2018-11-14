@@ -61,7 +61,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title section-title-res text-center mb-30">
-                    <h2>Featured</h2>
+                    <h2><spring:message code="label.title.featured"/></h2>
                 </div>
             </div>
         </div>
@@ -310,9 +310,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title bt text-center pt-100 mb-50">
-                    <h2>Our Products</h2>
-                    <p>Browse the collection of our best selling and top interresting products. <br/> ll definitely find
-                        what you are looking for.</p>
+                    <h2><spring:message code="label.our.product"/> </h2>
+                    <p><spring:message code="label.our.product.message"/></p>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -962,12 +961,12 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="block-newsletter">
-                    <h2>Sign up for send newsletter</h2>
-                    <p>You can be always up to date with our company new!</p>
+                    <h2><spring:message code="label.signup.newsletter"/> </h2>
+                    <p><spring:message code="label.title.newsletter"/> </p>
                     <form action="#">
-                        <input type="text" placeholder="Enter your email address"/>
+                        <input type="text" placeholder="<spring:message code="label.enter.email"/>" />
                     </form>
-                    <a href="#">Send Email</a>
+                    <a href="#"><spring:message code="label.send.eamil"/></a>
                 </div>
             </div>
         </div>
