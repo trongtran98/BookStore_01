@@ -88,3 +88,74 @@
         </div>
     </div>
 </div>
+
+
+<!-- box chat -->
+<div class="popup-box chat-popup" id="qnimate">
+    <div class="popup-head">
+        <div class="popup-head-left pull-left">Support</div>
+        <div class="popup-head-right pull-right">
+            <a data-widget="remove" id="removeClass" class="pull-right" type="button"><i class="fas fa-angle-down"></i></a>
+        </div>
+    </div>
+    <div class="popup-messages">
+
+
+        <div class="direct-chat-messages">
+
+
+
+
+
+            <!-- Message. Default to the left -->
+            <div class="direct-chat-msg doted-border">
+
+                <!-- /.direct-chat-info -->
+                <!-- /.direct-chat-img -->
+                <div class="direct-chat-text">
+                    Hey bro, how’s everything going ?
+                </div>
+                <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-timestamp pull-right">3.36 PM</span>
+                </div>
+
+                <!-- /.direct-chat-text -->
+            </div>
+            <!-- /.direct-chat-msg -->
+
+
+
+
+
+            <!-- Message. Default to the left -->
+            <div class="direct-chat-msg doted-border">
+
+                <!-- /.direct-chat-info -->
+                <!-- /.direct-chat-img -->
+                <div class="direct-chat-text">
+                    Hey bro, how’s everything going ?
+                </div>
+                <div class="direct-chat-info clearfix">
+                    <span class="direct-chat-timestamp pull-right">3.36 PM</span>
+                </div>
+
+                <!-- /.direct-chat-text -->
+            </div>
+            <!-- /.direct-chat-msg -->
+
+
+        </div>
+
+
+    </div>
+    <div class="popup-messages-footer">
+        <textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
+    </div>
+</div>
+<div>
+
+</div>
+<a id="addClass" class="button-message"><i class="fas fa-comments"></i></a>
+<head>
+    <link rel="stylesheet" href="/client/assets/css/box.chat.css">
+</head>

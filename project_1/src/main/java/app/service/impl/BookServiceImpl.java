@@ -73,7 +73,6 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
         }catch (Exception e){
             return Collections.emptyList();
         }
-
     }
 
     @Override

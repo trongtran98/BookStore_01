@@ -69,9 +69,7 @@
 
                 <div class="my-cart">
                     <ul>
-                        <li><a href="/carts/${myCart.id}"><i class="fa fa-shopping-cart"></i><spring:message
-                                code="label.cart"/></a>
-
+                        <li><a href="/carts/${myCart.id}"><i class="fa fa-shopping-cart"></i><spring:message code="label.cart"/></a>
                             <c:set var="number" value="0"/>
                             <c:if test="${cart != null}">
                                 <c:forEach items="${cart.getCartDetails()}" var="cd">
