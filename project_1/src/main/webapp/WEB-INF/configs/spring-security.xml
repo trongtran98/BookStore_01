@@ -4,20 +4,19 @@
              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <http auto-config="true" access-denied-page="/403.jsp" use-expressions="true">
-        <intercept-url pattern="/**" access="permitAll()" />
-        <intercept-url pattern="/admin/login" access="permitAll()" />
-        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-        <form-login login-page="/login" login-processing-url="/j_spring_security_login"
-                    default-target-url="/" authentication-failure-url="/login?error"
-                    username-parameter="username" password-parameter="password" />
-        <form-login login-page="/admin/login" login-processing-url="/j_spring_security_login"
-                    default-target-url="/" authentication-failure-url="/login?error"
-                    username-parameter="username" password-parameter="password" />
-        <logout logout-url="/j_spring_security_logout"
-                logout-success-url="/admin/logout" delete-cookies="JSESSIONID" />
+    <http use-expressions="true" auto-config="true">
+        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/**" access="permitAll()"/>
+        <csrf />
+        <form-login login-page="/login" login-processing-url="/security_login"
+                    default-target-url="/"
+                    authentication-failure-url="/login?error=true"
+                    username-parameter="email" password-parameter="password" />
+        <logout logout-url="/security_logout" invalidate-session="true"
+                logout-success-url="/login" delete-cookies="JSESSIONID" />
         <remember-me key="uniqueAndSecret" token-validity-seconds="1209600"
-                     remember-me-parameter="remember-me" />
+                     remember-me-parameter="rememberme" />
+
     </http>
 
     <authentication-manager>

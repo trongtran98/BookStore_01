@@ -11,11 +11,9 @@ import app.service.UserService;
 @Controller(value = "adminController")
 @RequestMapping(value = "/admin")
 public class IndexController {
-    @Autowired
-    UserService userService;
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginPage(User user) {
-        return "/admin/login";
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String indexPage() {
+        return "/admin/index";
     }
+
 }
