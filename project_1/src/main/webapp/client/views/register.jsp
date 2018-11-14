@@ -9,6 +9,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <div class="breadcrumbs-area mb-70">
     <div class="container">
         <div class="row">
@@ -33,65 +34,61 @@
                         architecto beat</p>
                 </div>
             </div>
-            <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
-                <div class="billing-fields">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-register">
-                                <form action="#">
-                                    <label>First Name<span>*</span></label>
-                                    <input type="text">
-                                </form>
+            <form id="idForm" action="/register" method="POST">
+                <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    <div class="login-form">
+                        <div class="single-login">
+                            <label>Full name <span>*</span></label>
+                            <input name="fullName" type="text" required/>
+                        </div>
+
+                        <div class="single-login">
+                            <label>Email Address <span>*</span></label>
+                            <input name="email" type="email" required/>
+                        </div>
+
+                        <div class="single-login" style="margin-bottom: 0">
+                            <label>Account password <span>*</span></label>
+                            <input type="password" name="password"required/>
+                        </div>
+
+                        <div class="single-login" style="margin-bottom: 0">
+                            <label>Confirm password <span>*</span></label>
+                            <input type="password" required/>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="single-register">
+                                    <label>Phone <span>*</span></label>
+                                    <input type="tel" name="phone" required/>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="single-register">
+                                    <label>Gender <span>*</span></label>
+                                    <select name="gender" class="chosen-select">
+                                        <option value="true">Male</option>
+                                        <option value="false">Female</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-register">
-                                <form action="#">
-                                    <label>Last Name<span>*</span></label>
-                                    <input type="text">
-                                </form>
-                            </div>
+
+                        <div class="single-login single-login-2">
+                            <%--<input id="rememberme" type="checkbox" name="remember-me">--%>
+                            <span>I agree Terms &amp; Condition</span>
+                            <input type="submit" value="Register"
+                                   style="margin-top: 15px; background-color: #FF742D; color: white">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-register">
-                                <form action="#">
-                                    <label>Email Address<span>*</span></label>
-                                    <input type="text">
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-register">
-                                <form action="#">
-                                    <label>Phone<span>*</span></label>
-                                    <input type="text">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-register">
-                        <form action="#">
-                            <label>Account password<span>*</span></label>
-                            <input type="text" placeholder="Password">
-                        </form>
-                    </div>
-                    <div class="single-register">
-                        <form action="#">
-                            <label>Confirm password<span>*</span></label>
-                            <input type="text" placeholder="Password">
-                        </form>
-                    </div>
-                    <div class="single-register single-register-3">
-                        <input id="rememberme" type="checkbox" name="rememberme" value="forever">
-                        <label class="inline">I agree <a href="#">Terms &amp; Condition</a></label>
-                    </div>
-                    <div class="single-register">
-                        <a href="#">Register</a>
+                        <br/>
+
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
+<head>
+
+</head>

@@ -1,5 +1,7 @@
 package app.model;
 
+import app.DTO.AddressDTO;
+
 public class Address implements java.io.Serializable {
 	private Integer id;
 	private String address;
@@ -28,4 +30,12 @@ public class Address implements java.io.Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public Address() {
+	}
+	public Address(AddressDTO addressDTO) {
+		this.id = addressDTO.getId();
+		this.address = addressDTO.getAddress();
+	}
+
 }

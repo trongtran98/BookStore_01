@@ -4,7 +4,6 @@ import app.DTO.ProducerDTO;
 import app.controller.BaseController;
 import app.helper.Helper;
 import app.model.Producer;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,6 +44,6 @@ public class ProducersController extends BaseController {
 
     private ResponseEntity createOrUpdate(ProducerDTO producerDTO) {
         Producer producer = new Producer(producerDTO);
-        return Helper.createOrUpdate(producer,producerService.saveOrUpdate(producer));
+        return Helper.createOrUpdate(producer, producerService.saveOrUpdate(producer));
     }
 }

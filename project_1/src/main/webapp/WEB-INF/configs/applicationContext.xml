@@ -69,4 +69,6 @@
     <bean id="googleUtils" class="app.utlis.GoogleUtils"/>
 
     <bean id="mailUtils" class="app.utlis.MailUtils"/>
+
+    <bean id="utilConvertModel" class="app.info.UtilConvertModel"/>
 </beans>
