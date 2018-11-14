@@ -119,7 +119,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(BookDTO bookDTO, String image) {
+    public Book(BookDTO bookDTO, String image, Author author, Producer producer , CategoryDetail categoryDetail ) {
         this.id = bookDTO.getId();
         this.title = bookDTO.getTitle();
         this.description = bookDTO.getDescription();
@@ -128,5 +128,8 @@ public class Book {
         this.price = bookDTO.getPrice();
         this.available = bookDTO.getAvailable();
         this.status = bookDTO.getStatus();
+        this.author = author;
+        this.producer = producer;
+        this.categoryDetail = categoryDetail;
     }
 }
