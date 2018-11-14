@@ -48,7 +48,10 @@
                                     <spring:url value="/admin/add-manager?${_csrf.parameterName}=${_csrf.token}"
                                                 var="addManager"/>
                                     <form action="${addManager}" method="post" enctype="multipart/form-data">
-                                        <input type="file" name="fileExcel"/>
+                                        <div class="box">
+                                            <input type="file" name="fileExcel" id="file-1" accept=".xls, .xlsx"   class="inputfile inputfile-1"  />
+                                            <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a file&hellip;</span></label>
+                                        </div>
                                         <button type="submit">ok</button>
                                     </form>
                                 </li>
@@ -2291,6 +2294,9 @@
     <link rel="stylesheet" href="/admin/assets/stylesheets/theme-custom.css">
 
     <link rel="stylesheet" href="/admin/assets/stylesheets/tooltip.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/custom/popup.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/custom/input-file-excel.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/notify/notify.css">
 
 
     <!-- Vendor -->
@@ -2347,6 +2353,19 @@
 
     <!-- Examples -->
     <script src="/admin/assets/javascripts/dashboard/examples.dashboard.js"></script>
+    <script src="/admin/assets/notify/notify.js"></script>
+    <script src="/admin/assets/custom/input-file-excel.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            if('${excelMessage}' == 'error!'){
+                $.notify("Error!", {type: "danger", align: "right", verticalAlign: "top", icon: "close"});
+            }
+            if('${excelMessage}' == 'success!'){
+                $.notify("success!", {type:"success", align:"right", verticalAlign:"top", icon:"close"});
+            }
+        });
+    </script>
 </head>
 
 

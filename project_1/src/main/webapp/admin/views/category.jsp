@@ -1,13 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: jocker
-  Date: 21/11/2018
-  Time: 16:28
+  Date: 29/11/2018
+  Time: 08:45
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <div class="inner-wrapper">
     <!-- start: sidebar -->
     <aside id="sidebar-left" class="sidebar-left">
@@ -69,12 +70,12 @@
                                         Books
                                     </a>
                                 </li>
-                                <li >
+                                <li class="nav-active">
                                     <a href="/admin/authors">
                                         Authors
                                     </a>
                                 </li>
-                                <li class="nav-active">
+                                <li>
                                     <a href="/admin/producers">
                                         Producers
                                     </a>
@@ -163,7 +164,7 @@
         <!-- start: page -->
         <section class="panel">
             <header class="panel-heading">
-                <h2 class="panel-title">Producers</h2>
+                <h2 class="panel-title">Authors</h2>
             </header>
             <div class="panel-body">
                 <div class="row">
@@ -186,32 +187,27 @@
                                 </th>
                                 <th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1"
                                     colspan="1" aria-label="Browser: activate to sort column ascending"
-                                    style="width: 178px;">Producer name
+                                    style="width: 178px;">Full name
                                 </th>
-                                <th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1"
-                                    colspan="1" aria-label="Platform(s): activate to sort column ascending"
-                                    style="width: 160px;">Address
-                                </th>
+                                <%--<th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1"--%>
+                                    <%--colspan="1" aria-label="Platform(s): activate to sort column ascending"--%>
+                                    <%--style="width: 160px;">Description--%>
+                                <%--</th>--%>
                                 <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions"
                                     style="width: 60px;">Actions
                                 </th>
                             </tr>
                             </thead>
                             <tbody id="reload">
-                            <c:forEach items="${producers}" var="item">
+                            <c:forEach items="${categories}" var="item">
                                 <tr class="gradeA odd" role="row">
                                     <td class="sorting_1">${item.id}</td>
-                                    <td>${item.producerName}</td>
-                                    <td>${item.address}</td>
+                                    <td>${item.categoryName}</td>
+                                    <%--<td></td>--%>
                                     <td class="actions">
-                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
                                         <a href="#"
                                            onclick="edit(${item.id})"
-                                           style="width:auto;"
-                                           class="on-default edit-row">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
+                                           style="width:auto;" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
                                         <a href="#" bId="${item.id}" class="on-default remove-row"><i
                                                 class="fa fa-trash-o"></i></a>
                                     </td>
@@ -224,6 +220,7 @@
             </div>
         </section>
         <!-- end: page -->
+
         <aside id="sidebar-right" class="sidebar-right">
             <div class="nano has-scrollbar">
                 <div class="nano-content" tabindex="0" style="right: -15px;">
@@ -440,6 +437,7 @@
                 </div>
             </div>
         </aside>
+
     </section>
     <section id="section2" role="main" class="content-body">
         <header class="page-header">
@@ -471,16 +469,9 @@
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                             <input id="id" type="hidden" class="form-control input-rounded" name="id">
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="producerName">Producer name</label>
+                                <label class="col-md-3 control-label" for="fullName">Full name</label>
                                 <div class="col-md-6">
-                                    <input id="producerName" type="text" class="form-control input-rounded" name="producerName">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="address">Address</label>
-                                <div class="col-md-6">
-                                    <textarea id="address" placeholder="Description" name="address"></textarea>
+                                    <input id="fullName" type="text" class="form-control input-rounded" name="fullName">
                                 </div>
                             </div>
 
@@ -500,6 +491,7 @@
         </div>
         <!-- end: page -->
     </section>
+
 </div>
 
 <head>
@@ -550,6 +542,5 @@
     <link rel="stylesheet" type="text/css" href="/admin/assets/custom/input-file-excel.css">
     <script src="/admin/assets/notify/notify.js"></script>
     <script src="/admin/assets/notify/prettify.js"></script>
-    <script src="/admin/assets/custom/popup.js"></script>
     <script src="/admin/assets/custom/input-file-excel.js"></script>
 </head>

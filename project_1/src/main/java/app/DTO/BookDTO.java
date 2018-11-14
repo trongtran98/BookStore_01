@@ -1,6 +1,7 @@
 package app.DTO;
 
 import app.model.Book;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -15,9 +16,9 @@ public class BookDTO implements Serializable {
     private BigDecimal price;
     private Integer available;
     private Boolean status;
-    private List<AuthorDTO> author;
-    private List<CategoryDetailDTO> categoryDetail;
-    private List<ProducerDTO> producer;
+    private Integer author;
+    private Integer categoryDetail;
+    private Integer producer;
 
     public Integer getId() {
         return id;
@@ -75,27 +76,27 @@ public class BookDTO implements Serializable {
         this.status = status;
     }
 
-    public List<AuthorDTO> getAuthor() {
+    public Integer getAuthor() {
         return author;
     }
 
-    public void setAuthor(List<AuthorDTO> author) {
+    public void setAuthor(Integer author) {
         this.author = author;
     }
 
-    public List<CategoryDetailDTO> getCategoryDetail() {
+    public Integer getCategoryDetail() {
         return categoryDetail;
     }
 
-    public void setCategoryDetail(List<CategoryDetailDTO> categoryDetail) {
+    public void setCategoryDetail(Integer categoryDetail) {
         this.categoryDetail = categoryDetail;
     }
 
-    public List<ProducerDTO> getProducer() {
+    public Integer getProducer() {
         return producer;
     }
 
-    public void setProducer(List<ProducerDTO> producer) {
+    public void setProducer(Integer producer) {
         this.producer = producer;
     }
 

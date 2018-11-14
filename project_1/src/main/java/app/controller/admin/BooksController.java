@@ -52,10 +52,8 @@ public class BooksController extends BaseController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity createBook(BookDTO bookDTO, MultipartFile image) {
-
-        return createOrUpdate(bookDTO, image);
-
+    public ResponseEntity createBook(BookDTO bookDTO ,MultipartFile multipartFile) {
+        return createOrUpdate(bookDTO, multipartFile);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
@@ -68,7 +66,11 @@ public class BooksController extends BaseController {
         if (bookDTO == null || multipartFile == null)
             return ResponseEntity.status(HttpStatus.FAILED_DEPENDENCY).body(null);
 
-        Book book = new Book(bookDTO, ImageUtils.renameBook(multipartFile.getOriginalFilename()));
+        Book book = new Book(bookDTO, ImageUtils.renameBook(multipartFile.getOriginalFilename()),
+                authorService.findById(bookDTO.getAuthor()),
+                producerService.findById(bookDTO.getProducer()),
+                categoryDetailService.findById(bookDTO.getCategoryDetail())
+        );
 
         if (!ImageUtils.copyFileUsingStream(multipartFile))
             return ResponseEntity.status(HttpStatus.FAILED_DEPENDENCY).body(null);

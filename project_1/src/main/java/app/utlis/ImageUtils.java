@@ -11,8 +11,9 @@ public class ImageUtils {
 
     public static boolean copyFileUsingStream(MultipartFile file) {
         if (checkImage(file)) {
+
             File dest = null;
-            dest = new File("../books/" + renameBook(file.getOriginalFilename()));
+            dest = new File("../resources/books/" + renameBook(file.getOriginalFilename()));
             try (OutputStream outputStream = new FileOutputStream(dest)) {
                 byte[] buffer = file.getBytes();
                 outputStream.write(buffer);
@@ -30,7 +31,7 @@ public class ImageUtils {
     }
 
     public static boolean checkImage(MultipartFile file) {
-        String[] allowedExt = {"jpg", "jpeg", "png", "gif"};
+        String[] allowedExt = {".jpg", ".jpeg", ".png", ".gif"};
         String postFix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
         for (String item : allowedExt) {
             if (item.equals(postFix))
