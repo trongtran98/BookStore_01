@@ -5660,3 +5660,7 @@ p.lost-password a:hover {
 .loginBtn--google:focus {
     background: #E74B37;
 }
+
+.add-to-cart{
+    cursor: pointer;
+}
