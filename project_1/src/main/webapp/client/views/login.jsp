@@ -57,8 +57,9 @@
                             <input type="submit" value="Login"
                                    style="margin-top: 15px; background-color: #FF742D; color: white">
                         </div>
-                        <a href="#"><span style="text-indent: 20px"><spring:message code="label.lost.password"/> </span></a>
+                        <a href="/register"><span style="text-indent: 20px">Register</span></a>
                         <br/>
+                        <a href="#"><span style="text-indent: 20px"><spring:message code="label.lost.password"/> </span></a>
                         <div style="text-align: center">
                             <scan id="message-error-login">
                                 <c:if test="${not empty errorMessage}">

@@ -19,5 +19,6 @@ public class ProducerDAOImpl extends GenericDAO<Integer, Producer> implements Pr
             return (Producer) getSession().createQuery("FROM Producer WHERE id = :id").setParameter("id", id).getSingleResult();
 
         return getSession().load(Producer.class, id, LockMode.PESSIMISTIC_WRITE);
+
     }
 }
