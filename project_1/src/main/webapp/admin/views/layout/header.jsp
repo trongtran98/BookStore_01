@@ -3,358 +3,221 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<!-- header-top-area-start -->
-<div class="header-top-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="language-area">
-                    <ul>
-                        <li><img src="/admin/assets/img/flag/1.jpg" alt="flag"/><a href="#">English<i
-                                class="fa fa-angle-down"></i></a>
-                            <div class="header-sub">
-                                <ul>
-                                    <li><a href="#"><img src="/admin/assets/img/flag/2.jpg" alt="flag"/>france</a></li>
-                                    <li><a href="#"><img src="/admin/assets/img/flag/3.jpg" alt="flag"/>croatia</a></li>
-                                </ul>
-                            </div>
-                        </li>
+<header class="header">
+    <div class="logo-container">
+        <a href="../" class="logo">
+            <img src="assets/images/logo.png" height="35" alt="JSOFT Admin">
+        </a>
+        <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+            <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+        </div>
+    </div>
 
-                    </ul>
-                </div>
+    <!-- start: search & user box -->
+    <div class="header-right">
+
+        <form action="pages-search-results.html" class="search nav-form">
+            <div class="input-group input-search">
+                <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+                <span class="input-group-btn">
+								<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+							</span>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="account-area text-right">
-                    <ul>
-                        <li><a href="register.html">My Account</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="login.html">Sign in</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- header-top-area-end -->
-<!-- header-mid-area-start -->
-<div class="header-mid-area ptb-40">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
-                <div class="header-search">
-                    <form action="#">
-                        <input type="text" placeholder="Search entire store here..."/>
-                        <a href="#"><i class="fa fa-search"></i></a>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
-                <div class="logo-area text-center logo-xs-mrg">
-                    <a href="index.html"><img src="/admin/assets/img/logo/logo.png" alt="logo"/></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <div class="my-cart">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i>My Cart</a>
-                            <span>2</span>
-                            <div class="mini-cart-sub">
-                                <div class="cart-product">
-                                    <div class="single-cart">
-                                        <div class="cart-img">
-                                            <a href="#"><img src="img/product/1.jpg" alt="book"/></a>
-                                        </div>
-                                        <div class="cart-info">
-                                            <h5><a href="#">Joust Duffle Bag</a></h5>
-                                            <p>1 x £60.00</p>
-                                        </div>
-                                        <div class="cart-icon">
-                                            <a href="#"><i class="fa fa-remove"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="single-cart">
-                                        <div class="cart-img">
-                                            <a href="#"><img src="img/product/3.jpg" alt="book"/></a>
-                                        </div>
-                                        <div class="cart-info">
-                                            <h5><a href="#">Chaz Kangeroo Hoodie</a></h5>
-                                            <p>1 x £52.00</p>
-                                        </div>
-                                        <div class="cart-icon">
-                                            <a href="#"><i class="fa fa-remove"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cart-totals">
-                                    <h5>Total <span>£12.00</span></h5>
-                                </div>
-                                <div class="cart-bottom">
-                                    <a class="view-cart" href="cart.html">view cart</a>
-                                    <a href="checkout.html">Check out</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- header-mid-area-end -->
-<!-- main-menu-area-start -->
-<div class="main-menu-area hidden-sm hidden-xs" id="header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="menu-area">
-                    <nav>
+        </form>
+
+        <span class="separator"></span>
+
+        <ul class="notifications">
+            <li>
+                <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                    <i class="fa fa-tasks"></i>
+                    <span class="badge">3</span>
+                </a>
+
+                <div class="dropdown-menu notification-menu large">
+                    <div class="notification-title">
+                        <span class="pull-right label label-default">3</span>
+                        Tasks
+                    </div>
+
+                    <div class="content">
                         <ul>
-                            <li class="active"><a href="index.html">Home<i class="fa fa-angle-down"></i></a>
-                                <div class="sub-menu">
-                                    <ul>
-                                        <li><a href="index-2.html">Home-2</a></li>
-                                        <li><a href="index-3.html">Home-3</a></li>
-                                        <li><a href="index-4.html">Home-4</a></li>
-                                        <li><a href="index-5.html">Home-5</a></li>
-                                        <li><a href="index-6.html">Home-6</a></li>
-                                    </ul>
+                            <li>
+                                <p class="clearfix mb-xs">
+                                    <span class="message pull-left">Generating Sales Report</span>
+                                    <span class="message pull-right text-dark">60%</span>
+                                </p>
+                                <div class="progress progress-xs light">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
                                 </div>
                             </li>
-                            <li><a href="product-details.html">Book<i class="fa fa-angle-down"></i></a>
-                                <div class="mega-menu">
-    <span>
-    <a href="#" class="title">Jackets</a>
-    <a href="shop.html">Tops & Tees</a>
-    <a href="shop.html">Polo Short Sleeve</a>
-    <a href="shop.html">Graphic T-Shirts</a>
-    <a href="shop.html">Jackets & Coats</a>
-    <a href="shop.html">Fashion Jackets</a>
-    </span>
-                                    <span>
-    <a href="#" class="title">weaters</a>
-    <a href="shop.html">Crochet</a>
-    <a href="shop.html">Sleeveless</a>
-    <a href="shop.html">Stripes</a>
-    <a href="shop.html">Sweaters</a>
-    <a href="shop.html">hoodies</a>
-    </span>
-                                    <span>
-    <a href="#" class="title">Bottoms</a>
-    <a href="shop.html">Heeled sandals</a>
-    <a href="shop.html">Polo Short Sleeve</a>
-    <a href="shop.html">Flat sandals</a>
-    <a href="shop.html">Short Sleeve</a>
-    <a href="shop.html">Long Sleeve</a>
-    </span>
-                                    <span>
-    <a href="#" class="title">Jeans Pants</a>
-    <a href="shop.html">Polo Short Sleeve</a>
-    <a href="shop.html">Sleeveless</a>
-    <a href="shop.html">Graphic T-Shirts</a>
-    <a href="shop.html">Hoodies</a>
-    <a href="shop.html">Jackets</a>
-    </span>
-                                </div>
-                            </li>
-                            <li><a href="product-details.html">Audio books<i class="fa fa-angle-down"></i></a>
-                                <div class="mega-menu">
-    <span>
-    <a href="#" class="title">Shirts</a>
-    <a href="shop.html">Tops & Tees</a>
-    <a href="shop.html">Sweaters </a>
-    <a href="shop.html">Hoodies</a>
-    <a href="shop.html">Jackets & Coats</a>
-    </span>
-                                    <span>
-    <a href="#" class="title">Tops & Tees</a>
-    <a href="shop.html">Long Sleeve </a>
-    <a href="shop.html">Short Sleeve</a>
-    <a href="shop.html">Polo Short Sleeve</a>
-    <a href="shop.html">Sleeveless</a>
-    </span>
-                                    <span>
-    <a href="#" class="title">Jackets</a>
-    <a href="shop.html">Sweaters</a>
-    <a href="shop.html">Hoodies</a>
-    <a href="shop.html">Wedges</a>
-    <a href="shop.html">Vests</a>
-    </span>
-                                    <span>
-    <a href="#" class="title">Jeans Pants</a>
-    <a href="shop.html">Polo Short Sleeve</a>
-    <a href="shop.html">Sleeveless</a>
-    <a href="shop.html">Graphic T-Shirts</a>
-    <a href="shop.html">Hoodies</a>
-    </span>
-                                </div>
-                            </li>
-                            <li><a href="product-details.html">children’s books<i class="fa fa-angle-down"></i></a>
-                                <div class="mega-menu mega-menu-2">
-    <span>
-    <a href="#" class="title">Tops</a>
-    <a href="shop.html">Shirts</a>
-    <a href="shop.html">Florals</a>
-    <a href="shop.html">Crochet</a>
-    <a href="shop.html">Stripes</a>
-    </span>
-                                    <span>
-    <a href="#" class="title">Bottoms</a>
-    <a href="shop.html">Shorts</a>
-    <a href="shop.html">Dresses</a>
-    <a href="shop.html">Trousers</a>
-    <a href="shop.html">Jeans</a>
-    </span>
-                                    <span>
-    <a href="#" class="title">Shoes</a>
-    <a href="shop.html">Heeled sandals</a>
-    <a href="shop.html">Flat sandals</a>
-    <a href="shop.html">Wedges</a>
-    <a href="shop.html">Ankle boots</a>
-    </span>
-                                </div>
-                            </li>
-                            <li><a href="#">blog<i class="fa fa-angle-down"></i></a>
-                                <div class="sub-menu sub-menu-2">
-                                    <ul>
-                                        <li><a href="blog.html">blog</a></li>
-                                        <li><a href="blog-details.html">blog-details</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a href="#">pages<i class="fa fa-angle-down"></i></a>
-                                <div class="sub-menu sub-menu-2">
-                                    <ul>
-                                        <li><a href="shop.html">shop</a></li>
-                                        <li><a href="shop.html">product-details</a></li>
-                                        <li><a href="blog.html">blog</a></li>
-                                        <li><a href="blog-details.html">blog-details</a></li>
-                                        <li><a href="contact.html">contact</a></li>
-                                        <li><a href="about.html">about</a></li>
-                                        <li><a href="login.html">login</a></li>
-                                        <li><a href="register.html">register</a></li>
-                                        <li><a href="cart.html">cart</a></li>
-                                        <li><a href="checkout.html">checkout</a></li>
-                                        <li><a href="wishlist.html">wishlist</a></li>
-                                        <li><a href="404.html">404 Page</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="safe-area">
-                    <a href="product-details.html">sales off</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- main-menu-area-end -->
-<!-- mobile-menu-area-start -->
 
-<div class="mobile-menu-area hidden-md hidden-lg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="mobile-menu">
-                    <nav id="mobile-menu-active">
-                        <ul id="nav">
-                            <li><a href="index.html">Home</a>
-                                <ul>
-                                    <li><a href="index-2.html">Home-2</a></li>
-                                    <li><a href="index-3.html">Home-3</a></li>
-                                    <li><a href="index-4.html">Home-4</a></li>
-                                    <li><a href="index-5.html">Home-5</a></li>
-                                    <li><a href="index-6.html">Home-6</a></li>
-                                </ul>
+                            <li>
+                                <p class="clearfix mb-xs">
+                                    <span class="message pull-left">Importing Contacts</span>
+                                    <span class="message pull-right text-dark">98%</span>
+                                </p>
+                                <div class="progress progress-xs light">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"></div>
+                                </div>
                             </li>
-                            <li><a href="product-details.html">Book</a>
-                                <ul>
-                                    <li><a href="shop.html">Tops & Tees</a></li>
-                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                    <li><a href="shop.html">Graphic T-Shirts</a></li>
-                                    <li><a href="shop.html">Jackets & Coats</a></li>
-                                    <li><a href="shop.html">Fashion Jackets</a></li>
-                                    <li><a href="shop.html">Crochet</a></li>
-                                    <li><a href="shop.html">Sleeveless</a></li>
-                                    <li><a href="shop.html">Stripes</a></li>
-                                    <li><a href="shop.html">Sweaters</a></li>
-                                    <li><a href="shop.html">hoodies</a></li>
-                                    <li><a href="shop.html">Heeled sandals</a></li>
-                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                    <li><a href="shop.html">Flat sandals</a></li>
-                                    <li><a href="shop.html">Short Sleeve</a></li>
-                                    <li><a href="shop.html">Long Sleeve</a></li>
-                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                    <li><a href="shop.html">Sleeveless</a></li>
-                                    <li><a href="shop.html">Graphic T-Shirts</a></li>
-                                    <li><a href="shop.html">Hoodies</a></li>
-                                    <li><a href="shop.html">Jackets</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="product-details.html">Audio books</a>
-                                <ul>
-                                    <li><a href="shop.html">Tops & Tees</a></li>
-                                    <li><a href="shop.html">Sweaters</a></li>
-                                    <li><a href="shop.html">Hoodies</a></li>
-                                    <li><a href="shop.html">Jackets & Coats</a></li>
-                                    <li><a href="shop.html">Long Sleeve</a></li>
-                                    <li><a href="shop.html">Short Sleeve</a></li>
-                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                    <li><a href="shop.html">Sleeveless</a></li>
-                                    <li><a href="shop.html">Sweaters</a></li>
-                                    <li><a href="shop.html">Hoodies</a></li>
-                                    <li><a href="shop.html">Wedges</a></li>
-                                    <li><a href="shop.html">Vests</a></li>
-                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                    <li><a href="shop.html">Sleeveless</a></li>
-                                    <li><a href="shop.html">Graphic T-Shirts</a></li>
-                                    <li><a href="shop.html">Hoodies</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="product-details.html">childrenís books</a>
-                                <ul>
-                                    <li><a href="shop.html">Shirts</a></li>
-                                    <li><a href="shop.html">Florals</a></li>
-                                    <li><a href="shop.html">Crochet</a></li>
-                                    <li><a href="shop.html">Stripes</a></li>
-                                    <li><a href="shop.html">Shorts</a></li>
-                                    <li><a href="shop.html">Dresses</a></li>
-                                    <li><a href="shop.html">Trousers</a></li>
-                                    <li><a href="shop.html">Jeans</a></li>
-                                    <li><a href="shop.html">Heeled sandals</a></li>
-                                    <li><a href="shop.html">Flat sandals</a></li>
-                                    <li><a href="shop.html">Wedges</a></li>
-                                    <li><a href="shop.html">Ankle boots</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">blog</a>
-                                <ul>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-details.html">blog-details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="product-details.html">Page</a>
-                                <ul>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="product-details.html">product-details</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-details.html">blog-details</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">Register</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="404.html">404 Page</a></li>
-                                </ul>
+
+                            <li>
+                                <p class="clearfix mb-xs">
+                                    <span class="message pull-left">Uploading something big</span>
+                                    <span class="message pull-right text-dark">33%</span>
+                                </p>
+                                <div class="progress progress-xs light mb-xs">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+                                </div>
                             </li>
                         </ul>
-                    </nav>
+                    </div>
                 </div>
+            </li>
+            <li>
+                <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                    <i class="fa fa-envelope"></i>
+                    <span class="badge">4</span>
+                </a>
+
+                <div class="dropdown-menu notification-menu">
+                    <div class="notification-title">
+                        <span class="pull-right label label-default">230</span>
+                        Messages
+                    </div>
+
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <a href="#" class="clearfix">
+                                    <figure class="image">
+                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
+                                    </figure>
+                                    <span class="title">Joseph Doe</span>
+                                    <span class="message">Lorem ipsum dolor sit.</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="clearfix">
+                                    <figure class="image">
+                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
+                                    </figure>
+                                    <span class="title">Joseph Junior</span>
+                                    <span class="message truncate">Truncated message. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam, nec venenatis risus. Vestibulum blandit faucibus est et malesuada. Sed interdum cursus dui nec venenatis. Pellentesque non nisi lobortis, rutrum eros ut, convallis nisi. Sed tellus turpis, dignissim sit amet tristique quis, pretium id est. Sed aliquam diam diam, sit amet faucibus tellus ultricies eu. Aliquam lacinia nibh a metus bibendum, eu commodo eros commodo. Sed commodo molestie elit, a molestie lacus porttitor id. Donec facilisis varius sapien, ac fringilla velit porttitor et. Nam tincidunt gravida dui, sed pharetra odio pharetra nec. Duis consectetur venenatis pharetra. Vestibulum egestas nisi quis elementum elementum.</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="clearfix">
+                                    <figure class="image">
+                                        <img src="assets/images/!sample-user.jpg" alt="Joe Junior" class="img-circle">
+                                    </figure>
+                                    <span class="title">Joe Junior</span>
+                                    <span class="message">Lorem ipsum dolor sit.</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="clearfix">
+                                    <figure class="image">
+                                        <img src="assets/images/!sample-user.jpg" alt="Joseph Junior" class="img-circle">
+                                    </figure>
+                                    <span class="title">Joseph Junior</span>
+                                    <span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet lacinia orci. Proin vestibulum eget risus non luctus. Nunc cursus lacinia lacinia. Nulla molestie malesuada est ac tincidunt. Quisque eget convallis diam.</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <hr>
+
+                        <div class="text-right">
+                            <a href="#" class="view-more">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge">3</span>
+                </a>
+
+                <div class="dropdown-menu notification-menu">
+                    <div class="notification-title">
+                        <span class="pull-right label label-default">3</span>
+                        Alerts
+                    </div>
+
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <a href="#" class="clearfix">
+                                    <div class="image">
+                                        <i class="fa fa-thumbs-down bg-danger"></i>
+                                    </div>
+                                    <span class="title">Server is Down!</span>
+                                    <span class="message">Just now</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="clearfix">
+                                    <div class="image">
+                                        <i class="fa fa-lock bg-warning"></i>
+                                    </div>
+                                    <span class="title">User Locked</span>
+                                    <span class="message">15 minutes ago</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="clearfix">
+                                    <div class="image">
+                                        <i class="fa fa-signal bg-success"></i>
+                                    </div>
+                                    <span class="title">Connection Restaured</span>
+                                    <span class="message">10/10/2014</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <hr>
+
+                        <div class="text-right">
+                            <a href="#" class="view-more">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <span class="separator"></span>
+
+        <div id="userbox" class="userbox">
+            <a href="#" data-toggle="dropdown">
+                <figure class="profile-picture">
+                    <img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg">
+                </figure>
+                <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
+                    <span class="name">John Doe Junior</span>
+                    <span class="role">administrator</span>
+                </div>
+
+                <i class="fa custom-caret"></i>
+            </a>
+
+            <div class="dropdown-menu">
+                <ul class="list-unstyled">
+                    <li class="divider"></li>
+                    <li>
+                        <a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
+                    </li>
+                    <li>
+                        <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
+                    </li>
+                    <li>
+                        <a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-</div>
-<!-- mobile-menu-area-end -->
+    <!-- end: search & user box -->
+</header><!-- end: header -->

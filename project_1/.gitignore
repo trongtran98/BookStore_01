@@ -33,4 +33,5 @@ project_1/src/main/resources/datasources.properties
 
 # eclipse config
 *.classpath
-*.setting
+*.settings
+.project

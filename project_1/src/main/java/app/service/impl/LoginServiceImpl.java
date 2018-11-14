@@ -19,7 +19,7 @@ public class LoginServiceImpl extends BaseServiceImpl implements UserDetailsServ
         logger.info("login with: "+ email);
         User user = userDAO.findUserByEmail(email);
         if (user == null) {
-            throw new UsernameNotFoundException("User not found");
+            throw new UsernameNotFoundException("User not found " + email);
         }
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();

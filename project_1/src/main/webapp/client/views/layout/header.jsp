@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <!-- header-top-area-start -->
 <div class="header-top-area">
@@ -15,7 +15,8 @@
                             <div class="header-sub">
                                 <ul>
                                     <li><a href="#"><img src="/client/assets/img/flag/2.jpg" alt="flag"/>france</a></li>
-                                    <li><a href="#"><img src="/client/assets/img/flag/3.jpg" alt="flag"/>croatia</a></li>
+                                    <li><a href="#"><img src="/client/assets/img/flag/3.jpg" alt="flag"/>croatia</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -25,10 +26,25 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="account-area text-right">
+                    <spring:url value="/login" var="loginUrl"/>
+                    <spring:url value="/security_logout" var="logoutUrl"/>
                     <ul>
                         <li><a href="register.html">My Account</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
-                        <li><a href="login.html">Sign in</a></li>
+                        <security:authorize access="isAuthenticated()">
+                            <li>
+                                <a href="/info"> <security:authentication property="principal.username"/></a>
+                            </li>
+                            <form action="${logoutUrl}" method="post">
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+                                <button type="submit">Logout</button>
+
+                            </form>
+                        </security:authorize>
+                        <security:authorize access="isAnonymous()">
+                            <li><a href="${loginUrl}">Sign in</a></li>
+                        </security:authorize>
                     </ul>
                 </div>
             </div>
