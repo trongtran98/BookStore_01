@@ -52,7 +52,7 @@
                             <input type="password" name="password"/>
                         </div>
                         <div class="single-login single-login-2">
-                            <input id="rememberme" type="checkbox" name="rememberme" value="forever">
+                            <input id="rememberme" type="checkbox" name="remember-me">
                             <span>Remember me</span><br>
                             <input type="submit" value="Login"
                                    style="margin-top: 15px; background-color: #FF742D; color: white">
@@ -65,10 +65,14 @@
                             <button class="loginBtn loginBtn--facebook">
                                 Login with Facebook
                             </button>
+                            <spring:message code="google.request.url" var="googleReqUrl"/>
+                            <a href="${googleReqUrl}">
+                                <button type="button" class="loginBtn loginBtn--google">
+                                    Login with Google
+                                </button>
 
-                            <button class="loginBtn loginBtn--google">
-                                Login with Google
-                            </button>
+                            </a>
+
                         </div>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <p class="error">
