@@ -17,6 +17,8 @@ public class BaseServiceImpl {
 		this.authorDAO = authorDAO;
 	}
 
+	protected ReviewDAO reviewDAO;
+
 	public UserDAO getUserDAO() {
 		return userDAO;
 	}
@@ -47,5 +49,14 @@ public class BaseServiceImpl {
 
 	public void setCategoryDAO(CategoryDAO categoryDAO) {
 		this.categoryDAO = categoryDAO;
+	}
+
+
+	public ReviewDAO getReviewDAO() {
+		return reviewDAO;
+	}
+
+	public void setReviewDAO(ReviewDAO reviewDAO) {
+		this.reviewDAO = reviewDAO;
 	}
 }

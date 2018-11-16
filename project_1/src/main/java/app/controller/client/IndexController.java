@@ -1,13 +1,16 @@
 package app.controller.client;
 
 import app.controller.BaseController;
+import app.model.Category;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller(value = "clientController")
@@ -20,9 +23,6 @@ public class IndexController extends BaseController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(HttpSession session, Model model) {
-        if(session.getAttribute("categories") == null){
-            session.setAttribute("categories", categoryService.findAll());
-        }
         model.addAllAttributes(getMapAttributes());
         return "/client/index";
     }

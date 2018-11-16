@@ -11,6 +11,14 @@
 			<column name="content" />
 		</property>
 
+		<property name="time" type="date">
+			<column name="time"/>
+		</property>
+
+		<many-to-one name="user" class="User">
+			<column name="userId" not-null="true" />
+		</many-to-one>
+
 		<many-to-one name="book" class="Book" fetch="join">
 			<column name="bookId" not-null="true" />
 		</many-to-one>
