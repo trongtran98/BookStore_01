@@ -2,7 +2,6 @@ package app.controller.client;
 
 import app.controller.BaseController;
 import app.model.Cart;
-import app.model.CartDetail;
 import app.model.Category;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.ControllerAdvice;

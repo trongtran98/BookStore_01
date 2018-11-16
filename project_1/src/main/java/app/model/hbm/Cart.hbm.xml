@@ -8,9 +8,9 @@
 		</id>
 
 		<many-to-one name="user" class="User"
-			column="userId" unique="true" not-null="true" cascade="all" />
+			column="userId" unique="true" not-null="true" />
 
-		<list name="cartDetails" inverse="true" fetch="select">
+		<list name="cartDetails" inverse="true" fetch="select" cascade="all">
 			<key column="cartId" not-null="true" />
 			<list-index column="id" />
 			<one-to-many class="CartDetail" />

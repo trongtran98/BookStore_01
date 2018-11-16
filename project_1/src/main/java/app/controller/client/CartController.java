@@ -9,10 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(value = "/carts")
@@ -43,7 +40,7 @@ public class CartController extends BaseController {
         return new CartInfo(cartService.findById(cart.getId()));
     }
 
-    @RequestMapping(value = "/update")
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String updateCart(@ModelAttribute("cart") Cart cart, BindingResult bindingResult) {
         cartDetailService.updateListCartDetails(cart);
         return "redirect:/carts/" + cartId;
@@ -53,7 +50,6 @@ public class CartController extends BaseController {
     public String removeFromCart(@PathVariable Integer cartDetailId) {
         cartDetailService.deleteById(cartDetailId);
         return "redirect:/carts/" + cartId;
-
     }
 
     private void createNewCartDetail(Cart cart, Integer bookId) {

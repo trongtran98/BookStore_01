@@ -13,9 +13,8 @@ public class ErrorController {
     public ModelAndView renderErrorPage(HttpServletRequest httpRequest) {
 
         ModelAndView errorPage = new ModelAndView("/client/404");
-        String errorMsg = "";
         int httpErrorCode = getErrorCode(httpRequest);
-        errorPage.addObject("errorCode", "error."+httpErrorCode);
+        errorPage.addObject("errorCode", "error." + httpErrorCode);
         return errorPage;
     }
 
