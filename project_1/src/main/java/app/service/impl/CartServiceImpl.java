@@ -9,12 +9,20 @@ import java.io.Serializable;
 public class CartServiceImpl extends BaseServiceImpl implements CartService {
     @Override
     public Cart findById(Serializable key) {
-        return cartDAO.findByCartId(key);
+        try {
+            return cartDAO.findByCartId(key);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public Cart saveOrUpdate(Cart entity) {
-        return cartDAO.saveOrUpdate(entity);
+        try {
+            return cartDAO.saveOrUpdate(entity);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
@@ -24,19 +32,26 @@ public class CartServiceImpl extends BaseServiceImpl implements CartService {
 
     @Override
     public Cart createCart(String email) {
-        Cart cart = cartDAO.getCartByEmail(email);
-       if(cart != null){
-           return cart;
-       }else {
-    	   User user = userDAO.findUserByEmail(email);
-           Cart newCart = new Cart();
-           newCart.setUser(user);
-           return cartDAO.saveOrUpdate(newCart);
-       }
+
+        try {
+            Cart cart = cartDAO.getCartByEmail(email);
+            if (cart != null)
+                return cart;
+            User user = userDAO.findUserByEmail(email);
+            Cart newCart = new Cart();
+            newCart.setUser(user);
+            return cartDAO.saveOrUpdate(newCart);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
     public Cart findByUserId(String name) {
-        return cartDAO.getCartByEmail(name);
+        try {
+            return cartDAO.getCartByEmail(name);
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

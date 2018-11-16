@@ -18,7 +18,7 @@ public class IndexController extends BaseController {
     private final int TYPE_ON_SALE = 6;
     private final int TYPE_FEATURE = 7;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String index(HttpSession session, Model model) {
         model.addAllAttributes(getMapAttributes());
         return "/client/index";

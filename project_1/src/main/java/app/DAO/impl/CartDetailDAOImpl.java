@@ -22,11 +22,4 @@ public class CartDetailDAOImpl extends GenericDAO<Integer, CartDetail> implement
                 .setParameter("bookId", bookId)
                 .uniqueResult();
     }
-
-    @Override
-    public void deleteById(Integer cartDetailId) {
-        getSession().createQuery("delete CartDetail where id = :cartDetailId")
-                .setParameter("cartDetailId", cartDetailId)
-                .executeUpdate();
-    }
 }

@@ -4,6 +4,7 @@ import app.model.Review;
 import app.service.ReviewService;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 public class ReviewServiceImpl extends BaseServiceImpl implements ReviewService {
@@ -14,7 +15,11 @@ public class ReviewServiceImpl extends BaseServiceImpl implements ReviewService 
 
     @Override
     public Review saveOrUpdate(Review entity) {
-        return reviewDAO.saveOrUpdate(entity);
+        try {
+            return reviewDAO.saveOrUpdate(entity);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
@@ -24,6 +29,10 @@ public class ReviewServiceImpl extends BaseServiceImpl implements ReviewService 
 
     @Override
     public List<Review> findByBookId(Integer id) {
-        return reviewDAO.findByBookId(id);
+        try {
+            return reviewDAO.findByBookId(id);
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
     }
 }

@@ -1,6 +1,7 @@
 package app.bean;
 
 import app.model.*;
+import org.apache.log4j.Logger;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,6 +9,7 @@ import java.util.List;
 
 public class BookInfo implements Serializable {
     private static final long serialVersionUID = 5974438385263559928L;
+    private static final Logger logger = Logger.getLogger(BookInfo.class);
 
     private Integer id;
     private String title;
@@ -117,10 +119,12 @@ public class BookInfo implements Serializable {
         this.avatar = book.getAvatar();
         this.pages = book.getPages();
         this.price = book.getPrice();
-        this.author = book.getAuthor().getFullName();
-        this.categoryDetail = book.getCategoryDetail().getCategoryDetailName();
-        this.producer = book.getProducer().getProducerName();
+        try {
+            this.author = book.getAuthor().getFullName();
+            this.categoryDetail = book.getCategoryDetail().getCategoryDetailName();
+            this.producer = book.getProducer().getProducerName();
+        } catch (Exception e) {
+            logger.error(e);
+        }
     }
-
-
 }

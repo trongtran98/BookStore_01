@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
                 <div class="header-search">
-                    <form id="search-form" method="get" action="/book/search">
+                    <form id="search-form" method="get" action="/books/search">
                         <input name="bookName" type="text"
                                placeholder="<spring:message code="label.search.placeholder"/>"/>
                         <a id="btn-search" href="#"><i class="fa fa-search"></i></a>
@@ -63,7 +63,7 @@
 
                 <div class="my-cart">
                     <ul>
-                        <li><a href="/cart"><i class="fa fa-shopping-cart"></i><spring:message
+                        <li><a href="#"><i class="fa fa-shopping-cart"></i><spring:message
                                 code="label.cart"/></a>
                             <c:set var="number" value="0"/>
                             <c:if test="${cart != null}">
@@ -72,6 +72,7 @@
                                 </c:forEach>
                             </c:if>
                             <span id="number-in-cart">${number}</span>
+
                             <div class="mini-cart-sub">
                                 <c:forEach items="${myCart.cartDetails}" var="c">
                                     <div class="cart-product">
@@ -90,9 +91,8 @@
                                         </div>
                                     </div>
                                 </c:forEach>
-
                                 <div class="cart-bottom">
-                                    <a class="view-cart" href="/cart/${myCart.id}"><spring:message code="label.view.cart"/></a>
+                                    <a class="view-cart" href="/carts/${myCart.id}"><spring:message code="label.view.cart"/></a>
                                     <a href="checkout.html"><spring:message code="label.checkout"/></a>
                                 </div>
                             </div>

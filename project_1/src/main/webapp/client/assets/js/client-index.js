@@ -34,7 +34,6 @@ $('.add-to-cart').click(function () {
             var totalBook = 0;
             $('.cart-product').remove();
             $.each(cartJs.cartDetails, function (i, obj) {
-                totalMoney = totalMoney + (obj.book.price * obj.amount);
                 totalBook = totalBook + obj.amount;
                 $('.mini-cart-sub').prepend('<div class="cart-product">\n' +
                     '                                    <div class="single-cart">\n' +
@@ -51,7 +50,6 @@ $('.add-to-cart').click(function () {
                     '                                    </div>\n' +
                     '                                </div>');
             });
-
             $('#number-in-cart').text(totalBook);
         },
         error: function (e) {

@@ -7,12 +7,16 @@ import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
-public class CategoryDetailServiceImpl  extends BaseServiceImpl implements CategoryDetailService {
+public class CategoryDetailServiceImpl extends BaseServiceImpl implements CategoryDetailService {
     @Override
     public CategoryDetail findById(Serializable key) {
-        CategoryDetail result = categoryDetailDAO.findById(key);
-        result.getBooks().removeAll(Collections.singleton(null));
-        return result;
+        try {
+            CategoryDetail result = categoryDetailDAO.findById(key);
+            result.getBooks().removeAll(Collections.singleton(null));
+            return result;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
@@ -29,8 +33,8 @@ public class CategoryDetailServiceImpl  extends BaseServiceImpl implements Categ
     public List<CategoryDetail> loadFeatureCateDetails(int categoryId) {
         try {
             return categoryDetailDAO.loadFeatureCateDetails(categoryId);
-        }catch (Exception e){
-            throw e;
+        } catch (Exception e) {
+            return Collections.emptyList();
         }
     }
 }

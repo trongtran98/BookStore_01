@@ -3,7 +3,7 @@ $("#review-submit").click(function () {
     $.ajax({
         headers: {"X-CSRF-TOKEN": $("input[name='_csrf']").val()},
         method: "POST",
-        url: "/review/comment",
+        url: "/reviews/comment",
         dataType: 'json',
         data: data,
         success: function (message) {
