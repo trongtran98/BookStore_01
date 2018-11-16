@@ -1,16 +1,13 @@
 package app.controller.client;
 
 import app.controller.BaseController;
-import app.model.Category;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller(value = "clientController")
@@ -44,16 +41,6 @@ public class IndexController extends BaseController {
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
     public String contact() {
         return "/client/contact";
-    }
-
-    @RequestMapping(value = "/cart", method = RequestMethod.GET)
-    public String cart() {
-        return "/client/cart";
-    }
-
-    @RequestMapping(value = "/shop", method = RequestMethod.GET)
-    public String shop() {
-        return "/client/shop";
     }
 
     @RequestMapping(value = "/checkout", method = RequestMethod.GET)

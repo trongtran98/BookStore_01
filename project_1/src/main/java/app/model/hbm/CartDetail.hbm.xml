@@ -11,7 +11,7 @@
 			<column name="price" />
 		</property>
 
-		<property name="amount" type="big_decimal">
+		<property name="amount" type="integer">
 			<column name="amount" />
 		</property>
 
@@ -19,7 +19,7 @@
 			<column name="bookId" not-null="true" />
 		</many-to-one>
 		
-		<many-to-one name="cart" class="Cart" fetch="join">
+		<many-to-one name="cart" class="Cart" update="false">
 			<column name="cartId" not-null="true" />
 		</many-to-one>
 

@@ -9,6 +9,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="breadcrumbs-area mb-70">
     <div class="container">
         <div class="row">
@@ -38,7 +39,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form action="#">
+                <form:form id="cart-form" method="POST"
+                           action="/carts/update" modelAttribute="cart">
                     <div class="table-content table-responsive">
                         <table>
                             <thead>
@@ -52,33 +54,37 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td class="product-thumbnail"><a href="#"><img src="img/cart/1.jpg" alt="man"></a></td>
-                                <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                <td class="product-price"><span class="amount">£165.00</span></td>
-                                <td class="product-quantity"><input type="number" value="1"></td>
-                                <td class="product-subtotal">£165.00</td>
-                                <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td class="product-thumbnail"><a href="#"><img src="img/cart/2.jpg" alt="man"></a></td>
-                                <td class="product-name"><a href="#">Vestibulum dictum magna</a></td>
-                                <td class="product-price"><span class="amount">£50.00</span></td>
-                                <td class="product-quantity"><input type="number" value="1"></td>
-                                <td class="product-subtotal">£50.00</td>
-                                <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                            </tr>
+                            <c:set var="total" value="0"/>
+                            <c:if test="${not empty cart}">
+                                <c:forEach items="${cart.cartDetails}" var="cd" varStatus="status">
+                                    <tr>
+                                        <form:input path="cartDetails[${status.index}].id" type="hidden"/>
+                                        <td class="product-thumbnail"><a href="#"><img
+                                                src="/img-book/${cd.book.avatar}" alt="man"></a>
+                                        </td>
+                                        <td class="product-name"><a href="#">${cd.book.title}</a></td>
+                                        <td class="product-price"><span class="amount">${cd.book.price}</span></td>
+                                        <td><form:input path="cartDetails[${status.index}].amount" type="number" min="0"
+                                                        max="10" cssClass="product-quantity"/></td>
+                                        <td class="product-subtotal">$${cd.amount * cd.book.price}</td>
+                                        <c:set var="total" value="${total + (cd.amount * cd.book.price)}"/>
+                                        <td class="product-remove"><a href="/carts/remove-from-cart/${cd.id}"><i
+                                                class="fa fa-times"></i></a></td>
+                                    </tr>
+                                </c:forEach>
+                            </c:if>
+
                             </tbody>
                         </table>
                     </div>
-                </form>
+                </form:form>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                 <div class="buttons-cart mb-30">
                     <ul>
-                        <li><a href="#">Update Cart</a></li>
+                        <li><a id="update-cart" href="#">Update Cart</a></li>
                         <li><a href="#">Continue Shopping</a></li>
                     </ul>
                 </div>
@@ -99,7 +105,7 @@
                         <tr class="cart-subtotal">
                             <th>Subtotal</th>
                             <td>
-                                <span class="amount">£215.00</span>
+                                <span class="amount">$${total}</span>
                             </td>
                         </tr>
                         <tr class="shipping">
@@ -107,14 +113,7 @@
                             <td>
                                 <ul id="shipping_method">
                                     <li>
-                                        <input type="radio">
-                                        <label>
-                                            Flat Rate:
-                                            <span class="amount">£7.00</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="radio">
+                                        <input checked type="radio">
                                         <label> Free Shipping </label>
                                     </li>
                                 </ul>
@@ -125,7 +124,7 @@
                             <th>Total</th>
                             <td>
                                 <strong>
-                                    <span class="amount">£215.00</span>
+                                    <span class="amount">$${total}</span>
                                 </strong>
                             </td>
                         </tr>

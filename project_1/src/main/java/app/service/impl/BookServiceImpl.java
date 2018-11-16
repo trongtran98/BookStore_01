@@ -4,6 +4,7 @@ import app.model.Book;
 import app.service.BookService;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 public class BookServiceImpl extends BaseServiceImpl implements BookService {
@@ -12,7 +13,7 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
         try{
             return bookDAO.loadBooksTypeNew(number);
         }catch (Exception e){
-            throw e;
+            return Collections.emptyList();
         }
     }
 

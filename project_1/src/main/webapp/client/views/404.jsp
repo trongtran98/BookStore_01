@@ -22,7 +22,8 @@
                 <div class="entry-content text-center mb-30">
                     <p>Sorry, but the page you are looking for is not found. Please, make sure you have typed the
                         current URL.</p>
-                    <a href="index.html">GO TO HOME</a>
+                    <p><spring:message code="${errorCode}"/></p>
+                    <a href="/home">GO TO HOME</a>
                 </div>
             </div>
         </div>

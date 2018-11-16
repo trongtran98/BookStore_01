@@ -19,4 +19,8 @@ public class BaseController {
     protected AuthorService authorService;
     @Autowired
     protected ReviewService reviewService;
+    @Autowired
+    protected CartService cartService;
+    @Autowired
+    protected CartDetailService cartDetailService;
 }
