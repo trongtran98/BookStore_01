@@ -121,38 +121,16 @@
                             <li><a href="product-details.html"><spring:message code="label.book"/> <i
                                     class="fa fa-angle-down"></i></a>
                                 <div class="mega-menu">
-                                    <span>
-                                    <a href="#" class="title">Jackets</a>
-                                    <a href="shop.html">Tops & Tees</a>
-                                    <a href="shop.html">Polo Short Sleeve</a>
-                                    <a href="shop.html">Graphic T-Shirts</a>
-                                    <a href="shop.html">Jackets & Coats</a>
-                                    <a href="shop.html">Fashion Jackets</a>
-                                    </span>
-                                    <span>
-                                    <a href="#" class="title">weaters</a>
-                                    <a href="shop.html">Crochet</a>
-                                    <a href="shop.html">Sleeveless</a>
-                                    <a href="shop.html">Stripes</a>
-                                    <a href="shop.html">Sweaters</a>
-                                    <a href="shop.html">hoodies</a>
-                                    </span>
-                                    <span>
-                                    <a href="#" class="title">Bottoms</a>
-                                    <a href="shop.html">Heeled sandals</a>
-                                    <a href="shop.html">Polo Short Sleeve</a>
-                                    <a href="shop.html">Flat sandals</a>
-                                    <a href="shop.html">Short Sleeve</a>
-                                    <a href="shop.html">Long Sleeve</a>
-                                    </span>
-                                    <span>
-                                    <a href="#" class="title">Jeans Pants</a>
-                                    <a href="shop.html">Polo Short Sleeve</a>
-                                    <a href="shop.html">Sleeveless</a>
-                                    <a href="shop.html">Graphic T-Shirts</a>
-                                    <a href="shop.html">Hoodies</a>
-                                    <a href="shop.html">Jackets</a>
-                                    </span>
+                                    <c:forEach items="${sessionScope.categories}" var="cate">
+                                        <c:if test="${not empty cate}">
+                                            <span>
+                                            <a href="#" class="title">${cate.categoryName}</a>
+                                            <c:forEach items="${cate.categoryDetails}" var="cateDetail">
+                                                <a href="shop.html">${cateDetail.categoryDetailName}</a>
+                                            </c:forEach>
+                                        </span>
+                                        </c:if>
+                                    </c:forEach>
                                 </div>
                             </li>
                             <li><a href="product-details.html"><spring:message code="label.audio.book"/> <i

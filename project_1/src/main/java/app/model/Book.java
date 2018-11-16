@@ -3,7 +3,7 @@ package app.model;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class Book implements java.io.Serializable{
+public class Book{
     private Integer id;
     private String title;
     private String description;
@@ -13,7 +13,7 @@ public class Book implements java.io.Serializable{
     private Integer available;
     private Boolean status;
     private Author author;
-    private Category category;
+    private CategoryDetail categoryDetail;
     private Producer producer;
     private List<Review> reviews;
 
@@ -89,14 +89,6 @@ public class Book implements java.io.Serializable{
         this.author = author;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
     public Producer getProducer() {
         return producer;
     }
@@ -111,5 +103,13 @@ public class Book implements java.io.Serializable{
 
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
+    }
+
+    public CategoryDetail getCategoryDetail() {
+        return categoryDetail;
+    }
+
+    public void setCategoryDetail(CategoryDetail categoryDetail) {
+        this.categoryDetail = categoryDetail;
     }
 }

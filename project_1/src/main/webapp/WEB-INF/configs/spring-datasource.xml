@@ -52,6 +52,7 @@
 				<value>app/model/hbm/Category.hbm.xml</value>
 				<value>app/model/hbm/Producer.hbm.xml</value>
 				<value>app/model/hbm/Review.hbm.xml</value>
+				<value>app/model/hbm/CategoryDetail.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
