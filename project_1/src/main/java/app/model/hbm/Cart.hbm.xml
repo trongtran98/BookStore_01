@@ -7,12 +7,14 @@
 			<generator class="increment" />
 		</id>
 
-		<one-to-one name="user" class="User" fetch="join" cascade="all" />
+		<many-to-one name="user" class="User"
+			column="userId" unique="true" not-null="true" cascade="all" />
 
 		<list name="cartDetails" inverse="true" fetch="select">
 			<key column="cartId" not-null="true" />
 			<list-index column="id" />
 			<one-to-many class="CartDetail" />
 		</list>
+
 	</class>
 </hibernate-mapping>

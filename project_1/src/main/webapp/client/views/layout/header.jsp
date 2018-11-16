@@ -48,7 +48,8 @@
             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
                 <div class="header-search">
                     <form id="search-form" method="get" action="/book/search">
-                        <input name="bookName" type="text" placeholder="<spring:message code="label.search.placeholder"/>"/>
+                        <input name="bookName" type="text"
+                               placeholder="<spring:message code="label.search.placeholder"/>"/>
                         <a id="btn-search" href="#"><i class="fa fa-search"></i></a>
                     </form>
                 </div>
@@ -59,48 +60,46 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
                 <div class="my-cart">
                     <ul>
-                        <li><a href="/cart"><i class="fa fa-shopping-cart"></i><spring:message code="label.cart"/></a>
-                            <span>2</span>
+                        <li><a href="/cart"><i class="fa fa-shopping-cart"></i><spring:message
+                                code="label.cart"/></a>
+                            <c:set var="number" value="0"/>
+                            <c:if test="${cart != null}">
+                                <c:forEach items="${cart.getCartDetails()}" var="cd">
+                                    <c:set var="number" value="${number + cd.amount}"/>
+                                </c:forEach>
+                            </c:if>
+                            <span id="number-in-cart">${number}</span>
                             <div class="mini-cart-sub">
-                                <div class="cart-product">
-                                    <div class="single-cart">
-                                        <div class="cart-img">
-                                            <a href="#"><img src="/client/assets/img/product/1.jpg" alt="book"/></a>
-                                        </div>
-                                        <div class="cart-info">
-                                            <h5><a href="#">Joust Duffle Bag</a></h5>
-                                            <p>1 x £60.00</p>
-                                        </div>
-                                        <div class="cart-icon">
-                                            <a href="#"><i class="fa fa-remove"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="single-cart">
-                                        <div class="cart-img">
-                                            <a href="#"><img src="/client/assets/img/product/3.jpg" alt="book"/></a>
-                                        </div>
-                                        <div class="cart-info">
-                                            <h5><a href="#">Chaz Kangeroo Hoodie</a></h5>
-                                            <p>1 x £52.00</p>
-                                        </div>
-                                        <div class="cart-icon">
-                                            <a href="#"><i class="fa fa-remove"></i></a>
+                                <c:forEach items="${myCart.cartDetails}" var="c">
+                                    <div class="cart-product">
+                                        <div class="single-cart">
+                                            <div class="cart-img">
+                                                <a href="#"><img src="/img-book/${c.book.avatar}" alt="book"/></a>
+                                            </div>
+                                            <div class="cart-info">
+                                                <h5><a href="#">${c.book.title}</a></h5>
+                                                <p>${c.amount} x $${c.book.price}</p>
+                                                <c:set var="number" value="${number + c.amount}"/>
+                                            </div>
+                                            <div class="cart-icon">
+                                                <a href="#"><i class="fa fa-remove"></i></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="cart-totals">
-                                    <h5>Total <span>£12.00</span></h5>
-                                </div>
+                                </c:forEach>
+
                                 <div class="cart-bottom">
-                                    <a class="view-cart" href="/cart"><spring:message code="label.view.cart"/></a>
+                                    <a class="view-cart" href="/cart/${myCart.id}"><spring:message code="label.view.cart"/></a>
                                     <a href="checkout.html"><spring:message code="label.checkout"/></a>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </div>

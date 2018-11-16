@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import java.util.List;
 
 public class ReviewDAOImpl  extends GenericDAO<Integer, Review> implements ReviewDAO {
+
     private static final Logger logger = Logger.getLogger(ReviewDAOImpl.class);
 
     public ReviewDAOImpl() {
@@ -26,3 +27,4 @@ public class ReviewDAOImpl  extends GenericDAO<Integer, Review> implements Revie
                 .list();
     }
 }
+
