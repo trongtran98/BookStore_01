@@ -8,4 +8,6 @@ public interface CartDetailDAO extends BaseDAO<Integer, CartDetail> {
     List<CartDetail> findByCartId(Integer cartId);
 
     CartDetail findByCartIdAndBookId(Integer cartId, Integer bookId);
+
+    List<CartDetail> findInventory(Integer date);
 }

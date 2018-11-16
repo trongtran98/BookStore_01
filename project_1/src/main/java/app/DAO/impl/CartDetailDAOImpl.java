@@ -22,4 +22,11 @@ public class CartDetailDAOImpl extends GenericDAO<Integer, CartDetail> implement
                 .setParameter("bookId", bookId)
                 .uniqueResult();
     }
+
+    @Override
+    public List<CartDetail> findInventory(Integer date) {
+        return getSession().createQuery("from CartDetail cd where datediff(current_date ,cd.time) = :date")
+                .setParameter("date", date).list();
+    }
+
 }

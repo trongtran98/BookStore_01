@@ -2,13 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd
     http://www.springframework.org/schema/mvc
-    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
     <mvc:resources mapping="/admin/assets/**" location="/admin/assets/"/>
     <mvc:resources mapping="/client/assets/**" location="/client/assets/"/>
@@ -17,6 +17,7 @@
     <context:annotation-config/>
     <!-- Load all file from package com.framgia to bean. There, Almost are controllers -->
     <context:component-scan base-package="app.*"/>
+
     <!-- Use for json response -->
     <mvc:annotation-driven>
         <mvc:message-converters>
@@ -71,4 +72,7 @@
     <bean id="mailUtils" class="app.utlis.MailUtils"/>
 
     <bean id="utilConvertModel" class="app.info.UtilConvertModel"/>
+
+    <bean id="cartSchedule" class="app.schedule.CartSchedule"/>
+
 </beans>

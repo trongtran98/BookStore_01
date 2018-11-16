@@ -4,7 +4,6 @@ import app.bean.CartInfo;
 import app.bean.OrderInfo;
 import app.controller.BaseController;
 import app.model.Cart;
-import app.model.Order;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpStatus;
@@ -38,4 +37,5 @@ public class OrderController extends BaseController {
         }
         return ResponseEntity.status(HttpStatus.OK).body(null);
     }
+
 }

@@ -1,6 +1,7 @@
 package app.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 public class CartDetail implements java.io.Serializable {
@@ -9,6 +10,7 @@ public class CartDetail implements java.io.Serializable {
 	private Integer amount;
 	private Cart cart;
 	private Book book;
+	private Date time;
 
 	public Integer getId() {
 		return id;
@@ -50,4 +52,11 @@ public class CartDetail implements java.io.Serializable {
 		this.book = book;
 	}
 
+	public Date getTime() {
+		return time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
 }
