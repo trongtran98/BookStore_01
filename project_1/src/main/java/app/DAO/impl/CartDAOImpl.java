@@ -8,10 +8,10 @@ import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
-
 import java.io.Serializable;
 
 public class CartDAOImpl extends GenericDAO<Integer, Cart> implements CartDAO {
+
     private static final Logger logger = Logger.getLogger(CartDAOImpl.class);
 
     public CartDAOImpl() {
@@ -28,7 +28,8 @@ public class CartDAOImpl extends GenericDAO<Integer, Cart> implements CartDAO {
         c.createAlias("c.user", "u");
         c.add(Restrictions.eq("u.email", email));
         Cart cart = (Cart) c.uniqueResult();
-        Hibernate.initialize(cart.getCartDetails());
+        if (cart != null)
+            Hibernate.initialize(cart.getCartDetails());
         return cart;
     }
 
@@ -37,7 +38,10 @@ public class CartDAOImpl extends GenericDAO<Integer, Cart> implements CartDAO {
         Criteria c = getSession().createCriteria(Cart.class);
         c.add(Restrictions.idEq(key));
         Cart cart = (Cart) c.uniqueResult();
-        Hibernate.initialize(cart.getCartDetails());
+        if (cart != null){
+            Hibernate.initialize(cart.getCartDetails());
+            Hibernate.initialize(cart.getUser());
+        }
         return cart;
     }
 }

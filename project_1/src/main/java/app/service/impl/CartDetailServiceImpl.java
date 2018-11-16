@@ -1,4 +1,5 @@
 package app.service.impl;
+
 import app.model.Cart;
 import app.model.CartDetail;
 import app.service.CartDetailService;
@@ -19,9 +20,9 @@ public class CartDetailServiceImpl extends BaseServiceImpl implements CartDetail
 
     @Override
     public CartDetail findByCartIdAndBookId(Integer cartId, Integer bookId) {
-        try{
+        try {
             return cartDetailDAO.findByCartIdAndBookId(cartId, bookId);
-        }catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }
@@ -30,7 +31,7 @@ public class CartDetailServiceImpl extends BaseServiceImpl implements CartDetail
     public void deleteById(Integer cartDetailId) {
         try {
             cartDetailDAO.delete(cartDetailDAO.findById(cartDetailId));
-        }catch (Exception e){
+        } catch (Exception e) {
             throw e;
         }
     }
@@ -38,12 +39,12 @@ public class CartDetailServiceImpl extends BaseServiceImpl implements CartDetail
     @Override
     public void updateListCartDetails(Cart cart) {
         try {
-            for (CartDetail cartDetailTemp : cart.getCartDetails()){
+            for (CartDetail cartDetailTemp : cart.getCartDetails()) {
                 CartDetail cartDetail = cartDetailDAO.findById(cartDetailTemp.getId());
                 cartDetail.setAmount(cartDetailTemp.getAmount());
                 saveOrUpdate(cartDetail);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             throw e;
         }
     }
@@ -55,9 +56,9 @@ public class CartDetailServiceImpl extends BaseServiceImpl implements CartDetail
 
     @Override
     public CartDetail saveOrUpdate(CartDetail entity) {
-        try{
+        try {
             return cartDetailDAO.saveOrUpdate(entity);
-        }catch (Exception e){
+        } catch (Exception e) {
             throw e;
         }
     }

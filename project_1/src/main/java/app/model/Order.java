@@ -1,43 +1,52 @@
 package app.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements java.io.Serializable {
-	private Integer id;
-	private Boolean status;
-	private User user;
-	private List<OrderDetail> orderDetails;
+    private Integer id;
+    private Boolean status;
+    private User user;
+    private List<OrderDetail> orderDetails;
 
-	public Integer getId() {
-		return id;
-	}
+    public Order() {
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    }
 
-	public Boolean getStatus() {
-		return status;
-	}
+    public Order(Cart cart) {
+        this.status = false;
+        this.user = cart.getUser();
+    }
 
-	public void setStatus(Boolean status) {
-		this.status = status;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public User getUser() {
-		return user;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public Boolean getStatus() {
+        return status;
+    }
 
-	public List<OrderDetail> getOrderDetails() {
-		return orderDetails;
-	}
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 
-	public void setOrderDetails(List<OrderDetail> orderDetails) {
-		this.orderDetails = orderDetails;
-	}
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
+    }
 }

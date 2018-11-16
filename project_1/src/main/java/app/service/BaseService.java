@@ -7,6 +7,6 @@ public interface BaseService<PK, T> {
 
 	T saveOrUpdate(T entity);
 
-	boolean delete(Integer id);
+	boolean delete(T id);
 
 }

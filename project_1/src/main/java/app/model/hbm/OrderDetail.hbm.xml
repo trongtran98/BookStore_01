@@ -11,12 +11,12 @@
 			<column name="price" />
 		</property>
 
-		<property name="amount" type="big_decimal">
+		<property name="amount" type="integer">
 			<column name="amount" />
 		</property>
 
 
-		<many-to-one name="book" class="Book">
+		<many-to-one name="book" class="Book" fetch="join">
 			<column name="bookId" not-null="true" />
 		</many-to-one>
 

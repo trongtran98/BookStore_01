@@ -32,7 +32,6 @@ public class CartServiceImpl extends BaseServiceImpl implements CartService {
 
     @Override
     public Cart createCart(String email) {
-
         try {
             Cart cart = cartDAO.getCartByEmail(email);
             if (cart != null)

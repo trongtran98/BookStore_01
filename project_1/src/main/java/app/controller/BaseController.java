@@ -2,7 +2,9 @@ package app.controller;
 
 import app.service.*;
 import app.utlis.GoogleUtils;
+import app.utlis.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 
 public class BaseController {
     @Autowired
@@ -25,4 +27,9 @@ public class BaseController {
     protected CartDetailService cartDetailService;
     @Autowired
     protected ProducerService producerService;
+    @Autowired
+    protected OrderService orderService;
+    @Autowired
+    protected MailUtils mailUtils;
+
 }
