@@ -51,6 +51,7 @@ $('.add-to-cart').click(function () {
                     '                                </div>');
             });
             $('#number-in-cart').text(totalBook);
+            $('#view-cart').attr('href','/carts/'+cartJs.id);
         },
         error: function (e) {
             alert("ERROR: " + e);
