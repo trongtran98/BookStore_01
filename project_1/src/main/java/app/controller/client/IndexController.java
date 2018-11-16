@@ -37,7 +37,7 @@ public class IndexController extends BaseController {
         return "/client/index";
     }
 
-    private Map<String, Object> getMapAttributes(){
+    private Map<String, Object> getMapAttributes() {
         Map<String, Object> attrs = new HashMap<>();
         attrs.put("newArrival", categoryDetailService.findById(TYPE_NEW_ARRIVAL));
         attrs.put("onSale", categoryDetailService.findById(TYPE_ON_SALE));
@@ -45,5 +45,4 @@ public class IndexController extends BaseController {
         attrs.put("newBooks", bookService.loadBooksTypeNew(TYPE_NEW_BOOKS));
         return attrs;
     }
-
 }

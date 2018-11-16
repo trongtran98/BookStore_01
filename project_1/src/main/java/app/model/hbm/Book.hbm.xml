@@ -29,7 +29,7 @@
             <column name="status" />
         </property>
 
-        <many-to-one name="author" class="Author">
+        <many-to-one name="author" fetch="join" class="Author">
             <column name="authorId" not-null="true" />
         </many-to-one>
 
@@ -37,7 +37,7 @@
             <column name="categoryDetailsId" not-null="true" />
         </many-to-one>
 
-        <many-to-one name="producer" class="Producer">
+        <many-to-one name="producer" fetch="join" class="Producer">
             <column name="producerId" not-null="true" />
         </many-to-one>
 

@@ -12,7 +12,7 @@
 
     <mvc:resources mapping="/admin/assets/**" location="/admin/assets/"/>
     <mvc:resources mapping="/client/assets/**" location="/client/assets/"/>
-    <mvc:resources mapping="/books/**" location="classpath:books/"/>
+    <mvc:resources mapping="/img-book/**" location="classpath:books/"/>
     <!-- Load all annotation from java class -->
     <context:annotation-config/>
     <!-- Load all file from package com.framgia to bean. There, Almost are controllers -->

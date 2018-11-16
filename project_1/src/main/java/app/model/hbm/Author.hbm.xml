@@ -11,7 +11,7 @@
 
 		<property name="description" type="string" column="description" />
 
-		<list name="books" fetch="join" inverse="true">
+		<list name="books" fetch="select" inverse="true">
 			<key column="authorId" />
 			<list-index column="id" />
 			<one-to-many class="Book" />
