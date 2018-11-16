@@ -2,12 +2,10 @@ package app.model;
 
 import java.util.List;
 
-public class Category implements java.io.Serializable{
+public class Category{
     private Integer id;
     private String categoryName;
-    private List<Book> books;
-    private Category category;
-    private List<Category> categories;
+    private List<CategoryDetail> categoryDetails;
 
     public Integer getId() {
         return id;
@@ -25,27 +23,11 @@ public class Category implements java.io.Serializable{
         this.categoryName = categoryName;
     }
 
-    public List<Book> getBooks() {
-        return books;
+    public List<CategoryDetail> getCategoryDetails() {
+        return categoryDetails;
     }
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
+    public void setCategoryDetails(List<CategoryDetail> categoryDetails) {
+        this.categoryDetails = categoryDetails;
     }
 }

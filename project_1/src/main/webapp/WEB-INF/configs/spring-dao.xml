@@ -8,4 +8,16 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
+	<bean id="categoryDAO" class="app.DAO.impl.CategoryDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<bean id="bookDAO" class="app.DAO.impl.BookDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<bean id="categoryDetailDAO" class="app.DAO.impl.CategoryDetailDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
 </beans>

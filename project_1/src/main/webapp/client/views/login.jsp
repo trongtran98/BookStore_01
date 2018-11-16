@@ -79,7 +79,7 @@
                             <c:if test="${not empty errorMessage}">
                                 <spring:message code="${errorMessage}"/>
                             </c:if>
-                        </p
+                        </p>
                     </div>
                 </div>
             </form>
