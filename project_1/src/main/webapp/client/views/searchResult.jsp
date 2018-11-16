@@ -504,7 +504,7 @@
                     </div>
                     <div class="banner-area mb-30">
                         <div class="banner-img-2">
-                            <a href="#"><img src="img/banner/31.jpg" alt="banner"></a>
+                            <a href="#"><img src="/client/assets/img/banner/31.jpg" alt="banner"></a>
                         </div>
                     </div>
                     <div class="left-title-2 mb-30">

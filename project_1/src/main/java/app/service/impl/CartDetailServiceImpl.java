@@ -50,6 +50,17 @@ public class CartDetailServiceImpl extends BaseServiceImpl implements CartDetail
     }
 
     @Override
+    public void deleteCartDetailInventory(Integer date) {
+        try {
+            List<CartDetail> cartDetails = cartDetailDAO.findInventory(date);
+            cartDetails.forEach(cartDetail -> cartDetailDAO.delete(cartDetail));
+        } catch (Exception e) {
+            throw e;
+        }
+
+    }
+
+    @Override
     public CartDetail findById(Serializable key) {
         return null;
     }
