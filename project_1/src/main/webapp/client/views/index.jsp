@@ -72,10 +72,10 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/books/${b.avatar}" alt="book" class="primary"/>
+                                <img src="/img-book/${b.avatar}" alt="book" class="primary"/>
                             </a>
                             <div class="quick-view">
-                                <a class="action-view" href="#" data-target="#productModal" data-toggle="modal"
+                                <a class="action-view" href="#" bId="${b.id}" data-target="#productModal" data-toggle="modal"
                                    title="Quick View">
                                     <i class="fa fa-search-plus"></i>
                                 </a>
@@ -337,10 +337,10 @@
                             <div class="product-wrapper">
                                 <div class="product-img">
                                     <a href="#">
-                                        <img src="/books/${b.avatar}" alt="book" class="primary"/>
+                                        <img src="/img-book/${b.avatar}" alt="book" class="primary"/>
                                     </a>
                                     <div class="quick-view">
-                                        <a class="action-view" href="#" data-target="#productModal"
+                                        <a class="action-view" bId="${b.id}" href="#" data-target="#productModal"
                                            data-toggle="modal"
                                            title="Quick View">
                                             <i class="fa fa-search-plus"></i>
@@ -397,10 +397,10 @@
                             <div class="product-wrapper">
                                 <div class="product-img">
                                     <a href="#">
-                                        <img src="/books/${b.avatar}" alt="book" class="primary"/>
+                                        <img src="/img-book/${b.avatar}" alt="book" class="primary"/>
                                     </a>
                                     <div class="quick-view">
-                                        <a class="action-view" href="#" data-target="#productModal"
+                                        <a class="action-view" bId="${b.id}" href="#" data-target="#productModal"
                                            data-toggle="modal"
                                            title="Quick View">
                                             <i class="fa fa-search-plus"></i>
@@ -457,10 +457,10 @@
                             <div class="product-wrapper">
                                 <div class="product-img">
                                     <a href="#">
-                                        <img src="/books/${b.avatar}" alt="book" class="primary"/>
+                                        <img src="/img-book/${b.avatar}" alt="book" class="primary"/>
                                     </a>
                                     <div class="quick-view">
-                                        <a class="action-view" href="#" data-target="#productModal"
+                                        <a class="action-view" bId="${b.id}" href="#" data-target="#productModal"
                                            data-toggle="modal"
                                            title="Quick View">
                                             <i class="fa fa-search-plus"></i>
@@ -1147,11 +1147,11 @@
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
                         <div class="modal-pro-content">
-                            <h3>Chaz Kangeroo Hoodie3</h3>
+                            <h3 id="book-title">Chaz Kangeroo Hoodie3</h3>
                             <div class="price">
-                                <span>$70.00</span>
+                                <span id="book-price">$70.00</span>
                             </div>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            <p id="book-description">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
                                 egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
                             <div class="quick-view-select">
                                 <div class="select-option-part">
