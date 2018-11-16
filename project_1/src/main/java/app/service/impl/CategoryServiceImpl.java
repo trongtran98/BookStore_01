@@ -2,7 +2,9 @@ package app.service.impl;
 
 import app.model.Category;
 import app.service.CategoryService;
+
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 public class CategoryServiceImpl extends BaseServiceImpl implements CategoryService {
@@ -23,6 +25,10 @@ public class CategoryServiceImpl extends BaseServiceImpl implements CategoryServ
 
     @Override
     public List<Category> findAll() {
-        return categoryDAO.findAll();
+        try {
+            return categoryDAO.findAll();
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
     }
 }

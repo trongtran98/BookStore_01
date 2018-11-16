@@ -15,9 +15,10 @@ import java.io.IOException;
 import java.util.Date;
 
 @Controller
+@RequestMapping(value = "/reviews")
 public class ReviewController extends BaseController {
 
-    @RequestMapping(value = "/review/comment", method = RequestMethod.POST)
+    @RequestMapping(value = "/comment", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity createReview(@RequestParam  String content, @RequestParam Integer bookId, @RequestParam String email, HttpServletResponse response) throws IOException {
         Review review = new Review();

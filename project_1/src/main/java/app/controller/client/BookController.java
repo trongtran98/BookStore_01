@@ -15,8 +15,9 @@ import java.util.Collections;
 import java.util.List;
 
 @Controller
+@RequestMapping(value = "/books")
 public class BookController extends BaseController {
-    @RequestMapping(value = "/book/{id}")
+    @RequestMapping(value = "/info/{id}")
     public String loadAndBook(@PathVariable Integer id, Model model) {
         Book book = bookService.findById(id);
         List<Review> reviews = reviewService.findByBookId(id);
@@ -25,14 +26,14 @@ public class BookController extends BaseController {
         return "/client/detail";
     }
 
-    @RequestMapping(value = "/books/{id}")
+    @RequestMapping(value = "/{id}")
     public @ResponseBody
     BookInfo loadBookJson(@PathVariable Integer id) {
         Book book = bookService.findById(id);
         return new BookInfo(book);
     }
 
-    @RequestMapping(value = "/book/search")
+    @RequestMapping(value = "/search")
     public String searchBook(@RequestParam String bookName, Model model){
         model.addAttribute("books", bookService.findByName(bookName));
         return "/client/searchResult";

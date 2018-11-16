@@ -97,7 +97,7 @@
                                     <li><a href="#"><i class="fa fa-star"></i></a></li>
                                 </ul>
                             </div>
-                            <h4><a href="/book/${b.id}">${b.title}</a></h4>
+                            <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
                             <div class="product-price">
                                 <ul>
                                     <li>$${b.price}</li>
@@ -362,7 +362,7 @@
                                             <li><a href="#"><i class="fa fa-star"></i></a></li>
                                         </ul>
                                     </div>
-                                    <h4><a href="/book/${b.id}">${b.title}</a></h4>
+                                    <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
                                     <div class="product-price">
                                         <ul>
                                             <li>$${b.price}</li>
@@ -421,7 +421,7 @@
                                             <li><a href="#"><i class="fa fa-star"></i></a></li>
                                         </ul>
                                     </div>
-                                    <h4><a href="/book/${b.title}">${b.title}</a></h4>
+                                    <h4><a href="/books/info/${b.title}">${b.title}</a></h4>
                                     <div class="product-price">
                                         <ul>
                                             <li>$${b.price}</li>

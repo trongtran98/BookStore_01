@@ -17,15 +17,21 @@ public class LoginServiceImpl extends BaseServiceImpl implements UserDetailsServ
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         logger.info("login with: "+ email);
-        User user = userDAO.findUserByEmail(email);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found " + email);
+        try{
+            User user = userDAO.findUserByEmail(email);
+            if (user == null) {
+                logger.info("User not found " + email);
+                throw new UsernameNotFoundException(null);
+            }
+
+            Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+            grantedAuthorities.add(new SimpleGrantedAuthority(user.getRole()));
+
+            return new org.springframework.security.core.userdetails.User(
+                    user.getEmail(), user.getPassword(), grantedAuthorities);
+        }catch (Exception e){
+            return null;
         }
 
-        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        grantedAuthorities.add(new SimpleGrantedAuthority(user.getRole()));
-
-        return new org.springframework.security.core.userdetails.User(
-                user.getEmail(), user.getPassword(), grantedAuthorities);
     }
 }
