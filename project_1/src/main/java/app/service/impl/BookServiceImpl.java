@@ -17,6 +17,11 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
     }
 
     @Override
+    public List<Book> findByName(String bookName) {
+        return bookDAO.findByName(bookName);
+    }
+
+    @Override
     public Book findById(Serializable key) {
         return bookDAO.findById(key);
     }

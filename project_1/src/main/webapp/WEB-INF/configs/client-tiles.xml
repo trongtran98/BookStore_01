@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
     <!-- Base Definition -->
     <definition name="/client/baseLayout" template="/client/views/layout/baseLayout.jsp">
-        <put-attribute name="title" value="" />
-        <put-attribute name="header" value="/client/views/layout/header.jsp" />
-        <put-attribute name="body" value="" />
-        <put-attribute name="footer" value="/client/views/layout/footer.jsp" />
+        <put-attribute name="title" value=""/>
+        <put-attribute name="header" value="/client/views/layout/header.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/client/views/layout/footer.jsp"/>
     </definition>
 
     <!-- Home page -->
     <definition name="/client/index" extends="/client/baseLayout">
-        <put-attribute name="title" value="Home" />
-        <put-attribute name="body" value="/client/views/index.jsp" />
+        <put-attribute name="title" value="Home"/>
+        <put-attribute name="body" value="/client/views/index.jsp"/>
     </definition>
 
     <!-- login page -->
@@ -53,9 +54,9 @@
     </definition>
 
     <!-- Shop page-->
-    <definition name="/client/shop" extends="/client/baseLayout">
+    <definition name="/client/searchResult" extends="/client/baseLayout">
         <put-attribute name="title" value="Shop page"/>
-        <put-attribute name="body" value="/client/views/shop.jsp"/>
+        <put-attribute name="body" value="/client/views/searchResult.jsp"/>
     </definition>
 
     <!-- checkout page-->
@@ -63,4 +64,11 @@
         <put-attribute name="title" value="Checkout page"/>
         <put-attribute name="body" value="/client/views/checkout.jsp"/>
     </definition>
+
+    <!-- Details page-->
+    <definition name="/client/detail" extends="/client/baseLayout">
+        <put-attribute name="title" value="Book details"/>
+        <put-attribute name="body" value="/client/views/details.jsp"/>
+    </definition>
+
 </tiles-definitions>

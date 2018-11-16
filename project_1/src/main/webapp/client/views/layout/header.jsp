@@ -47,9 +47,9 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
                 <div class="header-search">
-                    <form action="#">
-                        <input type="text" placeholder="<spring:message code="label.search.placeholder"/>"/>
-                        <a href="#"><i class="fa fa-search"></i></a>
+                    <form id="search-form" method="get" action="/book/search">
+                        <input name="bookName" type="text" placeholder="<spring:message code="label.search.placeholder"/>"/>
+                        <a id="btn-search" href="#"><i class="fa fa-search"></i></a>
                     </form>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                             <li><a href="product-details.html"><spring:message code="label.book"/> <i
                                     class="fa fa-angle-down"></i></a>
                                 <div class="mega-menu">
-                                    <c:forEach items="${sessionScope.categories}" var="cate">
+                                    <c:forEach items="${categories}" var="cate">
                                         <c:if test="${not empty cate}">
                                             <span>
                                             <a href="#" class="title">${cate.categoryName}</a>
