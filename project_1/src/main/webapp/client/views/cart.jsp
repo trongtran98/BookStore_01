@@ -64,7 +64,7 @@
                                                 src="/img-book/${cd.book.avatar}" alt="man"></a>
                                         </td>
                                         <td class="product-name"><a href="#">${cd.book.title}</a></td>
-                                        <td class="product-price"><span class="amount">${cd.book.price}</span></td>
+                                        <td class="product-price"><span class="amount">$${cd.book.price}</span></td>
                                         <td><form:input path="cartDetails[${status.index}].amount" type="number" min="0"
                                                         max="10" cssClass="product-quantity"/></td>
                                         <td class="product-subtotal">$${cd.amount * cd.book.price}</td>
@@ -132,7 +132,7 @@
                         </tbody>
                     </table>
                     <div class="wc-proceed-to-checkout">
-                        <a id="purchase" href="#">Proceed to Checkout</a>
+                        <a href="/orders/${cart.id}">Proceed to Checkout</a>
                     </div>
                 </div>
             </div>

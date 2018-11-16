@@ -96,8 +96,9 @@
                                     </div>
                                 </c:forEach>
                                 <div class="cart-bottom">
-                                    <a class="view-cart" href="/carts/${myCart.id}"><spring:message
-                                            code="label.view.cart"/></a>
+
+                                    <a id="view-cart" class="view-cart" href="/carts/${myCart.id}"><spring:message code="label.view.cart"/></a>
+
                                     <a href="checkout.html"><spring:message code="label.checkout"/></a>
                                 </div>
                             </div>
