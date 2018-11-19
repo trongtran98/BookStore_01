@@ -11,10 +11,10 @@
             <column name="categoryName" />
         </property>
 
-        <list name = "books" fetch="join" inverse="true">
-            <key column = "categoryId" not-null="true"/>
+        <list name = "categoryDetails" lazy="false" fetch="select" inverse="true">
+            <key column="categoryId" not-null="true"/>
             <list-index column = "id"/>
-            <one-to-many class="Book"/>
+            <one-to-many class="CategoryDetail"/>
         </list>
 
 <!-- // chị cam thay cho nay co gi do ko on, de chi check lai sau, tam thoi de 1 level da, mai chi reply cho nay nhe -->

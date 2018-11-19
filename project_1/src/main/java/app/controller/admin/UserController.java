@@ -1,5 +1,6 @@
 package app.controller.admin;
 
+import app.controller.BaseController;
 import app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,11 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller(value = "adminClientController")
 @RequestMapping(value = "/admin")
-public class UserController {
-
-    @Autowired
-    private UserService userService;
-
+public class UserController  extends BaseController {
 
     @RequestMapping(value = "/add-manager", method = RequestMethod.POST)
     public void addManager(@RequestParam("fileExcel") MultipartFile fileExcel) {

@@ -22,5 +22,28 @@
 		</property>
 	</bean>
 
+	<bean id="categoryService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="app.service.impl.CategoryServiceImpl">
+				<property name="categoryDAO" ref="categoryDAO"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="bookService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="app.service.impl.BookServiceImpl">
+				<property name="bookDAO" ref="bookDAO"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="categoryDetailService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="app.service.impl.CategoryDetailServiceImpl">
+				<property name="categoryDetailDAO" ref="categoryDetailDAO"/>
+			</bean>
+		</property>
+	</bean>
 
 </beans>

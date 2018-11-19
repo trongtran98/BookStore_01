@@ -1,6 +1,7 @@
 package app.controller.client;
 
 import app.bean.GoogleUserInfo;
+import app.controller.BaseController;
 import app.utlis.GoogleUtils;
 import org.apache.http.client.ClientProtocolException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Controller(value = "userClientController")
-public class UserController {
-    @Autowired
-    private GoogleUtils googleUtils;
+public class UserController  extends BaseController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(@RequestParam(required = false) Boolean error, Model model) {
