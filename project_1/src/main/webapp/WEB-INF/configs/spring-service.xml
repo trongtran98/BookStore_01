@@ -45,5 +45,12 @@
 			</bean>
 		</property>
 	</bean>
+	<bean id="authorService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="app.service.impl.AuthorServiceImpl">
+				<property name="authorDAO" ref="authorDAO"/>
+			</bean>
+		</property>
+	</bean>
 
 </beans>

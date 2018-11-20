@@ -27,4 +27,40 @@
         <put-attribute name="title" value="Register page"/>
         <put-attribute name="body" value="/client/views/register.jsp"/>
     </definition>
+
+    <!-- About page-->
+    <definition name="/client/about" extends="/client/baseLayout">
+        <put-attribute name="title" value="About page"/>
+        <put-attribute name="body" value="/client/views/about.jsp"/>
+    </definition>
+
+    <!-- Contact page-->
+    <definition name="/client/contact" extends="/client/baseLayout">
+        <put-attribute name="title" value="Contact page"/>
+        <put-attribute name="body" value="/client/views/contact.jsp"/>
+    </definition>
+
+    <!-- 404 page-->
+    <definition name="/client/404" extends="/client/baseLayout">
+        <put-attribute name="title" value="404"/>
+        <put-attribute name="body" value="/client/views/404.jsp"/>
+    </definition>
+
+    <!-- cart page-->
+    <definition name="/client/cart" extends="/client/baseLayout">
+        <put-attribute name="title" value="Cart page"/>
+        <put-attribute name="body" value="/client/views/cart.jsp"/>
+    </definition>
+
+    <!-- Shop page-->
+    <definition name="/client/shop" extends="/client/baseLayout">
+        <put-attribute name="title" value="Shop page"/>
+        <put-attribute name="body" value="/client/views/shop.jsp"/>
+    </definition>
+
+    <!-- checkout page-->
+    <definition name="/client/checkout" extends="/client/baseLayout">
+        <put-attribute name="title" value="Checkout page"/>
+        <put-attribute name="body" value="/client/views/checkout.jsp"/>
+    </definition>
 </tiles-definitions>

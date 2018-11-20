@@ -10,44 +10,43 @@ import java.lang.reflect.ParameterizedType;
 
 public abstract class GenericDAO<PK extends Serializable, T> extends HibernateDaoSupport {
 
-	@Autowired
-	private SessionFactory sessionFactory;
+    @Autowired
+    private SessionFactory sessionFactory;
+    private Class<T> persistentClass;
 
-	public T findById(Serializable key) {
-		return (T) getSession().get(getPersistentClass(), key);
-	}
+    public GenericDAO(Class<T> persistentClass) {
+        this.persistentClass = persistentClass;
+    }
 
-	public void persist(T entity) {
-		getSession().persist(entity);
-	}
+    @SuppressWarnings("unchecked")
+    public GenericDAO() {
+        this.persistentClass = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass())
+                .getActualTypeArguments()[1];
+    }
 
-	public void delete(T entity) {
-		getSession().delete(entity);
-	}
+    public T findById(Serializable key) {
+        return (T) getSession().get(getPersistentClass(), key);
+    }
 
-	public T saveOrUpdate(T entity) {
-		getSession().saveOrUpdate(entity);
-		return entity;
-	}
+    public void persist(T entity) {
+        getSession().persist(entity);
+    }
 
-	private Class<T> persistentClass;
+    public void delete(T entity) {
+        getSession().delete(entity);
+    }
 
-	public Class<T> getPersistentClass() {
-		return persistentClass;
-	}
+    public T saveOrUpdate(T entity) {
+        getSession().saveOrUpdate(entity);
+        return entity;
+    }
 
-	public GenericDAO(Class<T> persistentClass) {
-		this.persistentClass = persistentClass;
-	}
+    public Class<T> getPersistentClass() {
+        return persistentClass;
+    }
 
-	@SuppressWarnings("unchecked")
-	public GenericDAO() {
-		this.persistentClass = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass())
-				.getActualTypeArguments()[1];
-	}
-
-	protected Session getSession() {
-		return sessionFactory.getCurrentSession();
-	}
+    protected Session getSession() {
+        return sessionFactory.getCurrentSession();
+    }
 
 }

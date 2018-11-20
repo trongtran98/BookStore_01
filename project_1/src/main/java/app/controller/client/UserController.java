@@ -2,9 +2,7 @@ package app.controller.client;
 
 import app.bean.GoogleUserInfo;
 import app.controller.BaseController;
-import app.utlis.GoogleUtils;
 import org.apache.http.client.ClientProtocolException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,8 +29,8 @@ public class UserController  extends BaseController {
         return "/client/login";
     }
 
-    @RequestMapping(value = "/register" ,method = RequestMethod.PUT)
-    public String register(){
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register() {
         return "/client/register";
     }
 
@@ -51,7 +49,7 @@ public class UserController  extends BaseController {
         return "redirect:/";
     }
 
-    private void setWebAuthentication(UserDetails userDetails, HttpServletRequest request){
+    private void setWebAuthentication(UserDetails userDetails, HttpServletRequest request) {
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null,
                 userDetails.getAuthorities());
         authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));

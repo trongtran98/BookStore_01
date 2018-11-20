@@ -68,13 +68,13 @@
 				.on('click', 'a.edit-row', function( e ) {
 					e.preventDefault();
 
-					_self.rowEdit( $(this).closest( 'tr' ) );
+					// _self.rowEdit( $(this).closest( 'tr' ) );
 				})
 				.on( 'click', 'a.remove-row', function( e ) {
 					e.preventDefault();
 
 					var $row = $(this).closest( 'tr' );
-
+                    var bId = $(this).attr("bId");
 					$.magnificPopup.open({
 						items: {
 							src: '#dialog',
@@ -86,8 +86,18 @@
 							change: function() {
 								_self.dialog.$confirm.on( 'click', function( e ) {
 									e.preventDefault();
+                                    var xhttp = new XMLHttpRequest();
+                                    xhttp.onreadystatechange = function () {
+                                        if (this.status == 200 && this.readyState == 4) {
+                                            _self.rowRemove( $row );
+                                            $.notify("Alert!", {type:"success", align:"right", verticalAlign:"top", icon:"close"});
+                                        } else if (this.readyState == 4 && this.status != 200) {
+                                            $.notify("Alert!", {type:"danger", align:"right", verticalAlign:"top", icon:"close"});
+                                        }
+                                    };
+                                    xhttp.open("GET", "authors/delete/" + bId, true);
+                                    xhttp.send();
 
-									_self.rowRemove( $row );
 									$.magnificPopup.close();
 								});
 							},
@@ -237,3 +247,7 @@
 	});
 
 }).apply( this, [ jQuery ]);
+
+
+
+

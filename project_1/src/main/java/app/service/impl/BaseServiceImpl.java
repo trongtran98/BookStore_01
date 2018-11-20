@@ -1,15 +1,21 @@
 package app.service.impl;
 
-import app.DAO.BookDAO;
-import app.DAO.CategoryDAO;
-import app.DAO.CategoryDetailDAO;
-import app.DAO.UserDAO;
+import app.DAO.*;
 
 public class BaseServiceImpl {
 	protected UserDAO userDAO;
 	protected CategoryDAO categoryDAO;
 	protected BookDAO bookDAO;
 	protected CategoryDetailDAO categoryDetailDAO;
+	protected AuthorDAO authorDAO;
+
+	public AuthorDAO getAuthorDAO() {
+		return authorDAO;
+	}
+
+	public void setAuthorDAO(AuthorDAO authorDAO) {
+		this.authorDAO = authorDAO;
+	}
 
 	public UserDAO getUserDAO() {
 		return userDAO;

@@ -53,12 +53,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="single-register">
-                        <form action="#">
-                            <label>Company Name</label>
-                            <input type="text">
-                        </form>
-                    </div>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="single-register">
@@ -73,54 +67,6 @@
                                 <form action="#">
                                     <label>Phone<span>*</span></label>
                                     <input type="text">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-register">
-                        <label>Country<span>*</span></label>
-                        <select class="chosen-select" tabindex="1" style="width:100%;"
-                                data-placeholder="Default Sorting">
-                            <option value="country">Select a country</option>
-                            <option value="Islands">Aland Islands</option>
-                            <option value="Afghanistan">Afghanistan</option>
-                            <option value="Albania">Albania</option>
-                            <option value="Samoa">American Samoa</option>
-                        </select>
-                    </div>
-                    <div class="single-register">
-                        <form action="#">
-                            <label>Address<span>*</span></label>
-                            <input type="text" placeholder="Street address">
-                            <input type="text" id="billing_address_2"
-                                   placeholder="Apartment, suite, unit etc. (optional">
-                        </form>
-                    </div>
-                    <div class="single-register">
-                        <form action="#">
-                            <label>Town/City<span>*</span></label>
-                            <input type="text">
-                        </form>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-register">
-                                <label>State<span>*</span></label>
-                                <select class="chosen-select" tabindex="1" style="width:100%;"
-                                        data-placeholder="Default Sorting">
-                                    <option value="Select">Select a State</option>
-                                    <option value="Andhra">Andhra Pradesh</option>
-                                    <option value="Pradesh">Arunachal Pradesh</option>
-                                    <option value="Delhi">Delhi</option>
-                                    <option value="Lakshadeep">Lakshadeep</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="single-register">
-                                <form action="#">
-                                    <label>Postcode/zip<span>*</span></label>
-                                    <input type="text" placeholder="Postcode/zip">
                                 </form>
                             </div>
                         </div>

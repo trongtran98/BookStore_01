@@ -52,379 +52,39 @@
                                         <button type="submit">ok</button>
                                     </form>
                                 </li>
-                                <li>
-                                    <a href="pages-signin.html">
-                                        Sign In
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-recover-password.html">
-                                        Recover Password
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-lock-screen.html">
-                                        Locked Screen
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-user-profile.html">
-                                        User Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-session-timeout.html">
-                                        Session Timeout
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-calendar.html">
-                                        Calendar
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-timeline.html">
-                                        Timeline
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-media-gallery.html">
-                                        Media Gallery
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-invoice.html">
-                                        Invoice
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-blank.html">
-                                        Blank Page
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-404.html">
-                                        404
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-500.html">
-                                        500
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-log-viewer.html">
-                                        Log Viewer
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="pages-search-results.html">
-                                        Search Results
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a>
-                                <i class="fa fa-tasks" aria-hidden="true"></i>
-                                <span>UI Elements</span>
-                            </a>
-                            <ul class="nav nav-children">
-                                <li>
-                                    <a href="ui-elements-typography.html">
-                                        Typography
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-icons.html">
-                                        Icons
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-tabs.html">
-                                        Tabs
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-panels.html">
-                                        Panels
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-widgets.html">
-                                        Widgets
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-portlets.html">
-                                        Portlets
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-buttons.html">
-                                        Buttons
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-alerts.html">
-                                        Alerts
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-notifications.html">
-                                        Notifications
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-modals.html">
-                                        Modals
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-lightbox.html">
-                                        Lightbox
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-progressbars.html">
-                                        Progress Bars
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-sliders.html">
-                                        Sliders
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-carousels.html">
-                                        Carousels
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-accordions.html">
-                                        Accordions
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-nestable.html">
-                                        Nestable
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-tree-view.html">
-                                        Tree View
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-grid-system.html">
-                                        Grid System
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-charts.html">
-                                        Charts
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-animations.html">
-                                        Animations
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="ui-elements-extra.html">
-                                        Extra
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-parent">
                             <a>
                                 <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                <span>Forms</span>
+                                <span>Books</span>
                             </a>
                             <ul class="nav nav-children">
                                 <li>
                                     <a href="forms-basic.html">
-                                        Basic
+                                        Books
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="forms-advanced.html">
-                                        Advanced
+                                    <a href="/admin/authors">
+                                        Authors
                                     </a>
                                 </li>
                                 <li>
                                     <a href="forms-validation.html">
-                                        Validation
+                                        Producers
                                     </a>
                                 </li>
                                 <li>
                                     <a href="forms-layouts.html">
-                                        Layouts
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="forms-wizard.html">
-                                        Wizard
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="forms-code-editor.html">
-                                        Code Editor
+                                        Categories
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a>
-                                <i class="fa fa-table" aria-hidden="true"></i>
-                                <span>Tables</span>
-                            </a>
-                            <ul class="nav nav-children">
-                                <li>
-                                    <a href="tables-basic.html">
-                                        Basic
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="tables-advanced.html">
-                                        Advanced
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="tables-responsive.html">
-                                        Responsive
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="tables-editable.html">
-                                        Editable
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="tables-ajax.html">
-                                        Ajax
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="tables-pricing.html">
-                                        Pricing
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a>
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span>Maps</span>
-                            </a>
-                            <ul class="nav nav-children">
-                                <li>
-                                    <a href="maps-google-maps.html">
-                                        Basic
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="maps-google-maps-builder.html">
-                                        Map Builder
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="maps-vector.html">
-                                        Vector
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a>
-                                <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span>Layouts</span>
-                            </a>
-                            <ul class="nav nav-children">
-                                <li>
-                                    <a href="layouts-default.html">
-                                        Default
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="layouts-boxed.html">
-                                        Boxed
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="layouts-menu-collapsed.html">
-                                        Menu Collapsed
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="layouts-scroll.html">
-                                        Scroll
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-parent">
-                            <a>
-                                <i class="fa fa-align-left" aria-hidden="true"></i>
-                                <span>Menu Levels</span>
-                            </a>
-                            <ul class="nav nav-children">
-                                <li>
-                                    <a>First Level</a>
-                                </li>
-                                <li class="nav-parent">
-                                    <a>Second Level</a>
-                                    <ul class="nav nav-children">
-                                        <li class="nav-parent">
-                                            <a>Third Level</a>
-                                            <ul class="nav nav-children">
-                                                <li>
-                                                    <a>Third Level Link #1</a>
-                                                </li>
-                                                <li>
-                                                    <a>Third Level Link #2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Second Level Link #1</a>
-                                        </li>
-                                        <li>
-                                            <a>Second Level Link #2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://themeforest.net/item/JSOFT-responsive-html5-template/4106987?ref=JSOFT"
-                               target="_blank">
-                                <i class="fa fa-external-link" aria-hidden="true"></i>
-                                <span>Front-End <em class="not-included">(Not Included)</em></span>
-                            </a>
                         </li>
                     </ul>
                 </nav>
-
                 <hr class="separator">
-
-                <div class="sidebar-widget widget-tasks">
-                    <div class="widget-header">
-                        <h6>Projects</h6>
-                        <div class="widget-toggle">+</div>
-                    </div>
-                    <div class="widget-content">
-                        <ul class="list-unstyled m-none">
-                            <li><a href="#">JSOFT HTML5 Template</a></li>
-                            <li><a href="#">Tucson Template</a></li>
-                            <li><a href="#">JSOFT Admin</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <hr class="separator">
-
                 <div class="sidebar-widget widget-stats">
                     <div class="widget-header">
                         <h6>Company Stats</h6>
@@ -1049,7 +709,7 @@
                                                   style="stroke-width: 1;"
                                                   d="M0,142.4 C96.4,154.4 158.4,158.4 220,154.4 L220,220 L0,220 z"></path>
                                             <text x="50%" y="50%" fill="#333333" dy=".4em" stroke="#333333"
-                                                  style="font-family: &quot;Open Sans&quot;; font-size: 24px; font-weight: 600; text-anchor: middle;">
+                                                  style="font-family: 'Open Sans'; font-size: 24px; font-weight: 600; text-anchor: middle;">
                                                 <tspan>35</tspan>
                                                 <tspan stroke="none" style="font-size: 24px;">%</tspan>
                                             </text>
@@ -2615,3 +2275,78 @@
         </div>
     </div>
 </aside>
+<head>
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="/admin/assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css">
+    <link rel="stylesheet" href="/admin/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css">
+    <link rel="stylesheet" href="/admin/assets/vendor/morris/morris.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/admin/assets/stylesheets/theme.css">
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="/admin/assets/stylesheets/skins/default.css">
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="/admin/assets/stylesheets/theme-custom.css">
+
+    <link rel="stylesheet" href="/admin/assets/stylesheets/tooltip.css">
+
+
+    <!-- Vendor -->
+    <script src="/admin/assets/vendor/jquery/jquery.js"></script>
+    <script src="/admin/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="/admin/assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="/admin/assets/vendor/nanoscroller/nanoscroller.js"></script>
+    <script src="/admin/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="/admin/assets/vendor/magnific-popup/magnific-popup.js"></script>
+    <script src="/admin/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+
+    <!-- Specific Page Vendor -->
+    <script src="/admin/assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="/admin/assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+    <script src="/admin/assets/vendor/jquery-appear/jquery.appear.js"></script>
+    <script src="/admin/assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+    <script src="/admin/assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+    <script src="/admin/assets/vendor/flot/jquery.flot.js"></script>
+    <script src="/admin/assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+    <script src="/admin/assets/vendor/flot/jquery.flot.pie.js"></script>
+    <script src="/admin/assets/vendor/flot/jquery.flot.categories.js"></script>
+    <script src="/admin/assets/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="/admin/assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+    <script src="/admin/assets/vendor/raphael/raphael.js"></script>
+    <script src="/admin/assets/vendor/morris/morris.js"></script>
+    <script src="/admin/assets/vendor/gauge/gauge.js"></script>
+    <script src="/admin/assets/vendor/snap-svg/snap.svg.js"></script>
+    <script src="/admin/assets/vendor/liquid-meter/liquid.meter.js"></script>
+    <script src="/admin/assets/vendor/jqvmap/jquery.vmap.js"></script>
+    <script src="/admin/assets/vendor/jqvmap/data/jquery.vmap.sampledata.js"></script>
+    <script src="/admin/assets/vendor/jqvmap/maps/jquery.vmap.world.js"></script>
+    <script src="/admin/assets/vendor/jqvmap/maps/continents/jquery.vmap.africa.js"></script>
+    <script src="/admin/assets/vendor/jqvmap/maps/continents/jquery.vmap.asia.js"></script>
+    <script src="/admin/assets/vendor/jqvmap/maps/continents/jquery.vmap.australia.js"></script>
+    <script src="/admin/assets/vendor/jqvmap/maps/continents/jquery.vmap.europe.js"></script>
+    <script src="/admin/assets/vendor/jqvmap/maps/continents/jquery.vmap.north-america.js"></script>
+    <script src="/admin/assets/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js"></script>
+
+
+    <%--<!-- Specific Page Vendor -->--%>
+    <%--<script src="/admin/assets/vendor/select2/select2.js"></script>--%>
+    <%--<script src="/admin/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>--%>
+    <%--<script src="/admin/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>--%>
+    <!-- Theme Base, Components and Settings -->
+    <script src="/admin/assets/javascripts/theme.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="/admin/assets/javascripts/theme.custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="/admin/assets/javascripts/theme.init.js"></script>
+
+
+    <!-- Examples -->
+    <script src="/admin/assets/javascripts/dashboard/examples.dashboard.js"></script>
+</head>
+
+
