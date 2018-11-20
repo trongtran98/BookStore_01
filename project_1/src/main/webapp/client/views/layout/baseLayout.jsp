@@ -80,6 +80,8 @@
         <script src="/client/assets/js/plugins.js"></script>
         <!-- main js -->
         <script src="/client/assets/js/main.js"></script>
+        <%--client index js--%>
+        <script src="/client/assets/js/client-index.js"></script>
 
 	</body>
 </html>

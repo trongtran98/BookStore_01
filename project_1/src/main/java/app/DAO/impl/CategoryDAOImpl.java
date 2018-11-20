@@ -22,7 +22,7 @@ public class CategoryDAOImpl extends GenericDAO<Integer, Category> implements Ca
 
     @Override
     public List<Category> findAll() {
-        return getSession().createQuery("from Category").getResultList();
+        return getSession().createQuery("select DISTINCT c from Category c inner join fetch c.categoryDetails cd").list();
     }
 
 

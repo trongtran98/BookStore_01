@@ -11,7 +11,7 @@
             <column name="categoryDetailsName" />
         </property>
 
-        <list name ="books" lazy="false" fetch="select" inverse="true">
+        <list name ="books" fetch="select" inverse="true">
             <key column = "categoryDetailsId" not-null="true"/>
             <list-index column = "id"/>
             <one-to-many class="Book"/>

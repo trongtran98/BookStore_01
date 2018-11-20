@@ -9,7 +9,7 @@
 
         <property name="address" type="string" column="address" />
 
-        <many-to-one name="user" class="User">
+        <many-to-one name="user" class="User" fetch="join">
             <column name="userId" not-null="true" />
         </many-to-one>
     </class>

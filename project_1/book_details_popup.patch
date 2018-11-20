@@ -1,0 +1,439 @@
+Index: project_1/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/pom.xml	(date 1542351500000)
++++ project_1/pom.xml	(date 1542613416000)
+@@ -12,7 +12,7 @@
+ 		<jdk>1.8</jdk>
+ 		<spring.version>4.3.18.RELEASE</spring.version>
+ 		<mysql-connector-java>6.0.6</mysql-connector-java>
+-		<hibernate.version>5.3.0.Final</hibernate.version>
++		<hibernate.version>5.3.6.Final</hibernate.version>
+ 		<hibernate-validator>6.0.7.Final</hibernate-validator>
+ 		<hibernate-common.version>3.2.0.Final</hibernate-common.version>
+ 		<hibernate-persistence.version>1.0.1.Final</hibernate-persistence.version>
+Index: project_1/src/main/java/app/DAO/impl/BookDAOImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/java/app/DAO/impl/BookDAOImpl.java	(date 1542351500000)
++++ project_1/src/main/java/app/DAO/impl/BookDAOImpl.java	(date 1542613416000)
+@@ -23,6 +23,7 @@
+     @Override
+     public List<Book> loadBooksTypeNew(int number) {
+         return getSession().createQuery("from Book b order by id desc").setMaxResults(number)
++                .setCacheable(true)
+                 .getResultList();
+     }
+ }
+Index: project_1/src/main/java/app/bean/BookInfo.java
+===================================================================
+--- project_1/src/main/java/app/bean/BookInfo.java	(date 1542613416000)
++++ project_1/src/main/java/app/bean/BookInfo.java	(date 1542613416000)
+@@ -0,0 +1,126 @@
++package app.bean;
++
++import app.model.*;
++
++import java.io.Serializable;
++import java.math.BigDecimal;
++import java.util.List;
++
++public class BookInfo implements Serializable {
++    private static final long serialVersionUID = 5974438385263559928L;
++
++    private Integer id;
++    private String title;
++    private String description;
++    private String avatar;
++    private Integer pages;
++    private BigDecimal price;
++    private String author;
++    private String categoryDetail;
++    private String producer;
++
++    public BookInfo(Integer id, String title, String description, String avatar, Integer pages, BigDecimal price, String author, String categoryDetail, String producer) {
++        this.id = id;
++        this.title = title;
++        this.description = description;
++        this.avatar = avatar;
++        this.pages = pages;
++        this.price = price;
++        this.author = author;
++        this.categoryDetail = categoryDetail;
++        this.producer = producer;
++    }
++
++    public BookInfo() {
++    }
++
++    public static long getSerialVersionUID() {
++        return serialVersionUID;
++    }
++
++    public void setAuthor(String author) {
++        this.author = author;
++    }
++
++    public void setCategoryDetail(String categoryDetail) {
++        this.categoryDetail = categoryDetail;
++    }
++
++    public void setProducer(String producer) {
++        this.producer = producer;
++    }
++
++    public Integer getId() {
++        return id;
++    }
++
++    public void setId(Integer id) {
++        this.id = id;
++    }
++
++    public String getTitle() {
++        return title;
++    }
++
++    public void setTitle(String title) {
++        this.title = title;
++    }
++
++    public String getDescription() {
++        return description;
++    }
++
++    public void setDescription(String description) {
++        this.description = description;
++    }
++
++    public String getAvatar() {
++        return avatar;
++    }
++
++    public void setAvatar(String avatar) {
++        this.avatar = avatar;
++    }
++
++    public Integer getPages() {
++        return pages;
++    }
++
++    public void setPages(Integer pages) {
++        this.pages = pages;
++    }
++
++    public BigDecimal getPrice() {
++        return price;
++    }
++
++    public void setPrice(BigDecimal price) {
++        this.price = price;
++    }
++
++    public String getAuthor() {
++        return author;
++    }
++
++    public String getCategoryDetail() {
++        return categoryDetail;
++    }
++
++    public String getProducer() {
++        return producer;
++    }
++
++    public void setBookInfoDTO(Book book){
++        this.id = book.getId();
++        this.title = book.getTitle();
++        this.description = book.getDescription();
++        this.avatar = book.getAvatar();
++        this.pages = book.getPages();
++        this.price = book.getPrice();
++        this.author = book.getAuthor().getFullName();
++        this.categoryDetail = book.getCategoryDetail().getCategoryDetailName();
++        this.producer = book.getProducer().getProducerName();
++    }
++
++
++}
+Index: project_1/src/main/java/app/controller/client/IndexController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/java/app/controller/client/IndexController.java	(date 1542351500000)
++++ project_1/src/main/java/app/controller/client/IndexController.java	(date 1542613416000)
+@@ -1,21 +1,15 @@
+ package app.controller.client;
+ 
++import app.bean.BookInfo;
+ import app.controller.BaseController;
+ import app.model.Book;
+ import app.model.Category;
+ import app.model.CategoryDetail;
+-import app.service.BookService;
+-import app.service.CategoryDetailService;
+-import app.service.CategoryService;
+-import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Controller;
+ import org.springframework.ui.Model;
+-import org.springframework.web.bind.annotation.ModelAttribute;
+-import org.springframework.web.bind.annotation.RequestMapping;
+-import org.springframework.web.bind.annotation.RequestMethod;
++import org.springframework.web.bind.annotation.*;
+ 
+ import javax.servlet.http.HttpSession;
+-import java.util.Collections;
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
+@@ -25,7 +19,7 @@
+ 
+     @RequestMapping(value = "/", method = RequestMethod.GET)
+     public String index(HttpSession session, Model model) {
+-        if(session.getAttribute("categories") == null){
++        if (session.getAttribute("categories") == null) {
+             List<Category> categories = categoryService.findAll();
+             session.setAttribute("categories", categories);
+         }
+@@ -44,4 +38,13 @@
+         return "/client/index";
+     }
+ 
++    //Book controller
++    @RequestMapping(value = "/book/{id}")
++    public @ResponseBody
++    BookInfo loadBook(@PathVariable Integer id) {
++        Book book = bookService.findById(id);
++        BookInfo bookInfo =  new BookInfo();
++        bookInfo.setBookInfoDTO(book);
++        return bookInfo;
++    }
+ }
+Index: project_1/src/main/java/app/model/hbm/Author.hbm.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/java/app/model/hbm/Author.hbm.xml	(date 1542351500000)
++++ project_1/src/main/java/app/model/hbm/Author.hbm.xml	(date 1542613416000)
+@@ -11,7 +11,7 @@
+ 
+ 		<property name="description" type="string" column="description" />
+ 
+-		<list name="books" fetch="join" inverse="true">
++		<list name="books" lazy="false" fetch="select" inverse="true">
+ 			<key column="authorId" />
+ 			<list-index column="id" />
+ 			<one-to-many class="Book" />
+Index: project_1/src/main/java/app/model/hbm/Book.hbm.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/java/app/model/hbm/Book.hbm.xml	(date 1542351500000)
++++ project_1/src/main/java/app/model/hbm/Book.hbm.xml	(date 1542613416000)
+@@ -29,7 +29,7 @@
+             <column name="status" />
+         </property>
+ 
+-        <many-to-one name="author" class="Author">
++        <many-to-one name="author" lazy="false" fetch="join" class="Author">
+             <column name="authorId" not-null="true" />
+         </many-to-one>
+ 
+@@ -37,12 +37,12 @@
+             <column name="categoryDetailsId" not-null="true" />
+         </many-to-one>
+ 
+-        <many-to-one name="producer" class="Producer">
++        <many-to-one name="producer" lazy="false" fetch="join" class="Producer">
+             <column name="producerId" not-null="true" />
+         </many-to-one>
+ 
+ 
+-        <list name="reviews" fetch="select" inverse="true" >
++        <list name="reviews" lazy="false" fetch="select" inverse="true" >
+             <key column="bookId" not-null="true"/>
+             <list-index column="id"/>
+             <one-to-many class="Review" />
+Index: project_1/src/main/java/app/model/hbm/Cart.hbm.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/java/app/model/hbm/Cart.hbm.xml	(date 1542351500000)
++++ project_1/src/main/java/app/model/hbm/Cart.hbm.xml	(date 1542613416000)
+@@ -9,7 +9,7 @@
+ 
+ 		<one-to-one name="user" class="User" fetch="join" cascade="all" />
+ 
+-		<list name="cartDetails" inverse="true" fetch="join">
++		<list name="cartDetails" lazy="false" inverse="true" fetch="select">
+ 			<key column="cartId" not-null="true" />
+ 			<list-index column="id" />
+ 			<one-to-many class="CartDetail" />
+Index: project_1/src/main/java/app/model/hbm/Order.hbm.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/java/app/model/hbm/Order.hbm.xml	(date 1542351500000)
++++ project_1/src/main/java/app/model/hbm/Order.hbm.xml	(date 1542613416000)
+@@ -15,7 +15,7 @@
+ 			<column name="userId" not-null="true" />
+ 		</many-to-one>
+ 
+-		<list name="orderDetails" fetch="join" inverse="true">
++		<list name="orderDetails" lazy="false" fetch="select" inverse="true">
+ 			<key column="orderId" not-null="true" />
+ 			<list-index column="id" />
+ 			<one-to-many class="OrderDetail" />
+Index: project_1/src/main/java/app/model/hbm/Producer.hbm.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/java/app/model/hbm/Producer.hbm.xml	(date 1542351500000)
++++ project_1/src/main/java/app/model/hbm/Producer.hbm.xml	(date 1542613416000)
+@@ -17,7 +17,7 @@
+             <column name="description" />
+         </property>
+ 
+-        <list name = "books" fetch="select" inverse="true">
++        <list name = "books" lazy="false" fetch="select" inverse="true">
+             <key column = "producerId" not-null="true"/>
+             <list-index column = "id"/>
+             <one-to-many class="Book"/>
+Index: project_1/src/main/java/app/model/hbm/User.hbm.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/java/app/model/hbm/User.hbm.xml	(date 1542351500000)
++++ project_1/src/main/java/app/model/hbm/User.hbm.xml	(date 1542613416000)
+@@ -35,7 +35,7 @@
+ 			<column name="birthday" />
+ 		</property>
+ 
+-		<list name="addresses" fetch="join" inverse="true">
++		<list name="addresses" lazy="false" fetch="select" inverse="true">
+ 			<key column="userId" not-null="true" />
+ 			<list-index column="id" />
+ 			<one-to-many class="Address" />
+@@ -43,7 +43,7 @@
+ 
+ 		<one-to-one name="cart" class="Cart" constrained="true" />
+ 
+-		<list name="orders" fetch="join" inverse="true">
++		<list name="orders" lazy="false" fetch="select" inverse="true">
+ 			<key column="userId" not-null="true" />
+ 			<list-index column="id" />
+ 			<one-to-many class="Order" />
+Index: project_1/src/main/webapp/client/assets/js/client-index.js
+===================================================================
+--- project_1/src/main/webapp/client/assets/js/client-index.js	(date 1542613416000)
++++ project_1/src/main/webapp/client/assets/js/client-index.js	(date 1542613416000)
+@@ -0,0 +1,18 @@
++$('.action-view').click(function () {
++    var bookId = $(this).attr('bId');
++    $.ajax({
++        type: "GET",
++        contentType: "application/json",
++        url: "/book/" + bookId,
++        dataType: 'json',
++        success: function (book) {
++            $('#image-1').children(":first").attr("src", "/books/" + book.avatar);
++            $('#book-title').text(book.title);
++            $('#book-price').text(book.price);
++            $('#book-description').text(book.description);
++        },
++        error: function (e) {
++            console.log("ERROR: ", e);
++        }
++    });
++});
+\ No newline at end of file
+Index: project_1/src/main/webapp/client/views/index.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/webapp/client/views/index.jsp	(date 1542351500000)
++++ project_1/src/main/webapp/client/views/index.jsp	(date 1542613416000)
+@@ -75,7 +75,7 @@
+                                 <img src="/books/${b.avatar}" alt="book" class="primary"/>
+                             </a>
+                             <div class="quick-view">
+-                                <a class="action-view" href="#" data-target="#productModal" data-toggle="modal"
++                                <a class="action-view" bId="${b.id}" href="#" data-target="#productModal" data-toggle="modal"
+                                    title="Quick View">
+                                     <i class="fa fa-search-plus"></i>
+                                 </a>
+@@ -340,7 +340,7 @@
+                                         <img src="/books/${b.avatar}" alt="book" class="primary"/>
+                                     </a>
+                                     <div class="quick-view">
+-                                        <a class="action-view" href="#" data-target="#productModal"
++                                        <a class="action-view" bId="${b.id}" href="#" data-target="#productModal"
+                                            data-toggle="modal"
+                                            title="Quick View">
+                                             <i class="fa fa-search-plus"></i>
+@@ -400,7 +400,7 @@
+                                         <img src="/books/${b.avatar}" alt="book" class="primary"/>
+                                     </a>
+                                     <div class="quick-view">
+-                                        <a class="action-view" href="#" data-target="#productModal"
++                                        <a class="action-view" bId="${b.id}" href="#" data-target="#productModal"
+                                            data-toggle="modal"
+                                            title="Quick View">
+                                             <i class="fa fa-search-plus"></i>
+@@ -460,7 +460,7 @@
+                                         <img src="/books/${b.avatar}" alt="book" class="primary"/>
+                                     </a>
+                                     <div class="quick-view">
+-                                        <a class="action-view" href="#" data-target="#productModal"
++                                        <a class="action-view" bId="${b.id}" href="#" data-target="#productModal"
+                                            data-toggle="modal"
+                                            title="Quick View">
+                                             <i class="fa fa-search-plus"></i>
+@@ -1147,11 +1147,11 @@
+                     </div>
+                     <div class="col-md-7 col-sm-7 col-xs-12">
+                         <div class="modal-pro-content">
+-                            <h3>Chaz Kangeroo Hoodie3</h3>
++                            <h3 id="book-title">Chaz Kangeroo Hoodie3</h3>
+                             <div class="price">
+-                                <span>$70.00</span>
++                                <span id="book-price">$70.00</span>
+                             </div>
+-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
++                            <p id="book-description">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                 egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
+                             <div class="quick-view-select">
+                                 <div class="select-option-part">
+@@ -1187,4 +1187,3 @@
+ </div>
+ <!-- Modal end -->
+ 
+-
+Index: project_1/src/main/webapp/client/views/layout/baseLayout.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project_1/src/main/webapp/client/views/layout/baseLayout.jsp	(date 1542351500000)
++++ project_1/src/main/webapp/client/views/layout/baseLayout.jsp	(date 1542613416000)
+@@ -80,6 +80,8 @@
+         <script src="/client/assets/js/plugins.js"></script>
+         <!-- main js -->
+         <script src="/client/assets/js/main.js"></script>
++        <%--client index js--%>
++        <script src="/client/assets/js/client-index.js"></script>
+ 
+ 	</body>
+ </html>
