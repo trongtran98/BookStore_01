@@ -1,5 +1,7 @@
 package app.model;
 
+import app.DTO.AuthorDTO;
+
 import java.util.List;
 
 public class Author implements java.io.Serializable{
@@ -38,5 +40,14 @@ public class Author implements java.io.Serializable{
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public Author() {
+    }
+
+    public Author(AuthorDTO authorDTO) {
+        this.id = authorDTO.getId();
+        this.fullName = authorDTO.getFullName();
+        this.description = authorDTO.getDescription();
     }
 }

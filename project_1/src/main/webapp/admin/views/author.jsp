@@ -140,8 +140,56 @@
 
     </aside>
     <!-- end: sidebar -->
-
     <section role="main" class="content-body">
+
+        <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <form class="modal-content" id="idForm" action="">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                <div class="container1">
+                    <h1>Add Author</h1>
+                    <p>Please fill in this form to add Author.</p>
+                    <hr>
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Name" name="fullName" required>
+
+                    <label for="description"><b>Description</b></label>
+                    <textarea placeholder="Description" name="description"></textarea>
+
+                    <div class="clearfix">
+                        <button type="submit" class="signupbtn">Add</button>
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="id02" class="modal">
+            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <form class="modal-content" id="idForm2" action="">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                <div class="container1">
+                    <h1>Edit Author</h1>
+                    <p>Please edit author</p>
+                    <hr>
+                    <label for="id2"><b>ID</b></label>
+                    <input id="id2" type="text" placeholder="ID" name="id" required readonly>
+                    <label for="name2"><b>Name</b></label>
+                    <input id="name2" type="text" placeholder="Name" name="fullName" required>
+
+                    <label for="description2"><b>Description</b></label>
+                    <textarea id="description2" placeholder="Description" name="description"></textarea>
+
+                    <div class="clearfix">
+                        <button type="submit" class="signupbtn">Edit</button>
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                                class="cancelbtn">Cancel
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
         <header class="page-header">
             <h2>Editable Tables</h2>
 
@@ -174,30 +222,55 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="mb-md">
-                            <button id="addToTable" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
+                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
+                                    class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
                         </div>
                     </div>
                 </div>
-                <div id="datatable-editable_wrapper" class="dataTables_wrapper no-footer"><div class="table-responsive"><table class="table table-bordered table-striped mb-none dataTable no-footer" id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
-                    <thead>
-                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending" aria-sort="ascending" style="width: 128px;">ID</th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 178px;">Full name</th><th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 160px;">Description</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="width: 60px;">Actions</th></tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${authors}" var="item">
-                        <tr class="gradeA odd" role="row">
-                            <td class="sorting_1">${item.id}</td>
-                            <td>${item.fullName}</td>
-                            <td>${item.description}</td>
-                            <td class="actions">
-                                <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
-                                <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                <a href="#" bId="${item.id}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table></div></div>
+                <div id="datatable-editable_wrapper" class="dataTables_wrapper no-footer">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped mb-none dataTable no-footer"
+                               id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
+                            <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1"
+                                    colspan="1" aria-label="Rendering engine: activate to sort column ascending"
+                                    aria-sort="ascending" style="width: 128px;">ID
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1"
+                                    colspan="1" aria-label="Browser: activate to sort column ascending"
+                                    style="width: 178px;">Full name
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1"
+                                    colspan="1" aria-label="Platform(s): activate to sort column ascending"
+                                    style="width: 160px;">Description
+                                </th>
+                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions"
+                                    style="width: 60px;">Actions
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="reload">
+                            <c:forEach items="${authors}" var="item">
+                                <tr class="gradeA odd" role="row">
+                                    <td class="sorting_1">${item.id}</td>
+                                    <td>${item.fullName}</td>
+                                    <td>${item.description}</td>
+                                    <td class="actions">
+                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
+                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
+                                        <a href="#"
+                                           onclick="editAuthor('${item.id}','${item.fullName}','${item.description}')"
+                                           style="width:auto;" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                        <a href="#" bId="${item.id}" class="on-default remove-row"><i
+                                                class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- end: page -->
@@ -207,13 +280,156 @@
                     <a href="#" class="mobile-close visible-xs">
                         Collapse <i class="fa fa-chevron-right"></i>
                     </a>
-
                     <div class="sidebar-right-wrapper">
-
                         <div class="sidebar-widget widget-calendar">
                             <h6>Upcoming Tasks</h6>
-                            <div data-plugin-datepicker="" data-plugin-skin="dark"><div class="datepicker datepicker-inline datepicker-dark"><div class="datepicker-days" style="display: block;"><table class=" table-condensed"><thead><tr><th class="prev" style="visibility: visible;">«</th><th colspan="5" class="datepicker-switch">November 2018</th><th class="next" style="visibility: visible;">»</th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="old day">28</td><td class="old day">29</td><td class="old day">30</td><td class="old day">31</td><td class="day">1</td><td class="day">2</td><td class="day">3</td></tr><tr><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day">7</td><td class="day">8</td><td class="day">9</td><td class="day">10</td></tr><tr><td class="day">11</td><td class="day">12</td><td class="day">13</td><td class="day">14</td><td class="day">15</td><td class="day">16</td><td class="day">17</td></tr><tr><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td><td class="day">22</td><td class="day">23</td><td class="day">24</td></tr><tr><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td><td class="day">29</td><td class="day">30</td><td class="new day">1</td></tr><tr><td class="new day">2</td><td class="new day">3</td><td class="new day">4</td><td class="new day">5</td><td class="new day">6</td><td class="new day">7</td><td class="new day">8</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;">«</th><th colspan="5" class="datepicker-switch">2018</th><th class="next" style="visibility: visible;">»</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" style="visibility: visible;">«</th><th colspan="5" class="datepicker-switch">2010-2019</th><th class="next" style="visibility: visible;">»</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span class="year">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year new">2020</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div></div></div>
-
+                            <div data-plugin-datepicker="" data-plugin-skin="dark">
+                                <div class="datepicker datepicker-inline datepicker-dark">
+                                    <div class="datepicker-days" style="display: block;">
+                                        <table class=" table-condensed">
+                                            <thead>
+                                            <tr>
+                                                <th class="prev" style="visibility: visible;">«</th>
+                                                <th colspan="5" class="datepicker-switch">November 2018</th>
+                                                <th class="next" style="visibility: visible;">»</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="dow">Su</th>
+                                                <th class="dow">Mo</th>
+                                                <th class="dow">Tu</th>
+                                                <th class="dow">We</th>
+                                                <th class="dow">Th</th>
+                                                <th class="dow">Fr</th>
+                                                <th class="dow">Sa</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td class="old day">28</td>
+                                                <td class="old day">29</td>
+                                                <td class="old day">30</td>
+                                                <td class="old day">31</td>
+                                                <td class="day">1</td>
+                                                <td class="day">2</td>
+                                                <td class="day">3</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="day">4</td>
+                                                <td class="day">5</td>
+                                                <td class="day">6</td>
+                                                <td class="day">7</td>
+                                                <td class="day">8</td>
+                                                <td class="day">9</td>
+                                                <td class="day">10</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="day">11</td>
+                                                <td class="day">12</td>
+                                                <td class="day">13</td>
+                                                <td class="day">14</td>
+                                                <td class="day">15</td>
+                                                <td class="day">16</td>
+                                                <td class="day">17</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="day">18</td>
+                                                <td class="day">19</td>
+                                                <td class="day">20</td>
+                                                <td class="day">21</td>
+                                                <td class="day">22</td>
+                                                <td class="day">23</td>
+                                                <td class="day">24</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="day">25</td>
+                                                <td class="day">26</td>
+                                                <td class="day">27</td>
+                                                <td class="day">28</td>
+                                                <td class="day">29</td>
+                                                <td class="day">30</td>
+                                                <td class="new day">1</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="new day">2</td>
+                                                <td class="new day">3</td>
+                                                <td class="new day">4</td>
+                                                <td class="new day">5</td>
+                                                <td class="new day">6</td>
+                                                <td class="new day">7</td>
+                                                <td class="new day">8</td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <th colspan="7" class="today" style="display: none;">Today</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="7" class="clear" style="display: none;">Clear</th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="datepicker-months" style="display: none;">
+                                        <table class="table-condensed">
+                                            <thead>
+                                            <tr>
+                                                <th class="prev" style="visibility: visible;">«</th>
+                                                <th colspan="5" class="datepicker-switch">2018</th>
+                                                <th class="next" style="visibility: visible;">»</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td colspan="7"><span class="month">Jan</span><span
+                                                        class="month">Feb</span><span class="month">Mar</span><span
+                                                        class="month">Apr</span><span class="month">May</span><span
+                                                        class="month">Jun</span><span class="month">Jul</span><span
+                                                        class="month">Aug</span><span class="month">Sep</span><span
+                                                        class="month">Oct</span><span class="month">Nov</span><span
+                                                        class="month">Dec</span></td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <th colspan="7" class="today" style="display: none;">Today</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="7" class="clear" style="display: none;">Clear</th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="datepicker-years" style="display: none;">
+                                        <table class="table-condensed">
+                                            <thead>
+                                            <tr>
+                                                <th class="prev" style="visibility: visible;">«</th>
+                                                <th colspan="5" class="datepicker-switch">2010-2019</th>
+                                                <th class="next" style="visibility: visible;">»</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span
+                                                        class="year">2011</span><span class="year">2012</span><span
+                                                        class="year">2013</span><span class="year">2014</span><span
+                                                        class="year">2015</span><span class="year">2016</span><span
+                                                        class="year">2017</span><span class="year">2018</span><span
+                                                        class="year">2019</span><span class="year new">2020</span></td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <th colspan="7" class="today" style="display: none;">Today</th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="7" class="clear" style="display: none;">Clear</th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                             <ul>
                                 <li>
                                     <time datetime="2014-04-19T00:00+00:00">04/19/2014</time>
@@ -221,13 +437,13 @@
                                 </li>
                             </ul>
                         </div>
-
                         <div class="sidebar-widget widget-friends">
                             <h6>Friends</h6>
                             <ul>
                                 <li class="status-online">
                                     <figure class="profile-picture">
-                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe"
+                                             class="img-circle">
                                     </figure>
                                     <div class="profile-info">
                                         <span class="name">Joseph Doe Junior</span>
@@ -236,7 +452,8 @@
                                 </li>
                                 <li class="status-online">
                                     <figure class="profile-picture">
-                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe"
+                                             class="img-circle">
                                     </figure>
                                     <div class="profile-info">
                                         <span class="name">Joseph Doe Junior</span>
@@ -245,7 +462,8 @@
                                 </li>
                                 <li class="status-offline">
                                     <figure class="profile-picture">
-                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe"
+                                             class="img-circle">
                                     </figure>
                                     <div class="profile-info">
                                         <span class="name">Joseph Doe Junior</span>
@@ -254,7 +472,8 @@
                                 </li>
                                 <li class="status-offline">
                                     <figure class="profile-picture">
-                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe" class="img-circle">
+                                        <img src="/admin/assets/images/!sample-user.jpg" alt="Joseph Doe"
+                                             class="img-circle">
                                     </figure>
                                     <div class="profile-info">
                                         <span class="name">Joseph Doe Junior</span>
@@ -266,15 +485,18 @@
 
                     </div>
                 </div>
-                <div class="nano-pane" style="display: none; opacity: 1; visibility: visible;"><div class="nano-slider" style="height: 858px; transform: translate(0px, 0px);"></div></div></div>
+                <div class="nano-pane" style="display: none; opacity: 1; visibility: visible;">
+                    <div class="nano-slider" style="height: 858px; transform: translate(0px, 0px);"></div>
+                </div>
+            </div>
         </aside>
     </section>
 </div>
 
 <head>
     <!-- Specific Page Vendor CSS -->
-    <link rel="stylesheet" href="/admin/assets/vendor/select2/select2.css" />
-    <link rel="stylesheet" href="/admin/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
+    <link rel="stylesheet" href="/admin/assets/vendor/select2/select2.css"/>
+    <link rel="stylesheet" href="/admin/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css"/>
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="/admin/assets/stylesheets/theme.css">
@@ -315,9 +537,10 @@
 
     <link rel="stylesheet" type="text/css" href="/admin/assets/notify/notify.css">
     <link rel="stylesheet" type="text/css" href="/admin/assets/notify/prettify.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/custom/popup.css">
     <script src="/admin/assets/notify/notify.js"></script>
     <script src="/admin/assets/notify/prettify.js"></script>
-
+    <script src="/admin/assets/custom/popup.js"></script>
 </head>
 
 

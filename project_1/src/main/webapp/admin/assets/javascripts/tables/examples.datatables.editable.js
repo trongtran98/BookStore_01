@@ -90,7 +90,7 @@
                                     xhttp.onreadystatechange = function () {
                                         if (this.status == 200 && this.readyState == 4) {
                                             _self.rowRemove( $row );
-                                            $.notify("Alert!", {type:"success", align:"right", verticalAlign:"top", icon:"close"});
+                                            $.notify("success!", {type:"success", align:"right", verticalAlign:"top", icon:"close"});
                                         } else if (this.readyState == 4 && this.status != 200) {
                                             $.notify("Alert!", {type:"danger", align:"right", verticalAlign:"top", icon:"close"});
                                         }

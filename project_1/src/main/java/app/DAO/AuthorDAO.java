@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface AuthorDAO extends BaseDAO<Integer,Author>{
     List<Author> findAuthors();
-    Author findAuthorById(Integer id);
     Author findAuthorById(Integer id,boolean lock);
 }
