@@ -17,4 +17,6 @@ public class BaseController {
     protected GoogleUtils googleUtils;
     @Autowired
     protected AuthorService authorService;
+    @Autowired
+    protected ReviewService reviewService;
 }

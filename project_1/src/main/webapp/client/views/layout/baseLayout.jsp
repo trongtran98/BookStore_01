@@ -81,6 +81,8 @@
         <script src="/client/assets/js/main.js"></script>
         <%--client index js--%>
         <script src="/client/assets/js/client-index.js"></script>
+        <%--client details js--%>
+        <script src="/client/assets/js/client-details.js"></script>
 
-	</body>
+    </body>
 </html>
