@@ -83,6 +83,8 @@
         <script src="/client/assets/js/client-index.js"></script>
         <%--client details js--%>
         <script src="/client/assets/js/client-details.js"></script>
+        <%--client cart js--%>
+        <script src="/client/assets/js/client-cart.js"></script>
 
     </body>
 </html>

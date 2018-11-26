@@ -7,6 +7,7 @@
     <http use-expressions="true" auto-config="true">
         <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/**" access="permitAll()"/>
+        <intercept-url pattern="/carts/**" access="hasRole('ROLE_CUSTOMER')"/>
         <csrf />
         <form-login login-page="/login" login-processing-url="/security_login"
                     default-target-url="/"

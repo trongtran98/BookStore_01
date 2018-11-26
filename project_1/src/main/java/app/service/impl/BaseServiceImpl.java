@@ -8,6 +8,8 @@ public class BaseServiceImpl {
 	protected BookDAO bookDAO;
 	protected CategoryDetailDAO categoryDetailDAO;
 	protected AuthorDAO authorDAO;
+	protected CartDAO cartDAO;
+	protected CartDetailDAO cartDetailDAO;
 
 	public AuthorDAO getAuthorDAO() {
 		return authorDAO;
@@ -58,5 +60,21 @@ public class BaseServiceImpl {
 
 	public void setReviewDAO(ReviewDAO reviewDAO) {
 		this.reviewDAO = reviewDAO;
+	}
+
+	public CartDAO getCartDAO() {
+		return cartDAO;
+	}
+
+	public void setCartDAO(CartDAO cartDAO) {
+		this.cartDAO = cartDAO;
+	}
+
+	public CartDetailDAO getCartDetailDAO() {
+		return cartDetailDAO;
+	}
+
+	public void setCartDetailDAO(CartDetailDAO cartDetailDAO) {
+		this.cartDetailDAO = cartDetailDAO;
 	}
 }
