@@ -10,21 +10,29 @@ import java.util.List;
 public class BookServiceImpl extends BaseServiceImpl implements BookService {
     @Override
     public List<Book> loadBooksTypeNew(int number) {
-        try{
+        try {
             return bookDAO.loadBooksTypeNew(number);
-        }catch (Exception e){
+        } catch (Exception e) {
             return Collections.emptyList();
         }
     }
 
     @Override
     public List<Book> findByName(String bookName) {
-        return bookDAO.findByName(bookName);
+        try {
+            return bookDAO.findByName(bookName);
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
     }
 
     @Override
     public Book findById(Serializable key) {
-        return bookDAO.findById(key);
+        try {
+            return bookDAO.findById(key);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override

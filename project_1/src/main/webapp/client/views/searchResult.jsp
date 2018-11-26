@@ -584,7 +584,7 @@
                                             </div>
                                         </div>
                                         <div class="product-details text-center">
-                                            <h4><a href="/book/${b.id}">${b.title}</a></h4>
+                                            <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
                                             <div class="product-price">
                                                 <ul>
                                                     <li>$${b.price}</li>

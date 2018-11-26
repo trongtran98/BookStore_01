@@ -23,7 +23,11 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 
     @Override
     public User saveOrUpdate(User entity) {
-        return userDAO.saveOrUpdate(entity);
+        try {
+            return userDAO.saveOrUpdate(entity);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     @Override
