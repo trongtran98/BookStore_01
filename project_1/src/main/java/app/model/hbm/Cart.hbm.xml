@@ -7,7 +7,7 @@
 			<generator class="increment" />
 		</id>
 
-		<many-to-one name="user" class="User"
+		<many-to-one name="user" class="User" fetch="join"
 			column="userId" unique="true" not-null="true" />
 
 		<list name="cartDetails" inverse="true" fetch="select" cascade="all">
