@@ -39,4 +39,13 @@
 	<bean id="producerDAO" class="app.DAO.impl.ProducerDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+
+	<bean id="orderDAO" class="app.DAO.impl.OrderDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<bean id="orderDetailDAO" class="app.DAO.impl.OrderDetailDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
 </beans>

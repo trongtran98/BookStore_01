@@ -15,7 +15,7 @@
 			<column name="userId" not-null="true" />
 		</many-to-one>
 
-		<list name="orderDetails" fetch="select" inverse="true">
+		<list name="orderDetails" fetch="select" inverse="true" cascade="all">
 			<key column="orderId" not-null="true" />
 			<list-index column="id" />
 			<one-to-many class="OrderDetail" />

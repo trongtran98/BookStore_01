@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <form:form id="cart-form" method="POST"
+                <form:form name="cart-form" id="cart-form" method="POST"
                            action="/carts/update" modelAttribute="cart">
                     <div class="table-content table-responsive">
                         <table>
@@ -54,6 +54,7 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <form:input path="id" type="hidden"/>
                             <c:set var="total" value="0"/>
                             <c:if test="${not empty cart}">
                                 <c:forEach items="${cart.cartDetails}" var="cd" varStatus="status">
@@ -131,7 +132,7 @@
                         </tbody>
                     </table>
                     <div class="wc-proceed-to-checkout">
-                        <a href="#">Proceed to Checkout</a>
+                        <a id="purchase" href="#">Proceed to Checkout</a>
                     </div>
                 </div>
             </div>

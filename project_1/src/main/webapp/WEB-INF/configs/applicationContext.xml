@@ -36,6 +36,7 @@
             <list>
                 <value>classpath:messages</value>
                 <value>classpath:google-security</value>
+                <value>classpath:mail</value>
             </list>
         </property>
         <property name="defaultEncoding" value="UTF-8"/>
@@ -63,11 +64,9 @@
         <property name="maxInMemorySize" value="50000000"/>
     </bean>
 
-    <bean id="excelUtils" class="app.utlis.ExcelUtils">
+    <bean id="excelUtils" class="app.utlis.ExcelUtils"/>
 
-    </bean>
+    <bean id="googleUtils" class="app.utlis.GoogleUtils"/>
 
-    <bean id="googleUtils" class="app.utlis.GoogleUtils">
-
-    </bean>
+    <bean id="mailUtils" class="app.utlis.MailUtils"/>
 </beans>

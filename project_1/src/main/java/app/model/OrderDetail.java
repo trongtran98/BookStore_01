@@ -11,7 +11,16 @@ public class OrderDetail implements java.io.Serializable {
 	private Book book;
 	private Order order;
 
-	public Integer getId() {
+	public OrderDetail() {
+	}
+
+    public OrderDetail(CartDetail cartDetail) {
+		this.price = cartDetail.getPrice();
+		this.amount = cartDetail.getAmount();
+		this.book = cartDetail.getBook();
+    }
+
+    public Integer getId() {
 		return id;
 	}
 

@@ -11,6 +11,8 @@ public class BaseServiceImpl {
     protected CartDAO cartDAO;
     protected CartDetailDAO cartDetailDAO;
     protected ProducerDAO producerDAO;
+    protected OrderDAO orderDAO;
+    protected OrderDetailDAO orderDetailDAO;
 
     public ProducerDAO getProducerDAO() {
         return producerDAO;
@@ -86,4 +88,21 @@ public class BaseServiceImpl {
     public void setCartDetailDAO(CartDetailDAO cartDetailDAO) {
         this.cartDetailDAO = cartDetailDAO;
     }
+
+    public OrderDAO getOrderDAO() {
+        return orderDAO;
+    }
+
+    public void setOrderDAO(OrderDAO orderDAO) {
+        this.orderDAO = orderDAO;
+    }
+
+    public OrderDetailDAO getOrderDetailDAO() {
+        return orderDetailDAO;
+    }
+
+    public void setOrderDetailDAO(OrderDetailDAO orderDetailDAO) {
+        this.orderDetailDAO = orderDetailDAO;
+    }
+
 }
