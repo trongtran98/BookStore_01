@@ -1,5 +1,7 @@
 package app.controller.client;
 
+import app.bean.CartInfo;
+import app.bean.OrderInfo;
 import app.controller.BaseController;
 import app.model.Cart;
 import app.model.CartDetail;
@@ -19,19 +21,11 @@ public class OrderController extends BaseController {
 
     @RequestMapping(value = "/purchase", method = RequestMethod.POST)
     public String purchase(@RequestParam Integer id) {
-        Cart cart = cartService.findById(id);
-        Order order = new Order(cart);
-        List<OrderDetail> orderDetails = new ArrayList<>();
-        for (CartDetail cartDetail : cart.getCartDetails()) {
-            if (cartDetail != null) {
-                orderDetails.add(new OrderDetail(cartDetail));
-            }
-        }
-        if (orderService.saveOrderAndRemoveCart(order, orderDetails, cart)) {
-            mailUtils.sendSimpleMessage(cart.getUser().getEmail(), cart.getUser().getFullName());
+        Order order = orderService.getOrderByCart(id);
+        if (orderService.saveOrderAndRemoveCart(order, order.getOrderDetails(), order.getCart())) {
+            mailUtils.sendSimpleMessage(order.getCart().getUser().getEmail(), order.getCart().getUser().getFullName());
         }
         return "redirect:/home";
     }
-
 
 }

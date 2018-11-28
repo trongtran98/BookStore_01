@@ -17,7 +17,8 @@ public class OrderDetailServiceImpl extends BaseServiceImpl implements OrderDeta
     }
 
     @Override
-    public boolean delete(OrderDetail entity) {
+    public boolean delete(Integer id) {
         return false;
     }
+
 }
