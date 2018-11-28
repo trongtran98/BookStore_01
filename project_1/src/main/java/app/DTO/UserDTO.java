@@ -1,11 +1,10 @@
-package app.model;
+package app.DTO;
 
-import app.DTO.UserDTO;
+import app.model.User;
 
 import java.util.Date;
-import java.util.List;
 
-public class User implements java.io.Serializable{
+public class UserDTO {
     private Integer id;
     private String email;
     private String password;
@@ -14,9 +13,7 @@ public class User implements java.io.Serializable{
     private Boolean gender;
     private Date birthday;
     private String role;
-    private List<Address> addresses;
-    private Cart cart;
-    private List<Order> orders;
+    private  AddressDTO address;
 
     public Integer getId() {
         return id;
@@ -82,46 +79,12 @@ public class User implements java.io.Serializable{
         this.role = role;
     }
 
-    public List<Address> getAddresses() {
-        return addresses;
+    public AddressDTO getAddress() {
+        return address;
     }
 
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
+    public void setAddress(AddressDTO address) {
+        this.address = address;
     }
 
-    public Cart getCart() {
-        return cart;
-    }
-
-    public void setCart(Cart cart) {
-        this.cart = cart;
-    }
-
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
-
-    public User() {
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
-    public User(UserDTO userDTO) {
-        this.id = userDTO.getId();
-        this.email = userDTO.getEmail();
-        this.password = userDTO.getPassword();
-        this.fullName = userDTO.getFullName();
-        this.phone = userDTO.getPhone();
-        this.gender = userDTO.getGender();
-        this.birthday = userDTO.getBirthday();
-        this.addresses.add(new Address(userDTO.getAddress()));
-    }
 }

@@ -2,6 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!-- header-top-area-start -->
 <div class="header-top-area">
@@ -13,29 +14,34 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="account-area text-right">
-                    <spring:url value="/login" var="loginUrl"/>
-                    <spring:url value="/security_logout" var="logoutUrl"/>
-                    <ul>
-                        <security:authorize access="isAuthenticated()">
-                            <li>
-                                <a href="/info"> <security:authentication property="principal.username"/></a>
+            <div class="pull-right">
+                <spring:url value="/login" var="loginUrl"/>
+                <spring:url value="/security_logout" var="logoutUrl"/>
+                <ul class="nav pull-right">
+                    <security:authorize access="isAuthenticated()">
+
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" style="color: #363636"
+                                            data-toggle="dropdown"><security:authentication
+                            property="principal.username"/><b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="right: 0; left: revert">
+                            <li><a href="#"><i class="icon-cog"></i> Preferences</a></li>
+                            <li><a href="#"><i class="icon-envelope"></i> Contact Support</a></li>
+                            <li class="divider"></li>
+                            <li><a id="logout-button" style="cursor: pointer"><i class="icon-off"></i> Logout</a></li>
+                            <li style="display: none">
+                                <form id="logout-form" action="${logoutUrl}" method="post">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                    <input type="submit"></input>
+                                </form>
                             </li>
-                            <form action="${logoutUrl}" method="post">
-                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
-                                <button type="submit">Logout</button>
-
-                            </form>
+                        </ul>
                         </security:authorize>
                         <security:authorize access="isAnonymous()">
+                    <li><a style="color: #363636" href="${loginUrl}"> <spring:message code="label.login"/></a></li>
+                    </security:authorize>
+                    </li>
 
-                            <li><a href="${loginUrl}"><spring:message code="label.login"/></a></li>
-
-                        </security:authorize>
-                    </ul>
-                </div>
+                </ul>
             </div>
         </div>
     </div>
@@ -90,7 +96,8 @@
                                     </div>
                                 </c:forEach>
                                 <div class="cart-bottom">
-                                    <a class="view-cart" href="/carts/${myCart.id}"><spring:message code="label.view.cart"/></a>
+                                    <a class="view-cart" href="/carts/${myCart.id}"><spring:message
+                                            code="label.view.cart"/></a>
                                     <a href="checkout.html"><spring:message code="label.checkout"/></a>
                                 </div>
                             </div>
@@ -295,3 +302,10 @@
     </div>
 </div>
 <!-- mobile-menu-area-end -->
+<head>
+    <script>
+        document.getElementById("logout-button").onclick = function () {
+            document.getElementById("logout-form").submit();
+        }
+    </script>
+</head>
