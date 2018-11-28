@@ -23,7 +23,7 @@ public class ReviewServiceImpl extends BaseServiceImpl implements ReviewService 
     }
 
     @Override
-    public boolean delete(Review entity) {
+    public boolean delete(Integer id) {
         return false;
     }
 

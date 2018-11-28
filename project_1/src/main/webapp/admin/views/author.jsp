@@ -9,7 +9,6 @@
 <%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <div class="inner-wrapper">
     <!-- start: sidebar -->
     <aside id="sidebar-left" class="sidebar-left">
@@ -64,7 +63,7 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li>
-                                    <a href="forms-basic.html">
+                                    <a href="/admin/books">
                                         Books
                                     </a>
                                 </li>
@@ -74,12 +73,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="forms-validation.html">
+                                    <a href="/admin/producers">
                                         Producers
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="forms-layouts.html">
+                                    <a href="/admin/categories">
                                         Categories
                                     </a>
                                 </li>
@@ -140,56 +139,7 @@
 
     </aside>
     <!-- end: sidebar -->
-    <section role="main" class="content-body">
-
-        <div id="id01" class="modal">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <form class="modal-content" id="idForm" action="">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                <div class="container1">
-                    <h1>Add Author</h1>
-                    <p>Please fill in this form to add Author.</p>
-                    <hr>
-                    <label for="name"><b>Name</b></label>
-                    <input type="text" placeholder="Name" name="fullName" required>
-
-                    <label for="description"><b>Description</b></label>
-                    <textarea placeholder="Description" name="description"></textarea>
-
-                    <div class="clearfix">
-                        <button type="submit" class="signupbtn">Add</button>
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                                class="cancelbtn">Cancel
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div id="id02" class="modal">
-            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <form class="modal-content" id="idForm2" action="">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                <div class="container1">
-                    <h1>Edit Author</h1>
-                    <p>Please edit author</p>
-                    <hr>
-                    <label for="id2"><b>ID</b></label>
-                    <input id="id2" type="text" placeholder="ID" name="id" required readonly>
-                    <label for="name2"><b>Name</b></label>
-                    <input id="name2" type="text" placeholder="Name" name="fullName" required>
-
-                    <label for="description2"><b>Description</b></label>
-                    <textarea id="description2" placeholder="Description" name="description"></textarea>
-
-                    <div class="clearfix">
-                        <button type="submit" class="signupbtn">Edit</button>
-                        <button type="button" onclick="document.getElementById('id02').style.display='none'"
-                                class="cancelbtn">Cancel
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
+    <section id="section1" role="main" class="content-body">
         <header class="page-header">
             <h2>Editable Tables</h2>
 
@@ -211,18 +161,13 @@
         <!-- start: page -->
         <section class="panel">
             <header class="panel-heading">
-                <div class="panel-actions">
-                    <a href="#" class="fa fa-caret-down"></a>
-                    <a href="#" class="fa fa-times"></a>
-                </div>
-
                 <h2 class="panel-title">Authors</h2>
             </header>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="mb-md">
-                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
+                            <button onclick="add()" style="width:auto;"
                                     class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
                         </div>
                     </div>
@@ -257,10 +202,8 @@
                                     <td>${item.fullName}</td>
                                     <td>${item.description}</td>
                                     <td class="actions">
-                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
-                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
                                         <a href="#"
-                                           onclick="editAuthor('${item.id}','${item.fullName}','${item.description}')"
+                                           onclick="edit(${item.id})"
                                            style="width:auto;" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
                                         <a href="#" bId="${item.id}" class="on-default remove-row"><i
                                                 class="fa fa-trash-o"></i></a>
@@ -274,6 +217,7 @@
             </div>
         </section>
         <!-- end: page -->
+
         <aside id="sidebar-right" class="sidebar-right">
             <div class="nano has-scrollbar">
                 <div class="nano-content" tabindex="0" style="right: -15px;">
@@ -490,7 +434,61 @@
                 </div>
             </div>
         </aside>
+
     </section>
+    <section id="section2" role="main" class="content-body">
+        <header class="page-header">
+            <h2>Basic Forms</h2>
+
+            <div class="right-wrapper pull-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a href="index.html">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Forms</span></li>
+                    <li><span>Basic</span></li>
+                </ol>
+
+                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+            </div>
+        </header>
+        <!-- start: page -->
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Form Elements</h2>
+                    </header>
+                    <div class="panel-body">
+                        <form id="idForm" class="form-horizontal form-bordered">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            <input id="id" type="hidden" class="form-control input-rounded" name="id">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="fullName">Full name</label>
+                                <div class="col-md-6">
+                                    <input id="fullName" type="text" class="form-control input-rounded" name="fullName">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="description">Description</label>
+                                <div class="col-md-6">
+                                    <textarea id="description" placeholder="Description" name="description"></textarea>
+                                </div>
+                            </div>
+                                <button id="button-add" type="button">Add</button>
+                                <button id="button-edit" type="button">edit</button>
+                                <button id="button-close" onclick="cancel()" type="button">cancel</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- end: page -->
+    </section>
+
 </div>
 
 <head>

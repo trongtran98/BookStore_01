@@ -23,4 +23,6 @@ public class BaseController {
     protected CartService cartService;
     @Autowired
     protected CartDetailService cartDetailService;
+    @Autowired
+    protected ProducerService producerService;
 }

@@ -9,6 +9,11 @@ import java.util.List;
 
 public class CategoryDetailDAOImpl extends GenericDAO<Integer, CategoryDetail> implements CategoryDetailDAO {
     @Override
+    public List<CategoryDetail> findCategoryDetails() {
+        return getSession().createQuery("FROM CategoryDetail ").getResultList();
+    }
+
+    @Override
     public List<CategoryDetail> loadFeatureCateDetails(int categoryId){
         return (List<CategoryDetail>) getSession().createQuery("from CategoryDetail cd where cd.category.id = :categoryId")
                 .setParameter("categoryId", categoryId)

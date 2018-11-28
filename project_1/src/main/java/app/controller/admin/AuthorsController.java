@@ -2,49 +2,49 @@ package app.controller.admin;
 
 import app.DTO.AuthorDTO;
 import app.controller.BaseController;
+import app.helper.Helper;
 import app.model.Author;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/authors")
 public class AuthorsController extends BaseController {
 
-    @RequestMapping(value = "/authors", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("authors", authorService.findAuthors());
         return "/admin/authors";
     }
 
-    @RequestMapping(value = "/authors/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    AuthorDTO findById(@PathVariable Integer id) {
+        if (id == null)
+            return null;
+        AuthorDTO authorDTO = new AuthorDTO(authorService.findById(id));
+        return authorDTO;
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deleteAuthor(@PathVariable Integer id) {
-        if (id == null || !authorService.deleteAuthor(id)) {
-            return ResponseEntity.status(HttpStatus.FAILED_DEPENDENCY).body(null);
-        }
-        return ResponseEntity.status(HttpStatus.OK).
-
-                body(null);
+        return Helper.delete(id, authorService.delete(id));
     }
 
-    @RequestMapping(value = "/authors/create", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity createAuthor(@RequestBody AuthorDTO authorDTO) {
-        Author author = new Author(authorDTO);
-        if (authorDTO == null || authorService.saveOrUpdate(author) == null)
-            return ResponseEntity.status(HttpStatus.FAILED_DEPENDENCY).body(null);
-        return ResponseEntity.status(HttpStatus.OK).body(HttpStatus.OK);
+        return createOrUpdate(authorDTO);
     }
 
-    @RequestMapping(value = "/authors/edit", method = RequestMethod.PUT)
-    public ResponseEntity editAuthor(@RequestBody AuthorDTO authorDTO) {
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity updateAuthor(@RequestBody AuthorDTO authorDTO) {
+        return createOrUpdate(authorDTO);
+    }
+
+    private ResponseEntity createOrUpdate(AuthorDTO authorDTO) {
         Author author = new Author(authorDTO);
-        if (authorDTO == null || authorService.saveOrUpdate(author) == null)
-            return ResponseEntity.status(HttpStatus.FAILED_DEPENDENCY).body(null);
-        return ResponseEntity.status(HttpStatus.OK).body(HttpStatus.OK);
+        return Helper.createOrUpdate(author, authorService.saveOrUpdate(author));
     }
 }
