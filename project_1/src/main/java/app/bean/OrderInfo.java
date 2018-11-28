@@ -1,20 +1,28 @@
-package app.model;
+package app.bean;
 
-import java.util.ArrayList;
+import app.model.Cart;
+import app.model.Order;
+import app.model.OrderDetail;
+import app.model.User;
+
 import java.util.List;
 
-public class Order implements java.io.Serializable {
+public class OrderInfo {
     private Integer id;
     private Boolean status;
     private User user;
     private List<OrderDetail> orderDetails;
-    private Cart cart;
 
-    public Order() {
+    public OrderInfo() {
 
     }
 
-    public Order(Cart cart) {
+    public OrderInfo(Order order) {
+        this.user = order.getUser();
+        this.orderDetails = order.getOrderDetails();
+    }
+
+    public OrderInfo(Cart cart) {
         this.status = false;
         this.user = cart.getUser();
     }
@@ -49,13 +57,5 @@ public class Order implements java.io.Serializable {
 
     public void setOrderDetails(List<OrderDetail> orderDetails) {
         this.orderDetails = orderDetails;
-    }
-
-    public Cart getCart() {
-        return cart;
-    }
-
-    public void setCart(Cart cart) {
-        this.cart = cart;
     }
 }

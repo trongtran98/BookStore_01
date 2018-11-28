@@ -1,11 +1,14 @@
 package app.service.impl;
 
+import app.bean.OrderInfo;
 import app.model.Cart;
+import app.model.CartDetail;
 import app.model.Order;
 import app.model.OrderDetail;
 import app.service.OrderService;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
@@ -24,7 +27,7 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean delete(Order entity) {
+    public boolean delete(Integer id) {
         return false;
     }
 
@@ -39,5 +42,21 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
         }catch (Exception e){
             throw e;
         }
+    }
+
+    @Override
+    public Order getOrderByCart(Integer cartId) {
+        Cart cart = cartDAO.findById(cartId);
+        Order order = new Order(cart);
+        List<OrderDetail> orderDetails = new ArrayList<>();
+        for (CartDetail cartDetail : cart.getCartDetails()) {
+            if (cartDetail != null) {
+                orderDetails.add(new OrderDetail(cartDetail));
+            }
+        }
+        order.setUser(cart.getUser());
+        order.setOrderDetails(orderDetails);
+        order.setCart(cart);
+        return order;
     }
 }
