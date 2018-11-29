@@ -13,4 +13,7 @@ public interface CartDetailService extends BaseService<Integer, CartDetail> {
     void deleteById(Integer cartDetailId);
 
     void updateListCartDetails(Cart cart);
+
+    void deleteCartDetailInventory(Integer date);
+
 }
