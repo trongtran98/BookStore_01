@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <div class="inner-wrapper">
     <!-- start: sidebar -->
@@ -50,7 +50,16 @@
                                     <c:url value="/admin/add-manager?${_csrf.parameterName}=${_csrf.token}"
                                            var="addManager"/>
                                     <form action="${addManager}" method="post" enctype="multipart/form-data">
-                                        <input type="file" name="fileExcel"/>
+                                        <div class="box">
+                                            <input type="file" name="fileExcel" id="file-1"
+                                                   class="inputfile inputfile-1" accept=".xls, .xlsx"/>
+                                            <label for="file-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"
+                                                     viewBox="0 0 20 17">
+                                                    <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+                                                </svg>
+                                                <span>Choose a file&hellip;</span></label>
+                                        </div>
                                         <button type="submit">ok</button>
                                     </form>
                                 </li>
@@ -162,8 +171,8 @@
         <section class="panel">
             <header class="panel-heading">
                 <%--<div class="panel-actions">--%>
-                    <%--<a href="#" class="fa fa-caret-down"></a>--%>
-                    <%--<a href="#" class="fa fa-times"></a>--%>
+                <%--<a href="#" class="fa fa-caret-down"></a>--%>
+                <%--<a href="#" class="fa fa-times"></a>--%>
                 <%--</div>--%>
                 <h2 class="panel-title">Books</h2>
             </header>
@@ -171,7 +180,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="mb-md">
-                            <button onclick="displayBook(true)" style="width:auto;"
+                            <button onclick="add()" style="width:auto;"
                                     class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
                         </div>
                     </div>
@@ -467,16 +476,14 @@
                         <h2 class="panel-title">Form Elements</h2>
                     </header>
                     <div class="panel-body">
-                        <form id="idForm" class="form-horizontal form-bordered"
-                              action="/admin/books/create?${_csrf.parameterName}=${_csrf.token}" method="post"
-                              enctype="multipart/form-data">
-                            <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
-                            <%--<div class="form-group">--%>
-                            <%--<label class="col-md-3 control-label" for="id">ID</label>--%>
-                            <%--<div class="col-md-6">--%>
-                            <%--<input id="id" type="text" class="form-control input-rounded" name="id" >--%>
-                            <%--</div>--%>
-                            <%--</div>--%>
+                        <form id="idForm1" class="form-horizontal form-bordered" method="post" accept-charset="UTF-8"
+                              action="/admin/books?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
+                            <div class="form-group" style="display: none">
+                                <label class="col-md-3 control-label" for="id">ID</label>
+                                <div class="col-md-6">
+                                    <input id="id" type="text" class="form-control input-rounded" name="id">
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="title">Title</label>
                                 <div class="col-md-6">
@@ -496,14 +503,16 @@
                                 <div class="col-md-6">
                                     <div class="file-upload">
                                         <div class="image-upload-wrap">
-                                            <input class="file-upload-input" type='file' onchange="readURL(this);"
+                                            <input class="file-upload-input" type='file' name="multipartFile"
+                                                   onchange="readURL(this);"
                                                    accept="image/*"/>
                                             <div class="drag-text">
                                                 <h3>Drag and drop a file or select add Image</h3>
                                             </div>
                                         </div>
                                         <div class="file-upload-content">
-                                            <img class="file-upload-image" accept="image/*" src="#" alt="your image" name="image"/>
+                                            <img class="file-upload-image" accept="image/*" src="#" alt="your image"
+                                                 name="image"/>
                                             <div class="image-title-wrap">
                                                 <button type="button" onclick="removeUpload()" class="remove-image">
                                                     Remove
@@ -514,6 +523,7 @@
                                 </div>
 
                             </div>
+
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="pages">Pages</label>
                                 <div class="col-md-6">
@@ -579,7 +589,8 @@
                                 </div>
                             </div>
                             <button type="submit">Add</button>
-                            <button onclick="displayBook(false)" type="button">cancel</button>
+                            <button id="button-edit" type="button">edit</button>
+                            <button id="button-close" onclick="cancel()" type="button">cancel</button>
                         </form>
                     </div>
                 </section>
@@ -634,129 +645,11 @@
     <link rel="stylesheet" type="text/css" href="/admin/assets/notify/notify.css">
     <link rel="stylesheet" type="text/css" href="/admin/assets/notify/prettify.css">
     <link rel="stylesheet" type="text/css" href="/admin/assets/custom/popup.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/custom/input-file-excel.css">
     <script src="/admin/assets/notify/notify.js"></script>
     <script src="/admin/assets/notify/prettify.js"></script>
     <script src="/admin/assets/custom/popup.js"></script>
-
-    <%--<style>--%>
-
-
-        <%--input[type=text], input[type=password], textarea, input[type=number], select {--%>
-            <%--width: 100%;--%>
-            <%--padding: 15px;--%>
-            <%--margin: 5px 0 22px 0;--%>
-            <%--display: inline-block;--%>
-            <%--border: none;--%>
-            <%--background: #f1f1f1;--%>
-        <%--}--%>
-
-        <%--/* Add a background color when the inputs get focus */--%>
-        <%--input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=number]:focus, select:focus {--%>
-            <%--background-color: #ddd;--%>
-            <%--outline: none;--%>
-        <%--}--%>
-
-        <%--/* Set a style for all buttons */--%>
-        <%--button {--%>
-            <%--background-color: #0090E3;--%>
-            <%--color: white;--%>
-            <%--padding: 14px 20px;--%>
-            <%--margin: 8px 0;--%>
-            <%--border: none;--%>
-            <%--cursor: pointer;--%>
-            <%--width: 100%;--%>
-            <%--opacity: 0.9;--%>
-        <%--}--%>
-
-        <%--button:hover {--%>
-            <%--opacity: 1;--%>
-        <%--}--%>
-
-
-        <%--.file-upload {--%>
-            <%--background-color: #ffffff;--%>
-            <%--width: 100%;--%>
-            <%--padding: 15px;--%>
-            <%--margin: 5px 0 22px 0;--%>
-        <%--}--%>
-
-        <%--.file-upload-content {--%>
-            <%--display: none;--%>
-            <%--text-align: center;--%>
-        <%--}--%>
-
-        <%--.file-upload-input {--%>
-            <%--position: absolute;--%>
-            <%--margin: 0;--%>
-            <%--padding: 0;--%>
-            <%--width: 100%;--%>
-            <%--height: 100%;--%>
-            <%--outline: none;--%>
-            <%--opacity: 0;--%>
-            <%--cursor: pointer;--%>
-        <%--}--%>
-
-        <%--.image-upload-wrap {--%>
-            <%--margin-top: 20px;--%>
-            <%--border: 4px dashed #1FB264;--%>
-            <%--position: relative;--%>
-        <%--}--%>
-
-        <%--.image-dropping,--%>
-        <%--.image-upload-wrap:hover {--%>
-            <%--background-color: #1FB264;--%>
-            <%--border: 4px dashed #ffffff;--%>
-        <%--}--%>
-
-        <%--.image-title-wrap {--%>
-            <%--padding: 0 15px 15px 15px;--%>
-            <%--color: #222;--%>
-        <%--}--%>
-
-        <%--.drag-text {--%>
-            <%--text-align: center;--%>
-        <%--}--%>
-
-        <%--.drag-text h3 {--%>
-            <%--font-weight: 100;--%>
-            <%--text-transform: uppercase;--%>
-            <%--color: #15824B;--%>
-            <%--padding: 60px 0;--%>
-        <%--}--%>
-
-        <%--.file-upload-image {--%>
-            <%--width: 100%;--%>
-            <%--padding: 15px;--%>
-            <%--margin: 5px 0 22px 0;--%>
-        <%--}--%>
-
-        <%--.remove-image {--%>
-            <%--width: 200px;--%>
-            <%--margin: 0;--%>
-            <%--color: #fff;--%>
-            <%--background: #cd4535;--%>
-            <%--border: none;--%>
-            <%--padding: 10px;--%>
-            <%--border-radius: 4px;--%>
-            <%--border-bottom: 4px solid #b02818;--%>
-            <%--transition: all .2s ease;--%>
-            <%--outline: none;--%>
-            <%--text-transform: uppercase;--%>
-            <%--font-weight: 700;--%>
-        <%--}--%>
-
-        <%--.remove-image:hover {--%>
-            <%--background: #c13b2a;--%>
-            <%--color: #ffffff;--%>
-            <%--transition: all .2s ease;--%>
-            <%--cursor: pointer;--%>
-        <%--}--%>
-
-        <%--.remove-image:active {--%>
-            <%--border: 0;--%>
-            <%--transition: all .2s ease;--%>
-        <%--}--%>
-    <%--</style>--%>
+    <script src="/admin/assets/custom/input-file-excel.js"></script>
 </head>
 
 
