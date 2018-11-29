@@ -19,9 +19,9 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
 
     @Override
     public Order saveOrUpdate(Order entity) {
-        try{
+        try {
             return orderDAO.saveOrUpdate(entity);
-        }catch (Exception e){
+        } catch (Exception e) {
             throw e;
         }
     }
@@ -32,31 +32,40 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean saveOrderAndRemoveCart(Order order, List<OrderDetail> orderDetails, Cart cart) {
-        try{
+    public boolean saveOrderAndRemoveCart(OrderInfo orderInfo, List<OrderDetail> orderDetails, Integer cartId) {
+        try {
+            Order order = convertBeanToModel(orderInfo);
             Order orderPersist = saveOrUpdate(order);
-            orderDetails.forEach(orderDetail -> orderDetail.setOrder(orderPersist));
-            orderDetailDAO.saveOrderDetails(orderDetails);
-            cartDAO.delete(cart);
+            for (OrderDetail orderDetail : orderDetails){
+                orderDetail.setOrder(orderPersist);
+                orderDetailDAO.saveOrUpdate(orderDetail);
+            }
+            cartDAO.delete(cartDAO.findByCartId(cartId));
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             throw e;
         }
     }
 
     @Override
-    public Order getOrderByCart(Integer cartId) {
+    public OrderInfo getOrderByCart(Integer cartId) {
         Cart cart = cartDAO.findById(cartId);
-        Order order = new Order(cart);
+        OrderInfo order = new OrderInfo(cart);
         List<OrderDetail> orderDetails = new ArrayList<>();
         for (CartDetail cartDetail : cart.getCartDetails()) {
             if (cartDetail != null) {
                 orderDetails.add(new OrderDetail(cartDetail));
             }
         }
-        order.setUser(cart.getUser());
         order.setOrderDetails(orderDetails);
-        order.setCart(cart);
         return order;
     }
+
+    private Order convertBeanToModel(OrderInfo orderInfo) {
+        Order order = new Order();
+        order.setUser(orderInfo.getUser());
+        order.setStatus(orderInfo.getStatus());
+        return order;
+    }
+
 }

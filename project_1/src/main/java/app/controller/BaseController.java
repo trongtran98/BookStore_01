@@ -5,7 +5,6 @@ import app.service.*;
 import app.utlis.GoogleUtils;
 import app.utlis.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class BaseController {
     @Autowired
