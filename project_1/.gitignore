@@ -35,3 +35,4 @@ project_1/src/main/resources/datasources.properties
 *.classpath
 *.settings
 .project
+project_1/src/main/resources/mail.properties
