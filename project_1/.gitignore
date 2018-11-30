@@ -30,6 +30,7 @@ hs_err_pid*
 project_1/.settings
 project_1/target
 project_1/src/main/resources/datasources.properties
+project_1/src/main/resources/mail.properties
 
 # eclipse config
 *.classpath
