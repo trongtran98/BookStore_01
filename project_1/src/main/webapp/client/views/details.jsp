@@ -88,7 +88,7 @@
                                         <div class="quality-button">
                                             <input class="qty" type="number" value="1">
                                         </div>
-                                        <a href="#">Add to cart</a>
+                                        <a class="add-to-cart"  bId="${book.id}">Add to cart</a>
                                     </form>
                                 </div>
                                 <div class="product-social-links">

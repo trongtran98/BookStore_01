@@ -37,6 +37,8 @@
         <link rel="stylesheet" href="/client/assets/css/responsive.css">
         <!-- modernizr css -->
         <script src="/client/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/client/assets/js/notify/prettify.css">
+        <link rel="stylesheet" type="text/css" href="/client/assets/js/notify/notify.css">
         <title>
             <tiles:insertAttribute name="title" ignore="true" />
             </title>
@@ -85,6 +87,8 @@
         <script src="/client/assets/js/client-details.js"></script>
         <%--client cart js--%>
         <script src="/client/assets/js/client-cart.js"></script>
+        <script src="/client/assets/js/notify/notify.js"></script>
+        <script src="/client/assets/js/notify/prettify.js"></script>
 
     </body>
 </html>

@@ -106,7 +106,7 @@
                         </div>
                         <div class="product-link">
                             <div class="product-button">
-                                <a href="#" class="add-to-cart" title="Add to cart" bId="${b.id}"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                <a class="add-to-cart"  title="Add to cart" bId="${b.id}"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </div>
                             <div class="add-to-link">
                                 <ul>
