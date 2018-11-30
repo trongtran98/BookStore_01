@@ -33,6 +33,4 @@ public class BaseController {
     protected MailUtils mailUtils;
     @Autowired
     protected UtilConvertModel utilConvertModel;
-    @Autowired
-    protected BCryptPasswordEncoder encoder;
 }
