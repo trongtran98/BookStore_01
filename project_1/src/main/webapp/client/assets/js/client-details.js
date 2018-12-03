@@ -1,5 +1,13 @@
-$("#review-submit").click(function () {
+CKEDITOR.replace('content');
+
+$("#review-submit").click(function (e) {
+    e.preventDefault();
+    for (instance in CKEDITOR.instances) {
+        CKEDITOR.instances[instance].updateElement();
+    }
     var data = $('#review-form').serialize();
+    CKEDITOR.instances[instance].setData('');
+    $('#content').text('');
     $.ajax({
         headers: {"X-CSRF-TOKEN": $("input[name='_csrf']").val()},
         method: "POST",
