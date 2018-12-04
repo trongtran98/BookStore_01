@@ -19,7 +19,7 @@ public class IndexController extends BaseController {
     private final int TYPE_FEATURE = 7;
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
-    public String index(HttpSession session, Model model) {
+    public String index(Model model) {
         model.addAllAttributes(getMapAttributes());
         return "/client/index";
     }

@@ -1,33 +1,51 @@
 package app.service.impl;
 
+
+import app.bean.BookInfo;
 import app.model.Book;
 import app.service.BookService;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class BookServiceImpl extends BaseServiceImpl implements BookService {
     @Override
-    public List<Book> loadBooksTypeNew(int number) {
+    public List<BookInfo> loadBooksTypeNew(int number) {
         try {
-            return bookDAO.loadBooksTypeNew(number);
+            List<Book> bookModels = bookDAO.loadBooksTypeNew(number);
+            List<BookInfo> bookInfos = new ArrayList<>();
+            for (Book book : bookModels){
+                bookInfos.add(new BookInfo(book));
+            }
+            return bookInfos;
         } catch (Exception e) {
             return Collections.emptyList();
         }
     }
 
     @Override
-    public List<Book> findByName(String bookName) {
+    public List<BookInfo> findByName(String bookName) {
         try {
-            return bookDAO.findByName(bookName);
+            List<Book> bookModels = bookDAO.findByName(bookName);
+            List<BookInfo> bookInfos = new ArrayList<>();
+            for (Book book : bookModels){
+                bookInfos.add(new BookInfo(book));
+            }
+            return bookInfos;
         } catch (Exception e) {
             return Collections.emptyList();
         }
     }
 
-    public List<Book> findBooks() {
-        return bookDAO.findBooks();
+    public List<BookInfo> findBooks() {
+        List<Book> bookModels = bookDAO.findBooks();
+        List<BookInfo> bookInfos = new ArrayList<>();
+        for (Book book : bookModels){
+            bookInfos.add(new BookInfo(book));
+        }
+        return bookInfos;
     }
 
     @Override

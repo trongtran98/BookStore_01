@@ -1,11 +1,12 @@
 package app.service;
 
+import app.bean.BookInfo;
 import app.model.Book;
 
 import java.util.List;
 
 public interface BookService extends BaseService<Integer, Book> {
-    List<Book> loadBooksTypeNew(int number);
-    List<Book> findByName(String bookName);
-    List<Book> findBooks();
+    List<BookInfo> loadBooksTypeNew(int number);
+    List<BookInfo> findByName(String bookName);
+    List<BookInfo> findBooks();
 }

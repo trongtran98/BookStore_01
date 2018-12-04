@@ -4,6 +4,8 @@ import app.bean.BookInfo;
 import app.controller.BaseController;
 import app.model.Book;
 import app.model.Review;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,8 +35,11 @@ public class BookController extends BaseController {
     }
 
     @RequestMapping(value = "/search")
-    public String searchBook(@RequestParam String bookName, Model model){
-        model.addAttribute("books", bookService.findByName(bookName));
+    public String searchBook(@RequestParam String bookName, Model model) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<BookInfo> books = bookService.findByName(bookName);
+        model.addAttribute("books", books);
+        model.addAttribute("booksJson", objectMapper.writeValueAsString(books));
         return "/client/searchResult";
     }
 }
