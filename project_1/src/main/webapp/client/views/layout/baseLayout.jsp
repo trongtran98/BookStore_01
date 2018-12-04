@@ -39,6 +39,9 @@
         <script src="/client/assets/js/vendor/modernizr-2.8.3.min.js"></script>
         <link rel="stylesheet" type="text/css" href="/client/assets/js/notify/prettify.css">
         <link rel="stylesheet" type="text/css" href="/client/assets/js/notify/notify.css">
+        <!-- jquery latest version -->
+        <script src="/client/assets/js/vendor/jquery-1.12.0.min.js"></script>
+
         <title>
             <tiles:insertAttribute name="title" ignore="true" />
             </title>
@@ -54,9 +57,10 @@
 			<tiles:insertAttribute name="footer" />
 		</footer>
 
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <!-- all js here -->
-        <!-- jquery latest version -->
-        <script src="/client/assets/js/vendor/jquery-1.12.0.min.js"></script>
+
         <!-- bootstrap js -->
         <script src="/client/assets/js/bootstrap.min.js"></script>
         <!-- owl.carousel js -->
@@ -85,10 +89,12 @@
         <script src="/client/assets/js/client-index.js"></script>
         <%--client details js--%>
         <script src="/client/assets/js/client-details.js"></script>
+
         <%--client cart js--%>
         <script src="/client/assets/js/client-cart.js"></script>
         <script src="/client/assets/js/notify/notify.js"></script>
         <script src="/client/assets/js/notify/prettify.js"></script>
+
 
     </body>
 </html>

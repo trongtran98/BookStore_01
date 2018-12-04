@@ -79,434 +79,7 @@
                             <li><a href="#">$70.00-and above<span>(1)</span></a></li>
                         </ul>
                     </div>
-                    <div class="left-title mb-20">
-                        <h4>Random</h4>
-                    </div>
-                    <div class="random-area mb-30">
-                        <div class="product-active-2 owl-carousel owl-loaded owl-drag">
 
-
-                            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-860px, 0px, 0px); transition: all 0s ease 0s; width: 2580px;"><div class="owl-item cloned" style="width: 430px;"><div class="product-total-2">
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/20.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Endeavor Daytrip</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$30.00</li>
-                                                <li class="old-price">$33.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/21.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Savvy Shoulder Tote</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$30.00</li>
-                                                <li class="old-price">$35.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/22.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Compete Track Tote</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$35.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 430px;"><div class="product-total-2">
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/23.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Voyage Yoga Bag</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$30.00</li>
-                                                <li class="old-price">$33.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/24.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Impulse Duffle</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$70.00</li>
-                                                <li class="old-price">$74.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/22.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Fusion Backpack</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$59.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item active" style="width: 430px;"><div class="product-total-2">
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/20.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Endeavor Daytrip</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$30.00</li>
-                                                <li class="old-price">$33.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/21.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Savvy Shoulder Tote</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$30.00</li>
-                                                <li class="old-price">$35.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/22.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Compete Track Tote</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$35.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item" style="width: 430px;"><div class="product-total-2">
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/23.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Voyage Yoga Bag</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$30.00</li>
-                                                <li class="old-price">$33.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/24.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Impulse Duffle</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$70.00</li>
-                                                <li class="old-price">$74.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/22.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Fusion Backpack</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$59.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 430px;"><div class="product-total-2">
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/20.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Endeavor Daytrip</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$30.00</li>
-                                                <li class="old-price">$33.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/21.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Savvy Shoulder Tote</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$30.00</li>
-                                                <li class="old-price">$35.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/22.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Compete Track Tote</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$35.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><div class="owl-item cloned" style="width: 430px;"><div class="product-total-2">
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/23.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Voyage Yoga Bag</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$30.00</li>
-                                                <li class="old-price">$33.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product bd mb-18">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/24.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Impulse Duffle</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$70.00</li>
-                                                <li class="old-price">$74.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-most-product">
-                                    <div class="most-product-img">
-                                        <a href="#"><img src="img/product/22.jpg" alt="book"></a>
-                                    </div>
-                                    <div class="most-product-content">
-                                        <div class="product-rating">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a href="#">Fusion Backpack</a></h4>
-                                        <div class="product-price">
-                                            <ul>
-                                                <li>$59.00</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="fa fa-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="fa fa-angle-right"></i></button></div><div class="owl-dots disabled"></div></div>
-                    </div>
-                    <div class="banner-area mb-30">
-                        <div class="banner-img-2">
-                            <a href="#"><img src="img/banner/31.jpg" alt="banner"></a>
-                        </div>
-                    </div>
                     <div class="left-title-2 mb-30">
                         <h2>Compare Products</h2>
                         <p>You have no items to compare.</p>
@@ -519,7 +92,8 @@
             </div>
             <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
                 <div class="category-image mb-30">
-                    <a href="#"><img src="img/banner/32.jpg" alt="banner"></a>
+
+                    <a href="#"><img src="/client/assets/img/banner/32.jpg" alt="banner"></a>
                 </div>
                 <div class="section-title-5 mb-30">
                     <h2>Book</h2>
@@ -528,7 +102,9 @@
                     <div class="shop-tab">
                         <div class="tab-3">
                             <ul>
-                                <li class="active"><a href="#th" data-toggle="tab"><i class="fa fa-th-large"></i>Grid</a></li>
+
+                                <li class="active"><a href="#th" data-toggle="tab"><i
+                                        class="fa fa-th-large"></i>Grid</a></li>
                                 <li><a href="#list" data-toggle="tab"><i class="fa fa-bars"></i>List</a></li>
                             </ul>
                         </div>
@@ -536,27 +112,11 @@
                             <p>Items 1-9 of 11</p>
                         </div>
                     </div>
-                    <div class="field-limiter">
-                        <div class="control">
-                            <span>Show</span>
-                            <!-- chosen-start -->
-                            <select data-placeholder="Default Sorting" style="width:50px;" class="chosen-select" tabindex="1">
-                                <option value="Sorting">1</option>
-                                <option value="popularity">2</option>
-                                <option value="rating">3</option>
-                                <option value="date">4</option>
-                            </select>
-                            <!-- chosen-end -->
-                        </div>
-                    </div>
-                    <div class="toolbar-sorter">
-                        <span>Sort By</span>
-                        <select id="sorter" class="sorter-options" data-role="sorter">
-                            <option selected="selected" value="position"> Position </option>
-                            <option value="name"> Product Name </option>
-                            <option value="price"> Price </option>
-                        </select>
-                        <a href="#"><i class="fa fa-arrow-up"></i></a>
+
+                    <div class="ui-widget toolbar-sorter">
+                        <label for="tags">Search in list: </label>
+                        <input id="tags"/>
+                        <a  id="on-search" href="#"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
                 <!-- tab-area-start -->
@@ -572,7 +132,10 @@
                                                 <img src="/img-book/${b.avatar}" alt="book" class="primary">
                                             </a>
                                             <div class="quick-view">
-                                                <a class="action-view" href="#" data-target="#productModal" data-toggle="modal" title="Quick View">
+
+                                                <a class="action-view" href="#" data-target="#productModal"
+                                                   data-toggle="modal" title="Quick View">
+
                                                     <i class="fa fa-search-plus"></i>
                                                 </a>
                                             </div>
@@ -593,11 +156,13 @@
                                         </div>
                                         <div class="product-link">
                                             <div class="product-button">
-                                                <a class="add-to-cart" bId="${b.id}" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                <a class="add-to-cart" bId="${b.id}" title="Add to cart"><i
+                                                        class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
                                             <div class="add-to-link">
                                                 <ul>
-                                                    <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
+                                                    <li><a href="product-details.html" title="Details"><i
+                                                            class="fa fa-external-link"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -610,241 +175,48 @@
                     </div>
                     <div class="tab-pane fade" id="list">
                         <!-- single-shop-start -->
-                        <div class="single-shop mb-30">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <div class="product-wrapper-2">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="img/product/3.jpg" alt="book" class="primary">
-                                            </a>
+                        <c:forEach items="${books}" var="b">
+                            <div class="single-shop mb-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <div class="product-wrapper-2">
+                                            <div class="product-img">
+                                                <a href="#">
+                                                    <img src="/img-book/${b.avatar}" alt="book" class="primary">
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                    <div class="product-wrapper-content">
-                                        <div class="product-details">
-                                            <div class="product-rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                        <div class="product-wrapper-content">
+                                            <div class="product-details">
+                                                <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
+                                                <div class="product-price">
+                                                    <ul>
+                                                        <li>$${b.price}</li>
+                                                    </ul>
+                                                </div>
+                                                <p>${b.description}</p>
                                             </div>
-                                            <h4><a href="#">Crown Summit</a></h4>
-                                            <div class="product-price">
-                                                <ul>
-                                                    <li>$36.00</li>
-                                                    <li class="old-price">$38.00</li>
-                                                </ul>
-                                            </div>
-                                            <p>The sporty Joust Duffle Bag can't be beat - not in the gym, not on the luggage carousel, not anywhere. Big enough to haul a basketball or soccer ball and some sneakers with plenty of room to spare,...											</p>
-                                        </div>
-                                        <div class="product-link">
-                                            <div class="product-button">
-                                                <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-                                            <div class="add-to-link">
-                                                <ul>
-                                                    <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
-                                                </ul>
+                                            <div class="product-link">
+                                                <div class="product-button">
+                                                    <a href="#" class="add-to-cart" bId="${b.id}" title="Add to cart"><i
+                                                            class="fa fa-shopping-cart"></i>Add
+                                                        to cart</a>
+                                                </div>
+                                                <div class="add-to-link">
+                                                    <ul>
+                                                        <li><a href="product-details.html" title="Details"><i
+                                                                class="fa fa-external-link"></i></a></li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- single-shop-end -->
-                        <!-- single-shop-start -->
-                        <div class="single-shop mb-30">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <div class="product-wrapper-2">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="img/product/18.jpg" alt="book" class="primary">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                    <div class="product-wrapper-content">
-                                        <div class="product-details">
-                                            <div class="product-rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <h4><a href="#">Driven Backpack</a></h4>
-                                            <div class="product-price">
-                                                <ul>
-                                                    <li>$34.00</li>
-                                                    <li class="old-price">$36.00</li>
-                                                </ul>
-                                            </div>
-                                            <p>The sporty Joust Duffle Bag can't be beat - not in the gym, not on the luggage carousel, not anywhere. Big enough to haul a basketball or soccer ball and some sneakers with plenty of room to spare,...											</p>
-                                        </div>
-                                        <div class="product-link">
-                                            <div class="product-button">
-                                                <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-                                            <div class="add-to-link">
-                                                <ul>
-                                                    <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single-shop-end -->
-                        <!-- single-shop-start -->
-                        <div class="single-shop mb-30">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <div class="product-wrapper-2">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="img/product/10.jpg" alt="book" class="primary">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                    <div class="product-wrapper-content">
-                                        <div class="product-details">
-                                            <div class="product-rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <h4><a href="#">Fusion Backpack</a></h4>
-                                            <div class="product-price">
-                                                <ul>
-                                                    <li>$59.00</li>
-                                                </ul>
-                                            </div>
-                                            <p>The sporty Joust Duffle Bag can't be beat - not in the gym, not on the luggage carousel, not anywhere. Big enough to haul a basketball or soccer ball and some sneakers with plenty of room to spare,...											</p>
-                                        </div>
-                                        <div class="product-link">
-                                            <div class="product-button">
-                                                <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-                                            <div class="add-to-link">
-                                                <ul>
-                                                    <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single-shop-end -->
-                        <!-- single-shop-start -->
-                        <div class="single-shop mb-30">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <div class="product-wrapper-2">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="img/product/5.jpg" alt="book" class="primary">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                    <div class="product-wrapper-content">
-                                        <div class="product-details">
-                                            <div class="product-rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <h4><a href="#">Set of Sprite Yoga Straps</a></h4>
-                                            <div class="product-price">
-                                                <ul>
-                                                    <li> <span>Starting at</span>$34.00</li>
-                                                </ul>
-                                            </div>
-                                            <p>The sporty Joust Duffle Bag can't be beat - not in the gym, not on the luggage carousel, not anywhere. Big enough to haul a basketball or soccer ball and some sneakers with plenty of room to spare,...											</p>
-                                        </div>
-                                        <div class="product-link">
-                                            <div class="product-button">
-                                                <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-                                            <div class="add-to-link">
-                                                <ul>
-                                                    <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single-shop-end -->
-                        <!-- single-shop-start -->
-                        <div class="single-shop">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                    <div class="product-wrapper-2">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="img/product/19.jpg" alt="book" class="primary">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                    <div class="product-wrapper-content">
-                                        <div class="product-details">
-                                            <div class="product-rating">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <h4><a href="#">Compete Track Tote</a></h4>
-                                            <div class="product-price">
-                                                <ul>
-                                                    <li>$32.00</li>
-                                                </ul>
-                                            </div>
-                                            <p>The sporty Joust Duffle Bag can't be beat - not in the gym, not on the luggage carousel, not anywhere. Big enough to haul a basketball or soccer ball and some sneakers with plenty of room to spare,...											</p>
-                                        </div>
-                                        <div class="product-link">
-                                            <div class="product-button">
-                                                <a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-                                            <div class="add-to-link">
-                                                <ul>
-                                                    <li><a href="product-details.html" title="Details"><i class="fa fa-external-link"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </c:forEach>
+
                         <!-- single-shop-end -->
                     </div>
                 </div>
@@ -869,3 +241,13 @@
         </div>
     </div>
 </div>
+
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel = "stylesheet">
+
+
+<script>
+    $(document).ready(function () {
+        setData(${booksJson});
+    });
+</script>
