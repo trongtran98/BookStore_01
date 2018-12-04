@@ -22,7 +22,7 @@ public class ReviewController extends BaseController {
     @ResponseBody
     public ResponseEntity createReview(@RequestParam  String content, @RequestParam Integer bookId, @RequestParam String email, HttpServletResponse response) throws IOException {
         Review review = new Review();
-        review.setContent(content);
+        review.setContent(content.trim());
         review.setBook(bookService.findById(bookId));
         review.setTime(new Date());
         review.setUser(userService.findByEmail(email));

@@ -73,14 +73,13 @@
                                         <a href="#"><i class="fa fa-star"></i></a>
                                     </div>
                                     <div class="reviews-actions">
-                                        <a href="#">3 Reviews</a>
-                                        <a href="#" class="view">Add Your Review</a>
+                                        <a href="#">3 Comments</a>
+                                        <a href="#" class="view">Add Your Comment</a>
                                     </div>
                                 </div>
                                 <div class="product-info-price">
                                     <div class="price-final">
                                         <span>$${book.price}</span>
-                                        <span class="old-price">$40.00</span>
                                     </div>
                                 </div>
                                 <div class="product-add-form">
@@ -111,7 +110,7 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="active"><a href="#Details" data-toggle="tab">Details</a></li>
-                        <li><a href="#Reviews" data-toggle="tab">Reviews ${reviews.size()}</a></li>
+                        <li><a href="#Reviews" data-toggle="tab">Comments ${reviews.size()}</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="Details">
@@ -130,9 +129,6 @@
                         </div>
                         <div class="tab-pane" id="Reviews">
                             <div class="valu valu-2">
-                                <div class="section-title mb-60 mt-60">
-                                    <h2>Customer Reviews</h2>
-                                </div>
                                 <ul>
                                     <li class="list-review">
                                         <c:forEach items="${reviews}" var="rv">
@@ -147,13 +143,13 @@
                                 <security:authorize access="isAuthenticated()">
 
                                     <div class="review-add">
-                                        <h3>You're reviewing:</h3>
+                                        <h3>You're Comments:</h3>
                                         <h4>Joust Duffle Bag</h4>
                                     </div>
                                     <form id="review-form" method="post">
                                         <div class="review-form">
                                             <div class="single-form">
-                                                <label>Review <sup>*</sup></label>
+
                                                 <input type="hidden" name="${_csrf.parameterName}"
                                                        value="${_csrf.token}"/>
                                                 <input type="hidden" name="bookId" value="${book.id}"/>
@@ -164,7 +160,7 @@
                                         </div>
                                         <div class="review-form-button">
                                             <a id="review-submit" href="#">
-                                                Submit Review
+                                                Submit
                                             </a>
                                         </div>
                                     </form>
@@ -531,7 +527,7 @@
                     </div>
                     <div class="banner-area mb-30">
                         <div class="banner-img-2">
-                            <a href="#"><img src="/client/assets/img/banner/33.jpg" alt="banner"/></a>
+                            <a href="#"><img src="/client/assets/img/banner/32.jpg" alt="banner"/></a>
                         </div>
                     </div>
                     <div class="left-title-2 mb-30">
@@ -548,3 +544,4 @@
     </div>
 </div>
 <!-- product-main-area-end -->
+<script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
