@@ -26,9 +26,10 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
     }
 
     @Override
-    public List<BookInfo> findByName(String bookName) {
+
+    public List<BookInfo> findByName(String bookName, Integer page, Integer bookPerPage) {
         try {
-            List<Book> bookModels = bookDAO.findByName(bookName);
+            List<Book> bookModels = bookDAO.findByName(bookName, page, bookPerPage);
             List<BookInfo> bookInfos = new ArrayList<>();
             for (Book book : bookModels){
                 bookInfos.add(new BookInfo(book));
@@ -46,6 +47,15 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
             bookInfos.add(new BookInfo(book));
         }
         return bookInfos;
+    }
+
+    @Override
+    public Integer countByName(String bookName) {
+        try{
+            return bookDAO.countByName(bookName).intValue();
+        }catch (Exception e){
+            return null;
+        }
     }
 
     @Override

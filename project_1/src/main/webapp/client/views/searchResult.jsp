@@ -123,118 +123,33 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="th">
                         <div class="row">
-                            <c:forEach items="${books}" var="b">
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- single-product-start -->
-                                    <div class="product-wrapper mb-40">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="/img-book/${b.avatar}" alt="book" class="primary">
-                                            </a>
-                                            <div class="quick-view">
 
-                                                <a class="action-view" href="#" data-target="#productModal"
-                                                   data-toggle="modal" title="Quick View">
-
-                                                    <i class="fa fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                            <div class="product-flag">
-                                                <ul>
-                                                    <li><span class="sale">new</span></li>
-                                                    <li><span class="discount-percentage">-5%</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details text-center">
-                                            <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
-                                            <div class="product-price">
-                                                <ul>
-                                                    <li>$${b.price}</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-link">
-                                            <div class="product-button">
-                                                <a class="add-to-cart" bId="${b.id}" title="Add to cart"><i
-                                                        class="fa fa-shopping-cart"></i>Add to cart</a>
-                                            </div>
-                                            <div class="add-to-link">
-                                                <ul>
-                                                    <li><a href="product-details.html" title="Details"><i
-                                                            class="fa fa-external-link"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single-product-end -->
-                                </div>
-                            </c:forEach>
+                            <%--list san pham o day--%>
 
                         </div>
                     </div>
                     <div class="tab-pane fade" id="list">
                         <!-- single-shop-start -->
-                        <c:forEach items="${books}" var="b">
-                            <div class="single-shop mb-30">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                        <div class="product-wrapper-2">
-                                            <div class="product-img">
-                                                <a href="#">
-                                                    <img src="/img-book/${b.avatar}" alt="book" class="primary">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                        <div class="product-wrapper-content">
-                                            <div class="product-details">
-                                                <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
-                                                <div class="product-price">
-                                                    <ul>
-                                                        <li>$${b.price}</li>
-                                                    </ul>
-                                                </div>
-                                                <p>${b.description}</p>
-                                            </div>
-                                            <div class="product-link">
-                                                <div class="product-button">
-                                                    <a href="#" class="add-to-cart" bId="${b.id}" title="Add to cart"><i
-                                                            class="fa fa-shopping-cart"></i>Add
-                                                        to cart</a>
-                                                </div>
-                                                <div class="add-to-link">
-                                                    <ul>
-                                                        <li><a href="product-details.html" title="Details"><i
-                                                                class="fa fa-external-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </c:forEach>
-
+                       <%--list of product--%>
                         <!-- single-shop-end -->
                     </div>
                 </div>
                 <!-- tab-area-end -->
                 <!-- pagination-area-start -->
                 <div class="pagination-area mt-50">
-                    <div class="list-page-2">
-                        <p>Items 1-9 of 11</p>
+
+                    <div class="wrapper">
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul id="pagination-demo" class="pagination-sm"></ul>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="page-number">
-                        <ul>
-                            <li><a href="#" class="active">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#" class="angle"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                    </div>
+
                 </div>
                 <!-- pagination-area-end -->
             </div>
@@ -242,12 +157,14 @@
     </div>
 </div>
 
+<input id="pages" hidden value="${pages}"/>
+
+<link href = "/client/assets/css/search.css"
+      rel = "stylesheet"/>
 <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
-      rel = "stylesheet">
+      rel = "stylesheet"/>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
+<script src="/client/assets/js/client-search.js"></script>
 
-<script>
-    $(document).ready(function () {
-        setData(${booksJson});
-    });
-</script>
