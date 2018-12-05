@@ -175,61 +175,23 @@
             <div class="panel-body">
                 <div class="messaging">
                     <div class="inbox_msg">
+                        <form id="messageForm" name="messageForm">
+                            <div class="mesgs">
+                                <div class="msg_history">
 
-                        <div class="mesgs">
-                            <div class="msg_history">
-                                <div class="incoming_msg">
-                                    <div class="incoming_msg_img"><img
-                                            src="https://ptetutorials.com/images/user-profile.png" alt="sunil"></div>
-                                    <div class="received_msg">
-                                        <div class="received_withd_msg">
-                                            <p>Test which is a new approach to have all
-                                                solutions</p>
-                                            <span class="time_date"> 11:01 AM    |    June 9</span></div>
-                                    </div>
+                                    <%--CHAT CONTENT HERE--%>
+
                                 </div>
-                                <div class="outgoing_msg">
-                                    <div class="sent_msg">
-                                        <p>Test which is a new approach to have all
-                                            solutions</p>
-                                        <span class="time_date"> 11:01 AM    |    June 9</span></div>
-                                </div>
-                                <div class="incoming_msg">
-                                    <div class="incoming_msg_img"><img
-                                            src="https://ptetutorials.com/images/user-profile.png" alt="sunil"></div>
-                                    <div class="received_msg">
-                                        <div class="received_withd_msg">
-                                            <p>Test, which is a new approach to have</p>
-                                            <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
-                                    </div>
-                                </div>
-                                <div class="outgoing_msg">
-                                    <div class="sent_msg">
-                                        <p>Apollo University, Delhi, India Test</p>
-                                        <span class="time_date"> 11:01 AM    |    Today</span></div>
-                                </div>
-                                <div class="incoming_msg">
-                                    <div class="incoming_msg_img"><img
-                                            src="https://ptetutorials.com/images/user-profile.png" alt="sunil"></div>
-                                    <div class="received_msg">
-                                        <div class="received_withd_msg">
-                                            <p>We work directly with our designers and suppliers,
-                                                and sell direct to you, which means quality, exclusive
-                                                products, at a price anyone can afford.</p>
-                                            <span class="time_date"> 11:01 AM    |    Today</span></div>
+                                <div class="type_msg">
+                                    <div class="input_msg_write">
+                                        <input type="text" id="status_message" class="write_msg" placeholder="Type a message">
+                                        <button class="msg_send_btn" type="submit"><i class="fa fa-paper-plane-o"
+                                                                                      aria-hidden="true"></i></button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="type_msg">
-                                <div class="input_msg_write">
-                                    <input type="text" class="write_msg" placeholder="Type a message">
-                                    <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o"
-                                                                                  aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
-
 
                 </div>
 
@@ -515,7 +477,7 @@
         <!-- end: page -->
     </section>
 </div>
-
+<input type="hidden" id="sId" value="${pageContext.session.id}"/>
 <head>
     <!-- Specific Page Vendor CSS -->
     <link rel="stylesheet" href="/admin/assets/vendor/select2/select2.css"/>
@@ -567,4 +529,9 @@
     <script src="/admin/assets/notify/prettify.js"></script>
     <script src="/admin/assets/custom/popup.js"></script>
     <script src="/admin/assets/custom/input-file-excel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <!-- https://cdnjs.com/libraries/stomp.js/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="/admin/assets/js/socket-admin.js"></script>
+
 </head>

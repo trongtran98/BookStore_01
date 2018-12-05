@@ -17,7 +17,7 @@ public class CartController extends BaseController {
 
     private Integer cartId;
 
-    @RequestMapping(value = "/{cartId}")
+    @GetMapping(value = "/{cartId}")
     public String checkCart(Model model, @PathVariable Integer cartId) {
         this.cartId = cartId;
         Cart cart = cartService.findById(cartId);
@@ -26,7 +26,7 @@ public class CartController extends BaseController {
         return "/client/cart";
     }
 
-    @RequestMapping(value = "/add-to-cart/{bookId}")
+    @GetMapping(value = "/add-to-cart/{bookId}")
     @ResponseBody
     public CartInfo addToCart(@PathVariable Integer bookId, Authentication authentication) {
         Cart cart = cartService.createCart(authentication.getName());
@@ -40,13 +40,13 @@ public class CartController extends BaseController {
         return new CartInfo(cartService.findById(cart.getId()));
     }
 
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @PostMapping(value = "/update")
     public String updateCart(@ModelAttribute("cart") Cart cart, BindingResult bindingResult) {
         cartDetailService.updateListCartDetails(cart);
         return "redirect:/carts/" + cartId;
     }
 
-    @RequestMapping(value = "/remove-from-cart/{cartDetailId}")
+    @GetMapping(value = "/remove-from-cart/{cartDetailId}")
     public String removeFromCart(@PathVariable Integer cartDetailId) {
         cartDetailService.deleteById(cartDetailId);
         return "redirect:/carts/" + cartId;

@@ -59,10 +59,10 @@
         </div>
     </div>
     <!-- end: search & user box -->
+    <input type="hidden" id="sId" value="${pageContext.session.id}"/>
+
 </header>
 <!-- end: header -->
 <head>
-    <script src="/admin/assets/custom/customize.js">
-
-    </script>
+    <script src="/admin/assets/custom/customize.js"></script>
 </head>

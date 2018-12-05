@@ -3,10 +3,8 @@ package app.controller.client;
 import app.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +16,7 @@ public class IndexController extends BaseController {
     private final int TYPE_ON_SALE = 6;
     private final int TYPE_FEATURE = 7;
 
-    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+    @GetMapping(value = {"/", "/home"})
     public String index(Model model) {
         model.addAllAttributes(getMapAttributes());
         return "/client/index";
@@ -33,17 +31,17 @@ public class IndexController extends BaseController {
         return attrs;
     }
 
-    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    @GetMapping(value = "/about")
     public String about() {
         return "/client/about";
     }
 
-    @RequestMapping(value = "/contact", method = RequestMethod.GET)
+    @GetMapping(value = "/contact")
     public String contact() {
         return "/client/contact";
     }
 
-    @RequestMapping(value = "/checkout", method = RequestMethod.GET)
+    @GetMapping(value = "/checkout")
     public String checkout() {
         return "/client/checkout";
     }
