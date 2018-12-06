@@ -27,9 +27,11 @@ public class BookDAOImpl extends GenericDAO<Integer, Book> implements BookDAO {
     }
 
     @Override
-    public List<Book> findByName(String bookName) {
+    public List<Book> findByName(String bookName, Integer page, Integer bookPerPage) {
         return getSession().createQuery("from Book b where LOWER(b.title) like :bookName")
                 .setParameter("bookName", "%" + bookName.toLowerCase() + "%")
+                .setFirstResult((page-1) * bookPerPage )
+                .setMaxResults(bookPerPage)
                 .list();
     }
 
@@ -43,5 +45,12 @@ public class BookDAOImpl extends GenericDAO<Integer, Book> implements BookDAO {
             return (Book) getSession().createQuery("FROM Book WHERE id = :id").setParameter("id", id).getSingleResult();
 
         return getSession().load(Book.class, id, LockMode.PESSIMISTIC_WRITE);
+    }
+
+    @Override
+    public Long countByName(String bookName) {
+        return (Long) getSession().createQuery("select count(*) from Book b where LOWER(b.title) like :bookName")
+                .setParameter("bookName", "%" + bookName.toLowerCase() + "%")
+                .uniqueResult();
     }
 }

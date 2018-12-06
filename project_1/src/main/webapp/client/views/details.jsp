@@ -545,3 +545,6 @@
 </div>
 <!-- product-main-area-end -->
 <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+
+<%--client details js--%>
+<script src="/client/assets/js/client-details.js"></script>

@@ -87,14 +87,12 @@
         <script src="/client/assets/js/main.js"></script>
         <%--client index js--%>
         <script src="/client/assets/js/client-index.js"></script>
-        <%--client details js--%>
-        <script src="/client/assets/js/client-details.js"></script>
+
 
         <%--client cart js--%>
         <script src="/client/assets/js/client-cart.js"></script>
         <script src="/client/assets/js/notify/notify.js"></script>
         <script src="/client/assets/js/notify/prettify.js"></script>
-
 
     </body>
 </html>
