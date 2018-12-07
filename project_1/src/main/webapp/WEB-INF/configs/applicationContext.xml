@@ -65,14 +65,16 @@
         <property name="maxInMemorySize" value="50000000"/>
     </bean>
 
-    <bean id="excelUtils" class="app.utlis.ExcelUtils"/>
+    <bean id="excelUtils" class="app.utils.ExcelUtils"/>
 
-    <bean id="googleUtils" class="app.utlis.GoogleUtils"/>
+    <bean id="googleUtils" class="app.utils.GoogleUtils"/>
 
-    <bean id="mailUtils" class="app.utlis.MailUtils"/>
+    <bean id="mailUtils" class="app.utils.MailUtils"/>
 
     <bean id="utilConvertModel" class="app.info.UtilConvertModel"/>
 
     <bean id="cartSchedule" class="app.schedule.CartSchedule"/>
+
+    <bean id="datetimeUtils" class="app.utils.DatetimeUtils"/>
 
 </beans>

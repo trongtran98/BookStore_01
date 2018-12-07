@@ -4,6 +4,7 @@ import app.model.OrderDetail;
 import app.service.OrderDetailService;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class OrderDetailServiceImpl extends BaseServiceImpl implements OrderDetailService {
     @Override
@@ -21,4 +22,13 @@ public class OrderDetailServiceImpl extends BaseServiceImpl implements OrderDeta
         return false;
     }
 
+    @Override
+    public BigDecimal totalProfit() {
+        try{
+            return orderDetailDAO.totalProfit();
+        }catch (Exception e){
+            return new BigDecimal(0);
+        }
+
+    }
 }

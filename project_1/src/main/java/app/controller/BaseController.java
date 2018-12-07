@@ -2,8 +2,8 @@ package app.controller;
 
 import app.info.UtilConvertModel;
 import app.service.*;
-import app.utlis.GoogleUtils;
-import app.utlis.MailUtils;
+import app.utils.GoogleUtils;
+import app.utils.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class BaseController {
@@ -33,4 +33,6 @@ public class BaseController {
     protected MailUtils mailUtils;
     @Autowired
     protected UtilConvertModel utilConvertModel;
+    @Autowired
+    protected OrderDetailService orderDetailService;
 }

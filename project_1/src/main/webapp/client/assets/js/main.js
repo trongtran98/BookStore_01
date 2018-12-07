@@ -521,9 +521,28 @@
         sidemenuDropdown();
     }
 
-
+    if(document.getElementById("logout-button") != null) {
+        document.getElementById("logout-button").onclick = function () {
+            document.getElementById("logout-form").submit();
+        }
+    }
 })(jQuery);
 
+function checkItemInCart(item){
+    if(item > 0){
+        displayMiniCart();
+    }
+    else {
+        hiddenMiniCart();
+    }
+}
+function displayMiniCart(){
+    $('.mini-cart-sub').show();
+}
+
+function hiddenMiniCart(){
+    $('.mini-cart-sub').hide();
+}
 
 let languageEn = "<li><img src=\"/client/assets/img/flag/1.jpg\" alt=\"flag\"/><a  onclick='urlLanguage(\"en\")'>English<i" +
     "class=\"fa fa-angle-down\"></i></a >" +
@@ -563,7 +582,11 @@ function urlLanguage(locale) {
         urlInstead = url.substr(0,pos) + "locale=" +locale;
         window.location.href = (urlInstead);
     }else {
-        window.location.href = (url + "?locale=" + locale);
+        if(url.indexOf('?') < 0)
+            window.location.href = (url + "?locale=" + locale);
+        else window.location.href = (url + "&locale=" + locale);
     }
-
 }
+
+
+

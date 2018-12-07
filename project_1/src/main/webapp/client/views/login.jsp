@@ -19,8 +19,8 @@
             <div class="col-lg-12">
                 <div class="breadcrumbs-menu">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#" class="active">login</a></li>
+                        <li><a href="#"><spring:message code="label.home"/></a></li>
+                        <li><a href="#" class="active"><spring:message code="label.login"/></a></li>
                     </ul>
                 </div>
             </div>
@@ -35,8 +35,6 @@
             <div class="col-lg-12">
                 <div class="login-title text-center mb-30">
                     <h2><spring:message code="label.login"/></h2>
-                    <p>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo<br>inventore veritatis et quasi
-                        architecto beat</p>
                 </div>
             </div>
             <spring:url var="securityLogin" value="/security_login"/>
@@ -44,20 +42,20 @@
                 <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
                     <div class="login-form">
                         <div class="single-login">
-                            <label>Username or email<span>*</span></label>
+                            <label><spring:message code="label.username.or.email"/> <span>*</span></label>
                             <input name="email" type="text"/>
                         </div>
                         <div class="single-login" style="margin-bottom: 0">
-                            <label>Passwords <span>*</span></label>
+                            <label><spring:message code="label.password"/> <span>*</span></label>
                             <input type="password" name="password"/>
                         </div>
                         <div class="single-login single-login-2">
                             <input id="rememberme" type="checkbox" name="remember-me">
-                            <span>Remember me</span><br>
-                            <input type="submit" value="Login"
+                            <span><spring:message code="label.remember"/></span><br>
+                            <input type="submit" value="<spring:message code="label.login"/>"
                                    style="margin-top: 15px; background-color: #FF742D; color: white">
                         </div>
-                        <a href="/register"><span style="text-indent: 20px">Register</span></a>
+                        <a href="/register"><span style="text-indent: 20px"><spring:message code="label.register"/></span></a>
                         <br/>
                         <a href="#"><span style="text-indent: 20px"><spring:message code="label.lost.password"/> </span></a>
                         <div style="text-align: center">

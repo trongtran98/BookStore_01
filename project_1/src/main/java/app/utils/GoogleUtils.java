@@ -1,4 +1,4 @@
-package app.utlis;
+package app.utils;
 
 import app.bean.GoogleUserInfo;
 import app.service.UserService;

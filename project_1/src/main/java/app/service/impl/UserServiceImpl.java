@@ -2,7 +2,7 @@ package app.service.impl;
 
 import app.model.User;
 import app.service.UserService;
-import app.utlis.ExcelUtils;
+import app.utils.ExcelUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;

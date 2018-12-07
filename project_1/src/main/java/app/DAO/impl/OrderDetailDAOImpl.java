@@ -6,6 +6,7 @@ import app.model.OrderDetail;
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class OrderDetailDAOImpl extends GenericDAO<Integer, OrderDetail> implements OrderDetailDAO {
@@ -17,6 +18,11 @@ public class OrderDetailDAOImpl extends GenericDAO<Integer, OrderDetail> impleme
 
     public OrderDetailDAOImpl(SessionFactory sessionfactory) {
         setSessionFactory(sessionfactory);
+    }
+
+    @Override
+    public BigDecimal totalProfit() {
+        return (BigDecimal) getSession().createQuery("SELECT sum(amount * price)  FROM OrderDetail ").uniqueResult();
     }
 
     @Override

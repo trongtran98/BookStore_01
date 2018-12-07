@@ -10,6 +10,9 @@
 		<property name="status" type="boolean">
 			<column name="status" />
 		</property>
+		<property name="orderDate" type="timestamp">
+			<column name="orderDate"/>
+		</property>
 
 		<many-to-one fetch="join" name="user" class="User">
 			<column name="userId" not-null="true" />

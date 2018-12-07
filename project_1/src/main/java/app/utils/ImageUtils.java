@@ -1,4 +1,4 @@
-package app.utlis;
+package app.utils;
 
 import org.springframework.web.multipart.MultipartFile;
 

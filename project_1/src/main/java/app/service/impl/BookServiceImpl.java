@@ -41,12 +41,16 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
     }
 
     public List<BookInfo> findBooks() {
-        List<Book> bookModels = bookDAO.findBooks();
-        List<BookInfo> bookInfos = new ArrayList<>();
-        for (Book book : bookModels){
-            bookInfos.add(new BookInfo(book));
+        try {
+            List<Book> bookModels = bookDAO.findBooks();
+            List<BookInfo> bookInfos = new ArrayList<>();
+            for (Book book : bookModels) {
+                bookInfos.add(new BookInfo(book));
+            }
+            return bookInfos;
+        }catch (Exception e){
+            return Collections.emptyList();
         }
-        return bookInfos;
     }
 
     @Override
@@ -56,6 +60,20 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
         }catch (Exception e){
             return null;
         }
+    }
+
+    public List<BookInfo> randomBooks() {
+        try {
+            List<Book> bookModels = bookDAO.randomBooks();
+            List<BookInfo> bookInfos = new ArrayList<>();
+            for (Book book : bookModels) {
+                bookInfos.add(new BookInfo(book));
+            }
+            return bookInfos;
+        }catch (Exception e){
+            return Collections.emptyList();
+        }
+
     }
 
     @Override

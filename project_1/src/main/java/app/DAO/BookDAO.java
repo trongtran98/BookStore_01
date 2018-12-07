@@ -10,4 +10,5 @@ public interface BookDAO extends BaseDAO<Integer, Book> {
     List<Book> findBooks();
     Book findBookById(Integer id, boolean lock);
     Long countByName(String bookName);
+    List<Book> randomBooks();
 }

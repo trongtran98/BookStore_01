@@ -53,6 +53,7 @@ $('.add-to-cart').click(function () {
             $('#number-in-cart').text(totalBook);
             $('#view-cart').attr('href','/carts/'+cartJs.id);
             $.notify("success!", {type:"success", align:"right", verticalAlign:"top", icon:"close"});
+            displayMiniCart();
         },
         error: function (e) {
             $.notify("error!", {type:"danger", align:"right", verticalAlign:"top", icon:"close"});

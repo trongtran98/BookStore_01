@@ -16,4 +16,28 @@ public class OrderDAOImpl extends GenericDAO<Integer, Order> implements OrderDAO
     public OrderDAOImpl(SessionFactory sessionfactory) {
         setSessionFactory(sessionfactory);
     }
+
+    @Override
+    public Long ordersOfTheMonth(int day) {
+        return (Long) getSession().createQuery("SELECT COUNT(id) FROM Order WHERE DAY(orderDate) = :day AND MONTH(orderDate) = MONTH(CURRENT_DATE)").setParameter("day", day).uniqueResult();
+
+    }
+
+    @Override
+    public Long ordersOfTheYear(int month) {
+        return (Long) getSession().createQuery("SELECT COUNT(id) FROM Order WHERE MONTH(orderDate) = :month").setParameter("month", month).uniqueResult();
+
+    }
+
+    @Override
+    public Long ordersOfTheYears(int year) {
+        return (Long) getSession().createQuery("SELECT COUNT(id) FROM Order WHERE YEAR(orderDate) = :year").setParameter("year", year).uniqueResult();
+
+    }
+
+    @Override
+    public Long totalOrder() {
+        return (Long) getSession().createQuery("SELECT count(id) FROM Order where DAY(orderDate) = DAY(CURRENT_DATE)").uniqueResult();
+
+    }
 }

@@ -4,13 +4,17 @@ import app.DAO.BookDAO;
 import app.DAO.GenericDAO;
 import app.model.Book;
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
 
 public class BookDAOImpl extends GenericDAO<Integer, Book> implements BookDAO {
     private static final Logger logger = Logger.getLogger(BookDAOImpl.class);
+    private static final int MAX_RESULT_RANDOM_BOOK = 3;
 
     public BookDAOImpl() {
         super(Book.class);
@@ -37,6 +41,14 @@ public class BookDAOImpl extends GenericDAO<Integer, Book> implements BookDAO {
 
     public List<Book> findBooks() {
         return getSession().createQuery("FROM Book ").getResultList();
+    }
+
+    @Override
+    public List<Book> randomBooks() {
+        Criteria criteria = getSession().createCriteria(Book.class);
+        criteria.add(Restrictions.sqlRestriction("1=1 order by rand()"));
+        criteria.setMaxResults(MAX_RESULT_RANDOM_BOOK);
+        return criteria.list();
     }
 
     @Override

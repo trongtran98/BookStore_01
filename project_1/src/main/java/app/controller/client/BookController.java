@@ -41,6 +41,7 @@ public class BookController extends BaseController {
         int bookCount =  bookService.countByName(bookName);
         int page = (bookCount % BOOK_PER_PAGE == 0) ? (bookCount / BOOK_PER_PAGE) : (bookCount / BOOK_PER_PAGE + 1);
         model.addAttribute("pages", page);
+        model.addAttribute("randomBooks", bookService.randomBooks());
         return "/client/searchResult";
     }
 

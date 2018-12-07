@@ -699,7 +699,6 @@ window.theme = {};
 								'<div class="panel-body">',
 									'<form>',
 										'<div class="current-user text-center">',
-											'<img id="LockUserPicture" src="{{picture}}" alt="John Doe" class="img-circle user-image" />',
 											'<h2 id="LockUserName" class="user-name text-dark m-none">{{username}}</h2>',
 											'<p  id="LockUserEmail" class="user-email m-none">{{email}}</p>',
 										'</div>',

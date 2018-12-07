@@ -1,6 +1,7 @@
 package app.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Order implements java.io.Serializable {
@@ -9,6 +10,7 @@ public class Order implements java.io.Serializable {
     private User user;
     private List<OrderDetail> orderDetails;
     private Cart cart;
+    private Date orderDate;
 
     public Order() {
 
@@ -17,6 +19,14 @@ public class Order implements java.io.Serializable {
     public Order(Cart cart) {
         this.status = false;
         this.user = cart.getUser();
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 
     public Integer getId() {
