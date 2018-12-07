@@ -14,22 +14,22 @@
             <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
         </div>
     </div>
+</div>
 
-    <!-- start: search & user box -->
-    <div class="header-right">
-        <span class="separator"></span>
+<!-- start: search & user box -->
+<div class="header-right">
+<span class="separator"></span>
 
-        <div id="userbox" class="userbox">
-            <spring:url value="/login" var="loginUrl"/>
-            <spring:url value="/security_logout" var="logoutUrl"/>
-            <security:authorize access="isAuthenticated()">
-                <a href="#" data-toggle="dropdown">
-                    <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
+<div id="userbox" class="userbox">
+<spring:url value="/login" var="loginUrl"/>
+<spring:url value="/security_logout" var="logoutUrl"/>
+<security:authorize access="isAuthenticated()">
+    <a href="#" data-toggle="dropdown">
+        <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
                     <span class="name"><security:authentication
                             property="principal.username"/></span>
-                        <span class="role">administrator</span>
-                    </div>
-
+            <span class="role">administrator</span>
+        </div>
                     <i class="fa custom-caret"></i>
                 </a>
 

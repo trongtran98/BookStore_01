@@ -1,14 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: jocker
-  Date: 15/11/2018
-  Time: 16:21
+  Date: 07/12/2018
+  Time: 09:45
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <div class="inner-wrapper">
     <!-- start: sidebar -->
     <aside id="sidebar-left" class="sidebar-left">
@@ -33,11 +32,11 @@
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="nav-active">
                             <a href="mailbox-folder.html">
                                 <span class="pull-right label label-primary">182</span>
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                <span>Chatbox</span>
+                                <span>Chat box</span>
                             </a>
                         </li>
                         <li class="nav-parent">
@@ -49,17 +48,24 @@
                                 <li>
                                     <spring:url value="/admin/add-manager?${_csrf.parameterName}=${_csrf.token}"
                                                 var="addManager"/>
-                                    <form action="${addManager}" method="post" enctype="multipart/form-data">
+                                    <form action="${addManager}" method="post" enctype="multipart/form-data"
+                                          accept=".xls, .xlsx">
                                         <div class="box">
-                                            <input type="file" name="fileExcel" id="file-1" class="inputfile inputfile-1" accept=".xls, .xlsx"  />
-                                            <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a file&hellip;</span></label>
+                                            <input type="file" name="fileExcel" id="file-1"
+                                                   class="inputfile inputfile-1"/>
+                                            <label for="file-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"
+                                                     viewBox="0 0 20 17">
+                                                    <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+                                                </svg>
+                                                <span>Choose a file&hellip;</span></label>
                                         </div>
                                         <button type="submit">ok</button>
                                     </form>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-parent nav-expanded nav-active">
+                        <li class="nav-parent nav-expanded">
                             <a>
                                 <i class="fa fa-list-alt" aria-hidden="true"></i>
                                 <span>Books</span>
@@ -70,7 +76,7 @@
                                         Books
                                     </a>
                                 </li>
-                                <li class="nav-active">
+                                <li>
                                     <a href="/admin/authors">
                                         Authors
                                     </a>
@@ -164,63 +170,73 @@
         <!-- start: page -->
         <section class="panel">
             <header class="panel-heading">
-                <h2 class="panel-title">Authors</h2>
+                <h2 class="panel-title">Chat box</h2>
             </header>
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="mb-md">
-                            <button onclick="add()" style="width:auto;"
-                                    class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
+                <div class="messaging">
+                    <div class="inbox_msg">
+
+                        <div class="mesgs">
+                            <div class="msg_history">
+                                <div class="incoming_msg">
+                                    <div class="incoming_msg_img"><img
+                                            src="https://ptetutorials.com/images/user-profile.png" alt="sunil"></div>
+                                    <div class="received_msg">
+                                        <div class="received_withd_msg">
+                                            <p>Test which is a new approach to have all
+                                                solutions</p>
+                                            <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                                    </div>
+                                </div>
+                                <div class="outgoing_msg">
+                                    <div class="sent_msg">
+                                        <p>Test which is a new approach to have all
+                                            solutions</p>
+                                        <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                                </div>
+                                <div class="incoming_msg">
+                                    <div class="incoming_msg_img"><img
+                                            src="https://ptetutorials.com/images/user-profile.png" alt="sunil"></div>
+                                    <div class="received_msg">
+                                        <div class="received_withd_msg">
+                                            <p>Test, which is a new approach to have</p>
+                                            <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+                                    </div>
+                                </div>
+                                <div class="outgoing_msg">
+                                    <div class="sent_msg">
+                                        <p>Apollo University, Delhi, India Test</p>
+                                        <span class="time_date"> 11:01 AM    |    Today</span></div>
+                                </div>
+                                <div class="incoming_msg">
+                                    <div class="incoming_msg_img"><img
+                                            src="https://ptetutorials.com/images/user-profile.png" alt="sunil"></div>
+                                    <div class="received_msg">
+                                        <div class="received_withd_msg">
+                                            <p>We work directly with our designers and suppliers,
+                                                and sell direct to you, which means quality, exclusive
+                                                products, at a price anyone can afford.</p>
+                                            <span class="time_date"> 11:01 AM    |    Today</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="type_msg">
+                                <div class="input_msg_write">
+                                    <input type="text" class="write_msg" placeholder="Type a message">
+                                    <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o"
+                                                                                  aria-hidden="true"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
-                <div id="datatable-editable_wrapper" class="dataTables_wrapper no-footer">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped mb-none dataTable no-footer"
-                               id="datatable-editable" role="grid" aria-describedby="datatable-editable_info">
-                            <thead>
-                            <tr role="row">
-                                <th class="sorting_asc" tabindex="0" aria-controls="datatable-editable" rowspan="1"
-                                    colspan="1" aria-label="Rendering engine: activate to sort column ascending"
-                                    aria-sort="ascending" style="width: 128px;">ID
-                                </th>
-                                <th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1"
-                                    colspan="1" aria-label="Browser: activate to sort column ascending"
-                                    style="width: 178px;">Full name
-                                </th>
-                                <th class="sorting" tabindex="0" aria-controls="datatable-editable" rowspan="1"
-                                    colspan="1" aria-label="Platform(s): activate to sort column ascending"
-                                    style="width: 160px;">Description
-                                </th>
-                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions"
-                                    style="width: 60px;">Actions
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody id="reload">
-                            <c:forEach items="${authors}" var="item">
-                                <tr class="gradeA odd" role="row">
-                                    <td class="sorting_1">${item.id}</td>
-                                    <td>${item.fullName}</td>
-                                    <td>${item.description}</td>
-                                    <td class="actions">
-                                        <a href="#"
-                                           onclick="edit(${item.id})"
-                                           style="width:auto;" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" bId="${item.id}" class="on-default remove-row"><i
-                                                class="fa fa-trash-o"></i></a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+
+
             </div>
         </section>
         <!-- end: page -->
-
         <aside id="sidebar-right" class="sidebar-right">
             <div class="nano has-scrollbar">
                 <div class="nano-content" tabindex="0" style="right: -15px;">
@@ -437,7 +453,6 @@
                 </div>
             </div>
         </aside>
-
     </section>
     <section id="section2" role="main" class="content-body">
         <header class="page-header">
@@ -469,9 +484,17 @@
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                             <input id="id" type="hidden" class="form-control input-rounded" name="id">
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="fullName">Full name</label>
+                                <label class="col-md-3 control-label" for="producerName">Producer name</label>
                                 <div class="col-md-6">
-                                    <input id="fullName" type="text" class="form-control input-rounded" name="fullName">
+                                    <input id="producerName" type="text" class="form-control input-rounded"
+                                           name="producerName">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="address">Address</label>
+                                <div class="col-md-6">
+                                    <textarea id="address" placeholder="Description" name="address"></textarea>
                                 </div>
                             </div>
 
@@ -481,9 +504,9 @@
                                     <textarea id="description" placeholder="Description" name="description"></textarea>
                                 </div>
                             </div>
-                                <button id="button-add" type="button">Add</button>
-                                <button id="button-edit" type="button">edit</button>
-                                <button id="button-close" onclick="cancel()" type="button">cancel</button>
+                            <button id="button-add" type="button">Add</button>
+                            <button id="button-edit" type="button">edit</button>
+                            <button id="button-close" onclick="cancel()" type="button">cancel</button>
                         </form>
                     </div>
                 </section>
@@ -491,7 +514,6 @@
         </div>
         <!-- end: page -->
     </section>
-
 </div>
 
 <head>
@@ -540,10 +562,9 @@
     <link rel="stylesheet" type="text/css" href="/admin/assets/notify/prettify.css">
     <link rel="stylesheet" type="text/css" href="/admin/assets/custom/popup.css">
     <link rel="stylesheet" type="text/css" href="/admin/assets/custom/input-file-excel.css">
+    <link rel="stylesheet" type="text/css" href="/admin/assets/custom/chatbox.css">
     <script src="/admin/assets/notify/notify.js"></script>
     <script src="/admin/assets/notify/prettify.js"></script>
     <script src="/admin/assets/custom/popup.js"></script>
     <script src="/admin/assets/custom/input-file-excel.js"></script>
 </head>
-
-

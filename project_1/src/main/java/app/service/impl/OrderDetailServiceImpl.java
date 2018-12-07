@@ -24,11 +24,10 @@ public class OrderDetailServiceImpl extends BaseServiceImpl implements OrderDeta
 
     @Override
     public BigDecimal totalProfit() {
-        try{
+        try {
             return orderDetailDAO.totalProfit();
-        }catch (Exception e){
+        } catch (Exception e) {
             return new BigDecimal(0);
         }
-
     }
 }
