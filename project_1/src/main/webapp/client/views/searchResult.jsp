@@ -15,8 +15,8 @@
             <div class="col-lg-12">
                 <div class="breadcrumbs-menu">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#" class="active">shop</a></li>
+                        <li><a href="#"><spring:message code="label.book"/></a></li>
+                        <li><a href="#" class="active"><spring:message code="label.search"/></a></li>
                     </ul>
                 </div>
             </div>
@@ -29,43 +29,36 @@
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                 <div class="shop-left">
                     <div class="section-title-5 mb-30">
-                        <h2>Shopping Options</h2>
+                        <h2><spring:message code="label.shopping.option"/></h2>
                     </div>
                     <div class="left-title mb-20">
-                        <h4>Category</h4>
+                        <h4><spring:message code="label.categories"/></h4>
                     </div>
                     <div class="left-menu mb-30">
                         <ul>
-                            <li><a>Jackets<span>(15)</span></a></li>
-                            <li><a>weaters<span>(9)</span></a></li>
-                            <li><a>Bottoms<span>(12)</span></a></li>
-                            <li><a>Jeans Pants<span>(6)</span></a></li>
+                            <c:forEach items="${categoriesMap}" var="c">
+                                <li><a>${c.key}<span>(${c.value})</span></a></li>
+                            </c:forEach>
                         </ul>
                     </div>
                     <div class="left-title mb-20">
-                        <h4>Manufacturer</h4>
+                        <h4><spring:message code="label.producers"/></h4>
                     </div>
                     <div class="left-menu mb-30">
                         <ul>
-                            <li><a href="#">Adidas<span>(4)</span></a></li>
-                            <li><a href="#">Chanel<span>(7)</span></a></li>
-                            <li><a href="#">DKNY <span>(3)</span></a></li>
-                            <li><a href="#">Dolce<span>(3)</span></a></li>
-                            <li><a href="#">Gabbana<span>(2)</span></a></li>
-                            <li><a href="#">Nike<span>(3)</span></a></li>
-                            <li><a href="#">Other <span>(1)</span></a></li>
+                            <c:forEach items="${producers}" var="p">
+                            <li><a>${p.key}<span>(${p.value})</span></a></li>
+                            </c:forEach>
                         </ul>
                     </div>
                     <div class="left-title mb-20">
-                        <h4>Price</h4>
+                        <h4><spring:message code="label.price"/></h4>
                     </div>
                     <div class="left-menu mb-30">
                         <ul>
-                            <li><a href="#">$0.00-$9.99<span>(1)</span></a></li>
-                            <li><a href="#">$30.00-$39.99<span>(11)</span></a></li>
-                            <li><a href="#">$40.00-$49.99<span>(2)</span></a></li>
-                            <li><a href="#">$50.00-$59.99<span>(3)</span></a></li>
-                            <li><a href="#">$70.00-and above<span>(1)</span></a></li>
+                            <c:forEach items="${prices}" var="p">
+                                <li><a>${p.key} $<span>(${p.value})</span></a></li>
+                            </c:forEach>
                         </ul>
                     </div>
                     <div class="left-title mb-20">
@@ -78,7 +71,7 @@
                                      style="transform: translate3d(-860px, 0px, 0px); transition: all 0s ease 0s; width: 2580px;">
                                     <div class="owl-item active" style="width: 430px;">
                                         <div class="product-total-2">
-                                            <c:forEach items="${randomBooks}" var="rb">
+                                            <c:forEach items="${random}" var="rb">
                                                 <div class="single-most-product bd mb-18">
                                                     <div class="most-product-img">
                                                         <a href="/info/${rb.id}"><img src="/img-book/${rb.avatar}" alt="book"></a>
@@ -119,99 +112,108 @@
                     <a href="#"><img src="/client/assets/img/banner/32.jpg" alt="banner"></a>
                 </div>
                 <div class="section-title-5 mb-30">
-                    <h2>Book</h2>
+                    <h2><spring:message code="label.book"/></h2>
                 </div>
-                <div class="toolbar mb-30">
-                    <div class="shop-tab">
-                        <div class="tab-3">
-                            <ul>
-                                <li class="active"><a href="#th" data-toggle="tab"><i
-                                        class="fa fa-th-large"></i>Grid</a></li>
-                                <li><a href="#list" data-toggle="tab"><i class="fa fa-bars"></i>List</a></li>
-                            </ul>
+                <c:choose>
+                    <c:when test="${books != null}">
+                        <div class="toolbar mb-30">
+                            <div class="shop-tab">
+                                <div class="tab-3">
+                                    <ul>
+                                        <li class="active"><a href="#th" data-toggle="tab"><i
+                                                class="fa fa-th-large"></i>Grid</a></li>
+                                        <li><a href="#list" data-toggle="tab"><i class="fa fa-bars"></i>List</a></li>
+                                    </ul>
+                                </div>
+                                <div class="list-page">
+                                    <p>Items 1-9 of 11</p>
+                                </div>
+                            </div>
+                            <div class="ui-widget toolbar-sorter">
+                                <label for="tags"><spring:message code="label.search.in.list"/>: </label>
+                                <input id="tags"/>
+                                <a  id="on-search" href="#"><i class="fa fa-search"></i></a>
+                            </div>
                         </div>
-                        <div class="list-page">
-                            <p>Items 1-9 of 11</p>
+                        <!-- tab-area-start -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="th">
+                                <div class="row">
+                                    <c:forEach items="${books}" var="b">
+                                        <div class="col-lg-3 col-md-4 col-sm-6">
+                                            <!-- single-product-start -->
+                                            <div class="product-wrapper mb-40">
+                                                <div class="product-img">
+                                                    <a href="#">
+                                                        <img src="/img-book/${b.avatar}" alt="book" class="primary">
+                                                    </a>
+                                                    <div class="quick-view">
+                                                        <a class="action-view" href="#" data-target="#productModal"
+                                                           data-toggle="modal" title="Quick View">
+                                                            <i class="fa fa-search-plus"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="product-flag">
+                                                        <ul>
+                                                            <li><span class="sale">new</span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-details text-center">
+                                                    <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
+                                                    <div class="product-price">
+                                                        <ul>
+                                                            <li>$${b.price}</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="product-link">
+                                                    <div class="product-button">
+                                                        <a class="add-to-cart" bId="${b.id}" ><i
+                                                                class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
+                                                    </div>
+                                                    <div class="add-to-link">
+                                                        <ul>
+                                                            <li><a href="product-details.html" title="Details"><i
+                                                                    class="fa fa-external-link"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- single-product-end -->
+                                        </div>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list">
+                                    <%--list of product--%>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ui-widget toolbar-sorter">
-                        <label for="tags"><spring:message code="label.search.in.list"/>: </label>
-                        <input id="tags"/>
-                        <a  id="on-search" href="#"><i class="fa fa-search"></i></a>
-                    </div>
-                </div>
-                <!-- tab-area-start -->
-                <div class="tab-content">
-                    <div class="tab-pane active" id="th">
-                        <div class="row">
-                            <c:forEach items="${books}" var="b">
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <!-- single-product-start -->
-                                    <div class="product-wrapper mb-40">
-                                        <div class="product-img">
-                                            <a href="#">
-                                                <img src="/img-book/${b.avatar}" alt="book" class="primary">
-                                            </a>
-                                            <div class="quick-view">
-                                                <a class="action-view" href="#" data-target="#productModal"
-                                                   data-toggle="modal" title="Quick View">
-                                                    <i class="fa fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                            <div class="product-flag">
-                                                <ul>
-                                                    <li><span class="sale">new</span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-details text-center">
-                                            <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
-                                            <div class="product-price">
-                                                <ul>
-                                                    <li>$${b.price}</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-link">
-                                            <div class="product-button">
-                                                <a class="add-to-cart" bId="${b.id}" ><i
-                                                        class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
-                                            </div>
-                                            <div class="add-to-link">
-                                                <ul>
-                                                    <li><a href="product-details.html" title="Details"><i
-                                                            class="fa fa-external-link"></i></a></li>
-                                                </ul>
-                                            </div>
+                        <!-- tab-area-end -->
+                        <!-- pagination-area-start -->
+                        <div class="pagination-area mt-50">
+
+                            <div class="wrapper">
+                                <div class="container">
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <ul id="pagination-demo" class="pagination-sm"></ul>
                                         </div>
                                     </div>
-                                    <!-- single-product-end -->
-                                </div>
-                            </c:forEach>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="list">
-                       <%--list of product--%>
-                    </div>
-                </div>
-                <!-- tab-area-end -->
-                <!-- pagination-area-start -->
-                <div class="pagination-area mt-50">
 
-                    <div class="wrapper">
-                        <div class="container">
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <ul id="pagination-demo" class="pagination-sm"></ul>
                                 </div>
                             </div>
 
                         </div>
-                    </div>
-
-                </div>
-                <!-- pagination-area-end -->
+                        <!-- pagination-area-end -->
+                    </c:when>
+                    <c:otherwise>
+                        <div>
+                            <h1 class="text-center line"><spring:message code="label.not.found.book"/></h1>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </div>
     </div>

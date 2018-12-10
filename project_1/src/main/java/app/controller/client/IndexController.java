@@ -31,8 +31,8 @@ public class IndexController extends BaseController {
         attrs.put("onSale", categoryDetailService.findById(TYPE_ON_SALE));
         attrs.put("feature", categoryDetailService.findById(TYPE_FEATURE));
         attrs.put("newBooks", bookService.loadBooksTypeNew(TYPE_NEW_BOOKS));
-        attrs.put("bestSale", bookService.bestSaleOfTheDay(MAX_RESULT_SALE_BEST));
-        attrs.put("panels", bookService.getPanel(MAX_RESULT_PANEL));
+        attrs.put("bestSale", bookService.getBestSaleOfTheDay(MAX_RESULT_SALE_BEST));
+        attrs.put("panels", bookService.getForPanel(MAX_RESULT_PANEL));
         return attrs;
     }
 
