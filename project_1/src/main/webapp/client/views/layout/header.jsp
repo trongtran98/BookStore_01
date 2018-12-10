@@ -69,7 +69,8 @@
 
                 <div class="my-cart">
                     <ul>
-                        <li><a href="/carts/${myCart.id}"><i class="fa fa-shopping-cart"></i><spring:message code="label.cart"/></a>
+                        <li><a href="/carts/${myCart.id}"><i class="fa fa-shopping-cart"></i><spring:message
+                                code="label.cart"/></a>
                             <c:set var="number" value="0"/>
                             <c:if test="${cart != null}">
                                 <c:forEach items="${cart.getCartDetails()}" var="cd">
@@ -214,6 +215,11 @@
                 <div class="safe-area">
                     <a href="product-details.html">sales off</a>
                 </div>
+                <div id="fb-root"></div>
+                <div class="fb-share-button" data-href="https://www.fahasa.com" data-layout="button_count"
+                     data-size="small" data-mobile-iframe="true"><a target="_blank"
+                                                                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                                                                    class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
             </div>
         </div>
     </div>
@@ -307,4 +313,5 @@
 <!-- mobile-menu-area-end -->
 <head>
     <script src="/client/assets/js/customize/customize.js"></script>
+    <script src="/client/assets/js/social-share.js"></script>
 </head>
