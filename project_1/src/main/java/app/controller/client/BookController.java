@@ -15,13 +15,14 @@ import java.util.List;
 public class BookController extends BaseController {
 
     public final int BOOK_PER_PAGE = 10;
+    private final int MAX_RESULT_RANDOM_BOOK = 3;
+
 
     @GetMapping(value = "/info/{id}")
     public String loadAndBook(@PathVariable Integer id, Model model) {
         Book book = bookService.findById(id);
         List<Review> reviews = reviewService.findByBookId(id);
         model.addAttribute("reviews", reviews);
-        model.addAttribute("book", book);
         return "/client/detail";
     }
 
@@ -33,16 +34,18 @@ public class BookController extends BaseController {
     }
 
     @GetMapping(value = "/search")
-    public String searchBook(@RequestParam String bookName, Model model){
-        int bookCount =  bookService.countByName(bookName);
+    public String searchBook(@RequestParam String bookName, Model model) {
+        int bookCount = bookService.countByName(bookName);
         int page = (bookCount % BOOK_PER_PAGE == 0) ? (bookCount / BOOK_PER_PAGE) : (bookCount / BOOK_PER_PAGE + 1);
         model.addAttribute("pages", page);
-        model.addAttribute("randomBooks", bookService.randomBooks());
+        model.addAttribute("randomBooks", bookService.randomBooks(MAX_RESULT_RANDOM_BOOK));
         return "/client/searchResult";
     }
 
-    @GetMapping(value = "/pages/{page}/{bookName}")
-    public @ResponseBody List<BookInfo> searchBookAjax(@PathVariable Integer page, @PathVariable String bookName){
+
+    @RequestMapping(value = "/pages/{page}/{bookName}")
+    public @ResponseBody
+    List<BookInfo> searchBookAjax(@PathVariable Integer page, @PathVariable String bookName) {
         List<BookInfo> books = bookService.findByName(bookName.trim(), page, BOOK_PER_PAGE);
         return books;
     }

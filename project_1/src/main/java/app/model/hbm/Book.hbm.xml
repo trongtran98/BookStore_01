@@ -41,6 +41,11 @@
             <column name="producerId" not-null="true" />
         </many-to-one>
 
+        <list name="orderDetails" inverse="true">
+            <key column="bookId" not-null="true"/>
+            <list-index column="id"/>
+            <one-to-many class="OrderDetail"/>
+        </list>
 
         <list name="reviews" fetch="select" inverse="true" >
             <key column="bookId" not-null="true"/>

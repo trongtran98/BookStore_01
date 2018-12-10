@@ -36,10 +36,10 @@
                     </div>
                     <div class="left-menu mb-30">
                         <ul>
-                            <li><a href="#">Jackets<span>(15)</span></a></li>
-                            <li><a href="#">weaters<span>(9)</span></a></li>
-                            <li><a href="#">Bottoms<span>(12)</span></a></li>
-                            <li><a href="#">Jeans Pants<span>(6)</span></a></li>
+                            <li><a>Jackets<span>(15)</span></a></li>
+                            <li><a>weaters<span>(9)</span></a></li>
+                            <li><a>Bottoms<span>(12)</span></a></li>
+                            <li><a>Jeans Pants<span>(6)</span></a></li>
                         </ul>
                     </div>
                     <div class="left-title mb-20">
@@ -144,7 +144,50 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="th">
                         <div class="row">
-                            <%--list of product--%>
+                            <c:forEach items="${books}" var="b">
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <!-- single-product-start -->
+                                    <div class="product-wrapper mb-40">
+                                        <div class="product-img">
+                                            <a href="#">
+                                                <img src="/img-book/${b.avatar}" alt="book" class="primary">
+                                            </a>
+                                            <div class="quick-view">
+                                                <a class="action-view" href="#" data-target="#productModal"
+                                                   data-toggle="modal" title="Quick View">
+                                                    <i class="fa fa-search-plus"></i>
+                                                </a>
+                                            </div>
+                                            <div class="product-flag">
+                                                <ul>
+                                                    <li><span class="sale">new</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-details text-center">
+                                            <h4><a href="/books/info/${b.id}">${b.title}</a></h4>
+                                            <div class="product-price">
+                                                <ul>
+                                                    <li>$${b.price}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="product-link">
+                                            <div class="product-button">
+                                                <a class="add-to-cart" bId="${b.id}" ><i
+                                                        class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
+                                            </div>
+                                            <div class="add-to-link">
+                                                <ul>
+                                                    <li><a href="product-details.html" title="Details"><i
+                                                            class="fa fa-external-link"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- single-product-end -->
+                                </div>
+                            </c:forEach>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="list">

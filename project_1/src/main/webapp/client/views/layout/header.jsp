@@ -97,6 +97,7 @@
                                         </div>
                                     </div>
                                 </c:forEach>
+                                <input id="number-total-cart" hidden value="${number}">
                                 <div class="cart-bottom">
 
                                     <a id="view-cart" class="view-cart" href="/carts/${myCart.id}"><spring:message
