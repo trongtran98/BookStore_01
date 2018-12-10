@@ -22,13 +22,10 @@ $('#btn-search').click(function () {
 });
 
 $('.add-to-cart').click(function () {
-    var bId = $(this).attr('bId');
     var bookId = $(this).attr('bId');
     $.ajax({
         type: "GET",
-        contentType: "application/json",
         url: "/carts/add-to-cart/" + bookId,
-        dataType: 'text',
         success: function (cart) {
             var cartJs = JSON.parse(cart);
             var totalBook = 0;

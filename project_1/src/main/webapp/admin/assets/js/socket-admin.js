@@ -17,7 +17,7 @@ function onConnected() {
 
 
 function onError(error) {
-    alert('An error has occurred when send this message~ ');
+    // alert('An error has occurred when send this message~ ');
 }
 
 
