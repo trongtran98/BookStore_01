@@ -10,16 +10,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping(value = "/orders")
 public class OrderController extends BaseController {
 
-    @RequestMapping(value = "/{cartId}")
+    @GetMapping(value = "/{cartId}")
     public String order(@PathVariable Integer cartId, Model model) throws JsonProcessingException {
         Cart cart = cartService.findById(cartId);
         if (cart != null){
@@ -29,7 +26,7 @@ public class OrderController extends BaseController {
         return "/client/checkout";
     }
 
-    @RequestMapping(value = "/purchase", method = RequestMethod.POST)
+    @PostMapping(value = "/purchase")
     public ResponseEntity purchase(@RequestParam Integer cartId) {
         OrderInfo order = orderService.getOrderByCart(cartId);
         if (orderService.saveOrderAndRemoveCart(order, order.getOrderDetails(), cartId)) {
