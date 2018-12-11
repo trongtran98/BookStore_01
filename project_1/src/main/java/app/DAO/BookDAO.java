@@ -10,7 +10,9 @@ public interface BookDAO extends BaseDAO<Integer, Book> {
     List<Book> findBooks();
     Book findBookById(Integer id, boolean lock);
     Long countByName(String bookName);
-    List<Book> randomBooks(int maxResult);
-    List<Book> bestSaleOfTheDay(int maxResult);
-    List<Book> getPanel(int maxResult);
+    List<Book> getRandom(int maxResult);
+    List<Book> getBestSaleOfTheDay(int maxResult);
+    List<Book> getForPanel(int maxResult);
+    Long getByPriceRange(float from, float to);
+    Long getByPriceUp(float price);
 }

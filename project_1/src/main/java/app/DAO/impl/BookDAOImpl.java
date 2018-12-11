@@ -7,9 +7,9 @@ import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class BookDAOImpl extends GenericDAO<Integer, Book> implements BookDAO {
@@ -33,7 +33,7 @@ public class BookDAOImpl extends GenericDAO<Integer, Book> implements BookDAO {
     public List<Book> findByName(String bookName, Integer page, Integer bookPerPage) {
         return getSession().createQuery("from Book b where LOWER(b.title) like :bookName")
                 .setParameter("bookName", "%" + bookName.toLowerCase() + "%")
-                .setFirstResult((page-1) * bookPerPage )
+                .setFirstResult((page - 1) * bookPerPage)
                 .setMaxResults(bookPerPage)
                 .list();
     }
@@ -44,18 +44,33 @@ public class BookDAOImpl extends GenericDAO<Integer, Book> implements BookDAO {
 
 
     @Override
-    public List<Book> bestSaleOfTheDay(int maxResult) {
+    public List<Book> getBestSaleOfTheDay(int maxResult) {
         return getSession().createQuery("SELECT b FROM Book b JOIN b.orderDetails oD JOIN oD.order o WHERE DATE(o.orderDate) = DATE(CURRENT_DATE) ORDER BY oD.amount DESC", Book.class).setMaxResults(maxResult).getResultList();
 
     }
 
     @Override
-    public List<Book> getPanel(int maxResult) {
+    public Long getByPriceRange(float to, float until) {
+        return getSession().createQuery("SELECT COUNT(b.id) FROM Book b WHERE b.price BETWEEN :to AND :until", Long.class)
+                .setParameter("to", BigDecimal.valueOf(to))
+                .setParameter("until", BigDecimal.valueOf(until))
+                .uniqueResult();
+    }
+
+    @Override
+    public Long getByPriceUp(float price) {
+        return getSession().createQuery("SELECT COUNT(b.id) FROM Book b WHERE b.price >= :price", Long.class)
+                .setParameter("price", BigDecimal.valueOf(price))
+                .uniqueResult();
+    }
+
+    @Override
+    public List<Book> getForPanel(int maxResult) {
         return getSession().createQuery("FROM Book b WHERE b.categoryDetail.id = 8").setMaxResults(maxResult).getResultList();
     }
 
     @Override
-    public List<Book> randomBooks(int maxResult) {
+    public List<Book> getRandom(int maxResult) {
         Criteria criteria = getSession().createCriteria(Book.class);
         criteria.add(Restrictions.sqlRestriction("1=1 order by rand()"));
         criteria.setMaxResults(maxResult);

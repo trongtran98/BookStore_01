@@ -21,8 +21,18 @@ public class CategoryDAOImpl extends GenericDAO<Integer, Category> implements Ca
     }
 
     @Override
+    public Long sumProductThemCategory(String category) {
+        return getSession().createQuery("SELECT COUNT(cB.id) FROM Category c " +
+                "JOIN c.categoryDetails cC " +
+                "JOIN cC.books cB " +
+                "WHERE c.categoryName = :category",Long.class)
+                .setParameter("category",category)
+                .uniqueResult();
+    }
+
+    @Override
     public List<Category> findAll() {
-        return getSession().createQuery("select DISTINCT c from Category c inner join fetch c.categoryDetails cd").list();
+        return getSession().createQuery("select DISTINCT c from Category c inner join fetch c.categoryDetails cd ").list();
     }
 
 

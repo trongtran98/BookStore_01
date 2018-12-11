@@ -6,20 +6,15 @@ import app.model.Book;
 import app.service.BookService;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class BookServiceImpl extends BaseServiceImpl implements BookService {
     @Override
     public List<BookInfo> loadBooksTypeNew(int number) {
         try {
             List<Book> bookModels = bookDAO.loadBooksTypeNew(number);
-            List<BookInfo> bookInfos = new ArrayList<>();
-            for (Book book : bookModels) {
-                bookInfos.add(new BookInfo(book));
-            }
-            return bookInfos;
+            return convertBookToBookInfo(bookModels);
+
         } catch (Exception e) {
             return Collections.emptyList();
         }
@@ -30,11 +25,8 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
     public List<BookInfo> findByName(String bookName, Integer page, Integer bookPerPage) {
         try {
             List<Book> bookModels = bookDAO.findByName(bookName, page, bookPerPage);
-            List<BookInfo> bookInfos = new ArrayList<>();
-            for (Book book : bookModels) {
-                bookInfos.add(new BookInfo(book));
-            }
-            return bookInfos;
+            return convertBookToBookInfo(bookModels);
+
         } catch (Exception e) {
             return Collections.emptyList();
         }
@@ -43,11 +35,8 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
     public List<BookInfo> findBooks() {
         try {
             List<Book> bookModels = bookDAO.findBooks();
-            List<BookInfo> bookInfos = new ArrayList<>();
-            for (Book book : bookModels) {
-                bookInfos.add(new BookInfo(book));
-            }
-            return bookInfos;
+            return convertBookToBookInfo(bookModels);
+
         } catch (Exception e) {
             return Collections.emptyList();
         }
@@ -57,25 +46,47 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
     public Integer countByName(String bookName) {
         try {
             return bookDAO.countByName(bookName).intValue();
+
         } catch (Exception e) {
             return null;
         }
     }
 
     @Override
-    public List<BookInfo> getPanel(int maxResult) {
+    public Map<String, Long> getByPrice() {
         try {
-            List<Book> panels = bookDAO.getPanel(maxResult);
-            if (panels == null) {
+            float from = 0f;
+            float to = 9.99f;
+            Map<String, Long> map = new LinkedHashMap<>();
+            for (int i = 0; i < 5; i++) {
+                if (i < 4) {
+                    map.put(String.format("%.2f", from) + " - " + String.format("%.2f", to)
+                            , bookDAO.getByPriceRange(from, to) == null
+                                    ? 0l : bookDAO.getByPriceRange(from, to));
+                    from += 10f;
+                    to += 10f;
+                } else {
+                    map.put(String.format("%.2f", from) + " - ~"
+                            , bookDAO.getByPriceUp(from) == null
+                                    ? 0l : bookDAO.getByPriceUp(from));
+                }
+            }
+            return map;
+
+        } catch (Exception e) {
+            return Collections.emptyMap();
+        }
+
+    }
+
+    @Override
+    public List<BookInfo> getForPanel(int maxResult) {
+        try {
+            List<Book> panels = bookDAO.getForPanel(maxResult);
+            if (panels == null)
                 return Collections.emptyList();
-            }
 
-            List<BookInfo> panelInfo = new ArrayList<>();
-            for (Book book : panels) {
-                panelInfo.add(new BookInfo(book));
-            }
-
-            return panelInfo;
+            return convertBookToBookInfo(panels);
 
         } catch (Exception e) {
             return Collections.emptyList();
@@ -83,40 +94,29 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
     }
 
     @Override
-    public List<BookInfo> bestSaleOfTheDay(int maxResult) {
+    public List<BookInfo> getBestSaleOfTheDay(int maxResult) {
         try {
-            List<Book> salesBest = bookDAO.bestSaleOfTheDay(maxResult);
+            List<Book> salesBest = bookDAO.getBestSaleOfTheDay(maxResult);
             if (salesBest != null && salesBest.size() == maxResult) {
-                List<BookInfo> salesBestInfo = new ArrayList<>();
-                for (Book book : salesBest) {
-                    salesBestInfo.add(new BookInfo(book));
-                }
-                return salesBestInfo;
-            }
+                return convertBookToBookInfo(salesBest);
 
-            List<Book> random = bookDAO.randomBooks(maxResult);
-            if (random != null) {
-                List<BookInfo> randomInfo = new ArrayList<>();
-                for (Book book : random) {
-                    randomInfo.add(new BookInfo(book));
-                }
-                return randomInfo;
-            }
-            return Collections.emptyList();
+            } else {
+                List<Book> random = bookDAO.getRandom(maxResult);
+                if (random == null)
+                    return Collections.emptyList();
 
+                return convertBookToBookInfo(random);
+            }
         } catch (Exception e) {
             return Collections.emptyList();
         }
     }
 
-    public List<BookInfo> randomBooks(int maxResult) {
+    public List<BookInfo> getRandom(int maxResult) {
         try {
-            List<Book> bookModels = bookDAO.randomBooks(maxResult);
-            List<BookInfo> bookInfos = new ArrayList<>();
-            for (Book book : bookModels) {
-                bookInfos.add(new BookInfo(book));
-            }
-            return bookInfos;
+            List<Book> bookModels = bookDAO.getRandom(maxResult);
+            return convertBookToBookInfo(bookModels);
+
         } catch (Exception e) {
             return Collections.emptyList();
         }
@@ -156,5 +156,13 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
         } catch (Exception e) {
             throw e;
         }
+    }
+
+    private List<BookInfo> convertBookToBookInfo(List<Book> books) {
+        List<BookInfo> bookInfos = new ArrayList<>();
+        for (Book book : books) {
+            bookInfos.add(new BookInfo(book));
+        }
+        return bookInfos;
     }
 }

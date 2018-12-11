@@ -38,7 +38,10 @@ public class BookController extends BaseController {
         int bookCount = bookService.countByName(bookName);
         int page = (bookCount % BOOK_PER_PAGE == 0) ? (bookCount / BOOK_PER_PAGE) : (bookCount / BOOK_PER_PAGE + 1);
         model.addAttribute("pages", page);
-        model.addAttribute("randomBooks", bookService.randomBooks(MAX_RESULT_RANDOM_BOOK));
+        model.addAttribute("random", bookService.getRandom(MAX_RESULT_RANDOM_BOOK));
+        model.addAttribute("producers", producerService.totalProductOfEachProducer());
+        model.addAttribute("categoriesMap", categoryService.totalProductOfEachCategory());
+        model.addAttribute("prices", bookService.getByPrice());
         return "/client/searchResult";
     }
 

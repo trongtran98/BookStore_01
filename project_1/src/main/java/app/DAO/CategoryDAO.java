@@ -8,4 +8,5 @@ import java.util.List;
 public interface CategoryDAO extends BaseDAO<Integer, Category>  {
     List<Category> findAll();
 
+    Long sumProductThemCategory(String category);
 }
