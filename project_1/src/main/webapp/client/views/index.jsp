@@ -14,43 +14,26 @@
 <!-- slider-area-start -->
 <div class="slider-area mt-30">
     <div class="container">
+
         <div class="slider-active owl-carousel">
+            <c:forEach items="${panels}" var="b">
             <div class="single-slider pt-100 pb-145 bg-img"
                  style="background-image:url(/client/assets/img/slider/13.jpg);">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="slider-content-3 slider-animated-1 pl-100">
-                            <h1>A Game <br>Fuck up</h1>
+                            <h1>${b.title}</h1>
                             <p class="slider-sale">
-                                <span class="sale1">-20%</span>
                                 <span class="sale2">
-                                            <strong>£80.00</strong>
-                                            £60.00
+                                           ${b.price}
                                         </span>
                             </p>
-                            <a href="#">Shop now!</a>
+                            <a href="#"><spring:message code="label.shop.now"/></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="single-slider pt-100 pb-145 bg-img"
-                 style="background-image:url(/client/assets/img/slider/12.jpg);">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="slider-content-3 slider-animated-1 pl-100">
-                            <h1>Wake The <br>of Thrones</h1>
-                            <p class="slider-sale">
-                                <span class="sale1">-20%</span>
-                                <span class="sale2">
-                                            <strong>£80.00</strong>
-                                            £60.00
-                                        </span>
-                            </p>
-                            <a href="#">Shop now!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </div>
@@ -75,7 +58,8 @@
                                 <img src="/img-book/${b.avatar}" alt="book" class="primary"/>
                             </a>
                             <div class="quick-view">
-                                <a class="action-view" href="#" bId="${b.id}" data-target="#productModal" data-toggle="modal"
+                                <a class="action-view" href="#" bId="${b.id}" data-target="#productModal"
+                                   data-toggle="modal"
                                    title="Quick View">
                                     <i class="fa fa-search-plus"></i>
                                 </a>
@@ -83,7 +67,6 @@
                             <div class="product-flag">
                                 <ul>
                                     <li><span class="sale">new</span> <br></li>
-                                    <li><span class="discount-percentage">-5%</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -97,7 +80,8 @@
                         </div>
                         <div class="product-link">
                             <div class="product-button">
-                                <a class="add-to-cart"   bId="${b.id}"><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/> </a>
+                                <a class="add-to-cart" bId="${b.id}"><i class="fa fa-shopping-cart"></i><spring:message
+                                        code="add.to.cart"/> </a>
                             </div>
                             <div class="add-to-link">
                                 <ul>
@@ -137,143 +121,59 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="deal-active owl-carousel">
-                    <div class="single-deal">
-                        <div class="deal-off-day">
-                            <div class="deal-off-day-title">
-                                <h1>DEALS OF THE DAY</h1>
-                            </div>
-                            <h2><a href="#">Sprite Yoga <br/>Straps1</a></h2>
-                            <div class="sale-area">
-                                <div class="price-box">
-                                    <span class="new-sale">$36.00</span>
+                    <c:forEach items="${bestSale}" var="b" end="2">
+                        <div class="single-deal">
+                            <div class="deal-off-day">
+                                <div class="deal-off-day-title">
+                                    <h1><spring:message code="label.best.sale"/></h1>
                                 </div>
-                            </div>
-                            <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with
-                                ruffles at the bottom of the dress.</p>
-                        </div>
-                        <div class="banner-img-3">
-                            <a href="#"><img src="/client/assets/img/product/3.jpg" alt="banner"/></a>
-                        </div>
-                    </div>
-                    <div class="single-deal">
-                        <div class="deal-off-day">
-                            <h2><a href="#">Rival Field <br>Messenger</a></h2>
-                            <div class="sale-area">
-                                <div class="price-box">
-                                    <span class="new-sale">$50.00</span>
+                                <h2><a href="#">${b.title}</a></h2>
+                                <div class="sale-area">
+                                    <div class="price-box">
+                                        <span class="new-sale">$${b.price}</span>
+                                    </div>
                                 </div>
+                                <p>${b.description}</p>
                             </div>
-                            <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with
-                                ruffles at the bottom of the dress.</p>
-                        </div>
-                        <div class="banner-img-3">
-                            <a href="#"><img src="/client/assets/img/product/11.jpg" alt="banner"/></a>
-                        </div>
-                    </div>
-                    <div class="single-deal">
-                        <div class="deal-off-day">
-                            <h2><a href="#">Voyage Yoga <br/> Bag</a></h2>
-                            <div class="sale-area">
-                                <div class="price-box">
-                                    <span class="new-sale">$70.00</span>
-                                </div>
+                            <div class="banner-img-3">
+                                <a href="#"><img src="/img-book/${b.avatar}" alt="banner"/></a>
                             </div>
-                            <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with
-                                ruffles at the bottom of the dress.</p>
                         </div>
-                        <div class="banner-img-3">
-                            <a href="#"><img src="/client/assets/img/product/15.jpg" alt="banner"/></a>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="bestseller-active owl-carousel">
-                    <div class="bestseller-total">
-                        <div class="single-bestseller mb-25">
-                            <div class="bestseller-img">
-                                <a href="#"><img src="/client/assets/img/product/13.jpg" alt="book"/></a>
+                    <c:forEach items="${bestSale}" var="b" begin="3" step="2" varStatus="i">
+                        <div class="bestseller-total">
+                            <div class="single-bestseller mb-25">
+                                <div class="bestseller-img">
+                                    <a href="#"><img src="/img-book/${b.avatar}" alt="book"/></a>
+                                </div>
+                                <div class="bestseller-text text-center">
+                                    <h3><a href="#">${b.title}</a></h3>
+                                    <div class="price">
+                                        <ul>
+                                            <li><span class="new-price">$${b.price}</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="bestseller-text text-center">
-                                <h3><a href="#">Rival Messenger</a></h3>
-                                <div class="price">
-                                    <ul>
-                                        <li><span class="new-price">$40.00</span></li>
-                                    </ul>
+                            <div class="single-bestseller">
+                                <div class="bestseller-img">
+                                    <a href="#"><img src="/img-book/${bestSale[i.index + 1].avatar}" alt="book"/></a>
+                                </div>
+                                <div class="bestseller-text text-center">
+                                    <h3><a href="#">${bestSale[i.index + 1].title}</a></h3>
+                                    <div class="price">
+                                        <ul>
+                                            <li><span class="new-price">$${bestSale[i.index + 1].price}</span></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="single-bestseller">
-                            <div class="bestseller-img">
-                                <a href="#"><img src="/client/assets/img/product/14.jpg" alt="book"/></a>
-                            </div>
-                            <div class="bestseller-text text-center">
-                                <h3><a href="#">Impulse Duffle</a></h3>
-                                <div class="price">
-                                    <ul>
-                                        <li><span class="new-price">$70.00</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bestseller-total">
-                        <div class="single-bestseller mb-25">
-                            <div class="bestseller-img">
-                                <a href="#"><img src="/client/assets/img/product/15.jpg" alt="book"/></a>
-                            </div>
-                            <div class="bestseller-text text-center">
-                                <h3><a href="#">Voyage Yoga Bag</a></h3>
-                                <div class="price">
-                                    <ul>
-                                        <li><span class="new-price">$30.00</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-bestseller">
-                            <div class="bestseller-img">
-                                <a href="#"><img src="/client/assets/img/product/16.jpg" alt="book"/></a>
-                            </div>
-                            <div class="bestseller-text text-center">
-                                <h3><a href="#">Compete Track Tote</a></h3>
-                                <div class="price">
-                                    <ul>
-                                        <li><span class="new-price">$32.00</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bestseller-total">
-                        <div class="single-bestseller mb-25">
-                            <div class="bestseller-img">
-                                <a href="#"><img src="/client/assets/img/product/17.jpg" alt="book"/></a>
-                            </div>
-                            <div class="bestseller-text text-center">
-                                <h3><a href="#">Fusion Backpack </a></h3>
-                                <div class="price">
-                                    <ul>
-                                        <li><span class="new-price">$59.00</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-bestseller">
-                            <div class="bestseller-img">
-                                <a href="#"><img src="/client/assets/img/product/14.jpg" alt="book"/></a>
-                            </div>
-                            <div class="bestseller-text text-center">
-                                <h3><a href="#">Impulse Duffle</a></h3>
-                                <div class="price">
-                                    <ul>
-                                        <li><span class="new-price">$70.00</span></li>
-                                        <li><span class="old-price">$74.00</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
@@ -286,7 +186,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title bt text-center pt-100 mb-50">
-                    <h2><spring:message code="label.our.product"/> </h2>
+                    <h2><spring:message code="label.our.product"/></h2>
                     <p><spring:message code="label.our.product.message"/></p>
                 </div>
             </div>
@@ -324,7 +224,6 @@
                                     <div class="product-flag">
                                         <ul>
                                             <li><span class="sale">new</span> <br></li>
-                                            <li><span class="discount-percentage">-5%</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -338,7 +237,9 @@
                                 </div>
                                 <div class="product-link">
                                     <div class="product-button">
-                                        <a class="add-to-cart"  bId="${b.id}"><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/> </a>
+                                        <a class="add-to-cart" bId="${b.id}"><i
+                                                class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/>
+                                        </a>
                                     </div>
                                     <div class="add-to-link">
                                         <ul>
@@ -387,7 +288,9 @@
                                 </div>
                                 <div class="product-link">
                                     <div class="product-button">
-                                        <a class="add-to-cart"  bId="${b.id}"><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/> </a>
+                                        <a class="add-to-cart" bId="${b.id}"><i
+                                                class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/>
+                                        </a>
                                     </div>
                                     <div class="add-to-link">
                                         <ul>
@@ -424,7 +327,6 @@
                                     <div class="product-flag">
                                         <ul>
                                             <li><span class="sale">new</span> <br></li>
-                                            <li><span class="discount-percentage">-5%</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -447,7 +349,8 @@
                                 </div>
                                 <div class="product-link">
                                     <div class="product-button">
-                                        <a class="add-to-cart"  bId="${b.id}"><i class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
+                                        <a class="add-to-cart" bId="${b.id}"><i
+                                                class="fa fa-shopping-cart"></i><spring:message code="add.to.cart"/></a>
                                     </div>
                                     <div class="add-to-link">
                                         <ul>
@@ -779,10 +682,10 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <div class="block-newsletter">
-                    <h2><spring:message code="label.signup.newsletter"/> </h2>
-                    <p><spring:message code="label.title.newsletter"/> </p>
+                    <h2><spring:message code="label.signup.newsletter"/></h2>
+                    <p><spring:message code="label.title.newsletter"/></p>
                     <form action="#">
-                        <input type="text" placeholder="<spring:message code="label.enter.email"/>" />
+                        <input type="text" placeholder="<spring:message code="label.enter.email"/>"/>
                     </form>
                     <a href="#"><spring:message code="label.send.eamil"/></a>
                 </div>
@@ -888,11 +791,12 @@
                             <div class="price">
                                 <span id="book-price">$70.00</span>
                             </div>
-                            <p id="book-description">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            <p id="book-description">Pellentesque habitant morbi tristique senectus et netus et
+                                malesuada fames ac turpis
                                 egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
                             <form action="#">
                                 <input type="number" value="1"/>
-                                <button ><spring:message code="add.to.cart"/></button>
+                                <button><spring:message code="add.to.cart"/></button>
                             </form>
                             <span><i class="fa fa-check"></i><spring:message code="label.in.stock"/> </span>
                         </div>

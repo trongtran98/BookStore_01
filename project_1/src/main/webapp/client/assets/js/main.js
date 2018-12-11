@@ -526,15 +526,21 @@
                 document.getElementById("logout-form").submit();
             }
         }
+        checkItemInCart();
     }
 )(jQuery);
 
-function checkItemInCart(item) {
+function checkItemInCart() {
+    let item = $('#number-total-cart').val();
     if (item > 0) {
         displayMiniCart();
     } else {
         hiddenMiniCart();
     }
+}
+
+function hiddenMiniCart() {
+    $('.mini-cart-sub').hide();
 }
 
 function displayMiniCart() {
@@ -552,23 +558,6 @@ $("#removeClass").click(function () {
     $("#addClass").show(500);
 });
 
-(jQuery);
-
-function checkItemInCart(item) {
-    if (item > 0) {
-        displayMiniCart();
-    } else {
-        hiddenMiniCart();
-    }
-}
-
-function displayMiniCart() {
-    $('.mini-cart-sub').show();
-}
-
-function hiddenMiniCart() {
-    $('.mini-cart-sub').hide();
-}
 
 let languageEn = "<li><img src=\"/client/assets/img/flag/1.jpg\" alt=\"flag\"/><a  onclick='urlLanguage(\"en\")'>English<i" +
     "class=\"fa fa-angle-down\"></i></a >" +

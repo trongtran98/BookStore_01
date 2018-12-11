@@ -10,5 +10,8 @@ public interface BookService extends BaseService<Integer, Book> {
     List<BookInfo> findByName(String bookName, Integer page, Integer bookPerPage);
     List<BookInfo> findBooks();
     Integer countByName(String bookName);
-    List<BookInfo> randomBooks();
+    List<BookInfo> randomBooks(int maxResult);
+    List<BookInfo> bestSaleOfTheDay(int maxResult);
+    List<BookInfo> getPanel(int maxResult);
+
 }

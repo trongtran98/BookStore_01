@@ -14,7 +14,6 @@ import java.util.List;
 
 public class BookDAOImpl extends GenericDAO<Integer, Book> implements BookDAO {
     private static final Logger logger = Logger.getLogger(BookDAOImpl.class);
-    private static final int MAX_RESULT_RANDOM_BOOK = 3;
 
     public BookDAOImpl() {
         super(Book.class);
@@ -40,14 +39,26 @@ public class BookDAOImpl extends GenericDAO<Integer, Book> implements BookDAO {
     }
 
     public List<Book> findBooks() {
-        return getSession().createQuery("FROM Book ").getResultList();
+        return getSession().createQuery("FROM Book").getResultList();
+    }
+
+
+    @Override
+    public List<Book> bestSaleOfTheDay(int maxResult) {
+        return getSession().createQuery("SELECT b FROM Book b JOIN b.orderDetails oD JOIN oD.order o WHERE DATE(o.orderDate) = DATE(CURRENT_DATE) ORDER BY oD.amount DESC", Book.class).setMaxResults(maxResult).getResultList();
+
     }
 
     @Override
-    public List<Book> randomBooks() {
+    public List<Book> getPanel(int maxResult) {
+        return getSession().createQuery("FROM Book b WHERE b.categoryDetail.id = 8").setMaxResults(maxResult).getResultList();
+    }
+
+    @Override
+    public List<Book> randomBooks(int maxResult) {
         Criteria criteria = getSession().createCriteria(Book.class);
         criteria.add(Restrictions.sqlRestriction("1=1 order by rand()"));
-        criteria.setMaxResults(MAX_RESULT_RANDOM_BOOK);
+        criteria.setMaxResults(maxResult);
         return criteria.list();
     }
 

@@ -19,6 +19,7 @@ public class Book {
     private CategoryDetail categoryDetail;
     private Producer producer;
     private List<Review> reviews;
+    private List<OrderDetail> orderDetails;
 
     public Integer getId() {
         return id;
@@ -114,6 +115,15 @@ public class Book {
 
     public void setCategoryDetail(CategoryDetail categoryDetail) {
         this.categoryDetail = categoryDetail;
+    }
+
+
+    public List<OrderDetail> getOrderDetails() {
+        return orderDetails;
+    }
+
+    public void setOrderDetails(List<OrderDetail> orderDetails) {
+        this.orderDetails = orderDetails;
     }
 
     public Book() {

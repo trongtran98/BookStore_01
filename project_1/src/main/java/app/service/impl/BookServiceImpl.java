@@ -16,7 +16,7 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
         try {
             List<Book> bookModels = bookDAO.loadBooksTypeNew(number);
             List<BookInfo> bookInfos = new ArrayList<>();
-            for (Book book : bookModels){
+            for (Book book : bookModels) {
                 bookInfos.add(new BookInfo(book));
             }
             return bookInfos;
@@ -31,7 +31,7 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
         try {
             List<Book> bookModels = bookDAO.findByName(bookName, page, bookPerPage);
             List<BookInfo> bookInfos = new ArrayList<>();
-            for (Book book : bookModels){
+            for (Book book : bookModels) {
                 bookInfos.add(new BookInfo(book));
             }
             return bookInfos;
@@ -48,29 +48,76 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
                 bookInfos.add(new BookInfo(book));
             }
             return bookInfos;
-        }catch (Exception e){
+        } catch (Exception e) {
             return Collections.emptyList();
         }
     }
 
     @Override
     public Integer countByName(String bookName) {
-        try{
+        try {
             return bookDAO.countByName(bookName).intValue();
-        }catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }
 
-    public List<BookInfo> randomBooks() {
+    @Override
+    public List<BookInfo> getPanel(int maxResult) {
         try {
-            List<Book> bookModels = bookDAO.randomBooks();
+            List<Book> panels = bookDAO.getPanel(maxResult);
+            if (panels == null) {
+                return Collections.emptyList();
+            }
+
+            List<BookInfo> panelInfo = new ArrayList<>();
+            for (Book book : panels) {
+                panelInfo.add(new BookInfo(book));
+            }
+
+            return panelInfo;
+
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
+    }
+
+    @Override
+    public List<BookInfo> bestSaleOfTheDay(int maxResult) {
+        try {
+            List<Book> salesBest = bookDAO.bestSaleOfTheDay(maxResult);
+            if (salesBest != null && salesBest.size() == maxResult) {
+                List<BookInfo> salesBestInfo = new ArrayList<>();
+                for (Book book : salesBest) {
+                    salesBestInfo.add(new BookInfo(book));
+                }
+                return salesBestInfo;
+            }
+
+            List<Book> random = bookDAO.randomBooks(maxResult);
+            if (random != null) {
+                List<BookInfo> randomInfo = new ArrayList<>();
+                for (Book book : random) {
+                    randomInfo.add(new BookInfo(book));
+                }
+                return randomInfo;
+            }
+            return Collections.emptyList();
+
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<BookInfo> randomBooks(int maxResult) {
+        try {
+            List<Book> bookModels = bookDAO.randomBooks(maxResult);
             List<BookInfo> bookInfos = new ArrayList<>();
             for (Book book : bookModels) {
                 bookInfos.add(new BookInfo(book));
             }
             return bookInfos;
-        }catch (Exception e){
+        } catch (Exception e) {
             return Collections.emptyList();
         }
     }
