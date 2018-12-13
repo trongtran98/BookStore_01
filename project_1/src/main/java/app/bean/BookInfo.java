@@ -1,6 +1,7 @@
 package app.bean;
 
 import app.model.Book;
+import app.utils.CloudinaryUtils;
 import org.apache.log4j.Logger;
 
 import java.io.Serializable;

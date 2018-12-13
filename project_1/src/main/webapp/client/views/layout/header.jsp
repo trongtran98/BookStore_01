@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!-- header-top-area-start -->
 <div class="header-top-area">
@@ -84,7 +85,8 @@
                                     <div class="cart-product">
                                         <div class="single-cart">
                                             <div class="cart-img">
-                                                <a href="#"><img src="/img-book/${c.book.avatar}" alt="book"/></a>
+                                                <c:set var = "imageBook" value = "${fn:split(c.book.avatar, '#')}" />
+                                                <a href="#"><img src="${imageBook[0]}" alt="book"/></a>
                                             </div>
                                             <div class="cart-info">
                                                 <h5><a href="#">${c.book.title}</a></h5>

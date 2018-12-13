@@ -1,7 +1,31 @@
-var $pathname = window.location.pathname;
-var $arr = $pathname.split('/');
+let $pathname = window.location.pathname;
+let $arr = $pathname.split('/');
 $('#section2').hide();
 
+$(document).on('click', '.btn-add', function (e) {
+    e.preventDefault();
+
+    let controlForm = $('.controls:first'),
+        currentEntry = $(this).parents('.entry:first'),
+        newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+    newEntry.find('input').val('');
+    controlForm.find('.entry:not(:last) .btn-add')
+        .removeClass('btn-add').addClass('btn-remove')
+        .removeClass('btn-success').addClass('btn-danger')
+        .html('<span class="glyphicon glyphicon-minus"></span>');
+    editInputImageAttribute($('.input-image').get());
+}).on('click', '.btn-remove', function (e) {
+    $(this).parents('.entry:first').remove();
+    editInputImageAttribute($('.input-image').get());
+    e.preventDefault();
+    return false;
+});
+function editInputImageAttribute(inputs){
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].setAttribute("name","files[" + i + "]");
+    }
+}
 
 function edit(key) {
     $.ajax({
@@ -11,7 +35,7 @@ function edit(key) {
         success: function (data) {
             if (data) {   // DO SOMETHING
                 $.getJSON($arr[2] + '/' + key, function (data) {
-                    for (var i in data) {
+                    for (let i in data) {
                         $('#' + i).val(data[i]);
                     }
                 });

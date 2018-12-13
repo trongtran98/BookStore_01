@@ -4,7 +4,7 @@ function setQuery(title, avatar, price, id) {
         "                                    <div class=\"product-wrapper mb-40\">\n" +
         "                                        <div class=\"product-img\">\n" +
         "                                            <a href=\"#\">\n" +
-        "                                                <img src='/img-book/" + avatar + "' alt=\"book\" class=\"primary\">\n" +
+        "                                                <img src='" +splitImage(avatar)+ "' alt=\"book\" class=\"primary\">\n" +
         "                                            </a>\n" +
         "                                            <div class=\"quick-view\">\n" +
         "                                                <a class=\"action-view\" href=\"#\" data-target=\"#productModal\"\n" +
@@ -53,7 +53,7 @@ function setQueryList(title, avatar, price, id, des) {
         "                                        <div class=\"product-wrapper-2\">\n" +
         "                                            <div class=\"product-img\">\n" +
         "                                                <a href=\"#\">\n" +
-        "                                                    <img src='/img-book/"+avatar+"' alt='book' class='primary'>\n" +
+        "                                                    <img src='"+splitImage(avatar)+"' alt='book' class='primary'>\n" +
         "                                                </a>\n" +
         "                                            </div>\n" +
         "                                        </div>\n" +
@@ -111,7 +111,7 @@ $('#pagination-demo').twbsPagination({
                         "                                    <div class=\"product-wrapper mb-40\">\n" +
                         "                                        <div class=\"product-img\">\n" +
                         "                                            <a href=\"#\">\n" +
-                        "                                                <img src='/img-book/" + value.avatar + "' alt=\"book\" class=\"primary\">\n" +
+                        "                                                <img src='" + splitImage(value.avatar) + "' alt=\"book\" class=\"primary\">\n" +
                         "                                            </a>\n" +
                         "                                            <div class=\"quick-view\">\n" +
                         "                                                <a class=\"action-view\" href=\"#\" data-target=\"#productModal\"\n" +
@@ -157,7 +157,7 @@ $('#pagination-demo').twbsPagination({
                         "<div class='product-wrapper-2'>\n" +
                         "<div class='product-img'>\n" +
                         "<a href='#'>\n" +
-                        "<img src='/img-book/" + value.avatar + "' alt='book' class='primary'>\n" +
+                        "<img src='" + value.avatar + "' alt='book' class='primary'>\n" +
                         "</a>\n" +
                         "</div>\n" +
                         "</div>\n" +

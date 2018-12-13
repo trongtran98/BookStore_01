@@ -9,6 +9,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <div class="breadcrumbs-area mb-70">
     <div class="container">
         <div class="row">
@@ -74,7 +75,10 @@
                                             <c:forEach items="${random}" var="rb">
                                                 <div class="single-most-product bd mb-18">
                                                     <div class="most-product-img">
-                                                        <a href="/info/${rb.id}"><img src="/img-book/${rb.avatar}" alt="book"></a>
+                                                        <a href="/info/${rb.id}">
+                                                            <c:set var = "imageBook" value = "${fn:split(rb.avatar, '#')}" />
+                                                            <img src="${imageBook[0]}" alt="banner"/>
+                                                        </a>
                                                     </div>
                                                     <div class="most-product-content">
                                                         <h4><a href="/info/${rb.id}">${rb.title}</a></h4>
@@ -114,8 +118,6 @@
                 <div class="section-title-5 mb-30">
                     <h2><spring:message code="label.book"/></h2>
                 </div>
-                <c:choose>
-                    <c:when test="${books != null}">
                         <div class="toolbar mb-30">
                             <div class="shop-tab">
                                 <div class="tab-3">
@@ -145,7 +147,8 @@
                                             <div class="product-wrapper mb-40">
                                                 <div class="product-img">
                                                     <a href="#">
-                                                        <img src="/img-book/${b.avatar}" alt="book" class="primary">
+                                                        <c:set var = "imageBook" value = "${fn:split(b.avatar, '#')}" />
+                                                        <img src="${imageBook[0]}" alt="book" />
                                                     </a>
                                                     <div class="quick-view">
                                                         <a class="action-view" href="#" data-target="#productModal"
@@ -207,13 +210,6 @@
 
                         </div>
                         <!-- pagination-area-end -->
-                    </c:when>
-                    <c:otherwise>
-                        <div>
-                            <h1 class="text-center line"><spring:message code="label.not.found.book"/></h1>
-                        </div>
-                    </c:otherwise>
-                </c:choose>
             </div>
         </div>
     </div>

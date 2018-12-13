@@ -5,7 +5,7 @@
   Time: 08:26
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="mailbox-folder.html">
+                            <a href="/admin/chats">
                                 <span class="pull-right label label-primary">182</span>
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                                 <span>Chatbox</span>
@@ -476,8 +476,9 @@
                         <h2 class="panel-title">Form Elements</h2>
                     </header>
                     <div class="panel-body">
-                        <form id="idForm1" class="form-horizontal form-bordered" method="post" accept-charset="UTF-8"
-                              action="/admin/books?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
+                        <form:form method="post" class="form-horizontal form-bordered" id="idForm1" action="/admin/books?${_csrf.parameterName}=${_csrf.token}" accept-charset="UTF-8" modelAttribute="uploadForm" enctype="multipart/form-data">
+                        <%--<form id="idForm1" class="form-horizontal form-bordered" method="post" accept-charset="UTF-8"--%>
+                              <%--action="/admin/books?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">--%>
                             <div class="form-group" style="display: none">
                                 <label class="col-md-3 control-label" for="id">ID</label>
                                 <div class="col-md-6">
@@ -501,24 +502,17 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label">File Upload</label>
                                 <div class="col-md-6">
-                                    <div class="file-upload">
-                                        <div class="image-upload-wrap">
-                                            <input class="file-upload-input" type='file' name="multipartFile"
-                                                   onchange="readURL(this);"
-                                                   accept="image/*"/>
-                                            <div class="drag-text">
-                                                <h3>Drag and drop a file or select add Image</h3>
-                                            </div>
+                                    <div class="controls">
+
+                                        <div class="entry input-group col-xs-3">
+                                            <input class="btn btn-primary input-image" name="files[0]" type="file" accept="image/*">
+                                            <span class="input-group-btn">
+                                                  <button class="btn btn-success btn-add" type="button">
+                                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                  </button>
+                                            </span>
                                         </div>
-                                        <div class="file-upload-content">
-                                            <img class="file-upload-image" accept="image/*" src="#" alt="your image"
-                                                 name="image"/>
-                                            <div class="image-title-wrap">
-                                                <button type="button" onclick="removeUpload()" class="remove-image">
-                                                    Remove
-                                                </button>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
 
@@ -591,7 +585,7 @@
                             <button type="submit">Add</button>
                             <button id="button-edit" type="button">edit</button>
                             <button id="button-close" onclick="cancel()" type="button">cancel</button>
-                        </form>
+                        </form:form>
                     </div>
                 </section>
             </div>

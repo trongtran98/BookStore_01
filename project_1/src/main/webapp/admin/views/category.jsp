@@ -28,13 +28,13 @@
                 <nav id="menu" class="nav-main" role="navigation">
                     <ul class="nav nav-main">
                         <li class="nav-active">
-                            <a href="index.html">
+                            <a href="/admin">
                                 <i class="fa fa-home" aria-hidden="true"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href="mailbox-folder.html">
+                            <a href="/admin/chats">
                                 <span class="pull-right label label-primary">182</span>
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                                 <span>Chatbox</span>

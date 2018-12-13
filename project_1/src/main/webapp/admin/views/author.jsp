@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="mailbox-folder.html">
+                            <a href="/admin/chats">
                                 <span class="pull-right label label-primary">182</span>
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                                 <span>Chatbox</span>

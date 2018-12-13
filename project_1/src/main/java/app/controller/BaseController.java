@@ -2,6 +2,7 @@ package app.controller;
 
 import app.info.UtilConvertModel;
 import app.service.*;
+import app.utils.CloudinaryUtils;
 import app.utils.GoogleUtils;
 import app.utils.MailUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,4 +36,6 @@ public class BaseController {
     protected UtilConvertModel utilConvertModel;
     @Autowired
     protected OrderDetailService orderDetailService;
+    @Autowired
+    protected CloudinaryUtils cloudinaryUtils;
 }

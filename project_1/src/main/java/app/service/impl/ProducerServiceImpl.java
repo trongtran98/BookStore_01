@@ -2,6 +2,7 @@ package app.service.impl;
 
 import app.model.Producer;
 import app.service.ProducerService;
+import org.hibernate.Hibernate;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -46,7 +47,9 @@ public class ProducerServiceImpl extends BaseServiceImpl implements ProducerServ
 
     @Override
     public Producer findById(Serializable key) {
-        return producerDAO.findById(key);
+        Producer producer = producerDAO.findById(key);
+        Hibernate.initialize(producer.getBooks());
+        return producer;
     }
 
     public Producer findById(Integer key) {
