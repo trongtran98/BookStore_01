@@ -36,3 +36,4 @@ project_1/src/main/resources/datasources.properties
 *.settings
 .project
 project_1/src/main/resources/mail.properties
+project_1/src/main/resources/cloud.properties

@@ -33,7 +33,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="mailbox-folder.html">
+                            <a href="/admin/chats">
                                 <span class="pull-right label label-primary">182</span>
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                                 <span>Chatbox</span>
@@ -71,7 +71,7 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li>
-                                    <a href="forms-basic.html">
+                                    <a href="admin/books">
                                         Books
                                     </a>
                                 </li>

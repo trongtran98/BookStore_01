@@ -1,6 +1,7 @@
 package app.service.impl;
 
 import app.model.Cart;
+import app.model.CartDetail;
 import app.model.User;
 import app.service.CartService;
 
@@ -10,7 +11,7 @@ public class CartServiceImpl extends BaseServiceImpl implements CartService {
     @Override
     public Cart findById(Serializable key) {
         try {
-            return cartDAO.findByCartId(key);
+            return setUrlImage(cartDAO.findByCartId(key));
         } catch (Exception e) {
             return null;
         }
@@ -48,9 +49,17 @@ public class CartServiceImpl extends BaseServiceImpl implements CartService {
     @Override
     public Cart findByUserId(String name) {
         try {
-            return cartDAO.getCartByEmail(name);
+            return setUrlImage(cartDAO.getCartByEmail(name));
         } catch (Exception e) {
             return null;
         }
+    }
+
+    private Cart setUrlImage(Cart cart){
+        for (CartDetail cartDetail : cart.getCartDetails()){
+            if ( cartDetail == null) break;
+            cartDetail.getBook().setAvatar(cloudinaryUtils.loadImageBook(cartDetail.getBook().getAvatar()));
+        }
+        return cart;
     }
 }

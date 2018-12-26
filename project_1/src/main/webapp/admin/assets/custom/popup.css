@@ -186,3 +186,17 @@ hr {
     border: 0;
     transition: all .2s ease;
 }
+
+.entry:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+.glyphicon {
+    font-size: 12px;
+}
+.btn-add{
+    margin: 0px;
+}
+.btn-danger{
+    margin: 0px;
+}

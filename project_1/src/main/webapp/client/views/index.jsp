@@ -9,12 +9,13 @@
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://cloudinary.com/jsp/taglib" prefix="cl" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 
 
 <!-- slider-area-start -->
 <div class="slider-area mt-30">
     <div class="container">
-
         <div class="slider-active owl-carousel">
             <c:forEach items="${panels}" var="b">
             <div class="single-slider pt-100 pb-145 bg-img"
@@ -55,7 +56,8 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="#">
-                                <img src="/img-book/${b.avatar}" alt="book" class="primary"/>
+                                <c:set var = "imageBook" value = "${fn:split(b.avatar, '#')}" />
+                                <img src="${imageBook[0]}"  width="335" height="449" alt="banner"/>
                             </a>
                             <div class="quick-view">
                                 <a class="action-view" href="#" bId="${b.id}" data-target="#productModal"
@@ -136,7 +138,10 @@
                                 <p>${b.description}</p>
                             </div>
                             <div class="banner-img-3">
-                                <a href="#"><img src="/img-book/${b.avatar}" alt="banner"/></a>
+                                <a href="#">
+                                    <c:set var = "imageBook" value = "${fn:split(b.avatar, '#')}" />
+                                    <img src="${imageBook[0]}"  width="335" height="449" alt="banner"/>
+                                </a>
                             </div>
                         </div>
                     </c:forEach>
@@ -148,7 +153,8 @@
                         <div class="bestseller-total">
                             <div class="single-bestseller mb-25">
                                 <div class="bestseller-img">
-                                    <a href="#"><img src="/img-book/${b.avatar}" alt="book"/></a>
+                                    <c:set var = "imageBook" value = "${fn:split(b.avatar, '#')}" />
+                                    <a href="#"><img src="${imageBook[0]}"  width="335" height="449" alt="book"/></a>
                                 </div>
                                 <div class="bestseller-text text-center">
                                     <h3><a href="#">${b.title}</a></h3>
@@ -161,7 +167,8 @@
                             </div>
                             <div class="single-bestseller">
                                 <div class="bestseller-img">
-                                    <a href="#"><img src="/img-book/${bestSale[i.index + 1].avatar}" alt="book"/></a>
+                                    <c:set var = "imageBook" value = "${fn:split(bestSale[i.index + 1].avatar, '#')}" />
+                                    <a href="#"><img src="${imageBook[0]}"  width="335" height="449" alt="book"/></a>
                                 </div>
                                 <div class="bestseller-text text-center">
                                     <h3><a href="#">${bestSale[i.index + 1].title}</a></h3>
@@ -212,7 +219,8 @@
                             <div class="product-wrapper">
                                 <div class="product-img">
                                     <a href="#">
-                                        <img src="/img-book/${b.avatar}" alt="book" class="primary"/>
+                                        <c:set var = "imageBook" value = "${fn:split(b.avatar, '#')}" />
+                                        <img src="${imageBook[0]}"  width="335" height="449" alt="book" class="primary"/>
                                     </a>
                                     <div class="quick-view">
                                         <a class="action-view" bId="${b.id}" href="#" data-target="#productModal"
@@ -263,7 +271,8 @@
                             <div class="product-wrapper">
                                 <div class="product-img">
                                     <a href="#">
-                                        <img src="/img-book/${b.avatar}" alt="book" class="primary"/>
+                                        <c:set var = "imageBook" value = "${fn:split(b.avatar, '#')}" />
+                                        <img src="${imageBook[0]}"  width="335" height="449" alt="book" class="primary"/>
                                     </a>
                                     <div class="quick-view">
                                         <a class="action-view" bId="${b.id}" href="#" data-target="#productModal"
@@ -315,7 +324,8 @@
                             <div class="product-wrapper">
                                 <div class="product-img">
                                     <a href="#">
-                                        <img src="/img-book/${b.avatar}" alt="book" class="primary"/>
+                                        <c:set var = "imageBook" value = "${fn:split(b.avatar, '#')}" />
+                                        <img src="${imageBook[0]}" width="335" height="449" alt="book" class="primary"/>
                                     </a>
                                     <div class="quick-view">
                                         <a class="action-view" bId="${b.id}" href="#" data-target="#productModal"
@@ -331,15 +341,6 @@
                                     </div>
                                 </div>
                                 <div class="product-details text-center">
-                                    <div class="product-rating">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        </ul>
-                                    </div>
                                     <h4><a href="#">${b.title}</a></h4>
                                     <div class="product-price">
                                         <ul>
@@ -439,38 +440,19 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-5 col-xs-12">
                         <div class="modal-tab">
-                            <div class="product-details-large tab-content">
-                                <div class="tab-pane active" id="image-1">
-                                    <img src="/client/assets/img/product/quickview-l4.jpg" alt=""/>
-                                </div>
-                                <div class="tab-pane" id="image-2">
-                                    <img src="/client/assets/img/product/quickview-l2.jpg" alt=""/>
-                                </div>
-                                <div class="tab-pane" id="image-3">
-                                    <img src="/client/assets/img/product/quickview-l3.jpg" alt=""/>
-                                </div>
-                                <div class="tab-pane" id="image-4">
-                                    <img src="/client/assets/img/product/quickview-l5.jpg" alt=""/>
-                                </div>
+                            <div class="product-details-large tab-content" id="bigImage">
                             </div>
-                            <div class="product-details-small quickview-active owl-carousel">
-                                <a class="active" href="#image-1"><img src="/client/assets/img/product/quickview-s4.jpg"
-                                                                       alt=""/></a>
-                                <a href="#image-2"><img src="/client/assets/img/product/quickview-s2.jpg" alt=""/></a>
-                                <a href="#image-3"><img src="/client/assets/img/product/quickview-s3.jpg" alt=""/></a>
-                                <a href="#image-4"><img src="/client/assets/img/product/quickview-s5.jpg" alt=""/></a>
+                            <div class="product-details-small quickview-active owl-carousel"  id="smallImage">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12" style="height: 100%">
                         <div class="modal-pro-content">
-                            <h3 id="book-title">Chaz Kangeroo Hoodie3</h3>
+                            <h3 id="book-title"></h3>
                             <div class="price">
-                                <span id="book-price">$70.00</span>
+                                <span id="book-price"></span>
                             </div>
-                            <p id="book-description">Pellentesque habitant morbi tristique senectus et netus et
-                                malesuada fames ac turpis
-                                egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
+                            <p id="book-description"></p>
                             <form action="#">
                                 <input type="number" value="1"/>
                                 <button><spring:message code="add.to.cart"/></button>

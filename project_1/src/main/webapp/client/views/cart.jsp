@@ -10,6 +10,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div class="breadcrumbs-area mb-70">
     <div class="container">
         <div class="row">
@@ -60,8 +61,9 @@
                                 <c:forEach items="${cart.cartDetails}" var="cd" varStatus="status">
                                     <tr>
                                         <form:input path="cartDetails[${status.index}].id" type="hidden"/>
-                                        <td class="product-thumbnail"><a href="#"><img
-                                                src="/img-book/${cd.book.avatar}" alt="man"></a>
+                                        <td class="product-thumbnail"><a href="#">
+                                            <c:set var = "imageBook" value = "${fn:split(cd.book.avatar, '#')}" />
+                                            <img src="${imageBook[0]}"  alt="man"/>
                                         </td>
                                         <td class="product-name"><a href="#">${cd.book.title}</a></td>
                                         <td class="product-price"><span class="amount">$${cd.book.price}</span></td>

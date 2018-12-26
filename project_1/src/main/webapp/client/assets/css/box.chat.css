@@ -45,6 +45,33 @@
     line-height: 42px;
 }
 
+.button-share {
+    background: #394E96 none repeat scroll 0 0;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    bottom: 135px;
+    color: white;
+    display: inline;
+    font-size: 20px;
+    height: 40px;
+    line-height: 32px;
+    position: fixed;
+    right: 12px;
+    text-align: center;
+    width: 40px;
+    z-index: 9999;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.button-share:hover {
+    color: white;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    line-height: 42px;
+}
+
 /*box chat*/
 .popup-box {
     background-color: #ffffff;

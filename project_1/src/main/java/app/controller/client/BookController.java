@@ -3,6 +3,7 @@ package app.controller.client;
 import app.bean.BookInfo;
 import app.controller.BaseController;
 import app.model.Book;
+import app.model.Producer;
 import app.model.Review;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +22,12 @@ public class BookController extends BaseController {
     @GetMapping(value = "/info/{id}")
     public String loadAndBook(@PathVariable Integer id, Model model) {
         Book book = bookService.findById(id);
+        book.setAvatar(cloudinaryUtils.loadImageBook(book.getAvatar()));
+//        List<Book> relateBook = producerService.findById(book.getProducer().getId()).getBooks();
         List<Review> reviews = reviewService.findByBookId(id);
         model.addAttribute("reviews", reviews);
+        model.addAttribute("book", book);
+//        model.addAttribute("relateBook", relateBook);
         return "/client/detail";
     }
 
@@ -30,6 +35,7 @@ public class BookController extends BaseController {
     public @ResponseBody
     BookInfo loadBookJson(@PathVariable Integer id) {
         Book book = bookService.findById(id);
+        book.setAvatar(cloudinaryUtils.loadImageBook(book.getAvatar()));
         return new BookInfo(book);
     }
 

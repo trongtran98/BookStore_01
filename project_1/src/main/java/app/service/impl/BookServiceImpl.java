@@ -4,6 +4,7 @@ package app.service.impl;
 import app.bean.BookInfo;
 import app.model.Book;
 import app.service.BookService;
+import app.utils.CloudinaryUtils;
 
 import java.io.Serializable;
 import java.util.*;
@@ -161,6 +162,7 @@ public class BookServiceImpl extends BaseServiceImpl implements BookService {
     private List<BookInfo> convertBookToBookInfo(List<Book> books) {
         List<BookInfo> bookInfos = new ArrayList<>();
         for (Book book : books) {
+            book.setAvatar(cloudinaryUtils.loadImageBook(book.getAvatar()));
             bookInfos.add(new BookInfo(book));
         }
         return bookInfos;

@@ -2,6 +2,7 @@ package app.service.impl;
 
 import app.model.CategoryDetail;
 import app.service.CategoryDetailService;
+import app.utils.CloudinaryUtils;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -13,6 +14,7 @@ public class CategoryDetailServiceImpl extends BaseServiceImpl implements Catego
         try {
             CategoryDetail result = categoryDetailDAO.findById(key);
             result.getBooks().removeAll(Collections.singleton(null));
+            result.getBooks().forEach(book -> book.setAvatar(cloudinaryUtils.loadImageBook(book.getAvatar())));
             return result;
         } catch (Exception e) {
             return null;
