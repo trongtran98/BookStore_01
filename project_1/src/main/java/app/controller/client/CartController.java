@@ -52,7 +52,7 @@ public class CartController extends BaseController {
         return "redirect:/carts/" + cartId;
     }
 
-    private void createNewCartDetail(Cart cart, Integer bookId) {
+    public void createNewCartDetail(Cart cart, Integer bookId) {
         Book book = bookService.findById(bookId);
         CartDetail cartDetail = new CartDetail();
         cartDetail.setBook(book);

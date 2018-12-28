@@ -2,11 +2,15 @@ package app.bean;
 
 import app.model.Cart;
 import app.model.CartDetail;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CartInfo {
+    private static final Logger logger = Logger.getLogger(CartInfo.class);
+
+
     private Integer id;
     private List<CartDetailInfo> cartDetails;
 
@@ -16,7 +20,11 @@ public class CartInfo {
 
     public CartInfo(Cart cart) {
         this.id = cart.getId();
-        this.cartDetails = getCartDetailsInfo(cart.getCartDetails());
+        try{
+            this.cartDetails = getCartDetailsInfo(cart.getCartDetails());
+        }catch (Exception e){
+            logger.info(e);
+        }
     }
 
     public List<CartDetailInfo> getCartDetailsInfo(List<CartDetail> cartDetails){
